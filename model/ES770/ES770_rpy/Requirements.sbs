@@ -1,0 +1,196 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _id = GUID 24b2c2cb-2b3a-42ab-976e-1909af601173;
+	- _myState = 8192;
+	- _name = "Requirements";
+	- _objectCreation = "502831083020161513676950";
+	- _umlDependencyID = "2873";
+	- Annotations = { IRPYRawContainer 
+		- size = 9;
+		- value = 
+		{ IRequirement 
+			- _id = GUID 304ee28a-86d1-4eb4-93a1-eac2600b0ed0;
+			- _name = "Requirement Follow";
+			- _objectCreation = "502831283020161513674950";
+			- _umlDependencyID = "3385";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall follow a nonstraight high-contrast black-on-white-background track.";
+			- reqID = "6";
+		}
+		{ IRequirement 
+			- _id = GUID 86c7f850-9d8b-4412-bbc6-b221d80a4cd4;
+			- _name = "Requirement Untethered";
+			- _objectCreation = "502831483020161513672950";
+			- _umlDependencyID = "3806";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall operate untethered from any external devices, including, but not limited to, wired and wireless communications, after any startup routines have been performed.";
+			- reqID = "9";
+		}
+		{ IRequirement 
+			- _id = GUID 460e3aa9-978f-466f-8789-626a78b7423b;
+			- _name = "Requirement Commands";
+			- _objectCreation = "502831683020161513670950";
+			- _umlDependencyID = "3576";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall obey a predefined number of commands present of the track.";
+			- reqID = "2";
+		}
+		{ IRequirement 
+			- _id = GUID 9b9be1c9-0f10-4a94-a509-97cbb6544dce;
+			- _name = "Requirement PID";
+			- _objectCreation = "502831883020161513668950";
+			- _umlDependencyID = "2988";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall adjust its trajectory based upon a PID algorithm.";
+			- reqID = "8";
+		}
+		{ IRequirement 
+			- _id = GUID 73963f9f-be87-468c-8423-a383625e93b7;
+			- _name = "Requirement Encoder";
+			- _objectCreation = "502832083020161513666950";
+			- _umlDependencyID = "3462";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall measure its speed through means of a rotary encoder.";
+			- reqID = "5";
+		}
+		{ IRequirement 
+			- _id = GUID 121d8adf-2f89-4e88-b86b-b2c309931f3d;
+			- _name = "Requirement IR Array";
+			- _objectCreation = "502832283020161513664950";
+			- _umlDependencyID = "3424";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall determine the location of the track by means of an infrared array.";
+			- reqID = "7";
+		}
+		{ IRequirement 
+			- _id = GUID 42655265-2c52-4a0d-bd17-39fd3dc763f2;
+			- _name = "Requirement Diagnostics";
+			- _objectCreation = "502832483020161513662950";
+			- _umlDependencyID = "3902";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall perform an automated diagnostics routine upon command.";
+			- reqID = "3";
+		}
+		{ IRequirement 
+			- _id = GUID e93f544b-e8c9-4aa8-a8bc-9d66a3a0609e;
+			- _name = "Requirement AutoCal";
+			- _objectCreation = "502832683020161513660950";
+			- _umlDependencyID = "3439";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall automatically calibrate the IR array sensors upon command.";
+			- reqID = "1";
+		}
+		{ IRequirement 
+			- _id = GUID c999821f-73a4-4aff-b53a-533f0ed7a836;
+			- _name = "Requirement Driver";
+			- _objectCreation = "502832883020161513658950";
+			- _umlDependencyID = "3387";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+				}
+			}
+			- _body = "The robot shall have its motors actuated by a motor driver with PWM signals.";
+			- reqID = "4";
+		}
+	}
+	- _lastID = 10;
+	- Declaratives = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IStereotype 
+			- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+			- _myState = 8192;
+			- _name = "Requirement";
+			- _objectCreation = "502833083020161513656950";
+			- _umlDependencyID = "2758";
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "Requirement"; 
+			}
+		}
+	}
+	- weakCGTime = 9.8.2016::18:30:47;
+	- strongCGTime = 9.8.2016::18:30:47;
+	- _defaultComposite = GUID 2b15ceae-ec72-40ee-b730-59e57237afdd;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID 2b15ceae-ec72-40ee-b730-59e57237afdd;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "502833283020161513654950";
+			- _umlDependencyID = "2400";
+			- weakCGTime = 12.31.1969::22:0:0;
+			- strongCGTime = 12.31.1969::22:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 12.31.1969::22:0:0;
+}
+

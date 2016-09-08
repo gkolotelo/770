@@ -1,0 +1,81 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _id = GUID f9623802-9e64-4088-b484-572be495c316;
+	- _myState = 8192;
+	- _name = "Sources";
+	- _objectCreation = "271384881420161510540927";
+	- _umlDependencyID = "2336";
+	- Annotations = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IComment 
+			- _id = GUID bcfd6366-23a8-4378-aacc-993db9993486;
+			- _myState = 2048;
+			- _name = "comment_3";
+			- _objectCreation = "271385081420161510538927";
+			- _umlDependencyID = "2497";
+			- _description = { IDescription 
+				- _text = "ES770 - Digital Systems Lab.
+2S2016
+
+Requirement Diagram";
+			}
+			- _body = "";
+		}
+	}
+	- _lastID = 6;
+	- Declaratives = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ISubsystem 
+			- fileName = "main";
+			- _id = GUID e415ef3e-1fba-4c75-8b90-6540a18a10f4;
+		}
+	}
+	- weakCGTime = 9.8.2016::18:5:58;
+	- strongCGTime = 9.8.2016::18:4:25;
+	- _defaultComposite = GUID c96d5194-58ed-4182-82e6-04845c227d30;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 2;
+		- value = 
+		{ IClass 
+			- _id = GUID c96d5194-58ed-4182-82e6-04845c227d30;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "271385281420161510536927";
+			- _umlDependencyID = "2407";
+			- weakCGTime = 9.8.2016::17:54:46;
+			- strongCGTime = 9.8.2016::17:54:46;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID d586fa80-484a-446c-ae2f-41ddb213ad32;
+			- _myState = 10240;
+			- _name = "class_4";
+			- _objectCreation = "271385481420161510534927";
+			- _umlDependencyID = "2277";
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "requirements";
+				- _id = GUID c745a580-9e49-477a-b69d-9fed186430f0;
+			}
+			- weakCGTime = 9.8.2016::18:5:16;
+			- strongCGTime = 9.8.2016::18:5:16;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 9.8.2016::18:2:35;
+}
+

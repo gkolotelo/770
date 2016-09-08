@@ -1,0 +1,130 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ IComponent 
+	- _id = GUID e14c6d7e-2527-4591-8d47-f61912c80b65;
+	- _myState = 139264;
+	- _name = "FRDM_KL25Z";
+	- _objectCreation = "474217812016158132947";
+	- _umlDependencyID = "2182";
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 92b35933-7c1f-4e64-a049-1e47e344731e;
+		- _myState = 73728;
+		- _name = "Files";
+		- _objectCreation = "474219812016158130947";
+		- _umlDependencyID = "1945";
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 0;
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID ad06700d-2ce8-41b7-b0b0-8c5e6d65cfe8;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID ad06700d-2ce8-41b7-b0b0-8c5e6d65cfe8;
+			- _myState = 8192;
+			- _name = "DefaultConfig";
+			- _objectCreation = "474221812016158128947";
+			- _umlDependencyID = "2753";
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID 8082dca5-3c9c-4431-baf3-e92f6d8b1a8b;
+					- _objectCreation = "474223812016158126947";
+					- _umlDependencyID = "1446";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\DefaultComponent\\DefaultConfig\\DefaultComponent.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID c121e892-d0ed-483b-9e9f-728716b55bd0;
+					- _objectCreation = "474225812016158124947";
+					- _umlDependencyID = "1446";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\DefaultComponent\\DefaultConfig\\MainDefaultComponent";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _root = { IFolder 
+				- _id = GUID 57698c54-95e0-4c01-b69a-7389e5ac465d;
+				- _myState = 8192;
+				- _name = "DefaultConfig";
+				- _objectCreation = "474227812016158122947";
+				- _umlDependencyID = "2753";
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 9.8.2016::17:58:52;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+		}
+	}
+	- HandlesInMe = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Sources.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Sources";
+			- _id = GUID f9623802-9e64-4088-b484-572be495c316;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 9.8.2016::17:58:39;
+	- strongCGTime = 9.8.2016::17:58:39;
+}
+
