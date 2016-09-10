@@ -1,21 +1,35 @@
-09, 08, 2016 (15:39:04): Starting Pre-Save actions
+09, 09, 2016 (21:00:09): Starting Pre-Save actions
 
-09, 08, 2016 (15:39:04): Starting Dialogs Check/Save
-09, 08, 2016 (15:39:04): Finished Dialogs Check/Save
-09, 08, 2016 (15:39:04): Starting Controlled Files Resolution
-09, 08, 2016 (15:39:04): Finished Controlled Files Resolution
-09, 08, 2016 (15:39:04): Finished Pre-Save actions
+09, 09, 2016 (21:00:09): Starting Dialogs Check/Save
+09, 09, 2016 (21:00:09): Finished Dialogs Check/Save
+09, 09, 2016 (21:00:09): Starting Controlled Files Resolution
+09, 09, 2016 (21:00:09): Finished Controlled Files Resolution
+09, 09, 2016 (21:00:09): Finished Pre-Save actions
 
-09, 08, 2016 (15:39:04): Creating D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy
-09, 08, 2016 (15:39:04): 
-Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy on Thursday, September 08, 2016 (15:39:04)
+09, 09, 2016 (21:00:09): Creating C:\cygwin64\home\770\model\ES770\ES770.rpy
+09, 09, 2016 (21:00:09): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 09, 2016 (21:00:09)
 
-09, 08, 2016 (15:39:04): version 8.5.2
-09, 08, 2016 (15:39:04): 
-Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\filesTable.dat on Thursday, September 08, 2016 (15:39:04)
+09, 09, 2016 (21:00:09): version 8.5.2
+09, 09, 2016 (21:00:09): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 09, 2016 (21:00:09)
 
-09, 08, 2016 (15:39:04): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\filesTable.dat on Thursday, September 08, 2016 (15:39:04)
+09, 09, 2016 (21:00:09): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 09, 2016 (21:00:09)
 
-09, 08, 2016 (15:39:04): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy on Thursday, September 08, 2016 (15:39:04)
+09, 09, 2016 (21:00:09): Creating C:\cygwin64\home\770\model\ES770\ES770_rpy\Sources.sbs
+09, 09, 2016 (21:00:09): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\Sources.sbs on Friday, September 09, 2016 (21:00:09)
 
-09, 08, 2016 (15:39:04): End Log
+09, 09, 2016 (21:00:09): version 8.5.2
+09, 09, 2016 (21:00:09): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\Sources.sbs on Friday, September 09, 2016 (21:00:09)
+
+09, 09, 2016 (21:00:09): Creating C:\cygwin64\home\770\model\ES770\ES770_rpy\Requirements.sbs
+09, 09, 2016 (21:00:09): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\Requirements.sbs on Friday, September 09, 2016 (21:00:09)
+
+09, 09, 2016 (21:00:09): version 8.5.2
+09, 09, 2016 (21:00:09): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\Requirements.sbs on Friday, September 09, 2016 (21:00:09)
+
+09, 09, 2016 (21:00:09): Finished writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 09, 2016 (21:00:09)
+
+09, 09, 2016 (21:00:09): End Log

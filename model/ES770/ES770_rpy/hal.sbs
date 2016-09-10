@@ -1,0 +1,92 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _ownerHandle = { IHandle 
+		- _m2Class = "ISubsystem";
+		- _filename = "Sources.sbs";
+		- _subsystem = "";
+		- _class = "";
+		- _name = "Sources";
+		- _id = GUID f9623802-9e64-4088-b484-572be495c316;
+	}
+	- _id = GUID 9d76869b-fd0a-412e-a4db-424509c70211;
+	- _myState = 8192;
+	- _name = "hal";
+	- _objectCreation = "45687193320161915816945";
+	- _umlDependencyID = "1872";
+	- Declaratives = { IRPYRawContainer 
+		- size = 8;
+		- value = 
+		{ ISubsystem 
+			- fileName = "controller";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID 646e750e-ef3b-4914-8ac3-e9d6ce4ad79f;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "driver";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID d14797a1-62b1-47af-a5cf-3f27b0cdbe1f;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "encoder";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID f0ae7402-b9af-4cd3-b0e0-eea47f903b41;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "hmi";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID b943c6c3-a525-4c75-afa3-a53760c76b26;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "mcg";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID 781104c1-6e40-456c-aac2-977cc9591044;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "target_definitions";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID 6415c5ae-e95b-443b-8a67-b28cad679cb0;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "uart";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID 390aecce-51f2-4698-8566-b75bbe83ec6d;
+			- _isReference = 1;
+		}
+		{ ISubsystem 
+			- fileName = "util";
+			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
+			- _id = GUID f5d6f4c4-ca70-4386-9866-389eed46d9b7;
+			- _isReference = 1;
+		}
+	}
+	- weakCGTime = 9.9.2016::22:32:53;
+	- strongCGTime = 9.9.2016::22:32:53;
+	- _defaultComposite = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "45687393320161915814945";
+			- _umlDependencyID = "2374";
+			- weakCGTime = 12.31.1969::22:0:0;
+			- strongCGTime = 12.31.1969::22:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 12.31.1969::22:0:0;
+}
+

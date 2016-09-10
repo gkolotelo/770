@@ -1,11 +1,12 @@
 I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 
 - filesTable = { IRPYRawContainer 
-	- size = 6;
+	- size = 7;
 	- value = "ES770.rpy" ""
 	"ES770_rpy\\FRDM_KL25Z.cmp" "FRDM_KL25Z"
 	"ES770_rpy\\Requirements.sbs" "Requirements"
 	"ES770_rpy\\Sources.sbs" "Sources"
+	"ES770_rpy\\hal.sbs" "Sources::hal"
 	"ES770_rpy\\main.sbs" "Sources::main"
 	"Projects.rpl" ""
 	
