@@ -1,44 +1,20 @@
 I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 { IComponent 
-	- _id = GUID e14c6d7e-2527-4591-8d47-f61912c80b65;
+	- _id = GUID cce7beb4-93eb-4e75-8781-bef4e2af0c48;
 	- _myState = 139264;
-	- _name = "FRDM_KL25Z";
-	- _objectCreation = "726732103720160739297";
-	- _umlDependencyID = "2183";
+	- _name = "Motor_copy";
+	- _objectCreation = "491433194120162330097949";
+	- _umlDependencyID = "2668";
 	- Stereotypes = { IRPYRawContainer 
-		- size = 2;
+		- size = 1;
 		- value = 
 		{ IHandle 
 			- _m2Class = "IStereotype";
-			- _filename = "System.sbs";
-			- _subsystem = "System";
+			- _filename = "";
+			- _subsystem = "Final_Project";
 			- _class = "";
 			- _name = "Hardware";
-			- _id = GUID 42d9f207-88a4-441e-ac63-c1087be236ba;
-		}
-		{ IHandle 
-			- _m2Class = "IStereotype";
-			- _filename = "System.sbs";
-			- _subsystem = "System";
-			- _class = "";
-			- _name = "Software";
-			- _id = GUID 442ed9d9-68e4-4bb2-b63a-838edd198f56;
-		}
-	}
-	- Declaratives = { IRPYRawContainer 
-		- size = 3;
-		- value = 
-		{ IComponent 
-			- fileName = "ADC0";
-			- _id = GUID 4465b3a3-1d75-4c0b-a65e-e10ac6fa3543;
-		}
-		{ IComponent 
-			- fileName = "TPM0";
-			- _id = GUID db757bae-42ea-4511-acde-185bb3a3ba35;
-		}
-		{ IComponent 
-			- fileName = "GPIO";
-			- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			- _id = GUID c8011682-d6fb-4a52-a7a9-73430e572531;
 		}
 	}
 	- m_buildType = Executable;
@@ -48,11 +24,11 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- m_includePath = "";
 	- m_initializationCode = "";
 	- m_folder = { IFolder 
-		- _id = GUID 92b35933-7c1f-4e64-a049-1e47e344731e;
+		- _id = GUID 67f364cf-17cf-446e-9942-93080f72bc5a;
 		- _myState = 73728;
 		- _name = "Files";
-		- _objectCreation = "726742103720160738297";
-		- _umlDependencyID = "1946";
+		- _objectCreation = "491433394120162330095949";
+		- _umlDependencyID = "2100";
 		- m_path = "";
 		- Elements = { IRPYRawContainer 
 			- size = 0;
@@ -63,45 +39,17 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	}
 	- m_configActive = { ICodeGenConfigInfoHandle 
 		- _m2Class = "ICodeGenConfigInfo";
-		- _id = GUID ad06700d-2ce8-41b7-b0b0-8c5e6d65cfe8;
+		- _id = GUID 283d6c3a-0e34-4094-a98a-4dbef54f1da6;
 	}
 	- Configs = { IRPYRawContainer 
 		- size = 1;
 		- value = 
 		{ ICodeGenConfigInfo 
-			- _id = GUID ad06700d-2ce8-41b7-b0b0-8c5e6d65cfe8;
+			- _id = GUID 283d6c3a-0e34-4094-a98a-4dbef54f1da6;
 			- _myState = 8192;
 			- _name = "DefaultConfig";
-			- _objectCreation = "726744103720160738097";
-			- _umlDependencyID = "2754";
-			- HyperLinks = { IRPYRawContainer 
-				- size = 2;
-				- value = 
-				{ IMHyperLink 
-					- _id = GUID 8082dca5-3c9c-4431-baf3-e92f6d8b1a8b;
-					- _objectCreation = "726746103720160737897";
-					- _umlDependencyID = "1456";
-					- _dependsOn = { INObjectHandle 
-						- _m2Class = "";
-					}
-					- _linkDispName = "Edit Makefile";
-					- _linkType = "FREE";
-					- _linkTarget = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\DefaultComponent\\DefaultConfig\\DefaultComponent.mak";
-					- isConfigurationFileHyperLink = 1;
-				}
-				{ IMHyperLink 
-					- _id = GUID c121e892-d0ed-483b-9e9f-728716b55bd0;
-					- _objectCreation = "726748103720160737697";
-					- _umlDependencyID = "1456";
-					- _dependsOn = { INObjectHandle 
-						- _m2Class = "";
-					}
-					- _linkDispName = "Edit Main File";
-					- _linkType = "FREE";
-					- _linkTarget = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\DefaultComponent\\DefaultConfig\\MainDefaultComponent";
-					- isConfigurationFileHyperLink = 1;
-				}
-			}
+			- _objectCreation = "491433594120162330093949";
+			- _umlDependencyID = "2908";
 			- _scopeType = Explicit;
 			- _libraries = "";
 			- _additionalSources = "";
@@ -121,11 +69,11 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				- size = 0;
 			}
 			- _root = { IFolder 
-				- _id = GUID 57698c54-95e0-4c01-b69a-7389e5ac465d;
+				- _id = GUID 66d88c2b-f547-4c93-b82e-8b72eb7688dd;
 				- _myState = 8192;
 				- _name = "DefaultConfig";
-				- _objectCreation = "726750103720160737497";
-				- _umlDependencyID = "2754";
+				- _objectCreation = "491433794120162330091949";
+				- _umlDependencyID = "2908";
 				- m_path = "";
 				- Elements = { IRPYRawContainer 
 					- size = 0;
@@ -134,7 +82,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- size = 0;
 				}
 			}
-			- weakCGTime = 9.8.2016::17:58:52;
+			- weakCGTime = 1.2.1990::0:0:0;
 			- strongCGTime = 1.2.1990::0:0:0;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
@@ -243,10 +191,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		}
 		{ IHandle 
 			- _m2Class = "ISubsystem";
-			- _filename = "System.sbs";
+			- _filename = "Overview.sbs";
 			- _subsystem = "";
 			- _class = "";
-			- _name = "System";
+			- _name = "Overview";
 			- _id = GUID 07685dbe-5566-4a67-8dda-a128e6d2b138;
 		}
 	}
@@ -256,7 +204,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 9.10.2016::3:36:23;
-	- strongCGTime = 9.10.2016::3:0:26;
+	- weakCGTime = 9.10.2016::2:40:19;
+	- strongCGTime = 9.10.2016::2:40:19;
 }
 

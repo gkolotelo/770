@@ -3,118 +3,306 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 24b2c2cb-2b3a-42ab-976e-1909af601173;
 	- _myState = 8192;
 	- _name = "Requirements";
-	- _objectCreation = "92112590201621-13999";
-	- _umlDependencyID = "2668";
+	- _objectCreation = "132154410212016225891913";
+	- _umlDependencyID = "2864";
 	- Annotations = { IRPYRawContainer 
-		- size = 9;
+		- size = 21;
 		- value = 
 		{ IRequirement 
 			- _id = GUID 304ee28a-86d1-4eb4-93a1-eac2600b0ed0;
-			- _name = "Requirement Follow";
-			- _objectCreation = "92112790201621-14199";
-			- _umlDependencyID = "3175";
+			- _name = "HLR Follow";
+			- _objectCreation = "132154610212016225889913";
+			- _umlDependencyID = "2446";
+			- Dependencies = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IDependency 
+					- _id = GUID 72a7d4bc-a4cd-4e34-a89b-a457c6a9d607;
+					- _myState = 2048;
+					- _name = "LLR Follow PID";
+					- _objectCreation = "132154810212016225887913";
+					- _umlDependencyID = "2671";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID c6ef3037-019e-45db-a3d5-4e798d15e707;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 499bd0a7-3482-480c-89c0-13b5a7a7b715;
+					- _myState = 2048;
+					- _name = "LLR Follow Error";
+					- _objectCreation = "132155010212016225885913";
+					- _umlDependencyID = "2963";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID c952fe60-9873-4148-8ee3-2a9d770ce1c4;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
 			}
 			- _body = "The robot shall follow a nonstraight high-contrast black-on-white-background track.";
-			- reqID = "6";
+			- reqID = "4";
 		}
 		{ IRequirement 
 			- _id = GUID 86c7f850-9d8b-4412-bbc6-b221d80a4cd4;
-			- _name = "Requirement Untethered";
-			- _objectCreation = "92112990201621-14399";
-			- _umlDependencyID = "3600";
+			- _name = "HLR Untethered";
+			- _objectCreation = "132155210212016225883913";
+			- _umlDependencyID = "2858";
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
 			}
 			- _body = "The robot shall operate untethered from any external devices, including, but not limited to, wired and wireless communications, after any startup routines have been performed.";
-			- reqID = "9";
+			- reqID = "6";
 		}
 		{ IRequirement 
 			- _id = GUID 460e3aa9-978f-466f-8789-626a78b7423b;
-			- _name = "Requirement Commands";
-			- _objectCreation = "92113190201621-14599";
-			- _umlDependencyID = "3365";
+			- _name = "HLR Commands";
+			- _objectCreation = "132155410212016225881913";
+			- _umlDependencyID = "2628";
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID 409315b2-d446-4b09-991f-8253f8fe653c;
+					- _myState = 2048;
+					- _name = "LLR Sensors";
+					- _objectCreation = "132155610212016225879913";
+					- _umlDependencyID = "2572";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID d7a220c3-edde-4075-81f4-b2eabd44cf33;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
 			}
 			- _body = "The robot shall obey a predefined number of commands present on the track.";
 			- reqID = "2";
 		}
 		{ IRequirement 
-			- _id = GUID 9b9be1c9-0f10-4a94-a509-97cbb6544dce;
-			- _name = "Requirement PID";
-			- _objectCreation = "92113390201621-14799";
-			- _umlDependencyID = "2772";
-			- Stereotypes = { IRPYRawContainer 
-				- size = 1;
-				- value = 
-				{ IHandle 
-					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
-				}
-			}
-			- _body = "The robot shall adjust its trajectory based upon a PID algorithm.";
-			- reqID = "8";
-		}
-		{ IRequirement 
-			- _id = GUID 73963f9f-be87-468c-8423-a383625e93b7;
-			- _name = "Requirement Encoder";
-			- _objectCreation = "92113590201621-14999";
-			- _umlDependencyID = "3259";
-			- Stereotypes = { IRPYRawContainer 
-				- size = 1;
-				- value = 
-				{ IHandle 
-					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
-				}
-			}
-			- _body = "The robot shall measure its speed through means of an optical rotary encoder.";
-			- reqID = "5";
-		}
-		{ IRequirement 
 			- _id = GUID 121d8adf-2f89-4e88-b86b-b2c309931f3d;
-			- _name = "Requirement IR Array";
-			- _objectCreation = "92113790201621-15199";
-			- _umlDependencyID = "3216";
+			- _name = "HLR IR Array";
+			- _objectCreation = "132155810212016225877913";
+			- _umlDependencyID = "2485";
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID 339bf44f-b6d2-45dc-8815-eea3df3b85d1;
+					- _myState = 2048;
+					- _name = "LLR Sensors";
+					- _objectCreation = "132156010212016225875913";
+					- _umlDependencyID = "2563";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID d7a220c3-edde-4075-81f4-b2eabd44cf33;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
 			}
 			- _body = "The robot shall determine the location of the track.";
-			- reqID = "7";
+			- reqID = "5";
 		}
 		{ IRequirement 
 			- _id = GUID 42655265-2c52-4a0d-bd17-39fd3dc763f2;
-			- _name = "Requirement Diagnostics";
-			- _objectCreation = "92113990201621-15399";
-			- _umlDependencyID = "3698";
+			- _name = "HLR Diagnostics";
+			- _objectCreation = "132156210212016225873913";
+			- _umlDependencyID = "2954";
+			- Dependencies = { IRPYRawContainer 
+				- size = 4;
+				- value = 
+				{ IDependency 
+					- _id = GUID c3f5776b-a82c-4c11-bafd-08b2ba2aeed0;
+					- _myState = 2048;
+					- _name = "LLR Diag IR";
+					- _objectCreation = "132156410212016225871913";
+					- _umlDependencyID = "2342";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 061f2cf0-1412-4cb9-8c31-190f83219294;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 8fc29086-7b51-499f-bd03-8b05de3fdc52;
+					- _myState = 2048;
+					- _name = "LLR Diag Encoder";
+					- _objectCreation = "132156610212016225869913";
+					- _umlDependencyID = "2900";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 15cdda37-ae7f-43f8-ba18-a9cc0e328915;
+					}
+				}
+				{ IDependency 
+					- _id = GUID ec72f246-29c7-40c9-9ec1-8ad0b1dff387;
+					- _myState = 2048;
+					- _name = "LLR Diag Motor";
+					- _objectCreation = "132156810212016225867913";
+					- _umlDependencyID = "2725";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 8f95f975-89fb-4e59-ab9e-ac4946b945a6;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 3bfb0341-fa34-4aa2-8fe6-7819253aa23e;
+					- _myState = 2048;
+					- _name = "LLR Diag Log";
+					- _objectCreation = "132157010212016225865913";
+					- _umlDependencyID = "2477";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID bff51acd-8dfa-4bae-81a9-a42749f9bc13;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
 			}
 			- _body = "The robot shall perform an automated diagnostics routine upon command.";
@@ -122,41 +310,581 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		}
 		{ IRequirement 
 			- _id = GUID e93f544b-e8c9-4aa8-a8bc-9d66a3a0609e;
-			- _name = "Requirement AutoCal";
-			- _objectCreation = "92114190201621-15599";
-			- _umlDependencyID = "3230";
+			- _name = "HLR AutoCal";
+			- _objectCreation = "132157210212016225863913";
+			- _umlDependencyID = "2491";
+			- Dependencies = { IRPYRawContainer 
+				- size = 3;
+				- value = 
+				{ IDependency 
+					- _id = GUID 3aae3d9d-2528-4d16-a0c5-3ae5b8cae463;
+					- _myState = 2048;
+					- _name = "LLR Cal BG";
+					- _objectCreation = "132157410212016225861913";
+					- _umlDependencyID = "2223";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 8ac0aefc-c444-4f97-afd0-4c0c24891896;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 3a2cf409-4d1e-4c9a-9bfb-c290a2e9caa2;
+					- _myState = 2048;
+					- _name = "LLR Cal Max";
+					- _objectCreation = "132157610212016225859913";
+					- _umlDependencyID = "2389";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 531e45e7-14af-474f-be50-d00ec60031d4;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 3a9bf658-245f-484d-82d1-6bcfeb633730;
+					- _myState = 2048;
+					- _name = "LLR Cal Min";
+					- _objectCreation = "132157810212016225857913";
+					- _umlDependencyID = "2387";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID ced9d27b-3353-4648-acd2-22cc14a12654;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 				}
-			}
-			- Annotations = { IRPYRawContainer 
-				- size = 0;
 			}
 			- _body = "The robot shall automatically calibrate the IR array sensors upon command.";
 			- reqID = "1";
 		}
 		{ IRequirement 
-			- _id = GUID c999821f-73a4-4aff-b53a-533f0ed7a836;
-			- _name = "Requirement Driver";
-			- _objectCreation = "92114390201621-15799";
-			- _umlDependencyID = "3173";
+			- _id = GUID 061f2cf0-1412-4cb9-8c31-190f83219294;
+			- _name = "LLR Diag IR";
+			- _objectCreation = "132158010212016225855913";
+			- _umlDependencyID = "2342";
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
 				{ IHandle 
 					- _m2Class = "IStereotype";
-					- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "Each IR LED/sensor shall be tested individually.";
+			- reqID = "18";
+		}
+		{ IRequirement 
+			- _id = GUID 15cdda37-ae7f-43f8-ba18-a9cc0e328915;
+			- _name = "LLR Diag Encoder";
+			- _objectCreation = "132158210212016225853913";
+			- _umlDependencyID = "2891";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The robot shall measure its speed through means of an optical rotary encoder.";
+			- reqID = "17";
+		}
+		{ IRequirement 
+			- _id = GUID 8f95f975-89fb-4e59-ab9e-ac4946b945a6;
+			- _name = "LLR Diag Motor";
+			- _objectCreation = "132158410212016225851913";
+			- _umlDependencyID = "2716";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "Each motor shall be tested individually.";
+			- reqID = "20";
+		}
+		{ IRequirement 
+			- _id = GUID bff51acd-8dfa-4bae-81a9-a42749f9bc13;
+			- _name = "LLR Diag Log";
+			- _objectCreation = "132158610212016225849913";
+			- _umlDependencyID = "2486";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The diagnostics routine shall output the results to a log.";
+			- reqID = "19";
+		}
+		{ IRequirement 
+			- _id = GUID 5e20b892-8995-40f1-a458-0164b590e9ff;
+			- _name = "LLR Array Location";
+			- _objectCreation = "132158810212016225847913";
+			- _umlDependencyID = "3159";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The infrared array shall be used to locate the track.";
+			- reqID = "7";
+		}
+		{ IRequirement 
+			- _id = GUID d7a220c3-edde-4075-81f4-b2eabd44cf33;
+			- _name = "LLR Sensors";
+			- _objectCreation = "132159010212016225845913";
+			- _umlDependencyID = "2563";
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID a79e37ba-29b4-4b4e-94cb-3f49ab863ab5;
+					- _myState = 2048;
+					- _name = "IR_Array";
+					- _objectCreation = "132159210212016225843913";
+					- _umlDependencyID = "2341";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IComponent";
+						- _filename = "IR_Array.cmp";
+						- _subsystem = "";
+						- _class = "";
+						- _name = "IR_Array";
+						- _id = GUID 9d7eef10-fb9b-4f5d-ad99-d6368ca646c1;
+					}
+				}
+			}
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "An infrared array of six sensors shall be used.";
+			- reqID = "13";
+		}
+		{ IRequirement 
+			- _id = GUID c952fe60-9873-4148-8ee3-2a9d770ce1c4;
+			- _name = "LLR Follow Error";
+			- _objectCreation = "132159410212016225841913";
+			- _umlDependencyID = "2963";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The PID algorith shall generate an error value.";
+			- reqID = "11";
+		}
+		{ IRequirement 
+			- _id = GUID c6ef3037-019e-45db-a3d5-4e798d15e707;
+			- _name = "LLR Follow PID";
+			- _objectCreation = "132159610212016225839913";
+			- _umlDependencyID = "2671";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The track shall be followed using PID control.";
+			- reqID = "12";
+		}
+		{ IRequirement 
+			- _id = GUID 50b07cd5-2555-4deb-a638-4865c060f9f5;
+			- _name = "LLR Speed Measure";
+			- _objectCreation = "132159810212016225837913";
+			- _umlDependencyID = "3042";
+			- Dependencies = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IDependency 
+					- _id = GUID 1671e07b-59d3-4b6d-b5c7-287212d4b359;
+					- _myState = 2048;
+					- _name = "Encoder_B";
+					- _objectCreation = "132160010212016225835913";
+					- _umlDependencyID = "2436";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "Satisfy";
+							- _id = GUID 0a768fda-b9e9-4bc5-b881-350889a8322a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IComponent";
+						- _filename = "Encoder_B.cmp";
+						- _subsystem = "";
+						- _class = "";
+						- _name = "Encoder_B";
+						- _id = GUID 199a0090-41bd-4581-ac47-f1c6366635f8;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 44014995-50c0-4d4a-9279-906f24f467e2;
+					- _myState = 2048;
+					- _name = "Encoder_A";
+					- _objectCreation = "132160210212016225833913";
+					- _umlDependencyID = "2435";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "Satisfy";
+							- _id = GUID 0a768fda-b9e9-4bc5-b881-350889a8322a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IComponent";
+						- _filename = "Encoder_A.cmp";
+						- _subsystem = "";
+						- _class = "";
+						- _name = "Encoder_A";
+						- _id = GUID ce24be95-baea-4ba5-9cd9-9124f23a155b;
+					}
+				}
+			}
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "Each wheels' speed shall be measured using  an optical rotary encoder.";
+			- reqID = "15";
+		}
+		{ IRequirement 
+			- _id = GUID 8f884294-033d-4590-bcc4-5db67ad55ed6;
+			- _name = "LLR Speed PID";
+			- _objectCreation = "132160410212016225831913";
+			- _umlDependencyID = "2523";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The robot shall maintain a constant speed through PID control.";
+			- reqID = "16";
+		}
+		{ IRequirement 
+			- _id = GUID a5d683ae-3d5d-46ff-a393-cb891f8d1d25;
+			- _name = "LLR Speed Driver";
+			- _objectCreation = "132160610212016225829913";
+			- _umlDependencyID = "2931";
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID 1c8db0d4-75bf-4840-aa37-b319c3ed25eb;
+					- _myState = 2048;
+					- _name = "Driver";
+					- _objectCreation = "132160810212016225827913";
+					- _umlDependencyID = "2200";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "Satisfy";
+							- _id = GUID 0a768fda-b9e9-4bc5-b881-350889a8322a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IComponent";
+						- _filename = "Driver.cmp";
+						- _subsystem = "";
+						- _class = "";
+						- _name = "Driver";
+						- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+					}
+				}
+			}
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
 				}
 			}
 			- _body = "The robot shall have its motors actuated by a motor driver with PWM signals.";
-			- reqID = "4";
+			- reqID = "14";
+		}
+		{ IRequirement 
+			- _id = GUID 8ac0aefc-c444-4f97-afd0-4c0c24891896;
+			- _name = "LLR Cal BG";
+			- _objectCreation = "132161010212016225825913";
+			- _umlDependencyID = "2214";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The IR sensors shall be used to adjust for background irradiance.";
+			- reqID = "8";
+		}
+		{ IRequirement 
+			- _id = GUID ced9d27b-3353-4648-acd2-22cc14a12654;
+			- _name = "LLR Cal Min";
+			- _objectCreation = "132161210212016225823913";
+			- _umlDependencyID = "2369";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The IR sensors shall be used to determine the minimum intensity.";
+			- reqID = "10";
+		}
+		{ IRequirement 
+			- _id = GUID 531e45e7-14af-474f-be50-d00ec60031d4;
+			- _name = "LLR Cal Max";
+			- _objectCreation = "132161410212016225821913";
+			- _umlDependencyID = "2371";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "Low Level Requirement";
+					- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
+				}
+			}
+			- _body = "The IR sensors shall be used to determine the maximum intensity.";
+			- reqID = "9";
+		}
+		{ IRequirement 
+			- _id = GUID d3da3843-61c5-4766-b364-0d434eadf304;
+			- _name = "HLR Speed";
+			- _objectCreation = "132161610212016225819913";
+			- _umlDependencyID = "2307";
+			- Dependencies = { IRPYRawContainer 
+				- size = 3;
+				- value = 
+				{ IDependency 
+					- _id = GUID cb5d2d38-ba99-442b-846b-d27248b10b06;
+					- _myState = 2048;
+					- _name = "LLR Speed Driver";
+					- _objectCreation = "132161810212016225817913";
+					- _umlDependencyID = "2931";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID a5d683ae-3d5d-46ff-a393-cb891f8d1d25;
+					}
+				}
+				{ IDependency 
+					- _id = GUID c4ddb24b-924d-4159-8dec-54b0a8fe82cf;
+					- _myState = 2048;
+					- _name = "LLR Speed Measure";
+					- _objectCreation = "132162010212016225815913";
+					- _umlDependencyID = "3024";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 50b07cd5-2555-4deb-a638-4865c060f9f5;
+					}
+				}
+				{ IDependency 
+					- _id = GUID a21ead0c-d20d-4098-b628-687e44e0c0fe;
+					- _myState = 2048;
+					- _name = "LLR Speed PID";
+					- _objectCreation = "132162210212016225813913";
+					- _umlDependencyID = "2523";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "derive";
+							- _id = GUID 77e51128-5c12-48fa-9a18-d782ae0ec76a;
+						}
+					}
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _id = GUID 8f884294-033d-4590-bcc4-5db67ad55ed6;
+					}
+				}
+			}
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "High Level Requirement";
+					- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
+				}
+			}
+			- _body = "The robot shall maintain a constant speed.";
+			- reqID = "21
+";
 		}
 	}
-	- _lastID = 10;
+	- _lastID = 26;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -164,16 +892,16 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 04655e63-2049-45c5-92b4-71e1bb8bf3a3;
 			- _myState = 8192;
 			- _name = "Requirement";
-			- _objectCreation = "92114590201621-15999";
-			- _umlDependencyID = "2557";
+			- _objectCreation = "132162410212016225811913";
+			- _umlDependencyID = "2740";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Requirement"; 
 			}
 		}
 	}
-	- weakCGTime = 9.9.2016::23:50:5;
-	- strongCGTime = 9.9.2016::23:43:45;
+	- weakCGTime = 9.10.2016::5:20:43;
+	- strongCGTime = 9.10.2016::5:1:15;
 	- _defaultComposite = GUID 2b15ceae-ec72-40ee-b730-59e57237afdd;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -183,10 +911,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 2b15ceae-ec72-40ee-b730-59e57237afdd;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "92114790201621-16199";
-			- _umlDependencyID = "2194";
-			- weakCGTime = 9.8.2016::18:30:47;
-			- strongCGTime = 9.8.2016::18:30:47;
+			- _objectCreation = "132162610212016225809913";
+			- _umlDependencyID = "2391";
+			- weakCGTime = 9.9.2016::23:50:5;
+			- strongCGTime = 9.9.2016::23:43:45;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";

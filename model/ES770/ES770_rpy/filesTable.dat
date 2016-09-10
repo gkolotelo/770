@@ -1,13 +1,33 @@
 I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 
 - filesTable = { IRPYRawContainer 
-	- size = 7;
+	- size = 27;
 	- value = "ES770.rpy" ""
+	"ES770_rpy\\ADC0.cmp" "FRDM_KL25Z::ADC0"
+	"ES770_rpy\\Battery.cmp" "Regulator_5V::Battery"
+	"ES770_rpy\\Driver.cmp" "Driver"
+	"ES770_rpy\\Encoder_A.cmp" "Encoder_A"
+	"ES770_rpy\\Encoder_B.cmp" "Encoder_B"
 	"ES770_rpy\\FRDM_KL25Z.cmp" "FRDM_KL25Z"
+	"ES770_rpy\\GPIO.cmp" "FRDM_KL25Z::GPIO"
+	"ES770_rpy\\IR_Array.cmp" "IR_Array"
+	"ES770_rpy\\Motor_A.cmp" "Motor_A"
+	"ES770_rpy\\Motor_B.cmp" "Motor_B"
+	"ES770_rpy\\Regulator_5V.cmp" "Regulator_5V"
 	"ES770_rpy\\Requirements.sbs" "Requirements"
 	"ES770_rpy\\Sources.sbs" "Sources"
+	"ES770_rpy\\System.sbs" "System"
+	"ES770_rpy\\TPM0.cmp" "FRDM_KL25Z::TPM0"
+	"ES770_rpy\\controller.sbs" "Sources::hal::controller"
+	"ES770_rpy\\driver.sbs" "Sources::hal::driver"
+	"ES770_rpy\\encoder.sbs" "Sources::hal::encoder"
 	"ES770_rpy\\hal.sbs" "Sources::hal"
+	"ES770_rpy\\hmi.sbs" "Sources::hal::hmi"
 	"ES770_rpy\\main.sbs" "Sources::main"
+	"ES770_rpy\\mcg.sbs" "Sources::hal::mcg"
+	"ES770_rpy\\target_definitions.sbs" "Sources::hal::target_definitions"
+	"ES770_rpy\\uart.sbs" "Sources::hal::uart"
+	"ES770_rpy\\util.sbs" "Sources::hal::util"
 	"Projects.rpl" ""
 	
 }

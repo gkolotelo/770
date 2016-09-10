@@ -1,0 +1,747 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _id = GUID 07685dbe-5566-4a67-8dda-a128e6d2b138;
+	- _myState = 8192;
+	- _name = "System";
+	- _objectCreation = "569531011201622429795";
+	- _umlDependencyID = "2088";
+	- Annotations = { IRPYRawContainer 
+		- size = 6;
+		- value = 
+		{ IComment 
+			- _id = GUID 69845d3b-596e-41ae-9ce0-d4f56ed325e9;
+			- _myState = 2048;
+			- _name = "comment_13";
+			- _objectCreation = "569551011201622429595";
+			- _umlDependencyID = "2393";
+			- _description = { IDescription 
+				- _text = "Driver control signals:
+PWM channel 1
+PWM channel 2
+PWM channel 3
+PWM channel 4
+Enable 1
+Enable 2";
+			}
+			- _body = "";
+		}
+		{ IComment 
+			- _id = GUID 62a6d1f1-36db-41da-bc6e-7a4c6d02ef24;
+			- _myState = 2048;
+			- _name = "comment_21";
+			- _objectCreation = "569571011201622429395";
+			- _umlDependencyID = "2392";
+			- _description = { IDescription 
+				- _text = "Track/Background reflecatance";
+			}
+			- _body = "";
+		}
+		{ IComment 
+			- _id = GUID 37c1a971-e435-4c9e-b610-bd8e72d13f5e;
+			- _myState = 2048;
+			- _name = "comment_26";
+			- _objectCreation = "569591011201622429195";
+			- _umlDependencyID = "2397";
+			- _description = { IDescription 
+				- _text = "User can initiate self-diagnostics routine";
+			}
+			- _body = "";
+		}
+		{ IComment 
+			- _id = GUID e19a1aa0-bd23-4772-8bd0-9d3555619b23;
+			- _myState = 2048;
+			- _name = "comment_27";
+			- _objectCreation = "569611011201622428995";
+			- _umlDependencyID = "2398";
+			- _description = { IDescription 
+				- _text = "1 optical rotary encoder per wheel";
+			}
+			- _body = "";
+		}
+		{ IComment 
+			- _id = GUID bcfd6366-23a8-4378-aacc-993db9993486;
+			- _myState = 2048;
+			- _name = "comment_3";
+			- _objectCreation = "569631011201622428795";
+			- _umlDependencyID = "2344";
+			- _description = { IDescription 
+				- _text = "ES770 - Digital Systems Lab.
+2S2016
+
+Requirement Diagram";
+			}
+			- _body = "";
+		}
+		{ IComment 
+			- _id = GUID 96f69553-5a93-44f1-a7e8-4cfc3a91b642;
+			- _myState = 2048;
+			- _name = "comment_9";
+			- _objectCreation = "569651011201622428595";
+			- _umlDependencyID = "2350";
+			- Dependencies = { IRPYRawContainer 
+				- size = 6;
+				- value = 
+				{ IDependency 
+					- _id = GUID ed836764-00dc-4588-ae34-06332f5c860e;
+					- _myState = 2048;
+					- _name = "HLR IR Array";
+					- _objectCreation = "569671011201622428395";
+					- _umlDependencyID = "2339";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR IR Array";
+						- _id = GUID 121d8adf-2f89-4e88-b86b-b2c309931f3d;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 09100ea0-8b09-4917-bfc0-da11a1f0fbac;
+					- _myState = 2048;
+					- _name = "HLR Follow";
+					- _objectCreation = "569691011201622428195";
+					- _umlDependencyID = "2300";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR Follow";
+						- _id = GUID 304ee28a-86d1-4eb4-93a1-eac2600b0ed0;
+					}
+				}
+				{ IDependency 
+					- _id = GUID aff21686-61f6-4b5a-a50f-fd0a265db1bd;
+					- _myState = 2048;
+					- _name = "HLR Follow_0";
+					- _objectCreation = "569711011201622427995";
+					- _umlDependencyID = "2443";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR Follow";
+						- _id = GUID 304ee28a-86d1-4eb4-93a1-eac2600b0ed0;
+					}
+				}
+				{ IDependency 
+					- _id = GUID d45712af-e348-4d08-8d12-3f11c4772a68;
+					- _myState = 2048;
+					- _name = "HLR Untethered";
+					- _objectCreation = "569731011201622427795";
+					- _umlDependencyID = "2721";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR Untethered";
+						- _id = GUID 86c7f850-9d8b-4412-bbc6-b221d80a4cd4;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 17369a93-3531-42fd-853f-c930df27e00f;
+					- _myState = 2048;
+					- _name = "HLR IR Array_0";
+					- _objectCreation = "569751011201622427595";
+					- _umlDependencyID = "2482";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR IR Array";
+						- _id = GUID 121d8adf-2f89-4e88-b86b-b2c309931f3d;
+					}
+				}
+				{ IDependency 
+					- _id = GUID 334924c2-af40-4436-b0d6-fb86938b940c;
+					- _myState = 2048;
+					- _name = "HLR Speed";
+					- _objectCreation = "569771011201622427395";
+					- _umlDependencyID = "2170";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IRequirement";
+						- _filename = "Requirements.sbs";
+						- _subsystem = "Requirements";
+						- _class = "";
+						- _name = "HLR Speed";
+						- _id = GUID d3da3843-61c5-4766-b364-0d434eadf304;
+					}
+				}
+			}
+			- _description = { IDescription 
+				- _text = "Follow Track";
+			}
+			- _body = "";
+		}
+	}
+	- _lastID = 1;
+	- Declaratives = { IRPYRawContainer 
+		- size = 29;
+		- value = 
+		{ IStereotype 
+			- _id = GUID 42d9f207-88a4-441e-ac63-c1087be236ba;
+			- _myState = 8192;
+			- _name = "Hardware";
+			- _objectCreation = "569791011201622427195";
+			- _umlDependencyID = "2257";
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "Component"; 
+			}
+		}
+		{ IStereotype 
+			- _id = GUID 442ed9d9-68e4-4bb2-b63a-838edd198f56;
+			- _myState = 8192;
+			- _name = "Software";
+			- _objectCreation = "569811011201622426995";
+			- _umlDependencyID = "2286";
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "Component"; 
+			}
+		}
+		{ IStereotype 
+			- _id = GUID bb504500-ea46-42af-ba7a-0debaef1a666;
+			- _myState = 8192;
+			- _name = "Peripheral";
+			- _objectCreation = "569831011201622426795";
+			- _umlDependencyID = "2479";
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "Component"; 
+			}
+		}
+		{ IInformationFlow 
+			- _id = GUID fc400fd9-9ed2-49c1-9ea0-c3244046c3fd;
+			- _myState = 2048;
+			- _name = "Battery_Driver";
+			- _objectCreation = "569851011201622426595";
+			- _umlDependencyID = "2889";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 5d1130bc-2fcf-4e7d-974d-4445923128e1;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Battery.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Regulator_5V\\Battery";
+				- _id = GUID 79b61cec-acf8-4488-909b-1988c728e3a0;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 2b1c1ece-adbe-4b1f-89a7-3004276791f3;
+			- _myState = 2048;
+			- _name = "Battery_Regulator_5V";
+			- _objectCreation = "569871011201622426395";
+			- _umlDependencyID = "3452";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 5d1130bc-2fcf-4e7d-974d-4445923128e1;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Battery.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Regulator_5V\\Battery";
+				- _id = GUID 79b61cec-acf8-4488-909b-1988c728e3a0;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Regulator_5V.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Regulator_5V";
+				- _id = GUID ab85102d-b980-4ba3-a86d-c3bffa018e58;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID d107a65f-6a2e-44c2-a342-9c7e11b78a46;
+			- _myState = 2048;
+			- _name = "Driver_Motor_A";
+			- _objectCreation = "569891011201622426195";
+			- _umlDependencyID = "2847";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID b8cade26-4a04-4c68-a264-e2c7c5dafd98;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Motor_A.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Motor_A";
+				- _id = GUID 07dce727-5e4f-4cff-aa6c-39dfbb3e9658;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 50ae50c8-d236-4c90-9479-d28e1650788a;
+			- _myState = 2048;
+			- _name = "Driver_Motor_B";
+			- _objectCreation = "569911011201622425995";
+			- _umlDependencyID = "2848";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID ee60156e-edb1-4c12-be07-06e2acaf1f54;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Motor_B.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Motor_B";
+				- _id = GUID 5c9146fc-4bd2-422a-a71f-3f13a2125b14;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 993b6810-d0ba-412c-933c-50b9aa9704ef;
+			- _myState = 2048;
+			- _name = "Encoder_A_ADC0";
+			- _objectCreation = "569931011201622425795";
+			- _umlDependencyID = "2650";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID e4f788ba-6205-47f1-996d-38cd9356a65c;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_A.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_A";
+				- _id = GUID ce24be95-baea-4ba5-9cd9-9124f23a155b;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "ADC0.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\ADC0";
+				- _id = GUID 4465b3a3-1d75-4c0b-a65e-e10ac6fa3543;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 764a8fe5-828c-4bad-80dd-d53662c3abf2;
+			- _myState = 2048;
+			- _name = "Encoder_B_ADC0";
+			- _objectCreation = "569951011201622425595";
+			- _umlDependencyID = "2651";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID b6d74527-46a7-4186-ad42-cf3c4db181b3;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_B.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_B";
+				- _id = GUID 199a0090-41bd-4581-ac47-f1c6366635f8;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "ADC0.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\ADC0";
+				- _id = GUID 4465b3a3-1d75-4c0b-a65e-e10ac6fa3543;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 6a20c765-4264-4104-9bca-8642da197c08;
+			- _myState = 2048;
+			- _name = "IR_Array_ADC0";
+			- _objectCreation = "569971011201622425395";
+			- _umlDependencyID = "2547";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 8094fe73-508b-4528-8879-622fb1a96e9e;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "IR_Array.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "IR_Array";
+				- _id = GUID 9d7eef10-fb9b-4f5d-ad99-d6368ca646c1;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "ADC0.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\ADC0";
+				- _id = GUID 4465b3a3-1d75-4c0b-a65e-e10ac6fa3543;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID f7059783-b90e-42f8-8f17-5e5a5b79be6c;
+			- _myState = 2048;
+			- _name = "Motor_A_Encoder_A";
+			- _objectCreation = "569991011201622425195";
+			- _umlDependencyID = "3091";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 150fa017-bc79-46ae-b0c3-45f1b382ab69;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Motor_A.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Motor_A";
+				- _id = GUID 07dce727-5e4f-4cff-aa6c-39dfbb3e9658;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_A.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_A";
+				- _id = GUID ce24be95-baea-4ba5-9cd9-9124f23a155b;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 38e11ce7-d72f-49d8-9e2c-bac02f76645c;
+			- _myState = 2048;
+			- _name = "Motor_B_Encoder_B";
+			- _objectCreation = "570011011201622424995";
+			- _umlDependencyID = "3075";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 1be912db-ce56-4e66-8382-a061ae32aeac;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Motor_B.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Motor_B";
+				- _id = GUID 5c9146fc-4bd2-422a-a71f-3f13a2125b14;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_B.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_B";
+				- _id = GUID 199a0090-41bd-4581-ac47-f1c6366635f8;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID e32b8392-7add-4415-b1d7-773358c3279a;
+			- _myState = 2048;
+			- _name = "Regulator_5V_FRDM_KL25Z";
+			- _objectCreation = "570031011201622424795";
+			- _umlDependencyID = "3439";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 81107f59-4eb3-475e-8cb6-14757d41e321;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Regulator_5V.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Regulator_5V";
+				- _id = GUID ab85102d-b980-4ba3-a86d-c3bffa018e58;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "FRDM_KL25Z.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z";
+				- _id = GUID e14c6d7e-2527-4591-8d47-f61912c80b65;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 726d80fd-195a-4ae4-b7f8-372c84a5223b;
+			- _myState = 2048;
+			- _name = "TPM0_Driver";
+			- _objectCreation = "570051011201622424595";
+			- _umlDependencyID = "2429";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 95b2c49d-6880-4588-b5b6-03ad00722248;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "TPM0.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\TPM0";
+				- _id = GUID db757bae-42ea-4511-acde-185bb3a3ba35;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 740b6e89-8166-425c-a467-e7a89b28ac2c;
+			- _myState = 2048;
+			- _name = "User_GPIO";
+			- _objectCreation = "570071011201622424395";
+			- _umlDependencyID = "2238";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 655b74fb-398e-4cd1-b874-fe4c30ef17e4;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IActor";
+				- _id = GUID f5ec02a4-e90a-481c-ab43-646c84e34c5a;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "GPIO.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\GPIO";
+				- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationItem 
+			- _id = GUID e4f788ba-6205-47f1-996d-38cd9356a65c;
+			- _myState = 8192;
+			- _name = "ADC_A";
+			- _objectCreation = "570091011201622424195";
+			- _umlDependencyID = "1785";
+		}
+		{ IInformationItem 
+			- _id = GUID b6d74527-46a7-4186-ad42-cf3c4db181b3;
+			- _myState = 8192;
+			- _name = "ADC_B";
+			- _objectCreation = "570111011201622423995";
+			- _umlDependencyID = "1786";
+		}
+		{ IInformationItem 
+			- _id = GUID 8094fe73-508b-4528-8879-622fb1a96e9e;
+			- _myState = 8192;
+			- _name = "ADC_IR";
+			- _objectCreation = "570131011201622423795";
+			- _umlDependencyID = "1875";
+		}
+		{ IInformationItem 
+			- _id = GUID 5d1130bc-2fcf-4e7d-974d-4445923128e1;
+			- _myState = 8192;
+			- _name = "Batt_Pwr";
+			- _objectCreation = "570151011201622423595";
+			- _umlDependencyID = "2228";
+		}
+		{ IInformationItem 
+			- _id = GUID 95b2c49d-6880-4588-b5b6-03ad00722248;
+			- _myState = 8192;
+			- _name = "Control_Signals";
+			- _objectCreation = "570171011201622423395";
+			- _umlDependencyID = "2978";
+		}
+		{ IInformationItem 
+			- _id = GUID 655b74fb-398e-4cd1-b874-fe4c30ef17e4;
+			- _myState = 8192;
+			- _name = "Diag_SW";
+			- _objectCreation = "570191011201622423195";
+			- _umlDependencyID = "2063";
+		}
+		{ IInformationItem 
+			- _id = GUID 81107f59-4eb3-475e-8cb6-14757d41e321;
+			- _myState = 8192;
+			- _name = "Power";
+			- _objectCreation = "570211011201622422995";
+			- _umlDependencyID = "1950";
+		}
+		{ IInformationItem 
+			- _id = GUID 7bbf7c54-28fa-44a5-851d-e52ec7faa326;
+			- _myState = 8192;
+			- _name = "PWM";
+			- _objectCreation = "570231011201622422795";
+			- _umlDependencyID = "1669";
+		}
+		{ IInformationItem 
+			- _id = GUID b8cade26-4a04-4c68-a264-e2c7c5dafd98;
+			- _myState = 8192;
+			- _name = "PWM_A";
+			- _objectCreation = "570251011201622422595";
+			- _umlDependencyID = "1829";
+		}
+		{ IInformationItem 
+			- _id = GUID ee60156e-edb1-4c12-be07-06e2acaf1f54;
+			- _myState = 8192;
+			- _name = "PWM_B";
+			- _objectCreation = "570271011201622422395";
+			- _umlDependencyID = "1830";
+		}
+		{ IInformationItem 
+			- _id = GUID 448c1e08-abc3-4169-8450-5cf6c5cd386d;
+			- _myState = 8192;
+			- _name = "Shaft_A";
+			- _objectCreation = "570291011201622422195";
+			- _umlDependencyID = "2087";
+		}
+		{ IInformationItem 
+			- _id = GUID 205e6f40-9099-4f02-a09f-5ed14e9c5c8e;
+			- _myState = 8192;
+			- _name = "Shaft_B";
+			- _objectCreation = "570311011201622421995";
+			- _umlDependencyID = "2088";
+		}
+		{ IInformationItem 
+			- _id = GUID 150fa017-bc79-46ae-b0c3-45f1b382ab69;
+			- _myState = 8192;
+			- _name = "Wheel_A";
+			- _objectCreation = "570331011201622421795";
+			- _umlDependencyID = "2086";
+		}
+		{ IInformationItem 
+			- _id = GUID 1be912db-ce56-4e66-8382-a061ae32aeac;
+			- _myState = 8192;
+			- _name = "Wheel_B";
+			- _objectCreation = "570351011201622421595";
+			- _umlDependencyID = "2087";
+		}
+	}
+	- weakCGTime = 9.10.2016::5:11:0;
+	- strongCGTime = 9.10.2016::3:54:13;
+	- _defaultComposite = GUID 9050f65c-cfe8-4493-8d2e-bb6e4aa88df4;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID 9050f65c-cfe8-4493-8d2e-bb6e4aa88df4;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "570371011201622421395";
+			- _umlDependencyID = "2236";
+			- weakCGTime = 12.31.1969::22:0:0;
+			- strongCGTime = 12.31.1969::22:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- Actors = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IActor 
+			- _id = GUID f5ec02a4-e90a-481c-ab43-646c84e34c5a;
+			- _myState = 8192;
+			- _name = "User";
+			- _objectCreation = "570391011201622421195";
+			- _umlDependencyID = "1840";
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "overview";
+				- _id = GUID bc5b3b92-b5fc-4a8d-8558-b5ba0e29f33f;
+			}
+			- weakCGTime = 9.10.2016::3:28:19;
+			- strongCGTime = 9.10.2016::3:28:19;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 12.31.1969::22:0:0;
+}
+

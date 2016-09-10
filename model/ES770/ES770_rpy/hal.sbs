@@ -11,62 +11,55 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 9d76869b-fd0a-412e-a4db-424509c70211;
 	- _myState = 8192;
 	- _name = "hal";
-	- _objectCreation = "45687193320161915816945";
-	- _umlDependencyID = "1872";
+	- _objectCreation = "4351011023201622612194";
+	- _umlDependencyID = "1776";
+	- _theMainDiagram = { IHandle 
+		- _m2Class = "IDiagram";
+		- _filename = "";
+		- _subsystem = "";
+		- _class = "";
+		- _name = "packages";
+		- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
+	}
+	- _lastID = 1;
 	- Declaratives = { IRPYRawContainer 
 		- size = 8;
 		- value = 
 		{ ISubsystem 
+			- fileName = "util";
+			- _id = GUID 90a34774-303e-417c-99b9-4fd3fc96a8b0;
+		}
+		{ ISubsystem 
 			- fileName = "controller";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID 646e750e-ef3b-4914-8ac3-e9d6ce4ad79f;
-			- _isReference = 1;
+			- _id = GUID 60410c4e-2ac1-4e32-a1e4-cad6240bf27b;
 		}
 		{ ISubsystem 
 			- fileName = "driver";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID d14797a1-62b1-47af-a5cf-3f27b0cdbe1f;
-			- _isReference = 1;
+			- _id = GUID ada89d98-a664-4a3e-b908-a40fe4d34c30;
 		}
 		{ ISubsystem 
 			- fileName = "encoder";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID f0ae7402-b9af-4cd3-b0e0-eea47f903b41;
-			- _isReference = 1;
+			- _id = GUID 63d37f8e-344f-4f34-9891-a642f221ada0;
 		}
 		{ ISubsystem 
 			- fileName = "hmi";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID b943c6c3-a525-4c75-afa3-a53760c76b26;
-			- _isReference = 1;
+			- _id = GUID 7290b49b-2bd4-427f-a6a0-6898e7ec8a20;
 		}
 		{ ISubsystem 
 			- fileName = "mcg";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID 781104c1-6e40-456c-aac2-977cc9591044;
-			- _isReference = 1;
+			- _id = GUID 0a54d37b-facf-4ff5-b353-bbe3e6d15b0d;
 		}
 		{ ISubsystem 
 			- fileName = "target_definitions";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID 6415c5ae-e95b-443b-8a67-b28cad679cb0;
-			- _isReference = 1;
+			- _id = GUID 19f85f0f-5922-4e4a-8ee2-63d4eb7e14eb;
 		}
 		{ ISubsystem 
 			- fileName = "uart";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID 390aecce-51f2-4698-8566-b75bbe83ec6d;
-			- _isReference = 1;
-		}
-		{ ISubsystem 
-			- fileName = "util";
-			- _persistAs = "F:\\Final Project\\model\\Projeto_ES670_rpy";
-			- _id = GUID f5d6f4c4-ca70-4386-9866-389eed46d9b7;
-			- _isReference = 1;
+			- _id = GUID 2fe8a6c2-bb4d-414f-8fa3-164702cc22a7;
 		}
 	}
-	- weakCGTime = 9.9.2016::22:32:53;
-	- strongCGTime = 9.9.2016::22:32:53;
+	- weakCGTime = 9.10.2016::5:22:52;
+	- strongCGTime = 9.10.2016::2:39:52;
 	- _defaultComposite = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -76,10 +69,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "45687393320161915814945";
-			- _umlDependencyID = "2374";
-			- weakCGTime = 12.31.1969::22:0:0;
-			- strongCGTime = 12.31.1969::22:0:0;
+			- _objectCreation = "4351031023201622611994";
+			- _umlDependencyID = "2287";
+			- weakCGTime = 9.10.2016::2:36:13;
+			- strongCGTime = 9.10.2016::2:35:53;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -87,6 +80,6 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _classModifier = Unspecified;
 		}
 	}
-	- _configurationRelatedTime = 12.31.1969::22:0:0;
+	- _configurationRelatedTime = 9.10.2016::2:36:13;
 }
 

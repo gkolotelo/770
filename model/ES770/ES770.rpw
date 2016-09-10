@@ -65,8 +65,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 0;
-				- m_showCmd = 1;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -86,15 +86,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 1104 536 ;
+			- _DownRight = 1431 862 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 1;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -113,13 +113,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "requirements";
 				- _id = GUID c745a580-9e49-477a-b69d-9fed186430f0;
 			}
-			- _UpLeft = 500 0 ;
-			- _DownRight = 1896 862 ;
+			- _UpLeft = 23 0 ;
+			- _DownRight = 1515 724 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 2;
 		}
 	}
-	- _fullName = "C:\\cygwin64\\home\\770\\model\\ES770\\ES770";
+	- _fullName = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
