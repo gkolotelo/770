@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 0a54d37b-facf-4ff5-b353-bbe3e6d15b0d;
 	- _myState = 8192;
 	- _name = "mcg";
-	- _objectCreation = "141840493920162330683914";
-	- _umlDependencyID = "1909";
+	- _objectCreation = "4320028113920161317455943";
+	- _umlDependencyID = "1950";
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -22,8 +22,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		- _id = GUID 604328de-2202-48b3-9d1a-353bbeb75331;
 	}
 	- _lastID = 2;
-	- weakCGTime = 9.10.2016::2:34:54;
-	- strongCGTime = 9.10.2016::2:30:1;
+	- weakCGTime = 9.11.2016::16:29:19;
+	- strongCGTime = 9.11.2016::16:13:48;
 	- _defaultComposite = GUID 8c72c443-52a5-499c-8a2f-284c36c796e3;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -33,10 +33,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 8c72c443-52a5-499c-8a2f-284c36c796e3;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "141840693920162330681914";
-			- _umlDependencyID = "2409";
-			- weakCGTime = 9.10.2016::2:34:54;
-			- strongCGTime = 9.10.2016::2:30:1;
+			- _objectCreation = "4320030113920161317453943";
+			- _umlDependencyID = "2441";
+			- weakCGTime = 9.11.2016::16:13:48;
+			- strongCGTime = 9.11.2016::16:13:48;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -47,8 +47,11 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID a73cfdca-b18e-4872-9e19-c1e04af65df1;
 			- _myState = 8192;
 			- _name = "mcg";
-			- _objectCreation = "141840893920162330679914";
-			- _umlDependencyID = "1918";
+			- _objectCreation = "4320032113920161317451943";
+			- _umlDependencyID = "1941";
+			- Dependencies = { IRPYRawContainer 
+				- size = 0;
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
@@ -66,11 +69,11 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "definition_diagram";
-				- _id = GUID f53d507c-79b1-4f7f-850a-0c96a124e9bd;
+				- _name = "definition";
+				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
 			- _lastID = 34;
-			- weakCGTime = 9.10.2016::2:34:54;
+			- weakCGTime = 9.11.2016::16:29:19;
 			- strongCGTime = 9.10.2016::2:27:39;
 			- Operations = { IRPYRawContainer 
 				- size = 1;
@@ -79,8 +82,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID b98f5f33-7af5-4eec-8e18-b6d50e70e48e;
 					- _myState = 8192;
 					- _name = "mcg_clockInit";
-					- _objectCreation = "141841093920162330677914";
-					- _umlDependencyID = "2932";
+					- _objectCreation = "4320034113920161317449943";
+					- _umlDependencyID = "2973";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -107,15 +110,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID df70c1ff-e9cb-4bea-85f1-f3a78615537f;
 					- _name = "EXTAL0_PORT";
-					- _objectCreation = "141841293920162330675914";
-					- _umlDependencyID = "2448";
+					- _objectCreation = "4320036113920161317447943";
+					- _umlDependencyID = "2489";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 068dd32d-60aa-489b-a373-71a3dcb0848c;
-							- _objectCreation = "141841493920162330673914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320038113920161317445943";
+							- _umlDependencyID = "1639";
 							- _value = "PORTA";
 						}
 					}
@@ -136,15 +139,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 6bdaaa7e-9241-4d7f-b302-4ac5c9288b1c;
 					- _name = "EXTAL0_PIN";
-					- _objectCreation = "141841693920162330671914";
-					- _umlDependencyID = "2354";
+					- _objectCreation = "4320040113920161317443943";
+					- _umlDependencyID = "2386";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 2cc7e196-b66b-4600-8856-d6c334a13a43;
-							- _objectCreation = "141841893920162330669914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320042113920161317441943";
+							- _umlDependencyID = "1630";
 							- _value = "18U";
 						}
 					}
@@ -165,15 +168,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 975571b7-a6b6-4b20-9505-cf6f61553144;
 					- _name = "EXTAL_0_PINMUX";
-					- _objectCreation = "141842093920162330667914";
-					- _umlDependencyID = "2699";
+					- _objectCreation = "4320044113920161317439943";
+					- _umlDependencyID = "2740";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 2cfaf789-c504-48c1-9fc9-f285520c5159;
-							- _objectCreation = "141842293920162330665914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320046113920161317437943";
+							- _umlDependencyID = "1639";
 							- _value = "kPortPinDisabled";
 						}
 					}
@@ -194,15 +197,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID e813f5cc-6f26-493d-a5c5-77ae560d5159;
 					- _name = "XTAL0_PORT";
-					- _objectCreation = "141842493920162330663914";
-					- _umlDependencyID = "2379";
+					- _objectCreation = "4320048113920161317435943";
+					- _umlDependencyID = "2420";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID d309d0f0-d31f-4fb2-8205-d5877bc6dfdd;
-							- _objectCreation = "141842693920162330661914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320050113920161317433943";
+							- _umlDependencyID = "1630";
 							- _value = "PORTA";
 						}
 					}
@@ -223,15 +226,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1df8107b-c7c5-4a67-afdd-eec1daf24bb2;
 					- _name = "XTAL0_PIN";
-					- _objectCreation = "141842893920162330659914";
-					- _umlDependencyID = "2294";
+					- _objectCreation = "4320052113920161317431943";
+					- _umlDependencyID = "2317";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 7e139afd-8f68-4d19-82a8-2db9b245b443;
-							- _objectCreation = "141843093920162330657914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320054113920161317429943";
+							- _umlDependencyID = "1639";
 							- _value = "19U";
 						}
 					}
@@ -252,15 +255,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 31655bad-9e8f-4475-802a-97b2bed4b0ab;
 					- _name = "XTAL0_PINMUX";
-					- _objectCreation = "141843293920162330655914";
-					- _umlDependencyID = "2535";
+					- _objectCreation = "4320056113920161317427943";
+					- _umlDependencyID = "2576";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 378055f4-63f2-495e-89ed-94b5b5c0d66f;
-							- _objectCreation = "141843493920162330653914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320058113920161317425943";
+							- _umlDependencyID = "1639";
 							- _value = "kPortPinDisabled";
 						}
 					}
@@ -281,15 +284,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 59b2c176-743d-4172-a017-206f54b8c0f1;
 					- _name = "OSC0_INSTANCE";
-					- _objectCreation = "141843693920162330651914";
-					- _umlDependencyID = "2567";
+					- _objectCreation = "4320060113920161317423943";
+					- _umlDependencyID = "2599";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID b7b1062d-f131-40d1-955d-b7fa5242acdd;
-							- _objectCreation = "141843893920162330649914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320062113920161317421943";
+							- _umlDependencyID = "1630";
 							- _value = "0U";
 						}
 					}
@@ -310,15 +313,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3059acc4-6234-49e8-a2db-392813fde4d6;
 					- _name = "OSC0_XTAL_FREQ";
-					- _objectCreation = "141844093920162330647914";
-					- _umlDependencyID = "2680";
+					- _objectCreation = "4320064113920161317419943";
+					- _umlDependencyID = "2721";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 9e454674-9123-4327-8b51-158ffa2123f6;
-							- _objectCreation = "141844293920162330645914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320066113920161317417943";
+							- _umlDependencyID = "1639";
 							- _value = "8000000U";
 						}
 					}
@@ -339,15 +342,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 359df904-4503-4068-b180-8e42a0aaffc0;
 					- _name = "OSC0_SC2P_ENABLE_CONFIG";
-					- _objectCreation = "141844493920162330643914";
-					- _umlDependencyID = "3301";
+					- _objectCreation = "4320068113920161317415943";
+					- _umlDependencyID = "3342";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID c8acc691-fea3-4c1a-aecf-0857b9cd147f;
-							- _objectCreation = "141844693920162330641914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320070113920161317413943";
+							- _umlDependencyID = "1630";
 							- _value = "false";
 						}
 					}
@@ -368,15 +371,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 218e382b-2ebc-4fef-9a15-0a188686bcca;
 					- _name = "OSC0_SC4P_ENABLE_CONFIG";
-					- _objectCreation = "141844893920162330639914";
-					- _umlDependencyID = "3312";
+					- _objectCreation = "4320072113920161317411943";
+					- _umlDependencyID = "3335";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID a35c31dc-5eee-47f0-bdb4-2be4c6340bd1;
-							- _objectCreation = "141845093920162330637914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320074113920161317409943";
+							- _umlDependencyID = "1639";
 							- _value = "false";
 						}
 					}
@@ -397,15 +400,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fbc32a02-9e9e-483c-b8ad-553c5fe4dabb;
 					- _name = "OSC0_SC8P_ENABLE_CONFIG";
-					- _objectCreation = "141845293920162330635914";
-					- _umlDependencyID = "3307";
+					- _objectCreation = "4320076113920161317407943";
+					- _umlDependencyID = "3348";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID cbd680b1-0c4e-49b7-8732-98bda9cdf77a;
-							- _objectCreation = "141845493920162330633914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320078113920161317405943";
+							- _umlDependencyID = "1639";
 							- _value = "false";
 						}
 					}
@@ -426,15 +429,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID ab1453bd-7974-4f93-9ec4-32a702b11739;
 					- _name = "OSC0_SC16P_ENABLE_CONFIG";
-					- _objectCreation = "141845693920162330631914";
-					- _umlDependencyID = "3354";
+					- _objectCreation = "4320080113920161317403943";
+					- _umlDependencyID = "3386";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 30d8107c-b6e1-40e0-a5ae-27188f81645b;
-							- _objectCreation = "141845893920162330629914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320082113920161317401943";
+							- _umlDependencyID = "1630";
 							- _value = "false";
 						}
 					}
@@ -455,15 +458,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 63710fe8-61c6-4266-a51f-32e7238a2868;
 					- _name = "MCG_HGO0";
-					- _objectCreation = "141846093920162330627914";
-					- _umlDependencyID = "2178";
+					- _objectCreation = "4320084113920161317399943";
+					- _umlDependencyID = "2228";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID eebc487d-8167-4f99-bce8-45f351aea72c;
-							- _objectCreation = "141846293920162330625914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320086113920161317397943";
+							- _umlDependencyID = "1648";
 							- _value = "k0sGainLow";
 						}
 					}
@@ -484,15 +487,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 764ac102-8b26-431c-a0d7-75bac67e6bd5;
 					- _name = "MCG_RANGE0";
-					- _objectCreation = "141846493920162330623914";
-					- _umlDependencyID = "2321";
+					- _objectCreation = "4320088113920161317395943";
+					- _umlDependencyID = "2371";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 646d74e9-d24b-4721-b1c6-7dc73b92f51d;
-							- _objectCreation = "141846693920162330621914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320090113920161317393943";
+							- _umlDependencyID = "1639";
 							- _value = "k0scRangeVeryHigh";
 						}
 					}
@@ -513,15 +516,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c0a0b6d8-d734-4f4a-b8e9-8087fde97fe2;
 					- _name = "MCG_EREFS0";
-					- _objectCreation = "141846893920162330619914";
-					- _umlDependencyID = "2338";
+					- _objectCreation = "4320092113920161317391943";
+					- _umlDependencyID = "2370";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 367cd514-b7bf-4ecb-9f14-f0fcfccb9e89;
-							- _objectCreation = "141847093920162330617914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320094113920161317389943";
+							- _umlDependencyID = "1648";
 							- _value = "k0scSrcOsc";
 						}
 					}
@@ -542,15 +545,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1f03d55d-3e68-4148-af0e-51c9fb7b2027;
 					- _name = "RTC_XTAL_FREQ";
-					- _objectCreation = "141847293920162330615914";
-					- _umlDependencyID = "2636";
+					- _objectCreation = "4320096113920161317387943";
+					- _umlDependencyID = "2686";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID e1b2cb6a-b6dd-44c5-84f5-eacc1abcb9fe;
-							- _objectCreation = "141847493920162330613914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320098113920161317385943";
+							- _umlDependencyID = "1648";
 							- _value = "0U";
 						}
 					}
@@ -571,15 +574,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 42a99edc-7093-4bd9-ab87-168eaca0e902;
 					- _name = "RTC_SC2P_ENABLE_CONFIG";
-					- _objectCreation = "141847693920162330611914";
-					- _umlDependencyID = "3257";
+					- _objectCreation = "4320100113920161317383943";
+					- _umlDependencyID = "3289";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 1fa63eb4-1645-4943-98e2-4253434d704f;
-							- _objectCreation = "141847893920162330609914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320102113920161317381943";
+							- _umlDependencyID = "1630";
 							- _value = "false";
 						}
 					}
@@ -600,15 +603,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID a2a36865-c77e-4d5e-970d-53088ac954a1;
 					- _name = "RTC_SC4P_ENABLE_CONFIG";
-					- _objectCreation = "141848093920162330607914";
-					- _umlDependencyID = "3259";
+					- _objectCreation = "4320104113920161317379943";
+					- _umlDependencyID = "3300";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 1f33204d-2204-41b5-ab1d-0505443ea52c;
-							- _objectCreation = "141848293920162330605914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320106113920161317377943";
+							- _umlDependencyID = "1639";
 							- _value = "false";
 						}
 					}
@@ -629,15 +632,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1b8e32ac-fd1c-4c7e-8ed5-1436a7d03afb;
 					- _name = "RTC_SC8P_ENABLE_CONFIG";
-					- _objectCreation = "141848493920162330603914";
-					- _umlDependencyID = "3263";
+					- _objectCreation = "4320108113920161317375943";
+					- _umlDependencyID = "3304";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 2f6a258b-906b-4129-8336-46b6151cd4d8;
-							- _objectCreation = "141848693920162330601914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320110113920161317373943";
+							- _umlDependencyID = "1630";
 							- _value = "false";
 						}
 					}
@@ -658,15 +661,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 97884cc7-96ff-459e-aa8f-104770772072;
 					- _name = "RTC_SC16P_ENABLE_CONFIG";
-					- _objectCreation = "141848893920162330599914";
-					- _umlDependencyID = "3328";
+					- _objectCreation = "4320112113920161317371943";
+					- _umlDependencyID = "3342";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID bdf1a4e0-be32-46d1-a0f4-980468e1e57f;
-							- _objectCreation = "141849093920162330597914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320114113920161317369943";
+							- _umlDependencyID = "1639";
 							- _value = "false";
 						}
 					}
@@ -687,15 +690,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 010a963f-bbb5-4d6e-8f4a-4af13f708597;
 					- _name = "RTC_OSC_ENABLE_CONFIG";
-					- _objectCreation = "141849293920162330595914";
-					- _umlDependencyID = "3215";
+					- _objectCreation = "4320116113920161317367943";
+					- _umlDependencyID = "3247";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 0b803be9-a0df-48b6-abb0-b9eae454bcde;
-							- _objectCreation = "141849493920162330593914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320118113920161317365943";
+							- _umlDependencyID = "1639";
 							- _value = "false";
 						}
 					}
@@ -716,15 +719,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID d017b2b3-7ded-48eb-89a2-2c2e4d2af974;
 					- _name = "RTC_CLK_OUTPUT_ENABLE_CONFIG";
-					- _objectCreation = "141849693920162330591914";
-					- _umlDependencyID = "3796";
+					- _objectCreation = "4320120113920161317363943";
+					- _umlDependencyID = "3819";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 3cc1c4a8-8367-43f2-8498-dda16de5a452;
-							- _objectCreation = "141849893920162330589914";
-							- _umlDependencyID = "1616";
+							- _objectCreation = "4320122113920161317361943";
+							- _umlDependencyID = "1630";
 							- _value = "false";
 						}
 					}
@@ -745,15 +748,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID b8dcccbe-b946-46b5-a212-1ed3d4b0117c;
 					- _name = "RTC_CLKIN_PORT";
-					- _objectCreation = "141850093920162330587914";
-					- _umlDependencyID = "2715";
+					- _objectCreation = "4320124113920161317359943";
+					- _umlDependencyID = "2756";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 4e5a1560-75fa-430d-8bb0-4619c0edb5f0;
-							- _objectCreation = "141850293920162330585914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320126113920161317357943";
+							- _umlDependencyID = "1639";
 							- _value = "PORTC";
 						}
 					}
@@ -774,15 +777,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 5c234ce8-da95-4374-b18e-335632074224;
 					- _name = "RTC_CLKIN_PIN";
-					- _objectCreation = "141850493920162330583914";
-					- _umlDependencyID = "2621";
+					- _objectCreation = "4320128113920161317355943";
+					- _umlDependencyID = "2662";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 745ef154-7ccc-4378-bdee-1b671795e7a1;
-							- _objectCreation = "141850693920162330581914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320130113920161317353943";
+							- _umlDependencyID = "1630";
 							- _value = "1U";
 						}
 					}
@@ -803,15 +806,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 8b859a3f-d8bf-4bad-848f-1af903ceda0c;
 					- _name = "RTC_CLKIN_PINMUX";
-					- _objectCreation = "141850893920162330579914";
-					- _umlDependencyID = "2880";
+					- _objectCreation = "4320132113920161317351943";
+					- _umlDependencyID = "2903";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID dc59804d-b3d9-4e18-802f-e11e28d86731;
-							- _objectCreation = "141851093920162330577914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320134113920161317349943";
+							- _umlDependencyID = "1639";
 							- _value = "kPortMuxAsGpio";
 						}
 					}
@@ -832,15 +835,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f9eccafc-9100-458a-ad70-9b79c5944e9d;
 					- _name = "CLOCK_VLPR";
-					- _objectCreation = "141851293920162330575914";
-					- _umlDependencyID = "2381";
+					- _objectCreation = "4320136113920161317347943";
+					- _umlDependencyID = "2422";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 88635c0c-eeea-4fba-ac06-b2bfc21b6e4c;
-							- _objectCreation = "141851493920162330573914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320138113920161317345943";
+							- _umlDependencyID = "1639";
 							- _value = "1U";
 						}
 					}
@@ -861,15 +864,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 4663fd13-54d9-4425-8fc4-51116e13fbe3;
 					- _name = "CLOCK_RUN";
-					- _objectCreation = "141851693920162330571914";
-					- _umlDependencyID = "2302";
+					- _objectCreation = "4320140113920161317343943";
+					- _umlDependencyID = "2334";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 6eecbbdd-005e-4566-bc40-ab625b5e8f06;
-							- _objectCreation = "141851893920162330569914";
-							- _umlDependencyID = "1607";
+							- _objectCreation = "4320142113920161317341943";
+							- _umlDependencyID = "1630";
 							- _value = "2U";
 						}
 					}
@@ -890,15 +893,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 0b75b4f9-ba0b-44b6-b4f2-b73ce03734bb;
 					- _name = "CLOCK_INIT_CONFIG";
-					- _objectCreation = "141852093920162330567914";
-					- _umlDependencyID = "2898";
+					- _objectCreation = "4320144113920161317339943";
+					- _umlDependencyID = "2939";
 					- ValueSpecifications = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ ILiteralSpecification 
 							- _id = GUID 008bf30b-4e23-454f-89f4-0f1fa14ff9a6;
-							- _objectCreation = "141852293920162330565914";
-							- _umlDependencyID = "1598";
+							- _objectCreation = "4320146113920161317337943";
+							- _umlDependencyID = "1639";
 							- _value = "CLOCK_RUN";
 						}
 					}
@@ -919,13 +922,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID b038ec5a-e49e-4d63-bec1-d415e84e2476;
 					- _name = "g_defaultClockConfigVlpr";
-					- _objectCreation = "141852493920162330563914";
-					- _umlDependencyID = "4047";
+					- _objectCreation = "4320148113920161317335943";
+					- _umlDependencyID = "4088";
 					- myTypeOf = { IType 
 						- _id = GUID ca121175-8ad7-4ea5-83ff-053e21b4bd7a;
 						- _myState = 8192;
-						- _objectCreation = "141852693920162330561914";
-						- _umlDependencyID = "1598";
+						- _objectCreation = "4320150113920161317333943";
+						- _umlDependencyID = "1630";
 						- _declaration = "clock_manager_user_config_t";
 						- _kind = Language;
 					}
@@ -938,13 +941,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 18a8cb2b-8158-421f-8b3f-ffee049ef29a;
 					- _name = "g_defaultClockConfigRun";
-					- _objectCreation = "141852893920162330559914";
-					- _umlDependencyID = "3945";
+					- _objectCreation = "4320152113920161317331943";
+					- _umlDependencyID = "3968";
 					- myTypeOf = { IType 
 						- _id = GUID d8ac9f34-d076-4a99-a3d3-77e1521c25c9;
 						- _myState = 8192;
-						- _objectCreation = "141853093920162330557914";
-						- _umlDependencyID = "1598";
+						- _objectCreation = "4320154113920161317329943";
+						- _umlDependencyID = "1639";
 						- _declaration = "clock_manager_user_config_t";
 						- _kind = Language;
 					}

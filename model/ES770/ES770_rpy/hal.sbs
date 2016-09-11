@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 9d76869b-fd0a-412e-a4db-424509c70211;
 	- _myState = 8192;
 	- _name = "hal";
-	- _objectCreation = "4351011023201622612194";
-	- _umlDependencyID = "1776";
+	- _objectCreation = "4319858113920161317625943";
+	- _umlDependencyID = "1966";
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -42,7 +42,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 63d37f8e-344f-4f34-9891-a642f221ada0;
 		}
 		{ ISubsystem 
-			- fileName = "hmi";
+			- fileName = "logger";
 			- _id = GUID 7290b49b-2bd4-427f-a6a0-6898e7ec8a20;
 		}
 		{ ISubsystem 
@@ -58,8 +58,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 2fe8a6c2-bb4d-414f-8fa3-164702cc22a7;
 		}
 	}
-	- weakCGTime = 9.10.2016::5:22:52;
-	- strongCGTime = 9.10.2016::2:39:52;
+	- weakCGTime = 9.11.2016::16:37:24;
+	- strongCGTime = 9.11.2016::16:13:48;
 	- _defaultComposite = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -69,10 +69,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID ef8e1b68-40e6-45e0-ad22-8de6e4e1b4a2;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "4351031023201622611994";
-			- _umlDependencyID = "2287";
-			- weakCGTime = 9.10.2016::2:36:13;
-			- strongCGTime = 9.10.2016::2:35:53;
+			- _objectCreation = "4320378113920161317105943";
+			- _umlDependencyID = "2450";
+			- weakCGTime = 9.11.2016::16:13:48;
+			- strongCGTime = 9.11.2016::16:13:48;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";

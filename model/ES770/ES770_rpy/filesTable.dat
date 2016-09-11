@@ -22,7 +22,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 	"ES770_rpy\\driver.sbs" "Sources::hal::driver"
 	"ES770_rpy\\encoder.sbs" "Sources::hal::encoder"
 	"ES770_rpy\\hal.sbs" "Sources::hal"
-	"ES770_rpy\\hmi.sbs" "Sources::hal::hmi"
+	"ES770_rpy\\logger.sbs" "Sources::hal::logger"
 	"ES770_rpy\\main.sbs" "Sources::main"
 	"ES770_rpy\\mcg.sbs" "Sources::hal::mcg"
 	"ES770_rpy\\target_definitions.sbs" "Sources::hal::target_definitions"

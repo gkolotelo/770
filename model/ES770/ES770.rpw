@@ -9,16 +9,16 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 0;
-				- m_showCmd = 1;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
 				- m_ptMaxPositionY = -31;
-				- m_nLeft = 130;
-				- m_nTop = 130;
-				- m_nRight = 1271;
-				- m_nBottom = 726;
+				- m_nLeft = 156;
+				- m_nTop = 156;
+				- m_nRight = 1823;
+				- m_nBottom = 1009;
 			}
 			- _wasOpenedOnCloseProject = 1;
 			- _theDiagram = { IHandle 
@@ -27,10 +27,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _subsystem = "";
 				- _class = "";
 				- _name = "definition";
-				- _id = GUID c7ad31d0-6d65-4de2-b92f-2a90ddd54eea;
+				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1104 536 ;
+			- _UpLeft = 0 115 ;
+			- _DownRight = 2787 1788 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
@@ -65,8 +65,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -86,7 +86,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 1431 862 ;
+			- _DownRight = 1187 576 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 1;
 		}
@@ -113,13 +113,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "requirements";
 				- _id = GUID c745a580-9e49-477a-b69d-9fed186430f0;
 			}
-			- _UpLeft = 23 0 ;
-			- _DownRight = 1515 724 ;
+			- _UpLeft = 0 0 ;
+			- _DownRight = 1511 734 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 2;
 		}
 	}
-	- _fullName = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
+	- _fullName = "C:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
