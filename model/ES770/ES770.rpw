@@ -29,8 +29,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "definition";
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
-			- _UpLeft = 0 115 ;
-			- _DownRight = 2787 1788 ;
+			- _UpLeft = 134 170 ;
+			- _DownRight = 2181 1298 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
@@ -119,7 +119,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 			- m_nDiagramIndex = 2;
 		}
 	}
-	- _fullName = "C:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
+	- _fullName = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}

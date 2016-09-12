@@ -441,3 +441,7 @@
 09, 11, 2016 (13:15:34): UR named: controller, of type IDependency, and ID: d8656b20-861f-489f-9d63-3286312721ca was created. Owned by the hmi Class.
 09, 11, 2016 (13:15:34): UR named: stdlib, of type IDependency, and ID: 45ee7074-52e4-407a-8e80-289d5bd15701 was created. Owned by the controller Class.
 09, 11, 2016 (13:15:34): UR named: target_pins, of type IDependency, and ID: 2f5cdd95-ede5-4c33-8525-7d2880f9066b was created. Owned by the es670 Class.
+09, 12, 2016 (13:50:04): UR named: package_diagram, of type IDiagram, and ID: 604328de-2202-48b3-9d1a-353bbeb75331 was created. Owned by the ES770 Project.
+09, 12, 2016 (13:50:04): UR named: Final_Project, of type ISubsystem, and ID: 00000000-0000-0000-0000-000000000000 was created. Owned by the ES770 Project.
+09, 12, 2016 (13:50:04): UR named: MKL25Z4, of type IClass, and ID: d32248dd-74d9-479b-b8a9-cc8ac7ccc303 was created. Owned by the Final_Project Package.
+09, 12, 2016 (13:50:04): UR named: File, of type IStereotype, and ID: bdee0ab5-d5a0-4569-8f02-ac8f107b96c3 was created. Owned by the Final_Project Package.

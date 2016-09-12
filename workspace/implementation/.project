@@ -24,6 +24,48 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>SDK/platform/CMSIS</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/CMSIS</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/composite</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/composite</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/devices</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/devices</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/drivers</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/drivers</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/hal</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/hal</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/osa</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/osa</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/system</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/system</locationURI>
+		</link>
+		<link>
+			<name>SDK/platform/utilities</name>
+			<type>2</type>
+			<locationURI>PROJECT_KSDK_PATH/platform/utilities</locationURI>
+		</link>
+	</linkedResources>
 	<variableList>
 		<variable>
 			<name>PROJECT_KSDK_PATH</name>
