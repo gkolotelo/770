@@ -1,7 +1,7 @@
 I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 
 - filesTable = { IRPYRawContainer 
-	- size = 30;
+	- size = 32;
 	- value = "ES770.rpy" ""
 	"ES770_rpy\\ADC0.cmp" "FRDM_KL25Z::ADC0"
 	"ES770_rpy\\Battery.cmp" "Regulator_5V::Battery"
@@ -22,10 +22,12 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 	"ES770_rpy\\TPM2.cmp" "FRDM_KL25Z::TPM2"
 	"ES770_rpy\\adc.sbs" "Sources::hal::adc"
 	"ES770_rpy\\controller.sbs" "Sources::hal::controller"
+	"ES770_rpy\\diagnostics.sbs" "Sources::hal::diagnostics"
 	"ES770_rpy\\driver.sbs" "Sources::hal::driver"
 	"ES770_rpy\\encoder.sbs" "Sources::hal::encoder"
 	"ES770_rpy\\hal.sbs" "Sources::hal"
-	"ES770_rpy\\logger.sbs" "Sources::hal::logger"
+	"ES770_rpy\\hmi.sbs" "Sources::hal::hmi"
+	"ES770_rpy\\ir_array.sbs" "Sources::hal::ir_array"
 	"ES770_rpy\\main.sbs" "Sources::main"
 	"ES770_rpy\\mcg.sbs" "Sources::hal::mcg"
 	"ES770_rpy\\target_definitions.sbs" "Sources::hal::target_definitions"
