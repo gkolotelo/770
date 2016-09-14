@@ -29,8 +29,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "definition";
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
-			- _UpLeft = 134 170 ;
-			- _DownRight = 2181 1298 ;
+			- _UpLeft = 101 230 ;
+			- _DownRight = 1905 1358 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}

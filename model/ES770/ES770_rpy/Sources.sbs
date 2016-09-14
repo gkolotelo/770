@@ -3,14 +3,11 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID f9623802-9e64-4088-b484-572be495c316;
 	- _myState = 8192;
 	- _name = "Sources";
-	- _objectCreation = "4319848113920161317635943";
-	- _umlDependencyID = "2397";
-	- Annotations = { IRPYRawContainer 
-		- size = 0;
-	}
-	- _lastID = 35;
+	- _objectCreation = "291282213242016238691929";
+	- _umlDependencyID = "2341";
+	- _lastID = 39;
 	- Declaratives = { IRPYRawContainer 
-		- size = 7;
+		- size = 16;
 		- value = 
 		{ ISubsystem 
 			- fileName = "main";
@@ -24,8 +21,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 5baca468-f9a7-48c3-8804-f1d632aff0d7;
 			- _myState = 8192;
 			- _name = "High Level Requirement";
-			- _objectCreation = "4320380113920161317103943";
-			- _umlDependencyID = "3687";
+			- _objectCreation = "291282413242016238689929";
+			- _umlDependencyID = "3667";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Requirement"; 
@@ -35,8 +32,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID a1639215-4807-4119-a07d-8bbac0f5d890;
 			- _myState = 8192;
 			- _name = "Low Level Requirement";
-			- _objectCreation = "4320382113920161317101943";
-			- _umlDependencyID = "3609";
+			- _objectCreation = "291282613242016238687929";
+			- _umlDependencyID = "3589";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Requirement"; 
@@ -46,8 +43,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 0a768fda-b9e9-4bc5-b881-350889a8322a;
 			- _myState = 8192;
 			- _name = "Satisfy";
-			- _objectCreation = "4320384113920161317099943";
-			- _umlDependencyID = "2387";
+			- _objectCreation = "291282813242016238685929";
+			- _umlDependencyID = "2349";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Dependency"; 
@@ -57,8 +54,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 396d454d-fc43-4cca-9e9a-b398a5447bd0;
 			- _myState = 8192;
 			- _name = "file";
-			- _objectCreation = "4320386113920161317097943";
-			- _umlDependencyID = "2064";
+			- _objectCreation = "291283013242016238683929";
+			- _umlDependencyID = "2017";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Class"; 
@@ -68,16 +65,212 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
 			- _myState = 8192;
 			- _name = "C_define";
-			- _objectCreation = "4320388113920161317095943";
-			- _umlDependencyID = "2429";
+			- _objectCreation = "291283213242016238681929";
+			- _umlDependencyID = "2382";
 			- _m2Classes = { IRPYRawContainer 
 				- size = 1;
 				- value = "Attribute"; 
 			}
 		}
+		{ IInformationFlow 
+			- _id = GUID 764a8fe5-828c-4bad-80dd-d53662c3abf2;
+			- _myState = 2048;
+			- _name = "Encoder_B_TPM2";
+			- _objectCreation = "291283413242016238679929";
+			- _umlDependencyID = "2861";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 72d72c1a-4504-4298-a113-2767495f042d;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_B.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_B";
+				- _id = GUID 199a0090-41bd-4581-ac47-f1c6366635f8;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "TPM2.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\TPM2";
+				- _id = GUID e06d517f-73ae-4744-a1ed-e9ec23416f3a;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 993b6810-d0ba-412c-933c-50b9aa9704ef;
+			- _myState = 2048;
+			- _name = "Encoder_A_TPM1";
+			- _objectCreation = "291283613242016238677929";
+			- _umlDependencyID = "2859";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 665c7604-0d9a-4c7b-88a2-0da3be3523d6;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Encoder_A.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Encoder_A";
+				- _id = GUID ce24be95-baea-4ba5-9cd9-9124f23a155b;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "TPM1.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\TPM1";
+				- _id = GUID 6b5ea975-1085-46b7-92cb-bad6f350a40b;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationItem 
+			- _id = GUID 665c7604-0d9a-4c7b-88a2-0da3be3523d6;
+			- _myState = 8192;
+			- _name = "CHA";
+			- _objectCreation = "291283813242016238675929";
+			- _umlDependencyID = "1814";
+		}
+		{ IInformationItem 
+			- _id = GUID 72d72c1a-4504-4298-a113-2767495f042d;
+			- _myState = 8192;
+			- _name = "CHB";
+			- _objectCreation = "291284013242016238673929";
+			- _umlDependencyID = "1806";
+		}
+		{ IInformationFlow 
+			- _id = GUID c66feecf-2908-4966-abed-2924137cc355;
+			- _name = "EN_PINS";
+			- _objectCreation = "291284213242016238671929";
+			- _umlDependencyID = "2157";
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "IR_Array.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "IR_Array";
+				- _id = GUID 9d7eef10-fb9b-4f5d-ad99-d6368ca646c1;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "GPIO.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\GPIO";
+				- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 7032f65e-01a9-444a-b7e4-3fdee6916d98;
+			- _myState = 2048;
+			- _name = "GPIO_IR_Array";
+			- _objectCreation = "291284413242016238669929";
+			- _umlDependencyID = "2769";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 2e8aea70-e77d-4f70-b63d-2ae9aeace7f2;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "GPIO.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\GPIO";
+				- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "IR_Array.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "IR_Array";
+				- _id = GUID 9d7eef10-fb9b-4f5d-ad99-d6368ca646c1;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationItem 
+			- _id = GUID 2e8aea70-e77d-4f70-b63d-2ae9aeace7f2;
+			- _myState = 8192;
+			- _name = "EN_PINS";
+			- _objectCreation = "291284613242016238667929";
+			- _umlDependencyID = "2166";
+		}
+		{ IInformationFlow 
+			- _id = GUID 8b373d5f-fccb-48d5-9466-2a14e2d077d8;
+			- _myState = 2048;
+			- _name = "GPIO_Driver";
+			- _objectCreation = "291284813242016238665929";
+			- _umlDependencyID = "2628";
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "GPIO.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\GPIO";
+				- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- direction_ = toEnd2;
+		}
+		{ IInformationFlow 
+			- _id = GUID 5ffc4af5-af71-4933-9ca5-fadda02edfad;
+			- _myState = 2048;
+			- _name = "GPIO_Driver_0";
+			- _objectCreation = "291285013242016238663929";
+			- _umlDependencyID = "2762";
+			- Conveyed = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IInformationItem";
+					- _id = GUID 2e8aea70-e77d-4f70-b63d-2ae9aeace7f2;
+				}
+			}
+			- end1_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "GPIO.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FRDM_KL25Z\\GPIO";
+				- _id = GUID 6f402d72-a740-4a03-8db1-c017b46e9a16;
+			}
+			- end2_ = { IHandle 
+				- _m2Class = "IComponent";
+				- _filename = "Driver.cmp";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Driver";
+				- _id = GUID e8d2b136-7b20-43f7-91cd-12cd608855ae;
+			}
+			- direction_ = toEnd2;
+		}
 	}
-	- weakCGTime = 9.11.2016::16:34:22;
-	- strongCGTime = 9.11.2016::16:13:48;
+	- weakCGTime = 9.14.2016::2:24:1;
+	- strongCGTime = 9.11.2016::16:19:27;
 	- _defaultComposite = GUID c96d5194-58ed-4182-82e6-04845c227d30;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -87,9 +280,9 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID c96d5194-58ed-4182-82e6-04845c227d30;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "4320390113920161317093943";
-			- _umlDependencyID = "2450";
-			- weakCGTime = 9.11.2016::16:13:48;
+			- _objectCreation = "291285213242016238661929";
+			- _umlDependencyID = "2412";
+			- weakCGTime = 9.11.2016::16:34:22;
 			- strongCGTime = 9.11.2016::16:13:48;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
