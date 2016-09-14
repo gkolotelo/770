@@ -28,13 +28,7 @@
 #include "fsl_gpio_hal.h"
 #include "fsl_interrupt_manager.h"
 
-/* Defines */
-/* Maximum number of pulses to be counted in the defined acquisition period before resetting */
-#define ENCODER_MAX_PULSE_COUNT     0xFFFF
-/* Encoder pulse count */
-#define ENCODER_PULSE_COUNT         1024
-/* Acquisition period, should be same as cyclic executive period */
-#define ENCODER_ACQ_PERIOD_MS       CYCLIC_EXECUTIVE_PERIOD
+
 
 /* Global variables: */
 /* Measured pulses per second */
@@ -73,7 +67,8 @@ typedef struct {
 	uint8_t uiEncoderPinNumber;
 	uint8_t uiEncoderPortAlt;
 	uint8_t uiEncoderTpmInstance;
-	uint8_t uiEncoderTpmClkinInstance;
+	uint8_t uiEncoderTpmClkinSrc;
+    /* Encoder Hardware Setup section */
 	uint16_t uiEncoderMaxPulseCount;
 	uint8_t uiEncoderPulseCount;
 	uint32_t uiEncoderAcqPeriodUs;

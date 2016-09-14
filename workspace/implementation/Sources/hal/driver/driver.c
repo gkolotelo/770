@@ -46,24 +46,23 @@
 typedef struct {
 	/* Config section */
 	char cDriverInstance;
-	uint8_t uiDriverPwmPortInstance;
-	uint8_t uiDriverPwmPinNumber;
-	uint8_t uiDriverPwmPortAlt;
-	uint8_t uiDriverTpmInstance;
-	uint8_t uiDriverTpmClkinInstance;
+	uint8_t uiDriverPwmChAPortInstance;
+	uint8_t uiDriverPwmChAPinNumber;
+	uint8_t uiDriverPwmChAPortAlt;
+    uint8_t uiDriverPwmChAChannelInstance;
+    uint8_t uiDriverPwmChBPortInstance;
+    uint8_t uiDriverPwmChBPinNumber;
+    uint8_t uiDriverPwmChBPortAlt;
+    uint8_t uiDriverPwmChBChannelInstance;
+    uint8_t uiDriverTpmInstance;
+    uint8_t uiDriverTpmClkinInstance;
 	clock_tpm_src_t tTpmClkSrc = kClockTpmSrcNone;
 	tpm_clock_ps_t tTpmClkPrescaler = kTpmDividedBy1;
-	tpm_pwm_mode_t tPwmMode;
-    tpm_pwm_edge_mode_t tPwmEdgeMode;
 
-	uint8_t uiDriverEnPortInstance;
 	uint8_t uiDriverEnPinNumber;
 	uint8_t uiDriverEnPortAlt;
-	uint8_t uiDriverEnGpioInstance;
-	
-	uint16_t uiDriverMaxPulseCount;
-	uint8_t uiDriverPulseCount;
-	uint32_t uiDriverAcqPeriodUs;
+	uint8_t uiDriverEnPortInstance;
+    uint8_t uiDriverEnGpioInstance;
 
 } driver_instance_t;
 
