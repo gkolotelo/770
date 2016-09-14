@@ -22,6 +22,7 @@
 /* System Includes */
 #include "fsl_tpm_hal.h"
 #include "fsl_tpm_driver.h"
+#include "fsl_gpio_driver.h"
 #include "fsl_clock_manager.h"
 #include "fsl_port_hal.h"
 #include "fsl_gpio_hal.h"
@@ -60,6 +61,35 @@ extern void ENCODER_CHO_IRQ_HANDLER()
     uiEncoderPosition = 0;
 }
 
+
+
+/********************************************* NEW STUFF ********************************************************/
+
+
+typedef struct {
+	/* Config section */
+	char cEncoderInstance;
+	uint8_t uiEncoderPortInstance;
+	uint8_t uiEncoderPinNumber;
+	uint8_t uiEncoderPortAlt;
+	uint8_t uiEncoderTpmInstance;
+	uint8_t uiEncoderTpmClkinInstance;
+	uint16_t uiEncoderMaxPulseCount;
+	uint8_t uiEncoderPulseCount;
+	uint32_t uiEncoderAcqPeriodUs;
+
+	/* Data section */
+	uint32_t uiEncoderPulsesPerSecond = 0;
+
+} encoder_instance_t;
+
+
+#define DEBUG_MODE_ENABLE 1U // change tpm_general_config to reflect this. Also make this global (for all tpm's)
+
+/*****************************************************************************************************************/
+
+
+
 /**
  * Method name:         encoder_initEncoder
  * Method description:  Initializes the encoder for an incremental 3-pin encoder
@@ -69,8 +99,9 @@ extern void ENCODER_CHO_IRQ_HANDLER()
 void encoder_initEncoder()
 {
 
-	int instance = 0;
+	int instance = 0, port=0;
 	TPM_Type *tpmBase = g_tpmBase[instance];
+	PORT_Type * portBase = g_portBase[port];
     /* Configure Channel PORTs */
     CLOCK_SYS_EnablePortClock(ENCODER_CHA_PORT_INSTANCE);
     CLOCK_SYS_EnablePortClock(ENCODER_CHB_PORT_INSTANCE);

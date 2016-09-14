@@ -39,6 +39,40 @@
 /* Prescaler */
 #define DRIVER_PRESCALER            kTpmDividedBy1
 
+
+/********************************************* NEW STUFF ********************************************************/
+
+
+typedef struct {
+	/* Config section */
+	char cDriverInstance;
+	uint8_t uiDriverPwmPortInstance;
+	uint8_t uiDriverPwmPinNumber;
+	uint8_t uiDriverPwmPortAlt;
+	uint8_t uiDriverTpmInstance;
+	uint8_t uiDriverTpmClkinInstance;
+	clock_tpm_src_t tTpmClkSrc = kClockTpmSrcNone;
+	tpm_clock_ps_t tTpmClkPrescaler = kTpmDividedBy1;
+	tpm_pwm_mode_t tPwmMode;
+    tpm_pwm_edge_mode_t tPwmEdgeMode;
+
+	uint8_t uiDriverEnPortInstance;
+	uint8_t uiDriverEnPinNumber;
+	uint8_t uiDriverEnPortAlt;
+	uint8_t uiDriverEnGpioInstance;
+	
+	uint16_t uiDriverMaxPulseCount;
+	uint8_t uiDriverPulseCount;
+	uint32_t uiDriverAcqPeriodUs;
+
+} driver_instance_t;
+
+#define DEBUG_MODE_ENABLE 1U // change tpm_general_config to reflect this. Also make this global (for all tpm's)
+
+/*****************************************************************************************************************/
+
+
+
 /**
  * Method name:         driver_initDriver
  * Method description:  Initializes the driver with the load in idle (50% duty cycle)

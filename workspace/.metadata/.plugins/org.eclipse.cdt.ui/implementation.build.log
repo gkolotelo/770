@@ -1,0 +1,16 @@
+21:19:19 **** Incremental Build of configuration Debug for project implementation ****
+make all 
+'Building target: implementation.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"D:/Users/guilherme/Documents/University/Current Semester/ES770/workspace/implementation/Project_Settings/Linker_Files" -Wl,-Map,"implementation.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "implementation.elf"  ./Sources/hal/util/tc_hal.o  ./Sources/hal/uart/fsl_debug_console.o ./Sources/hal/uart/print_scan.o  ./Sources/hal/mcg/mcg.o  ./Sources/hal/hmi/hmi.o  ./Sources/hal/encoder/encoder.o  ./Sources/hal/driver/driver.o  ./Sources/hal/controller/controller.o  ./Sources/main.o  ./SDK/fsl_lptmr_common.o ./SDK/fsl_lptmr_driver.o ./SDK/fsl_lptmr_irq.o ./SDK/fsl_lptmr_lpm_callback.o  ./Project_Settings/Startup_Code/startup.o ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+'Finished building target: implementation.elf'
+' '
+'Invoking: Cross ARM GNU Print Size'
+arm-none-eabi-size --format=berkeley "implementation.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6112	    112	   2120	   8344	   2098	implementation.elf
+'Finished building: implementation.siz'
+' '
+
+21:19:19 Build Finished (took 477ms)
+

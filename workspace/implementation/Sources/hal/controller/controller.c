@@ -13,6 +13,31 @@
  *
  */
 
+
+
+
+
+/********************************************* NEW STUFF ********************************************************/
+
+
+typedef struct {
+	/* Config section */
+	char cControllerInstance;
+
+	/* Data section */
+	double dControllerKp;
+	double dControllerKi;
+	double dControllerKd;
+	double dControllerSensorPreviousValue;
+	double dControllerErrorSum;
+	double dControllerMaxSumError;
+
+} controller_instance_t;
+
+
+/*****************************************************************************************************************/
+
+
 /* System includes */
 #include <stdlib.h>
 

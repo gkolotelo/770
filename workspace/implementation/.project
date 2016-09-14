@@ -26,44 +26,24 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>SDK/platform/CMSIS</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/CMSIS</locationURI>
+			<name>SDK/fsl_lptmr_common.c</name>
+			<type>1</type>
+			<location>C:/Freescale/KSDK/platform/drivers/src/lptmr/fsl_lptmr_common.c</location>
 		</link>
 		<link>
-			<name>SDK/platform/composite</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/composite</locationURI>
+			<name>SDK/fsl_lptmr_driver.c</name>
+			<type>1</type>
+			<location>C:/Freescale/KSDK/platform/drivers/src/lptmr/fsl_lptmr_driver.c</location>
 		</link>
 		<link>
-			<name>SDK/platform/devices</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/devices</locationURI>
+			<name>SDK/fsl_lptmr_irq.c</name>
+			<type>1</type>
+			<location>C:/Freescale/KSDK/platform/drivers/src/lptmr/fsl_lptmr_irq.c</location>
 		</link>
 		<link>
-			<name>SDK/platform/drivers</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/drivers</locationURI>
-		</link>
-		<link>
-			<name>SDK/platform/hal</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/hal</locationURI>
-		</link>
-		<link>
-			<name>SDK/platform/osa</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/osa</locationURI>
-		</link>
-		<link>
-			<name>SDK/platform/system</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/system</locationURI>
-		</link>
-		<link>
-			<name>SDK/platform/utilities</name>
-			<type>2</type>
-			<locationURI>PROJECT_KSDK_PATH/platform/utilities</locationURI>
+			<name>SDK/fsl_lptmr_lpm_callback.c</name>
+			<type>1</type>
+			<location>C:/Freescale/KSDK/platform/drivers/src/lptmr/fsl_lptmr_lpm_callback.c</location>
 		</link>
 	</linkedResources>
 	<variableList>
