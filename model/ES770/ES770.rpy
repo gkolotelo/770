@@ -3,9 +3,9 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 25bca5c2-3f14-482b-97d9-efb6fc58d91f;
 	- _myState = 8192;
 	- _name = "ES770";
-	- _objectCreation = "532724714420162014908953";
-	- _umlDependencyID = "1906";
-	- _lastID = 22;
+	- _objectCreation = "3428346153620161219379934";
+	- _umlDependencyID = "1967";
+	- _lastID = 23;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
 		- value = 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 
@@ -306,8 +306,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				}
 			}
 			- _name = "overview";
-			- _objectCreation = "532724914420162014906953";
-			- _umlDependencyID = "2483";
+			- _objectCreation = "3428408153620161219317934";
+			- _umlDependencyID = "2535";
 			- _lastModifiedTime = "9.14.2016::2:24:25";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 5e9ecb70-0443-4ff1-8317-73ce5b577cae;
@@ -3324,8 +3324,8 @@ Overview of System";
 				}
 			}
 			- _name = "requirements";
-			- _objectCreation = "532725114420162014904953";
-			- _umlDependencyID = "2903";
+			- _objectCreation = "3428410153620161219315934";
+			- _umlDependencyID = "2955";
 			- _lastModifiedTime = "9.14.2016::22:54:54";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 1e1f683c-3117-43aa-9e5b-d696ba919192;
@@ -8209,8 +8209,8 @@ Overview of System";
 				}
 			}
 			- _name = "packages";
-			- _objectCreation = "532725314420162014902953";
-			- _umlDependencyID = "2418";
+			- _objectCreation = "3428412153620161219313934";
+			- _umlDependencyID = "2470";
 			- _lastModifiedTime = "9.14.2016::22:30:42";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID f24cd695-9d8b-41ba-a9c1-3787ad2bdbe6;
@@ -11502,9 +11502,9 @@ Overview of System";
 				}
 			}
 			- _name = "definition";
-			- _objectCreation = "532725514420162014900953";
-			- _umlDependencyID = "2652";
-			- _lastModifiedTime = "9.14.2016::22:53:51";
+			- _objectCreation = "3428414153620161219311934";
+			- _umlDependencyID = "2704";
+			- _lastModifiedTime = "9.15.2016::14:40:46";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 5fba9a0b-8c32-48fd-9714-e70d7196aaf8;
 				- m_type = 0;
@@ -12744,17 +12744,18 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 1;
 					}
+					- m_bFramesetModified = 1;
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=0%,100%>
 <frame name=AttributeListCompartment>
 <frame name=PrimitiveOperationListCompartment>";
 					- Attrs = { IRPYRawContainer 
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 1;
+						- size = 3;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
@@ -12763,6 +12764,22 @@ Overview of System";
 							- _class = "ES770";
 							- _name = "main()";
 							- _id = GUID 87115d89-1243-4fec-89d5-d9f736063178;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "main.sbs";
+							- _subsystem = "Sources::main";
+							- _class = "ES770";
+							- _name = "initBoard()";
+							- _id = GUID b6ed57e9-423f-43da-8eff-f580cc11c62c;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "main.sbs";
+							- _subsystem = "Sources::main";
+							- _class = "ES770";
+							- _name = "initPeripherals()";
+							- _id = GUID adbce8d6-94c7-4fcd-84fa-4e19d16a2454;
 						}
 					}
 				}
