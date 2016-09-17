@@ -121,8 +121,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -141,16 +141,16 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "main sequence";
 				- _id = GUID e3b79f6a-287f-4e51-acd0-7d7cdcc36dc0;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1152 801 ;
+			- _UpLeft = 31 0 ;
+			- _DownRight = 853 479 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 0;
-				- m_showCmd = 1;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -169,8 +169,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "definition";
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 2432 1183 ;
+			- _UpLeft = 0 11 ;
+			- _DownRight = 3322 2063 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 5;
 		}
@@ -225,8 +225,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "packages";
 				- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 			}
-			- _UpLeft = 0 49 ;
-			- _DownRight = 1149 607 ;
+			- _UpLeft = 0 69 ;
+			- _DownRight = 1149 627 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 6;
 		}
@@ -253,13 +253,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "requirements";
 				- _id = GUID c745a580-9e49-477a-b69d-9fed186430f0;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1752 851 ;
+			- _UpLeft = 396 193 ;
+			- _DownRight = 1664 809 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 7;
 		}
 	}
-	- _fullName = "D:\\Users\\guilherme\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
+	- _fullName = "C:\\cygwin64\\home\\770\\model\\ES770\\ES770";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
