@@ -1,0 +1,3 @@
+Added Component: Designator=P2(PCBComponent_1)
+Added Pin To Net: NetName=NetC3_2 Pin=P2-1
+Added Pin To Net: NetName=GND Pin=P2-2
