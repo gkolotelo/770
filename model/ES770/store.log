@@ -1,21 +1,28 @@
-09, 16, 2016 (19:54:38): Starting Pre-Save actions
+09, 23, 2016 (20:47:05): Starting Pre-Save actions
 
-09, 16, 2016 (19:54:38): Starting Dialogs Check/Save
-09, 16, 2016 (19:54:38): Finished Dialogs Check/Save
-09, 16, 2016 (19:54:38): Starting Controlled Files Resolution
-09, 16, 2016 (19:54:38): Finished Controlled Files Resolution
-09, 16, 2016 (19:54:38): Finished Pre-Save actions
+09, 23, 2016 (20:47:05): Starting Dialogs Check/Save
+09, 23, 2016 (20:47:05): Finished Dialogs Check/Save
+09, 23, 2016 (20:47:05): Starting Controlled Files Resolution
+09, 23, 2016 (20:47:05): Finished Controlled Files Resolution
+09, 23, 2016 (20:47:05): Finished Pre-Save actions
 
-09, 16, 2016 (19:54:38): Creating C:\cygwin64\home\770\model\ES770\ES770.rpy
-09, 16, 2016 (19:54:38): 
-Started writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 16, 2016 (19:54:38)
+09, 23, 2016 (20:47:05): Creating C:\cygwin64\home\770\model\ES770\ES770.rpy
+09, 23, 2016 (20:47:05): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 23, 2016 (20:47:05)
 
-09, 16, 2016 (19:54:38): version 8.5.2
-09, 16, 2016 (19:54:38): 
-Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 16, 2016 (19:54:38)
+09, 23, 2016 (20:47:05): version 8.5.2
+09, 23, 2016 (20:47:05): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 23, 2016 (20:47:05)
 
-09, 16, 2016 (19:54:38): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 16, 2016 (19:54:38)
+09, 23, 2016 (20:47:05): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\filesTable.dat on Friday, September 23, 2016 (20:47:05)
 
-09, 16, 2016 (19:54:38): Finished writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 16, 2016 (19:54:38)
+09, 23, 2016 (20:47:05): Creating C:\cygwin64\home\770\model\ES770\ES770_rpy\target_definitions.sbs
+09, 23, 2016 (20:47:05): 
+Started writing C:\cygwin64\home\770\model\ES770\ES770_rpy\target_definitions.sbs on Friday, September 23, 2016 (20:47:05)
 
-09, 16, 2016 (19:54:38): End Log
+09, 23, 2016 (20:47:05): version 8.5.2
+09, 23, 2016 (20:47:05): Finished writing C:\cygwin64\home\770\model\ES770\ES770_rpy\target_definitions.sbs on Friday, September 23, 2016 (20:47:05)
+
+09, 23, 2016 (20:47:05): Finished writing C:\cygwin64\home\770\model\ES770\ES770.rpy on Friday, September 23, 2016 (20:47:05)
+
+09, 23, 2016 (20:47:05): End Log

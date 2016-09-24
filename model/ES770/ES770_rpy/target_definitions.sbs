@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 19f85f0f-5922-4e4a-8ee2-63d4eb7e14eb;
 	- _myState = 8192;
 	- _name = "target_definitions";
-	- _objectCreation = "8175451428201619843898";
-	- _umlDependencyID = "3437";
+	- _objectCreation = "52686323472016201538395";
+	- _umlDependencyID = "3472";
 	- Dependencies = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -20,8 +20,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 47a02aca-005d-418d-ab47-5b3a6558c9b4;
 			- _myState = 2048;
 			- _name = "System";
-			- _objectCreation = "8175471428201619843698";
-			- _umlDependencyID = "2160";
+			- _objectCreation = "52686523472016201538195";
+			- _umlDependencyID = "2195";
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
@@ -53,7 +53,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 	}
 	- _lastID = 3;
-	- weakCGTime = 9.14.2016::22:27:18;
+	- weakCGTime = 9.23.2016::23:47:4;
 	- strongCGTime = 9.14.2016::22:27:18;
 	- _defaultComposite = GUID 16100de0-f345-4b93-b15d-8d78e440dd06;
 	- _eventsBaseID = -1;
@@ -64,10 +64,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 16100de0-f345-4b93-b15d-8d78e440dd06;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "8175491428201619843498";
-			- _umlDependencyID = "2326";
-			- weakCGTime = 9.11.2016::16:29:19;
-			- strongCGTime = 9.11.2016::16:13:48;
+			- _objectCreation = "52686723472016201537995";
+			- _umlDependencyID = "2370";
+			- weakCGTime = 9.14.2016::22:27:18;
+			- strongCGTime = 9.14.2016::22:27:18;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -78,8 +78,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID d27ea60b-073d-49d5-9595-2e38935d2c0a;
 			- _myState = 8192;
 			- _name = "target_pins";
-			- _objectCreation = "8175511428201619843298";
-			- _umlDependencyID = "2690";
+			- _objectCreation = "52686923472016201537795";
+			- _umlDependencyID = "2743";
 			- Dependencies = { IRPYRawContainer 
 				- size = 1;
 				- value = 
@@ -87,8 +87,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID f5771fa4-b7f4-4d6d-abb8-c623d0a5291f;
 					- _myState = 2048;
 					- _name = "MKL25Z4";
-					- _objectCreation = "8175531428201619843098";
-					- _umlDependencyID = "1979";
+					- _objectCreation = "52687123472016201537595";
+					- _umlDependencyID = "2023";
 					- _dependsOn = { INObjectHandle 
 						- _m2Class = "IClass";
 						- _filename = "System.sbs";
@@ -120,7 +120,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
 			- _lastID = 85;
-			- weakCGTime = 9.14.2016::20:6:56;
+			- weakCGTime = 9.23.2016::23:47:4;
 			- strongCGTime = 9.11.2016::16:21:33;
 			- Attrs = { IRPYRawContainer 
 				- size = 84;
@@ -128,8 +128,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f3310c0e-3894-4cc8-8b3f-6255dfe8bc61;
 					- _name = "DRIVER_LW_CHA_INSTANCE";
-					- _objectCreation = "8175551428201619842898";
-					- _umlDependencyID = "3224";
+					- _objectCreation = "52687323472016201537395";
+					- _umlDependencyID = "3259";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -159,8 +159,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 090c6d63-524e-442c-aabd-598924b4470c;
 					- _name = "DRIVER_LW_CHA_PIN_NUMBER";
-					- _objectCreation = "8175571428201619842698";
-					- _umlDependencyID = "3410";
+					- _objectCreation = "52687523472016201537195";
+					- _umlDependencyID = "3445";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -190,8 +190,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID cb71fa5e-d6e1-40f8-8d9c-3f60e8c7e3ce;
 					- _name = "DRIVER_LW_CHA_PORT_ALT";
-					- _objectCreation = "8175591428201619842498";
-					- _umlDependencyID = "3272";
+					- _objectCreation = "52687723472016201536995";
+					- _umlDependencyID = "3316";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -221,8 +221,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID e884fc12-604b-493d-84c0-18eec37d7a56;
 					- _name = "DRIVER_LW_CHA_PORT_INSTANCE";
-					- _objectCreation = "8175611428201619842298";
-					- _umlDependencyID = "3635";
+					- _objectCreation = "52687923472016201536795";
+					- _umlDependencyID = "3688";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -252,8 +252,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fd694909-e7ac-487c-b930-c1ba8ccc2c8b;
 					- _name = "DRIVER_RW_CHA_INSTANCE";
-					- _objectCreation = "8175631428201619842098";
-					- _umlDependencyID = "3221";
+					- _objectCreation = "52688123472016201536595";
+					- _umlDependencyID = "3265";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -283,8 +283,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID d9779c1b-4ace-431c-86f1-b3cf2b750428;
 					- _name = "DRIVER_RW_CHA_PIN_NUMBER";
-					- _objectCreation = "8175651428201619841898";
-					- _umlDependencyID = "3416";
+					- _objectCreation = "52688323472016201536395";
+					- _umlDependencyID = "3451";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -314,8 +314,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 01635efa-ab0b-4dca-b387-6404843ad193;
 					- _name = "DRIVER_RW_CHA_PORT_ALT";
-					- _objectCreation = "8175671428201619841698";
-					- _umlDependencyID = "3278";
+					- _objectCreation = "52688523472016201536195";
+					- _umlDependencyID = "3313";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -345,8 +345,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 2d75b586-7361-4b9c-890b-a10ad9a94b89;
 					- _name = "DRIVER_RW_CHA_PORT_INSTANCE";
-					- _objectCreation = "8175691428201619841498";
-					- _umlDependencyID = "3650";
+					- _objectCreation = "52688723472016201535995";
+					- _umlDependencyID = "3694";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -376,8 +376,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fb69a7fa-af2a-4804-acdd-5867f9cac24e;
 					- _name = "DRIVER_RW_EN_PIN_NUMBER";
-					- _objectCreation = "8175711428201619841298";
-					- _umlDependencyID = "3350";
+					- _objectCreation = "52688923472016201535795";
+					- _umlDependencyID = "3403";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -407,8 +407,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 2c8473f9-2275-4739-a95d-e62f9a90424c;
 					- _name = "DRIVER_RW_EN_PORT_ALT";
-					- _objectCreation = "8175731428201619841098";
-					- _umlDependencyID = "3212";
+					- _objectCreation = "52689123472016201535595";
+					- _umlDependencyID = "3256";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -438,8 +438,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 79a80c54-ac19-44d6-a678-5659a608384e;
 					- _name = "DRIVER_RW_EN_PORT_GPIO_INSTANCE";
-					- _objectCreation = "8175751428201619840898";
-					- _umlDependencyID = "3991";
+					- _objectCreation = "52689323472016201535395";
+					- _umlDependencyID = "4026";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -469,8 +469,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 5952e305-b00a-44c4-a783-c60c80a41232;
 					- _name = "ENCODER_RW_PIN_NUMBER";
-					- _objectCreation = "8175771428201619840698";
-					- _umlDependencyID = "3169";
+					- _objectCreation = "52689523472016201535195";
+					- _umlDependencyID = "3204";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -500,8 +500,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 43fdbdd1-bf28-42d6-92c9-96a62b828465;
 					- _name = "ENCODER_RW_PORT_ALT";
-					- _objectCreation = "8175791428201619840498";
-					- _umlDependencyID = "3031";
+					- _objectCreation = "52689723472016201534995";
+					- _umlDependencyID = "3075";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -531,8 +531,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 2d4d8197-6ff0-4c65-8412-83fbab3e29dd;
 					- _name = "ENCODER_RW_PORT_INSTANCE";
-					- _objectCreation = "8175811428201619840298";
-					- _umlDependencyID = "3394";
+					- _objectCreation = "52689923472016201534795";
+					- _umlDependencyID = "3447";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -562,8 +562,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f7b18fc2-8885-4378-9ee3-fa40f8e8b78c;
 					- _name = "ENCODER_RW_TPM_INSTANCE";
-					- _objectCreation = "8175831428201619840098";
-					- _umlDependencyID = "3310";
+					- _objectCreation = "52690123472016201534595";
+					- _umlDependencyID = "3345";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -593,8 +593,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1870e462-3c3b-4511-87fd-66ba247fec47;
 					- _name = "ENCODER_LW_PIN_NUMBER";
-					- _objectCreation = "8175851428201619839898";
-					- _umlDependencyID = "3172";
+					- _objectCreation = "52690323472016201534395";
+					- _umlDependencyID = "3189";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -624,8 +624,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c38793d4-5a3e-4c38-934d-e9188b1b5b4c;
 					- _name = "ENCODER_LW_PORT_ALT";
-					- _objectCreation = "8175871428201619839698";
-					- _umlDependencyID = "3034";
+					- _objectCreation = "52690523472016201534195";
+					- _umlDependencyID = "3051";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -655,8 +655,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 993a7d4f-b350-4bb2-bef8-1f9cb1134a8c;
 					- _name = "ENCODER_LW_PORT_INSTANCE";
-					- _objectCreation = "8175891428201619839498";
-					- _umlDependencyID = "3406";
+					- _objectCreation = "52690723472016201533995";
+					- _umlDependencyID = "3432";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -686,8 +686,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 25306d9b-130e-44a0-b5cf-fbbb48621062;
 					- _name = "ENCODER_LW_TPM_INSTANCE";
-					- _objectCreation = "8175911428201619839298";
-					- _umlDependencyID = "3313";
+					- _objectCreation = "52690923472016201533795";
+					- _umlDependencyID = "3348";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -717,8 +717,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 9f50e991-882b-44a9-a323-5b44ad18678a;
 					- _name = "ENCODER_RW_FTM_CLKIN_SRC";
-					- _objectCreation = "8175931428201619839098";
-					- _umlDependencyID = "3408";
+					- _objectCreation = "52691123472016201533595";
+					- _umlDependencyID = "3434";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -748,8 +748,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 4ed8b16d-0e41-49e3-9e1e-b07babbc443d;
 					- _name = "ENCODER_LW_FTM_CLKIN_SRC";
-					- _objectCreation = "8175951428201619838898";
-					- _umlDependencyID = "3411";
+					- _objectCreation = "52691323472016201533395";
+					- _umlDependencyID = "3428";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -779,8 +779,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 4f36b0e7-7907-43f8-af09-53126e91a940;
 					- _name = "GPIO_OUTPUT";
-					- _objectCreation = "8175971428201619838698";
-					- _umlDependencyID = "2419";
+					- _objectCreation = "52691523472016201533195";
+					- _umlDependencyID = "2436";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -810,8 +810,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 09f73c2e-26f5-42f8-a88d-7d6d04f8548d;
 					- _name = "GPIO_INPUT";
-					- _objectCreation = "8175991428201619838498";
-					- _umlDependencyID = "2322";
+					- _objectCreation = "52691723472016201532995";
+					- _umlDependencyID = "2348";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -841,8 +841,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1afdc0ac-39b3-4a55-8065-8130bf30a243;
 					- _name = "CONST_2PI";
-					- _objectCreation = "8176011428201619838298";
-					- _umlDependencyID = "2195";
+					- _objectCreation = "52691923472016201532795";
+					- _umlDependencyID = "2239";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -872,8 +872,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID a058288d-31aa-4a8d-a4e6-878c7e198991;
 					- _name = "CYCLIC_EXECUTIVE_PERIOD";
-					- _objectCreation = "8176031428201619838098";
-					- _umlDependencyID = "3276";
+					- _objectCreation = "52692123472016201532595";
+					- _umlDependencyID = "3311";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -903,8 +903,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 25aa36e0-d243-4ab2-b469-b4da2d79de0e;
 					- _name = "DRIVER_EN_PIN_DIR";
-					- _objectCreation = "8176051428201619837898";
-					- _umlDependencyID = "2861";
+					- _objectCreation = "52692323472016201532395";
+					- _umlDependencyID = "2887";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -934,8 +934,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3958e7cf-a0aa-4223-b8f8-39a5d4148a83;
 					- _name = "HMI_UART_PORT_INSTANCE";
-					- _objectCreation = "8176071428201619837698";
-					- _umlDependencyID = "3260";
+					- _objectCreation = "52692523472016201532195";
+					- _umlDependencyID = "3286";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -965,8 +965,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 34514e71-e8cd-4bc3-984a-9f9eec27b5eb;
 					- _name = "HMI_UART_PIN_RX";
-					- _objectCreation = "8176091428201619837498";
-					- _umlDependencyID = "2739";
+					- _objectCreation = "52692723472016201531995";
+					- _umlDependencyID = "2774";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -996,8 +996,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 75306260-445c-44b1-84a1-5c9b6f1fb294;
 					- _name = "HMI_UART_PIN_TX";
-					- _objectCreation = "8176111428201619837298";
-					- _umlDependencyID = "2732";
+					- _objectCreation = "52692923472016201531795";
+					- _umlDependencyID = "2776";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1027,8 +1027,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3b39979c-38ff-4d9f-abf6-5b737d4d1a5b;
 					- _name = "HMI_UART_INSTANCE";
-					- _objectCreation = "8176131428201619837098";
-					- _umlDependencyID = "2831";
+					- _objectCreation = "52693123472016201531595";
+					- _umlDependencyID = "2866";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1058,8 +1058,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 8f27f6ef-f6e4-43ad-ac66-bfa732067e2f;
 					- _name = "HMI_UART_BASE";
-					- _objectCreation = "8176151428201619836898";
-					- _umlDependencyID = "2526";
+					- _objectCreation = "52693323472016201531395";
+					- _umlDependencyID = "2552";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1089,8 +1089,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fb565bcb-bfa7-45e0-865c-f7ef556a7fce;
 					- _name = "HMI_UART_BAUD";
-					- _objectCreation = "8176171428201619836698";
-					- _umlDependencyID = "2527";
+					- _objectCreation = "52693523472016201531195";
+					- _umlDependencyID = "2553";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1120,8 +1120,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 748034e9-da5f-4c79-a53b-68856920b476;
 					- _name = "HMI_UART_PIN_ALT";
-					- _objectCreation = "8176191428201619836498";
-					- _umlDependencyID = "2794";
+					- _objectCreation = "52693723472016201530995";
+					- _umlDependencyID = "2829";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1151,8 +1151,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 6a3b973d-baa3-4109-83c5-914383a33f26;
 					- _name = "DRIVER_LW_CHB_INSTANCE";
-					- _objectCreation = "8176211428201619836298";
-					- _umlDependencyID = "3216";
+					- _objectCreation = "52693923472016201530795";
+					- _umlDependencyID = "3260";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1182,8 +1182,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 2fb7a8dc-8a8c-48d3-b602-7c4be7edd3ea;
 					- _name = "DRIVER_LW_CHB_PIN_NUMBER";
-					- _objectCreation = "8176231428201619836098";
-					- _umlDependencyID = "3402";
+					- _objectCreation = "52694123472016201530595";
+					- _umlDependencyID = "3437";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1213,8 +1213,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 9f16b761-390c-4845-b63c-7956407df8ef;
 					- _name = "DRIVER_LW_CHB_PORT_ALT";
-					- _objectCreation = "8176251428201619835898";
-					- _umlDependencyID = "3273";
+					- _objectCreation = "52694323472016201530395";
+					- _umlDependencyID = "3299";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1244,8 +1244,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID de7eb526-1672-43db-9fbb-14f51d8702a8;
 					- _name = "DRIVER_LW_CHB_PORT_INSTANCE";
-					- _objectCreation = "8176271428201619835698";
-					- _umlDependencyID = "3645";
+					- _objectCreation = "52694523472016201530195";
+					- _umlDependencyID = "3671";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1275,8 +1275,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 9c78c42d-1e99-47bd-9c35-f3ccab298eab;
 					- _name = "DRIVER_RW_CHB_INSTANCE";
-					- _objectCreation = "8176291428201619835498";
-					- _umlDependencyID = "3231";
+					- _objectCreation = "52694723472016201529995";
+					- _umlDependencyID = "3275";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1306,8 +1306,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f5fc36f1-cbbd-450d-80fc-e0dd2f919af2;
 					- _name = "DRIVER_RW_CHB_PIN_NUMBER";
-					- _objectCreation = "8176311428201619835298";
-					- _umlDependencyID = "3408";
+					- _objectCreation = "52694923472016201529795";
+					- _umlDependencyID = "3461";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1337,8 +1337,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c9da1155-9a88-43ec-82a0-b9fdf3e0808a;
 					- _name = "DRIVER_RW_CHB_PORT_ALT";
-					- _objectCreation = "8176331428201619835098";
-					- _umlDependencyID = "3270";
+					- _objectCreation = "52695123472016201529595";
+					- _umlDependencyID = "3314";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1368,8 +1368,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3294f667-bfb9-42b3-aabf-42170682f143;
 					- _name = "DRIVER_RW_CHB_PORT_INSTANCE";
-					- _objectCreation = "8176351428201619834898";
-					- _umlDependencyID = "3651";
+					- _objectCreation = "52695323472016201529395";
+					- _umlDependencyID = "3686";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1399,8 +1399,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID b1b0d014-a458-413e-9cfe-7de813d1c8cb;
 					- _name = "DRIVER_LW_EN_PIN_NUMBER";
-					- _objectCreation = "8176371428201619834698";
-					- _umlDependencyID = "3353";
+					- _objectCreation = "52695523472016201529195";
+					- _umlDependencyID = "3388";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1430,8 +1430,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 2d2d8b8c-0d48-4fe2-831b-223771eb1e6b;
 					- _name = "DRIVER_LW_EN_PORT_ALT";
-					- _objectCreation = "8176391428201619834498";
-					- _umlDependencyID = "3215";
+					- _objectCreation = "52695723472016201528995";
+					- _umlDependencyID = "3259";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1461,8 +1461,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 703682c2-0923-405f-b6cc-b7edf801f079;
 					- _name = "DRIVER_LW_EN_PORT_INSTANCE";
-					- _objectCreation = "8176411428201619834298";
-					- _umlDependencyID = "3578";
+					- _objectCreation = "52695923472016201528795";
+					- _umlDependencyID = "3631";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1492,8 +1492,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 27503a74-3ef8-4dcb-a31f-ac803031ba88;
 					- _name = "DRIVER_RW_TPM_CLKIN_INSTANCE";
-					- _objectCreation = "8176431428201619834098";
-					- _umlDependencyID = "3722";
+					- _objectCreation = "52696123472016201528595";
+					- _umlDependencyID = "3766";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1523,8 +1523,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3c4950bd-455a-4e15-bf83-73bb8d8f1f39;
 					- _name = "DRIVER_RW_TPM_INSTANCE";
-					- _objectCreation = "8176451428201619833898";
-					- _umlDependencyID = "3267";
+					- _objectCreation = "52696323472016201528395";
+					- _umlDependencyID = "3302";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1554,8 +1554,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 5b6d7e1f-eb3c-4ddd-881c-88799055b0b2;
 					- _name = "DRIVER_LW_TPM_CLKIN_INSTANCE";
-					- _objectCreation = "8176471428201619833698";
-					- _umlDependencyID = "3725";
+					- _objectCreation = "52696523472016201528195";
+					- _umlDependencyID = "3760";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1585,8 +1585,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 4297dc6f-8634-4778-ac53-aa5ee1279880;
 					- _name = "DRIVER_LW_TPM_INSTANCE";
-					- _objectCreation = "8176491428201619833498";
-					- _umlDependencyID = "3261";
+					- _objectCreation = "52696723472016201527995";
+					- _umlDependencyID = "3305";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1616,8 +1616,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 824727d5-869f-41d0-b415-7638cf33055d;
 					- _name = "DRIVER_RW_TPM_CLK_SRC";
-					- _objectCreation = "8176511428201619833298";
-					- _umlDependencyID = "3206";
+					- _objectCreation = "52696923472016201527795";
+					- _umlDependencyID = "3259";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1647,8 +1647,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 7b4f0a8b-ea2e-4de3-b9b9-fe8c847bc5f0;
 					- _name = "DRIVER_LW_TPM_CLK_SRC";
-					- _objectCreation = "8176531428201619833098";
-					- _umlDependencyID = "3200";
+					- _objectCreation = "52697123472016201527595";
+					- _umlDependencyID = "3244";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1678,8 +1678,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 59bf54f9-3081-499c-84c8-289eb560b88e;
 					- _name = "DRIVER_RW_TPM_CLK_PS";
-					- _objectCreation = "8176551428201619832898";
-					- _umlDependencyID = "3146";
+					- _objectCreation = "52697323472016201527395";
+					- _umlDependencyID = "3181";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1709,8 +1709,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 12c09f8d-5631-48f0-a1b3-6232d00ff213;
 					- _name = "DRIVER_LW_TPM_CLK_PS";
-					- _objectCreation = "8176571428201619832698";
-					- _umlDependencyID = "3140";
+					- _objectCreation = "52697523472016201527195";
+					- _umlDependencyID = "3175";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1740,8 +1740,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c82557fe-6426-48cb-996b-fd7b583b2a93;
 					- _name = "DRIVER_LW_EN_GPIO_INSTANCE";
-					- _objectCreation = "8176591428201619832498";
-					- _umlDependencyID = "3565";
+					- _objectCreation = "52697723472016201526995";
+					- _umlDependencyID = "3609";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1771,8 +1771,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 4f4e63f8-1280-4f63-948b-bb59745301cc;
 					- _name = "DRIVER_RW_EN_GPIO_INSTANCE";
-					- _objectCreation = "8176611428201619832298";
-					- _umlDependencyID = "3562";
+					- _objectCreation = "52697923472016201526795";
+					- _umlDependencyID = "3615";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1802,8 +1802,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID be5fc4d0-e7ff-4f76-ad05-13ae969e913a;
 					- _name = "DEBUG_MODE_ENABLE";
-					- _objectCreation = "8176631428201619832098";
-					- _umlDependencyID = "2771";
+					- _objectCreation = "52698123472016201526595";
+					- _umlDependencyID = "2815";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1833,8 +1833,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 8dd39182-a32c-4d43-9fe1-b1582facc642;
 					- _name = "MAX_RW_MOTOR_VELOCITY_RAD";
-					- _objectCreation = "8176651428201619831898";
-					- _umlDependencyID = "3533";
+					- _objectCreation = "52698323472016201526395";
+					- _umlDependencyID = "3568";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1864,8 +1864,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID ebc30a95-b2b3-4add-a04f-2a321b54e8d9;
 					- _name = "MAX_LW_MOTOR_VELOCITY_RAD";
-					- _objectCreation = "8176671428201619831698";
-					- _umlDependencyID = "3527";
+					- _objectCreation = "52698523472016201526195";
+					- _umlDependencyID = "3562";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1895,8 +1895,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID dc8d7844-891a-4344-9cc3-03cae96cf7f3;
 					- _name = "ENCODER_RW_MAX_PULSE_COUNT";
-					- _objectCreation = "8176691428201619831498";
-					- _umlDependencyID = "3592";
+					- _objectCreation = "52698723472016201525995";
+					- _umlDependencyID = "3636";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1926,8 +1926,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 5f35e49d-bcf9-4bd9-9aeb-a1fe8ace15e0;
 					- _name = "ENCODER_RW_PULSE_COUNT";
-					- _objectCreation = "8176711428201619831298";
-					- _umlDependencyID = "3258";
+					- _objectCreation = "52698923472016201525795";
+					- _umlDependencyID = "3311";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1957,8 +1957,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c55d631c-3046-401c-8135-4861d1d09919;
 					- _name = "ENCODER_RW_ACQ_PERIOD_US";
-					- _objectCreation = "8176731428201619831098";
-					- _umlDependencyID = "3399";
+					- _objectCreation = "52699123472016201525595";
+					- _umlDependencyID = "3443";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -1988,8 +1988,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 7500740c-75bc-401f-9716-ebe24b361f25;
 					- _name = "ENCODER_LW_MAX_PULSE_COUNT";
-					- _objectCreation = "8176751428201619830898";
-					- _umlDependencyID = "3586";
+					- _objectCreation = "52699323472016201525395";
+					- _umlDependencyID = "3621";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2019,8 +2019,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 7c8799f2-1dc9-4b70-be2a-b4c2848095d5;
 					- _name = "ENCODER_LW_PULSE_COUNT";
-					- _objectCreation = "8176771428201619830698";
-					- _umlDependencyID = "3261";
+					- _objectCreation = "52699523472016201525195";
+					- _umlDependencyID = "3296";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2050,8 +2050,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 919ac9de-c591-442c-96e4-5c0cb35921dd;
 					- _name = "ENCODER_LW_ACQ_PERIOD_US";
-					- _objectCreation = "8176791428201619830498";
-					- _umlDependencyID = "3402";
+					- _objectCreation = "52699723472016201524995";
+					- _umlDependencyID = "3446";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2081,8 +2081,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fe6e0c33-efee-4954-ba09-53c28286854a;
 					- _name = "HMI_DIAG_BTN_PORT_INSTANCE";
-					- _objectCreation = "8176811428201619830298";
-					- _umlDependencyID = "3535";
+					- _objectCreation = "52699923472016201524795";
+					- _umlDependencyID = "3588";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2112,8 +2112,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 7e6b2c0b-ff0c-4f23-bc3b-7bb2bbadf384;
 					- _name = "HMI_DIAG_BTN_PORT_ALT";
-					- _objectCreation = "8176831428201619830098";
-					- _umlDependencyID = "3163";
+					- _objectCreation = "52700123472016201524595";
+					- _umlDependencyID = "3189";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2143,8 +2143,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID e590e0dd-405f-4c66-8898-cf492d298280;
 					- _name = "HMI_DIAG_BTN_IRQN";
-					- _objectCreation = "8176851428201619829898";
-					- _umlDependencyID = "2850";
+					- _objectCreation = "52700323472016201524395";
+					- _umlDependencyID = "2858";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2174,8 +2174,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID e2fd3e0d-649e-4b8d-a244-668b8bbe094a;
 					- _name = "HMI_DIAG_BTN_PIN_NUMBER";
-					- _objectCreation = "8176871428201619829698";
-					- _umlDependencyID = "3319";
+					- _objectCreation = "52700523472016201524195";
+					- _umlDependencyID = "3327";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2205,8 +2205,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 35fd7709-5898-4698-9b08-e7dd8be9c2e0;
 					- _name = "HMI_STOP_BTN_PORT_INSTANCE";
-					- _objectCreation = "8176891428201619829498";
-					- _umlDependencyID = "3602";
+					- _objectCreation = "52700723472016201523995";
+					- _umlDependencyID = "3619";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2236,8 +2236,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 23ff92ea-d54a-4ffa-9569-281c2eaa236d;
 					- _name = "HMI_STOP_BTN_IRQN";
-					- _objectCreation = "8176911428201619829298";
-					- _umlDependencyID = "2890";
+					- _objectCreation = "52700923472016201523795";
+					- _umlDependencyID = "2916";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2267,8 +2267,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 74bed94e-7cf5-4bc4-9700-c1b08497cb8d;
 					- _name = "HMI_STOP_BTN_PORT_ALT";
-					- _objectCreation = "8176931428201619829098";
-					- _umlDependencyID = "3221";
+					- _objectCreation = "52701123472016201523595";
+					- _umlDependencyID = "3238";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2298,8 +2298,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f5546888-2592-4565-b125-19969df79d9d;
 					- _name = "HMI_STOP_BTN_PIN_NUMBER";
-					- _objectCreation = "8176951428201619828898";
-					- _umlDependencyID = "3368";
+					- _objectCreation = "52701323472016201523395";
+					- _umlDependencyID = "3376";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -2329,8 +2329,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID f0a36e2c-e4c5-41b2-b4a8-25b161cf2bfa;
 					- _name = "ADC_IR1_PORT_INSTANCE";
-					- _objectCreation = "8176971428201619828698";
-					- _umlDependencyID = "3135";
+					- _objectCreation = "52701523472016201523195";
+					- _umlDependencyID = "3143";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2348,8 +2360,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 775bb1d7-1924-48ed-b260-d671d34269dc;
 					- _name = "ADC_IR2_PORT_INSTANCE";
-					- _objectCreation = "8176991428201619828498";
-					- _umlDependencyID = "3136";
+					- _objectCreation = "52701723472016201522995";
+					- _umlDependencyID = "3153";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2367,8 +2391,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID c958e373-5957-49bb-a09d-d405c8892622;
 					- _name = "ADC_IR3_PORT_INSTANCE";
-					- _objectCreation = "8177011428201619828298";
-					- _umlDependencyID = "3119";
+					- _objectCreation = "52701923472016201522795";
+					- _umlDependencyID = "3154";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2386,8 +2422,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID fbac4b6a-f3b8-4f1b-b1c0-8a124a61b387;
 					- _name = "ADC_IR4_PORT_INSTANCE";
-					- _objectCreation = "8177031428201619828098";
-					- _umlDependencyID = "3120";
+					- _objectCreation = "52702123472016201522595";
+					- _umlDependencyID = "3146";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2405,8 +2453,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID cf3dcaa9-4ac5-4c7e-979b-b3b74a1828e3;
 					- _name = "ADC_IR5_PORT_INSTANCE";
-					- _objectCreation = "8177051428201619827898";
-					- _umlDependencyID = "3130";
+					- _objectCreation = "52702323472016201522395";
+					- _umlDependencyID = "3147";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2424,8 +2484,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 47fe59ce-54a3-4cc8-a353-42f116009457;
 					- _name = "ADC_IR6_PORT_INSTANCE";
-					- _objectCreation = "8177071428201619827698";
-					- _umlDependencyID = "3131";
+					- _objectCreation = "52702523472016201522195";
+					- _umlDependencyID = "3148";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2443,8 +2515,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 5e99045d-4daf-4526-b415-a904acfa8975;
 					- _name = "ADC_PORT_ALT";
-					- _objectCreation = "8177091428201619827498";
-					- _umlDependencyID = "2455";
+					- _objectCreation = "52702723472016201521995";
+					- _umlDependencyID = "2481";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2462,8 +2546,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID e51efe3d-821d-428c-8722-e142ebf31102;
 					- _name = "ADC_IR1_PIN_NUMBER";
-					- _objectCreation = "8177111428201619827298";
-					- _umlDependencyID = "2883";
+					- _objectCreation = "52702923472016201521795";
+					- _umlDependencyID = "2918";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2481,8 +2577,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 7f249d5e-0da7-4606-be7c-ee13a24d4aba;
 					- _name = "ADC_IR2_PIN_NUMBER";
-					- _objectCreation = "8177131428201619827098";
-					- _umlDependencyID = "2884";
+					- _objectCreation = "52703123472016201521595";
+					- _umlDependencyID = "2910";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2500,8 +2608,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 1dad92bb-6203-4980-9022-2da65a3a31de;
 					- _name = "ADC_IR3_PIN_NUMBER";
-					- _objectCreation = "8177151428201619826898";
-					- _umlDependencyID = "2894";
+					- _objectCreation = "52703323472016201521395";
+					- _umlDependencyID = "2911";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2519,8 +2639,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 3b5165c7-20a0-4cc2-bbea-93c6fb1976b3;
 					- _name = "ADC_IR4_PIN_NUMBER";
-					- _objectCreation = "8177171428201619826698";
-					- _umlDependencyID = "2895";
+					- _objectCreation = "52703523472016201521195";
+					- _umlDependencyID = "2912";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2538,8 +2670,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 05afc046-1df1-48ca-8220-f0db7a82f0e3;
 					- _name = "ADC_IR5_PIN_NUMBER";
-					- _objectCreation = "8177191428201619826498";
-					- _umlDependencyID = "2896";
+					- _objectCreation = "52703723472016201520995";
+					- _umlDependencyID = "2922";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -2557,8 +2701,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				{ IAttribute 
 					- _id = GUID 6236759d-0c5d-4151-b504-bae562b0ae95;
 					- _name = "ADC_IR6_PIN_NUMBER";
-					- _objectCreation = "8177211428201619826298";
-					- _umlDependencyID = "2888";
+					- _objectCreation = "52703923472016201520795";
+					- _umlDependencyID = "2923";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "Sources.sbs";
+							- _subsystem = "Sources";
+							- _class = "";
+							- _name = "C_define";
+							- _id = GUID 8ade01a1-a644-43cd-aedd-7e6b3ffb123d;
+						}
+					}
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
