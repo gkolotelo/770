@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;implementation/Sources/hal/diagnostics/disgnostics.h&apos; to &apos;diagnostics.h&apos;" description="Rename resource &apos;disgnostics.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Sources/hal/diagnostics/disgnostics.h" name="diagnostics.h" stamp="1474674298638" updateReferences="true"/>
+</session>
