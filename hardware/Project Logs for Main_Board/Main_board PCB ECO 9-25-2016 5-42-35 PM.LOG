@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=VCC Pin=C7-2
+Removed Pin From Net: NetName=VCC Pin=C8-2
+Removed Pin From Net: NetName=VCC Pin=P1-4
+Removed Pin From Net: NetName=VCC Pin=P3-1
+Removed Pin From Net: NetName=VCC Pin=P4-1
+Added Component: Designator=C11(CAPR5-4X5)
+Added Component: Designator=C12(RAD-0.1)
+Added Component: Designator=C13(CAPR5-4X5)
+Added Component: Designator=C14(RAD-0.1)
+Added Component: Designator=U9(TO220VW)
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=GND Pin=C13-1
+Added Pin To Net: NetName=GND Pin=C14-1
+Added Pin To Net: NetName=NetDRVPWR_2 Pin=U9-1
+Added Pin To Net: NetName=GND Pin=U9-3
+Change Net Name : Old Net Name=VCC New Net Name=VCC5V
+Added Pin To Net: NetName=VCC3V3 Pin=C7-2
+Added Pin To Net: NetName=VCC3V3 Pin=C8-2
+Added Pin To Net: NetName=VCC3V3 Pin=C11-2
+Added Pin To Net: NetName=VCC3V3 Pin=C12-2
+Added Pin To Net: NetName=VCC3V3 Pin=C13-2
+Added Pin To Net: NetName=VCC3V3 Pin=C14-2
+Added Pin To Net: NetName=VCC3V3 Pin=P1-4
+Added Pin To Net: NetName=VCC3V3 Pin=P3-1
+Added Pin To Net: NetName=VCC3V3 Pin=P4-1
+Added Pin To Net: NetName=VCC3V3 Pin=U9-2
+Added Net: Name=VCC3V3
