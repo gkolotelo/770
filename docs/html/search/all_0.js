@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['foo',['foo',['../main_8c.html#ad8e0accfe2e176631c2ca3f5ef51c2cf',1,'main.c']]]
+  ['controller_2ec',['controller.c',['../controller_8c.html',1,'']]],
+  ['controller_2eh',['controller.h',['../controller_8h.html',1,'']]],
+  ['controller_5finitpid',['controller_initPID',['../controller_8c.html#a5e91534531bf36d3f18210673874cdfb',1,'controller_initPID(controller_instance_t *controllerInstance):&#160;controller.c'],['../controller_8h.html#a5e91534531bf36d3f18210673874cdfb',1,'controller_initPID(controller_instance_t *controllerInstance):&#160;controller.c']]],
+  ['controller_5finstance_5ft',['controller_instance_t',['../structcontroller__instance__t.html',1,'']]],
+  ['controller_5fpidupdate',['controller_PIDUpdate',['../controller_8c.html#a8a26e90ddeb6c4d9363f22678b1d507c',1,'controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue):&#160;controller.c'],['../controller_8h.html#a8a26e90ddeb6c4d9363f22678b1d507c',1,'controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue):&#160;controller.c']]],
+  ['controller_5fsetkd',['controller_setKd',['../controller_8c.html#a269a9385ede641a4493b8d47ab1d1542',1,'controller_setKd(controller_instance_t *controllerInstance, double dDGain):&#160;controller.c'],['../controller_8h.html#a269a9385ede641a4493b8d47ab1d1542',1,'controller_setKd(controller_instance_t *controllerInstance, double dDGain):&#160;controller.c']]],
+  ['controller_5fsetki',['controller_setKi',['../controller_8c.html#a7bdd536cd9d13533f83ff1169ae0412c',1,'controller_setKi(controller_instance_t *controllerInstance, double dIGain):&#160;controller.c'],['../controller_8h.html#a7bdd536cd9d13533f83ff1169ae0412c',1,'controller_setKi(controller_instance_t *controllerInstance, double dIGain):&#160;controller.c']]],
+  ['controller_5fsetkp',['controller_setKp',['../controller_8c.html#ac047818e1fe3a2e87ef4131a0b92158e',1,'controller_setKp(controller_instance_t *controllerInstance, double dPGain):&#160;controller.c'],['../controller_8h.html#ac047818e1fe3a2e87ef4131a0b92158e',1,'controller_setKp(controller_instance_t *controllerInstance, double dPGain):&#160;controller.c']]],
+  ['controller_5fsetmaxsumerror',['controller_setMaxSumError',['../controller_8c.html#a1f7d1b10ff8c3eb61839949340f00ae8',1,'controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError):&#160;controller.c'],['../controller_8h.html#a1f7d1b10ff8c3eb61839949340f00ae8',1,'controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError):&#160;controller.c']]]
 ];

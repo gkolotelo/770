@@ -1,0 +1,163 @@
+\hypertarget{controller_8c}{\section{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/controller/controller.c File Reference}
+\label{controller_8c}\index{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/controller/controller.\-c@{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/controller/controller.\-c}}
+}
+
+
+File containing the methods implementing a P\-I\-D controller.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}controller.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{controller_8c_a5e91534531bf36d3f18210673874cdfb}{controller\-\_\-init\-P\-I\-D} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance)
+\begin{DoxyCompactList}\small\item\em Initializes the controller with safe values. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_a1f7d1b10ff8c3eb61839949340f00ae8}{controller\-\_\-set\-Max\-Sum\-Error} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance, double d\-Max\-Sum\-Error)
+\begin{DoxyCompactList}\small\item\em Sets the maximum integrative error. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_ac047818e1fe3a2e87ef4131a0b92158e}{controller\-\_\-set\-Kp} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance, double d\-P\-Gain)
+\begin{DoxyCompactList}\small\item\em Sets the Kp. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_a7bdd536cd9d13533f83ff1169ae0412c}{controller\-\_\-set\-Ki} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance, double d\-I\-Gain)
+\begin{DoxyCompactList}\small\item\em Sets the Ki. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_a269a9385ede641a4493b8d47ab1d1542}{controller\-\_\-set\-Kd} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance, double d\-D\-Gain)
+\begin{DoxyCompactList}\small\item\em Sets the Kd. \end{DoxyCompactList}\item 
+double \hyperlink{controller_8c_a8a26e90ddeb6c4d9363f22678b1d507c}{controller\-\_\-\-P\-I\-D\-Update} (\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} $\ast$controller\-Instance, double d\-Sensor\-Value, double d\-Reference\-Value)
+\begin{DoxyCompactList}\small\item\em Updates the active controller and retrieves the actuation value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the methods implementing a P\-I\-D controller. \begin{DoxyAuthor}{Author}
+Guilherme Kairalla Kolotelo 
+
+Bruno de Souza Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20 Jun 2016 
+
+26 Sep 2016 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{controller_8c_a5e91534531bf36d3f18210673874cdfb}{\index{controller.\-c@{controller.\-c}!controller\-\_\-init\-P\-I\-D@{controller\-\_\-init\-P\-I\-D}}
+\index{controller\-\_\-init\-P\-I\-D@{controller\-\_\-init\-P\-I\-D}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-init\-P\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}void controller\-\_\-init\-P\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_a5e91534531bf36d3f18210673874cdfb}
+
+
+Initializes the controller with safe values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\-Instance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+\end{DoxyParams}
+\hypertarget{controller_8c_a8a26e90ddeb6c4d9363f22678b1d507c}{\index{controller.\-c@{controller.\-c}!controller\-\_\-\-P\-I\-D\-Update@{controller\-\_\-\-P\-I\-D\-Update}}
+\index{controller\-\_\-\-P\-I\-D\-Update@{controller\-\_\-\-P\-I\-D\-Update}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-\-P\-I\-D\-Update}]{\setlength{\rightskip}{0pt plus 5cm}double controller\-\_\-\-P\-I\-D\-Update (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance, }
+\item[{double}]{d\-Sensor\-Value, }
+\item[{double}]{d\-Reference\-Value}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_a8a26e90ddeb6c4d9363f22678b1d507c}
+
+
+Updates the active controller and retrieves the actuation value. 
+
+\mbox{[}long description\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\-Instance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em d\-Sensor\-Value} & Value from sensor. \\
+\hline
+{\em d\-Reference\-Value} & Reference value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Actuation value. 
+\end{DoxyReturn}
+\hypertarget{controller_8c_a269a9385ede641a4493b8d47ab1d1542}{\index{controller.\-c@{controller.\-c}!controller\-\_\-set\-Kd@{controller\-\_\-set\-Kd}}
+\index{controller\-\_\-set\-Kd@{controller\-\_\-set\-Kd}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-set\-Kd}]{\setlength{\rightskip}{0pt plus 5cm}void controller\-\_\-set\-Kd (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance, }
+\item[{double}]{d\-D\-Gain}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_a269a9385ede641a4493b8d47ab1d1542}
+
+
+Sets the Kd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\-Instance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em d\-D\-Gain} & Derivative constant. \\
+\hline
+\end{DoxyParams}
+\hypertarget{controller_8c_a7bdd536cd9d13533f83ff1169ae0412c}{\index{controller.\-c@{controller.\-c}!controller\-\_\-set\-Ki@{controller\-\_\-set\-Ki}}
+\index{controller\-\_\-set\-Ki@{controller\-\_\-set\-Ki}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-set\-Ki}]{\setlength{\rightskip}{0pt plus 5cm}void controller\-\_\-set\-Ki (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance, }
+\item[{double}]{d\-I\-Gain}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_a7bdd536cd9d13533f83ff1169ae0412c}
+
+
+Sets the Ki. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\-Instance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em d\-I\-Gain} & Integrative constant. \\
+\hline
+\end{DoxyParams}
+\hypertarget{controller_8c_ac047818e1fe3a2e87ef4131a0b92158e}{\index{controller.\-c@{controller.\-c}!controller\-\_\-set\-Kp@{controller\-\_\-set\-Kp}}
+\index{controller\-\_\-set\-Kp@{controller\-\_\-set\-Kp}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-set\-Kp}]{\setlength{\rightskip}{0pt plus 5cm}void controller\-\_\-set\-Kp (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance, }
+\item[{double}]{d\-P\-Gain}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_ac047818e1fe3a2e87ef4131a0b92158e}
+
+
+Sets the Kp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\-Instance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em d\-P\-Gain} & Proportional constant. \\
+\hline
+\end{DoxyParams}
+\hypertarget{controller_8c_a1f7d1b10ff8c3eb61839949340f00ae8}{\index{controller.\-c@{controller.\-c}!controller\-\_\-set\-Max\-Sum\-Error@{controller\-\_\-set\-Max\-Sum\-Error}}
+\index{controller\-\_\-set\-Max\-Sum\-Error@{controller\-\_\-set\-Max\-Sum\-Error}!controller.c@{controller.\-c}}
+\subsubsection[{controller\-\_\-set\-Max\-Sum\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void controller\-\_\-set\-Max\-Sum\-Error (
+\begin{DoxyParamCaption}
+\item[{{\bf controller\-\_\-instance\-\_\-t} $\ast$}]{controller\-Instance, }
+\item[{double}]{d\-Max\-Sum\-Error}
+\end{DoxyParamCaption}
+)}}\label{controller_8c_a1f7d1b10ff8c3eb61839949340f00ae8}
+
+
+Sets the maximum integrative error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controllerinstance} & \hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em d\-Max\-Sum\-Error} & Maximum error acceptable \\
+\hline
+\end{DoxyParams}
