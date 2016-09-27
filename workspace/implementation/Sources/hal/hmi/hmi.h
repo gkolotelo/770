@@ -1,16 +1,11 @@
 /**
- *
- * File name:           hmi.c
- * File description:    File containing the definition of methods for interaction
- *                      with a host device via a serial connection.
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       25Jun2016
- * Revision date:       27Jun2016
- *
+ * @file hmi.h
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 20 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the definition of methods for the interaction with a host device via a serial connection.
  */
 
 #ifndef SOURCES_HMI_H_

@@ -1,136 +1,146 @@
 /**
- *
- * File name:           encoder.h                          
- * File description:    File containing the definition of methods for the
- *                      reading of an incremental, 3-pin, encoder.
- *                      
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       10Jun2016                                       
- * Revision date:       27Jun2016
- *
+ * @file encoder.h
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 20 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the definition of methods for the reading of an incremental encoder.
  */
 
 
 #ifndef SOURCES_ENCODER_H_
 #define SOURCES_ENCODER_H_
 
+/**
+ * @brief driver_instance_t Struct containing specific data for a motor driver instance.
+ */
+typedef struct {
+	/* Config section */
+	char cEncoderInstance;
+	uint8_t uiEncoderPortInstance;
+	uint8_t uiEncoderPinNumber;
+	uint8_t uiEncoderPortAlt;
+	uint8_t uiEncoderTpmInstance;
+	uint8_t uiEncoderTpmClkinSrc;
+    /* Encoder Hardware Setup section */
+	uint16_t uiEncoderMaxPulseCount;
+	uint8_t uiEncoderPulseCount;
+	uint32_t uiEncoderAcqPeriodUs;
+
+	/* Data section */
+	uint32_t uiEncoderPulsesPerSecond = 0;
+
+} encoder_instance_t;
+
 
 /**
- * Method name:         ENCODER_CHO_IRQ_HANDLER
- * Method description:  Channel O IRQ handler
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Channel O IRQ handler
+ * 
  */
 extern void ENCODER_CHO_IRQ_HANDLER();
 
 /**
- * Method name:         encoder_initEncoder
- * Method description:  Initializes the encoder for an incremental 3-pin encoder
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Initializes the encoder for an incremental encoder.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_initEncoder();
+void encoder_initEncoder(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_enableCounter
- * Method description:  Enables the counter
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Enables the counter.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_enableCounter();
+void encoder_enableCounter(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_disableCounter
- * Method description:  Disables the counter
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Disables the counter
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_disableCounter();
+void encoder_disableCounter(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_resetCounter
- * Method description:  Resets the counter
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Resets the counter.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_resetCounter();
+void encoder_resetCounter(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_enableChOInterrupt
- * Method description:  Enables the interrupt on Channel O
- * Input params:        n/a
- * Output params:       n/a
- */
-void encoder_enableChOInterrupt();
+ * @brief Enables the interrupt on Channel O.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+*/
+void encoder_enableChOInterrupt(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_disableChOInterrupt
- * Method description:  Disables the interrupt on channel O
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Disables the interrupt on channel O.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_disableChOInterrupt();
+void encoder_disableChOInterrupt(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_takeMeasurement
- * Method description:  Takes a measurement of speed, direction and position
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Takes a measurement of speed, direction and position.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
  */
-void encoder_takeMeasurement();
+void encoder_takeMeasurement(encoder_instance_t *encoder_instance);
+
 
 /* Data retrieval methods */
 
 
 /**
- * Method name:         encoder_getAngularPositionDegree
- * Method description:  Returns the angular position of the encoder in degrees
- * Input params:        n/a
- * Output params:       double = Angular position of the encoder in degrees
+ * @brief Returns the angular position of the encoder in degrees.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+ * @return Angular position of the encoder in degrees.
  */
-double encoder_getAngularPositionDegree();
+double encoder_getAngularPositionDegree(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_getAngularPositionRad
- * Method description:  Returns the angular position of the encoder in radians
- * Input params:        n/a
- * Output params:       double = Angular position of the encoder in radians
+ * @brief Returns the angular position of the encoder in radians.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+ * @return Angular position of the encoder in radians.
  */
-double encoder_getAngularPositionRad();
+double encoder_getAngularPositionRad(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_getAngularVelocity
- * Method description:  Returns the angular velocity of the encoder in pulses per second
- * Input params:        n/a
- * Output params:       double = Angular velocity of the encoder in pps
+ * @brief Returns the angular velocity of the encoder in pulses per second.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+ * @return Angular velocity of the encoder in pps.
  */
-double encoder_getAngularVelocity();
+double encoder_getAngularVelocity(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_getAngularVelocityRadPerSec
- * Method description:  Returns the angular velocity of the encoder in Rad/s
- * Input params:        n/a
- * Output params:       double = Angular velocity of the encoder in Rad/s
+ * @brief Returns the angular velocity of the encoder in Rad/s.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+ * @return Angular velocity of the encoder in Rad/s.
  */
-double encoder_getAngularVelocityRad();
+double encoder_getAngularVelocityRad(encoder_instance_t *encoder_instance);
+
 
 /**
- * Method name:         encoder_getAngularVelocityRPM
- * Method description:  Returns the angular velocity of the encoder in RPM
- * Input params:        n/a
- * Output params:       double = Angular velocity of the encoder in RPM
+ * @brief Returns the angular velocity of the encoder in RPM.
+ * 
+ * @param encoder_instance encoder_instance_t struct.
+ * @return Angular velocity of the encoder in RPM.
  */
-double encoder_getAngularVelocityRPM();
-/**
- * Method name:         encoder_getDirection
- * Method description:  Returns the direction the encoder is spinning
- * Input params:        n/a
- * Output params:       int = Direction (-1 or 1)
- */
-int encoder_getDirection();
+double encoder_getAngularVelocityRPM(encoder_instance_t *encoder_instance);
 
 #endif /* SOURCES_ENCODER_H_ */

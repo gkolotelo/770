@@ -1,22 +1,19 @@
 /**
- *
- * File name:           driver.h                            
- * File description:    File containing the definition of methods for the
- *                      operation of an H-Bridge in bipolar operation mode.
- *                      
- *                      - Driver actuation goes from -100 to 100, the former
- *                        being full reverse, and the latter, full steam ahead.
- *                      - Driver max freq @ 100kHz.
- *                      - Channel A on HighTrue and Channel B on LowTrue makes
- *                        for a bipolar H-Bridge operation.
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       10Jun2016                                       
- * Revision date:       20Jun2016                                       
- *
+ * @file driver.h
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 10 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the definition of methods for the operation of an H-Bridge in bipolar operation mode.
+ * @detail File containing the definition of methods for the operation
+ *         of an H-Bridge in bipolar operation mode.
+ *         
+ *         - Driver actuation through driver_setDriver goes from -100 to 100, the
+ *           former being full reverse, and the latter, full steam ahead.
+ *         - Driver max freq @ 100kHz.
+ *         - Channel A on HighTrue and Channel B on LowTrue makes
+ *           for a bipolar H-Bridge pair of control signals.
  */
 
 
@@ -24,59 +21,82 @@
 #define SOURCES_DRIVER_H_
 
 /**
- * Method name:         driver_initDriver
- * Method description:  Initializes the driver with the load in idle
- * Input params:        n/a
- * Output params:       n/a
+ * @brief driver_instance_t Struct containing specific data for a motor driver instance.
  */
-void driver_initDriver();
+typedef struct {
+	/* Config section */
+	char cDriverInstance;
+	uint8_t uiDriverPwmChAPortInstance;
+	uint8_t uiDriverPwmChAPinNumber;
+	uint8_t uiDriverPwmChAPortAlt;
+    uint8_t uiDriverPwmChAChannelInstance;
+    uint8_t uiDriverPwmChBPortInstance;
+    uint8_t uiDriverPwmChBPinNumber;
+    uint8_t uiDriverPwmChBPortAlt;
+    uint8_t uiDriverPwmChBChannelInstance;
+    uint8_t uiDriverTpmInstance;
+    uint8_t uiDriverTpmClkinInstance;
+	clock_tpm_src_t tTpmClkSrc = kClockTpmSrcNone;
+	tpm_clock_ps_t tTpmClkPrescaler = kTpmDividedBy1;
+
+	uint8_t uiDriverEnPinNumber;
+	uint8_t uiDriverEnPortAlt;
+	uint8_t uiDriverEnPortInstance;
+    uint8_t uiDriverEnGpioInstance;
+
+} driver_instance_t;
 
 /**
- * Method name:         driver_disableDriver
- * Method description:  Disables the driver by clearing the enable pin
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Initializes the driver with the load in idle (50% duty cycle).
+ * 
+ * @param driverInstance driver_instance_t struct.
  */
-void driver_disableDriver();
+void driver_initDriver(driver_instance_t *driverInstance);
 
 /**
- * Method name:         driver_enableDriver
- * Method description:  Enables the driver by setting the enable pin
- * Input params:        n/a
- * Output params:       n/a
+ * @brief Disables the driver by clearing the enable pin.
+ * 
+ * @param driverInstance driver_instance_t struct.
  */
-void driver_enableDriver();
+void driver_disableDriver(driver_instance_t *driverInstance);
 
 /**
- * Method name:         driver_setChannelADutyCycle
- * Method description:  Sets duty cycle for Channel A only
- * Input params:        uiDutyCyclePercent = Duty cycle in percentage
- * Output params:       n/a
+ * @brief Enables the driver by setting the enable pin
+ * 
+ * @param driverInstance driver_instance_t struct.
  */
-void driver_setChannelADutyCycle(int uiDutyCyclePercent);
+void driver_enableDriver(driver_instance_t *driverInstance);
 
 /**
- * Method name:         driver_setChannelBDutyCycle
- * Method description:  Sets duty cycle for Channel B only
- * Input params:        uiDutyCyclePercent = Duty cycle in percentage
- * Output params:       n/a
+ * @brief Sets duty cycle for Channel A only.
+ * 
+ * @param driverInstance driver_instance_t struct.
+ * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setChannelBDutyCycle(int uiDutyCyclePercent);
+void driver_setChannelADutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
 
 /**
- * Method name:         driver_setHBridgeDutyCycle
- * Method description:  Sets duty cycle for H-Bridge operation. Both ChA and ChB
- * Input params:        uiDutyCyclePercent = Duty cycle in percentage (0% is full reverse, 100% is full ahead)
- * Output params:       n/a
+ * @brief Sets duty cycle for Channel B only.
+ * 
+ * @param driverInstance driver_instance_t struct.
+ * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setHBridgeDutyCycle(int uiDutyCyclePercent);
+void driver_setChannelBDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
 
 /**
- * Method name:         driver_setDriver
- * Method description:  Sets the driver from -100 to 100, the former being full reverse, and the latter, full steam ahead.
- * Input params:        input = -100 to 100
- * Output params:       n/a
+ * @brief Sets duty cycle for H-Bridge operation. Both ChA and ChB.
+ * 
+ * @param driverInstance driver_instance_t struct.
+ * @param uiDutyCyclePercent Duty cycle in percentage (0% is full reverse, 100% is full ahead).
  */
-void driver_setDriver(int input);
+void driver_setHBridgeDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
+
+/**
+ * @brief Sets the driver from -100 to 100, the former being full reverse, and the latter, full steam ahead.
+ * 
+ * @param driverInstance driver_instance_t struct.
+ * @param input -100 to 100.
+ */
+void driver_setDriver(driver_instance_t *driverInstance, int input);
 
 #endif /* SOURCES_DRIVER_H_ */

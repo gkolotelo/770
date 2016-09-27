@@ -1,94 +1,82 @@
 /**
- *
- * File name:           controller.h                            
- * File description:    File containing the definition of methods
- *                      implementing a PID controller.
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       20Jun2016                                       
- * Revision date:       20Jun2016                                       
- *
+ * @file controller.h
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 20 Jun 2016
+ * @date 26 Sep 2016
+ * @brief File containing the definition of methods implementing a PID controller.
  */
 
 #ifndef SOURCES_CONTROLLER_H_
 #define SOURCES_CONTROLLER_H_
 
 /**
- * Type name:           t_PID_Data
- * Method description:  Struct containing variable for PID controller
- * Params:              dKp:                    Proportional gain
- *                      dKi:                    Integrative gain
- *                      dKd:                    Derivative gain
- *                      dSensorPreviousValue:   previous value read by sensor
- *                      dErrorSum:              Summation of previous errors up to dMaxSumError
- *                      dMaxSumError:           Maximum value dErrorSum can reach
+ * @brief controller_instance_t Struct containing specific data for a PID controller instance.
  */
-typedef struct
-{
-    double dKp;
-    double dKi;
-    double dKd;
-    double dSensorPreviousValue;
-    double dErrorSum;
-    double dMaxSumError;
-} t_PID_Data;
+typedef struct {
+	/* Config section */
+	char cControllerInstance;
+
+	/* Data section */
+	double dControllerKp;
+	double dControllerKi;
+	double dControllerKd;
+	double dControllerSensorPreviousValue;
+	double dControllerErrorSum;
+	double dControllerMaxSumError;
+
+} controller_instance_t;
 
 
 /**
- * Method name:         controller_initPID
- * Method description:  Initializes the t_PID_Data with safe values
- * Input params:        pidData = t_PID_Data struct
- * Output params:       n/a
+ * @brief Initializes the controller with safe values.
+ * 
+ * @param controllerInstance controller_instance_t struct.
  */
-void controller_initPID(t_PID_Data *pidData);
+void controller_initPID(controller_instance_t *controllerInstance);
 
 /**
- * Method name:         controller_setMaxError
- * Method description:  Sets the maximum integrative error
- * Input params:        pidData = t_PID_Data struct
- *                      dMaxError = Maximum error acceptable
- * Output params:       n/a
+ * @brief Sets the maximum integrative error.
+ * 
+ * @param controllerinstance controller_instance_t struct.
+ * @param dMaxSumError Maximum error acceptable
  */
-void controller_setMaxSumError(t_PID_Data *pidData, double dMaxSumError);
+void controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError);
 
 /**
- * Method name:         controller_setKp
- * Method description:  Sets the Kp
- * Input params:        pidData = t_PID_Data struct
- *                      dPGain = Proportional constant
- * Output params:       n/a
+ * @brief Sets the Kp.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dPGain Proportional constant.
  */
-void controller_setKp(t_PID_Data *pidData, double dPGain);
+void controller_setKp(controller_instance_t *controllerInstance, double dPGain);
 
 /**
- * Method name:         controller_setKi
- * Method description:  Sets the Ki
- * Input params:        pidData = t_PID_Data struct
- *                      dIGain = Integrative constant
- * Output params:       n/a
+ * @brief Sets the Ki.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dIGain Integrative constant.
  */
-void controller_setKi(t_PID_Data *pidData, double dIGain);
+void controller_setKi(controller_instance_t *controllerInstance, double dIGain);
 
 /**
- * Method name:         controller_setKd
- * Method description:  Sets the Kd
- * Input params:        pidData = t_PID_Data struct
- *                      dDGain = Derivative constant
- * Output params:       n/a
+ * @brief Sets the Kd.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dDGain Derivative constant.
  */
-void controller_setKd(t_PID_Data *pidData, double dDGain);
+void controller_setKd(controller_instance_t *controllerInstance, double dDGain);
 
 /**
- * Method name:         controller_PIDUpdate
- * Method description:  Updates the running controller and retrieves the actuation value
- * Input params:        pidData = t_PID_Data struct
- *                      dSensorValue = Value from sensor
- *                      dReferenceValue = Reference value
- * Output params:       double = Actuation value
+ * @brief Updates the active controller and retrieves the actuation value
+ * @details [long description]
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dSensorValue Value from sensor.
+ * @param dReferenceValue Reference value.
+ * @return Actuation value.
  */
-double controller_PIDUpdate(t_PID_Data *pidData, double dSensorValue, double dReferenceValue);
+double controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue);
 
 #endif /* SOURCES_CONTROLLER_H_ */

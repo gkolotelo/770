@@ -1,41 +1,12 @@
 /**
- *
- * File name:           controller.c
- * File description:    File containing the methods implementing
- *                      a PID controller.
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       20Jun2016
- * Revision date:       20Jun2016
- *
+ * @file controller.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 20 Jun 2016
+ * @date 26 Sep 2016
+ * @brief File containing the methods implementing a PID controller.
  */
-
-
-
-
-
-/********************************************* NEW STUFF ********************************************************/
-
-
-typedef struct {
-	/* Config section */
-	char cControllerInstance;
-
-	/* Data section */
-	double dControllerKp;
-	double dControllerKi;
-	double dControllerKd;
-	double dControllerSensorPreviousValue;
-	double dControllerErrorSum;
-	double dControllerMaxSumError;
-
-} controller_instance_t;
-
-
-/*****************************************************************************************************************/
 
 
 /* System includes */
@@ -45,78 +16,74 @@ typedef struct {
 #include "controller.h"
 
 /**
- * Method name:         controller_initPID
- * Method description:  Initializes the t_PID_Data with safe values
- * Input params:        pidData = t_PID_Data struct
- * Output params:       n/a
+ * @brief Initializes the controller with safe values.
+ * 
+ * @param controllerInstance controller_instance_t struct.
  */
-void controller_initPID(t_PID_Data *pidData)
+void controller_initPID(controller_instance_t *controllerInstance)
 {
-    pidData->dKp = 0;
-    pidData->dKi = 0;
-    pidData->dKd = 0;
-    pidData->dSensorPreviousValue = 0;
-    pidData->dErrorSum = 0;
-    pidData->dMaxSumError = 0;
+    controllerInstance->dControllerKp = 0;
+    controllerInstance->dControllerKi = 0;
+    controllerInstance->dControllerKd = 0;
+    controllerInstance->dControllerSensorPreviousValue = 0;
+    controllerInstance->dControllerErrorSum = 0;
+    controllerInstance->dControllerMaxSumError = 0;
 }
 
 /**
- * Method name:         controller_setMaxSumError
- * Method description:  Sets the maximum integrative error
- * Input params:        pidData = t_PID_Data struct
- *                      dMaxError = Maximum error acceptable
- * Output params:       n/a
+ * @brief Sets the maximum integrative error.
+ * 
+ * @param controllerinstance controller_instance_t struct.
+ * @param dMaxSumError Maximum error acceptable
  */
-void controller_setMaxSumError(t_PID_Data *pidData, double dMaxSumError)
+void controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError)
 {
-    pidData->dMaxSumError = dMaxSumError;
+    controllerInstance->dControllerMaxSumError = dMaxSumError;
 }
 
 /**
- * Method name:         controller_setKp
- * Method description:  Sets the Kp
- * Input params:        pidData = t_PID_Data struct
- *                      dPGain = Proportional constant
- * Output params:       n/a
+ * @brief Sets the Kp.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dPGain Proportional constant.
  */
-void controller_setKp(t_PID_Data *pidData, double dPGain)
+void controller_setKp(controller_instance_t *controllerInstance, double dPGain)
 {
-    pidData->dKp = dPGain;
+    controllerInstance->dControllerKp = dPGain;
 }
 
 /**
- * Method name:         controller_setKi
- * Method description:  Sets the Ki
- * Input params:        pidData = t_PID_Data struct
- *                      dIGain = Integrative constant
- * Output params:       n/a
+ * @brief Sets the Ki.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dIGain Integrative constant.
  */
-void controller_setKi(t_PID_Data *pidData, double dIGain)
+void controller_setKi(controller_instance_t *controllerInstance, double dIGain)
 {
-    pidData->dKi = dIGain;
+    controllerInstance->dControllerKi = dIGain;
 }
 
 /**
- * Method name:         controller_setKd
- * Method description:  Sets the Kd
- * Input params:        pidData = t_PID_Data struct
- *                      dDGain = Derivative constant
- * Output params:       n/a
+ * @brief Sets the Kd.
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dDGain Derivative constant.
  */
-void controller_setKd(t_PID_Data *pidData, double dDGain)
+void controller_setKd(controller_instance_t *controllerInstance, double dDGain)
 {
-    pidData->dKd = dDGain;
+    controllerInstance->dControllerKd = dDGain;
 }
 
 /**
- * Method name:         controller_PIDUpdate
- * Method description:  Updates the running controller and retrieves the actuation value
- * Input params:        pidData = t_PID_Data struct
- *                      dSensorValue = Value from sensor
- *                      dReferenceValue = Reference value
- * Output params:       double = Actuation value
+ * @brief Updates the active controller and retrieves the actuation value
+ * @details [long description]
+ * 
+ * @param controllerInstance controller_instance_t struct.
+ * @param dSensorValue Value from sensor.
+ * @param dReferenceValue Reference value.
+ * @return Actuation value.
  */
-double controller_PIDUpdate(t_PID_Data *pidData, double dSensorValue, double dReferenceValue)
+double controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue)
 {
     if(dReferenceValue < 20) return 0;
     double dPterm, dIterm, dDterm;
@@ -125,18 +92,18 @@ double controller_PIDUpdate(t_PID_Data *pidData, double dSensorValue, double dRe
     dError = dReferenceValue - dSensorValue;
 
     /* Proportional */
-    dPterm = pidData->dKp * dError;
+    dPterm = controllerInstance->dControllerKp * dError;
 
     /*  Integrative */
-    dItemp = pidData->dErrorSum + dError;
-    if(abs(dItemp) < pidData->dMaxSumError)
-        pidData->dErrorSum = dItemp;
-    dIterm = pidData->dKi * pidData->dErrorSum;
+    dItemp = controllerInstance->dControllerErrorSum + dError;
+    if(abs(dItemp) < controllerInstance->dControllerMaxSumError)
+        controllerInstance->dControllerErrorSum = dItemp;
+    dIterm = controllerInstance->dControllerKi * controllerInstance->dControllerErrorSum;
 
     /*  Derivative  */
-    dDifference = pidData->dSensorPreviousValue - dSensorValue;
-    pidData->dSensorPreviousValue = dSensorValue;
-    dDterm = pidData->dKd * dDifference;
+    dDifference = controllerInstance->dControllerSensorPreviousValue - dSensorValue;
+    controllerInstance->dControllerSensorPreviousValue = dSensorValue;
+    dDterm = controllerInstance->dControllerKd * dDifference;
 
     return (dPterm + dIterm + dDterm);
 }
