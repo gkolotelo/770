@@ -7,3 +7,14 @@
  * @date 27 Sep 2016
  * @brief File containing the definition of methods for executing a self-diagnostics routine.
  */
+
+
+void diagnostics_startDiagnostics();
+
+bool diagnostics_stestVSense();
+
+bool diagnostics_stestIrArray();
+
+bool diagnostics_stestMotors();
+
+bool diagnostics_stestEncoders();

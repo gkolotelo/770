@@ -21,6 +21,7 @@
 #include "fsl_port_hal.h"
 #include "fsl_gpio_hal.h"
 #include "fsl_interrupt_manager.h"
+#include "fsl_clock_manager.h"
 
 
 /*
@@ -39,23 +40,14 @@
 //}
 
 
-
-/********************************************* NEW STUFF ********************************************************/
-
-#define DEBUG_MODE_ENABLE 1U // change tpm_general_config to reflect this. Also make this global (for all tpm's)
-
-/*****************************************************************************************************************/
-
-
 /**
  * @brief Initializes the encoder for an incremental encoder.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_initEncoder(encoderInstance_t *encoderInstance)
+void encoder_initEncoder(encoder_instance_t encoderInstance)
 {
-
-	int instance = 0, port=0;
+	encoderInstance.uiEncoderPulsesPerSecond = 0;
 	TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
 	PORT_Type *encoderPortBase = g_portBase[encoderInstance.uiEncoderPortInstance];
 
@@ -64,7 +56,7 @@ void encoder_initEncoder(encoderInstance_t *encoderInstance)
     PORT_HAL_SetMuxMode(encoderPortBase, encoderInstance.uiEncoderPinNumber, encoderInstance.uiEncoderPortAlt);
 
     /* Configure external clock source for TPM modules */
-    SIM_HAL_SetTpmExternalClkPinSelMode(SIM, encoderInstance.uiEncoderPortInstance, encoderInstance.uiEncoderTpmClkinSrc);
+    SIM_HAL_SetTpmExternalClkPinSelMode(SIM, encoderInstance.uiEncoderTpmInstance, encoderInstance.uiEncoderTpmClkinSrc);
 
     /* Might be using USB serial over OpenSDA, must enable Debug Mode */
     tpm_general_config_t config=
@@ -92,12 +84,13 @@ void encoder_initEncoder(encoderInstance_t *encoderInstance)
 }
 
 
+
 /**
  * @brief Enables the counter.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_enableCounter(encoderInstance_t *encoderInstance)
+void encoder_enableCounter(encoder_instance_t encoderInstance)
 {
     TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
     TPM_HAL_SetClockMode(tpmBase, kTpmClockSourceExternalClk);
@@ -107,22 +100,22 @@ void encoder_enableCounter(encoderInstance_t *encoderInstance)
 /**
  * @brief Disables the counter
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_disableCounter(encoderInstance_t *encoderInstance)
+void encoder_disableCounter(encoder_instance_t encoderInstance)
 {
     TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
     TPM_HAL_SetClockMode(tpmBase, kTpmClockSourceNoneClk);
-    encoder_resetCounter();
+    encoder_resetCounter(encoderInstance);
 }
 
 
 /**
  * @brief Resets the counter.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_resetCounter(encoderInstance_t *encoderInstance)
+void encoder_resetCounter(encoder_instance_t encoderInstance)
 {
     TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
     TPM_HAL_ClearCounter(tpmBase);
@@ -132,9 +125,9 @@ void encoder_resetCounter(encoderInstance_t *encoderInstance)
 ///**
 // * @brief Enables the interrupt on Channel O.
 // * 
-// * @param encoderInstance encoderInstance_t struct.
+// * @param encoderInstance encoder_instance_t struct.
 //*/
-//void encoder_enableChOInterrupt(encoderInstance_t *encoderInstance)
+//void encoder_enableChOInterrupt(encoder_instance_t encoderInstance)
 //{
 //    NVIC_EnableIRQ(ENCODER_CHO_IRQn);
 //}
@@ -143,9 +136,9 @@ void encoder_resetCounter(encoderInstance_t *encoderInstance)
 ///**
 // * @brief Disables the interrupt on channel O.
 // * 
-// * @param encoderInstance encoderInstance_t struct.
+// * @param encoderInstance encoder_instance_t struct.
 // */
-//void encoder_disableChOInterrupt(encoderInstance_t *encoderInstance)
+//void encoder_disableChOInterrupt(encoder_instance_t encoderInstance)
 //{
 //    NVIC_DisableIRQ(ENCODER_CHO_IRQn);
 //}
@@ -154,13 +147,13 @@ void encoder_resetCounter(encoderInstance_t *encoderInstance)
 /**
  * @brief Takes a measurement of speed, direction and position.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_takeMeasurement(encoderInstance_t *encoderInstance)
+void encoder_takeMeasurement(encoder_instance_t encoderInstance)
 {
     TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
-    encoderInstance.uiEncoderPulsesPerSecond = (1000*TPM_HAL_GetCounterVal(tpmBase))/ENCODER_ACQ_PERIOD_MS;
-    encoder_resetCounter();
+    encoderInstance.uiEncoderPulsesPerSecond = (double)(1000*TPM_HAL_GetCounterVal(tpmBase))/(double)encoderInstance.uiEncoderAcqPeriodUs;
+    encoder_resetCounter(encoderInstance);
 }
 
 
@@ -170,10 +163,10 @@ void encoder_takeMeasurement(encoderInstance_t *encoderInstance)
 /**
  * @brief Returns the angular position of the encoder in degrees.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in degrees.
  */
-//double encoder_getAngularPositionDegree(encoderInstance_t *encoderInstance)
+//double encoder_getAngularPositionDegree(encoder_instance_t encoderInstance)
 //{
 //    return 360*((double)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
 //}
@@ -182,10 +175,10 @@ void encoder_takeMeasurement(encoderInstance_t *encoderInstance)
 /**
  * @brief Returns the angular position of the encoder in radians.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in radians.
  */
-//double encoder_getAngularPositionRad(encoderInstance_t *encoderInstance)
+//double encoder_getAngularPositionRad(encoder_instance_t encoderInstance)
 //{
 //    return CONST_2PI*((double)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
 //}
@@ -194,10 +187,10 @@ void encoder_takeMeasurement(encoderInstance_t *encoderInstance)
 /**
  * @brief Returns the angular velocity of the encoder in pulses per second.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in pps.
  */
-double encoder_getAngularVelocity(encoderInstance_t *encoderInstance)
+double encoder_getAngularVelocity(encoder_instance_t encoderInstance)
 {
     return encoderInstance.uiEncoderPulsesPerSecond;
 }
@@ -206,10 +199,10 @@ double encoder_getAngularVelocity(encoderInstance_t *encoderInstance)
 /**
  * @brief Returns the angular velocity of the encoder in Rad/s.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in Rad/s.
  */
-double encoder_getAngularVelocityRad(encoderInstance_t *encoderInstance)
+double encoder_getAngularVelocityRad(encoder_instance_t encoderInstance)
 {
     return CONST_2PI*(encoderInstance.uiEncoderPulsesPerSecond/encoderInstance.uiEncoderPulseCount);
 }
@@ -218,10 +211,10 @@ double encoder_getAngularVelocityRad(encoderInstance_t *encoderInstance)
 /**
  * @brief Returns the angular velocity of the encoder in RPM.
  * 
- * @param encoderInstance encoderInstance_t struct.
+ * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in RPM.
  */
-double encoder_getAngularVelocityRPM(encoderInstance_t *encoderInstance)
+double encoder_getAngularVelocityRPM(encoder_instance_t encoderInstance)
 {
     return 60*(encoderInstance.uiEncoderPulsesPerSecond/encoderInstance.uiEncoderPulseCount);
 }

@@ -16,6 +16,9 @@
  *           for a bipolar H-Bridge pair of control signals.
  */
 
+#include <MKL25Z4.h>
+#include "fsl_sim_hal.h"
+#include "fsl_tpm_hal.h"
 
 #ifndef SOURCES_DRIVER_H_
 #define SOURCES_DRIVER_H_
@@ -36,8 +39,8 @@ typedef struct {
     uint8_t uiDriverPwmChBChannelInstance;
     uint8_t uiDriverTpmInstance;
     uint8_t uiDriverTpmClkinInstance;
-	clock_tpm_src_t tTpmClkSrc = kClockTpmSrcNone;
-	tpm_clock_ps_t tTpmClkPrescaler = kTpmDividedBy1;
+	clock_tpm_src_t tTpmClkSrc; // kClockTpmSrcNone
+	tpm_clock_ps_t tTpmClkPrescaler; // kTpmDividedBy1
 
 	uint8_t uiDriverEnPinNumber;
 	uint8_t uiDriverEnPortAlt;
@@ -51,21 +54,28 @@ typedef struct {
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_initDriver(driver_instance_t *driverInstance);
+void driver_initDriver(driver_instance_t driverInstance);
+
+/**
+ * @brief Add another driver instance to an already active driver session with the load in idle (50% duty cycle).
+ *
+ * @param driverInstance driver_instance_t struct.
+ */
+void driver_appendDriver(driver_instance_t driverInstance);
 
 /**
  * @brief Disables the driver by clearing the enable pin.
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_disableDriver(driver_instance_t *driverInstance);
+void driver_disableDriver(driver_instance_t driverInstance);
 
 /**
  * @brief Enables the driver by setting the enable pin
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_enableDriver(driver_instance_t *driverInstance);
+void driver_enableDriver(driver_instance_t driverInstance);
 
 /**
  * @brief Sets duty cycle for Channel A only.
@@ -73,7 +83,7 @@ void driver_enableDriver(driver_instance_t *driverInstance);
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setChannelADutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
+void driver_setChannelADutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent);
 
 /**
  * @brief Sets duty cycle for Channel B only.
@@ -81,7 +91,7 @@ void driver_setChannelADutyCycle(driver_instance_t *driverInstance, int uiDutyCy
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setChannelBDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
+void driver_setChannelBDutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent);
 
 /**
  * @brief Sets duty cycle for H-Bridge operation. Both ChA and ChB.
@@ -89,7 +99,7 @@ void driver_setChannelBDutyCycle(driver_instance_t *driverInstance, int uiDutyCy
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage (0% is full reverse, 100% is full ahead).
  */
-void driver_setHBridgeDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent);
+void driver_setHBridgeDutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent);
 
 /**
  * @brief Sets the driver from -100 to 100, the former being full reverse, and the latter, full steam ahead.
@@ -97,6 +107,6 @@ void driver_setHBridgeDutyCycle(driver_instance_t *driverInstance, int uiDutyCyc
  * @param driverInstance driver_instance_t struct.
  * @param input -100 to 100.
  */
-void driver_setDriver(driver_instance_t *driverInstance, int input);
+void driver_setDriver(driver_instance_t driverInstance, int input);
 
 #endif /* SOURCES_DRIVER_H_ */

@@ -5,7 +5,19 @@
  *      Author: msoliveira
  */
 
-#include "hal/es670_peripheral_board.h"
+/**
+ * @file ir_array.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 27 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the methods for interacting with an IR array .
+ */
+
+
+#include <MKL25Z4.h>
+#include "hal/target_definitions.h"
 
 
 
@@ -80,9 +92,10 @@ void adc_initAdc(void)
 /* Input params:	   n/a 							  */
 /* Output params:	   n/a 							  */
 /* ************************************************** */
-void adc_startConversion(void)
+void adc_startConversion(uint8_t adcChannel)
 {
-	ADC0_SC1A &= (ADC_SC1_ADCH(0b00100) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
+	//ADC0_SC1A &= (ADC_SC1_ADCH(0b00100) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
+	ADC0_SC1A &= (ADC_SC1_ADCH(adcChannel) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
 
     /*
     ADC_SC1_COCO(x) // conversion complete flag HW-set

@@ -1,0 +1,73 @@
+/**
+ * @file ir_array.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 27 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the methods for interacting with an IR array .
+ */
+
+#include "hal/adc/adc.h"
+#include "fsl_gpio_hal.h"
+
+
+void ir_array_initArray()
+{
+	PORT_Type *irEnPortBase;
+	GPIO_Type *irEnGpioBase;
+
+	/* Configure enable pins */
+	CLOCK_SYS_EnablePortClock(ADC_IR1_PORT_INSTANCE);
+	CLOCK_SYS_EnablePortClock(ADC_IR2_PORT_INSTANCE);
+	CLOCK_SYS_EnablePortClock(ADC_IR3_PORT_INSTANCE);
+	CLOCK_SYS_EnablePortClock(ADC_IR4_PORT_INSTANCE);
+	CLOCK_SYS_EnablePortClock(ADC_IR5_PORT_INSTANCE);
+	CLOCK_SYS_EnablePortClock(ADC_IR6_PORT_INSTANCE);
+
+	irEnPortBase = g_portBase[ADC_IR_PORT_INSTANCE];
+	irEnGpioBase = g_gpioBase[ADC_IR_GPIO_INSTANCE];
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR1_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR2_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR3_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR4_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR5_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR6_PIN_NUMBER, kPortMuxAsGpio);
+
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR1_PIN_NUMBER, kGpioDigitalOutput);
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR2_PIN_NUMBER, kGpioDigitalOutput);
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR3_PIN_NUMBER, kGpioDigitalOutput);
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR4_PIN_NUMBER, kGpioDigitalOutput);
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR5_PIN_NUMBER, kGpioDigitalOutput);
+	GPIO_HAL_SetPinDir(irEnGpioBase, ADC_IR6_PIN_NUMBER, kGpioDigitalOutput);
+
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR1_PIN_NUMBER);
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR2_PIN_NUMBER);
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR3_PIN_NUMBER);
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR4_PIN_NUMBER);
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR5_PIN_NUMBER);
+	GPIO_HAL_ClearPinOutput(irEnGpioBase, ADC_IR6_PIN_NUMBER);
+
+	/* Configure ADC pins */
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR1_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR2_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR3_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR4_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR5_PIN_NUMBER, kPortMuxAsGpio);
+	PORT_HAL_SetMuxMode(irEnPortBase, ADC_IR6_PIN_NUMBER, kPortMuxAsGpio);
+}
+
+
+
+
+adc_startConversion();
+	for(int i = 0; i < 50; i++)
+	{
+		util_genDelay10ms();
+	}
+	if(adc_isAdcDone())
+	{
+		uint16_t uiTemperature = adc_getValue();
+		uiTemperature = HEATER_ADC_TRANSF_EQ_PARAM_A*uiTemperature + HEATER_ADC_TRANSF_EQ_PARAM_B;
+		return uiTemperature;
+	}

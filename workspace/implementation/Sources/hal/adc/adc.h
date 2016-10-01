@@ -25,7 +25,7 @@ void adc_initAdc(void);
 /* Input params:	   n/a 							  */
 /* Output params:	   n/a 							  */
 /* ************************************************** */
-void adc_startConversion(void);
+void adc_startConversion(uint8_t adcChannel);
 
 /* ************************************************** */
 /* Method name: 	   adc_isAdcDone                  */

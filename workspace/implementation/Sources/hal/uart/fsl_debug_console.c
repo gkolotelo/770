@@ -59,6 +59,7 @@ extern uint32_t g_app_handle;
 #include <yfuns.h>
 #endif
 
+
 static int debug_putc(int ch, void* stream);
 
 /*******************************************************************************

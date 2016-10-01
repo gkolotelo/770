@@ -38,8 +38,109 @@
  */
 
 #include "fsl_device_registers.h"
+#include "fsl_debug_console.h"
+#include "hal/mcg/mcg.h"
+#include <stdbool.h>
 
-static int i = 0;
+#include "hal/adc/adc.h"
+#include "hal/controller/controller.h"
+#include "hal/diagnostics/diagnostics.h"
+#include "hal/driver/driver.h"
+#include "hal/encoder/encoder.h"
+#include "hal/hmi/hmi.h"
+#include "hal/ir_array/ir_array.h"
+#include "hal/util/util.h"
+#include "hal/vsense/vsense.h"
+#include "hal/target_definitions.h"
+#include "hal/util/tc_hal.h"
+
+/* globals */
+volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
+
+void main_cyclicExecuteIsr(void)
+{
+    /* set the cyclic executive flag */
+    uiFlagNextPeriod = 1;
+}
+
+encoder_instance_t tencoderL = {
+		/* Config section */
+		.cEncoderInstance = 'L',
+		.uiEncoderPortInstance = ENCODER_LW_PORT_INSTANCE,
+		.uiEncoderPinNumber = ENCODER_LW_PIN_NUMBER,
+		.uiEncoderPortAlt = ENCODER_LW_PORT_ALT,
+		.uiEncoderTpmInstance = ENCODER_LW_TPM_INSTANCE,
+		.uiEncoderTpmClkinSrc = ENCODER_LW_FTM_CLKIN_SRC,
+		/* Encoder Hardware Setup section */
+		.uiEncoderMaxPulseCount = ENCODER_LW_MAX_PULSE_COUNT,
+		.uiEncoderPulseCount = ENCODER_LW_PULSE_COUNT,
+		.uiEncoderAcqPeriodUs = ENCODER_LW_ACQ_PERIOD_US,
+
+		/* Data section */
+		.uiEncoderPulsesPerSecond = 0
+};
+encoder_instance_t tencoderR = {
+		/* Config section */
+		.cEncoderInstance = 'R',
+		.uiEncoderPortInstance = ENCODER_RW_PORT_INSTANCE,
+		.uiEncoderPinNumber = ENCODER_RW_PIN_NUMBER,
+		.uiEncoderPortAlt = ENCODER_RW_PORT_ALT,
+		.uiEncoderTpmInstance = ENCODER_RW_TPM_INSTANCE,
+		.uiEncoderTpmClkinSrc = ENCODER_RW_FTM_CLKIN_SRC,
+		/* Encoder Hardware Setup section */
+		.uiEncoderMaxPulseCount = ENCODER_RW_MAX_PULSE_COUNT,
+		.uiEncoderPulseCount = ENCODER_RW_PULSE_COUNT,
+		.uiEncoderAcqPeriodUs = ENCODER_RW_ACQ_PERIOD_US,
+
+		/* Data section */
+		.uiEncoderPulsesPerSecond = 0
+};
+driver_instance_t tdriverL = {
+		/* Config section */
+		.cDriverInstance = 'L',
+		.uiDriverPwmChAPortInstance = DRIVER_LW_CHA_PORT_INSTANCE,
+		.uiDriverPwmChAPinNumber = DRIVER_LW_CHA_PIN_NUMBER,
+		.uiDriverPwmChAPortAlt = DRIVER_LW_CHA_PORT_ALT,
+		.uiDriverPwmChAChannelInstance = DRIVER_LW_CHA_INSTANCE,
+		.uiDriverPwmChBPortInstance = DRIVER_LW_CHB_PORT_INSTANCE,
+		.uiDriverPwmChBPinNumber = DRIVER_LW_CHB_PIN_NUMBER,
+		.uiDriverPwmChBPortAlt = DRIVER_LW_CHB_PORT_ALT,
+		.uiDriverPwmChBChannelInstance = DRIVER_LW_CHB_INSTANCE,
+		//uiDriverTpmInstance = DRIVER_LW_TPM_INSTANCE,
+		.uiDriverTpmClkinInstance = DRIVER_LW_TPM_CLK_SRC,
+		.tTpmClkSrc = DRIVER_LW_TPM_CLK_SRC,
+		.tTpmClkPrescaler = DRIVER_LW_TPM_CLK_PS, // kTpmDividedBy1
+
+		.uiDriverEnPinNumber = DRIVER_LW_EN_PIN_NUMBER,
+		.uiDriverEnPortAlt = DRIVER_LW_EN_PORT_ALT,
+		.uiDriverEnPortInstance = DRIVER_LW_EN_PORT_INSTANCE,
+		.uiDriverEnGpioInstance = DRIVER_LW_EN_GPIO_INSTANCE
+};
+driver_instance_t tdriverR = {
+		/* Config section */
+		.cDriverInstance = 'R',
+		.uiDriverPwmChAPortInstance = DRIVER_RW_CHA_PORT_INSTANCE,
+		.uiDriverPwmChAPinNumber = DRIVER_RW_CHA_PIN_NUMBER,
+		.uiDriverPwmChAPortAlt = DRIVER_RW_CHA_PORT_ALT,
+		.uiDriverPwmChAChannelInstance = DRIVER_RW_CHA_INSTANCE,
+		.uiDriverPwmChBPortInstance = DRIVER_RW_CHB_PORT_INSTANCE,
+		.uiDriverPwmChBPinNumber = DRIVER_RW_CHB_PIN_NUMBER,
+		.uiDriverPwmChBPortAlt = DRIVER_RW_CHB_PORT_ALT,
+		.uiDriverPwmChBChannelInstance = DRIVER_RW_CHB_INSTANCE,
+		//uiDriverTpmInstance = DRIVER_RW_TPM_INSTANCE,
+		.uiDriverTpmClkinInstance = DRIVER_RW_TPM_CLK_SRC,
+		.tTpmClkSrc = DRIVER_RW_TPM_CLK_SRC,
+		.tTpmClkPrescaler = DRIVER_RW_TPM_CLK_PS, // kTpmDividedBy1
+
+		.uiDriverEnPinNumber = DRIVER_RW_EN_PIN_NUMBER,
+		.uiDriverEnPortAlt = DRIVER_RW_EN_PORT_ALT,
+		.uiDriverEnPortInstance = DRIVER_RW_EN_PORT_INSTANCE,
+		.uiDriverEnGpioInstance = DRIVER_RW_EN_GPIO_INSTANCE
+};
+void boardInit()
+{
+	mcg_clockInit();
+}
 
 /**
  * @brief foo brief
@@ -48,22 +149,76 @@ static int i = 0;
  * @param foo integer
  * @param bar character
  */
-void foo(int foo, char bar)
+void peripheralInit()
 {
-
+	adc_initAdc();
+	hmi_initHmi();
+	ir_array_initArray();
+	vsense_initVsense();
+	driver_initDriver(tdriverL);
+	driver_appendDriver(tdriverR);
+	encoder_initEncoder(tencoderL);
+	encoder_initEncoder(tencoderR);
+	hmi_initHmi();
+	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
 }
+
 
 int main(void)
 {
+	boardInit();
+	peripheralInit();
+//	uint16_t meas = 0;
+//	ir_array_ledArrayOn();
+//	ir_array_ledArrayOff();
+//	ir_array_ledArrayOn();
+//	meas = ir_array_takeSingleMeasurement(0);
+//	meas = ir_array_takeSingleMeasurement(0);
+//
+//	meas = ir_array_takeSingleMeasurement(1);
+//	meas = ir_array_takeSingleMeasurement(1);
+//
+//	meas = ir_array_takeSingleMeasurement(2);
+//	meas = ir_array_takeSingleMeasurement(2);
+//
+//	meas = ir_array_takeSingleMeasurement(3);
+//	meas = ir_array_takeSingleMeasurement(3);
+//
+//	meas = ir_array_takeSingleMeasurement(4);
+//	meas = ir_array_takeSingleMeasurement(4);
+//
+//	meas = ir_array_takeSingleMeasurement(5);
+//	meas = ir_array_takeSingleMeasurement(5);
 
-    /* Write your code here */
+	diagnostics_startDiagnostics();
 
-    /* This for loop should be replaced. By default this loop allows a single stepping. */
-    for (;;) {
-        i++;
-    }
-    /* Never leave main */
-    return 0;
+	/* Setup Red LED for Status */
+	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
+	PORTB_PCR18 = PORT_PCR_MUX(1);
+	PTB_BASE_PTR->PDDR = 1 << 18;
+
+	//diagnostics_startDiagnostics();
+
+	while(1)
+	{
+		/* Blink Red LED for Status */
+		PTB_BASE_PTR->PTOR = 1 << 18;
+
+		CLOCK_SYS_EnablePortClock(PORTB_IDX);
+//		PORT_HAL_SetMuxMode(PORTB, 0, 0);
+//
+//		//meas = ir_array_takeSingleMeasurement(1);
+//		//ADC0_SC1A &= (ADC_SC1_ADCH(0b01000) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
+//		//for(int i = 0; i < ADC_10MS_MULTIPLE_WAIT_PERIOD; i++) util_genDelay10ms();
+//		meas = vsense_getRawV2();//adc_getValue();
+//		hmi_transmitSISI("ADC",0,": ",meas);
+
+		/* Wait for next cycle */
+		while(!uiFlagNextPeriod);
+		uiFlagNextPeriod = 0;
+	}
+
+
 }
 ////////////////////////////////////////////////////////////////////////////////
 // EOF

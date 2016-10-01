@@ -22,13 +22,16 @@
 #include "hal/target_definitions.h"
 
 /* System Includes */
-#include "fsl_tpm_hal.h"
-#include "fsl_tpm_driver.h"
-#include "fsl_clock_manager.h"
+
+
 #include "fsl_port_hal.h"
 #include "fsl_gpio_hal.h"
 #include "fsl_interrupt_manager.h"
+#include "fsl_tpm_hal.h"
+#include "fsl_tpm_driver.h"
 #include "fsl_pwm_driver.h"
+#include "fsl_gpio_driver.h"
+#include "fsl_clock_manager.h"
 
 /* Nominal switching frequency */
 /* 25kHz */
@@ -37,37 +40,28 @@
 #define DRIVER_PRESCALER            kTpmDividedBy1
 
 
-/********************************************* NEW STUFF ********************************************************/
-
-#define DEBUG_MODE_ENABLE 1U // change tpm_general_config to reflect this. Also make this global (for all tpm's)
-
-/*****************************************************************************************************************/
-
-
 
 /**
  * @brief Initializes the driver with the load in idle (50% duty cycle).
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_initDriver(driver_instance_t *driverInstance)
+void driver_initDriver(driver_instance_t driverInstance)
 {
-    //Add Error reporting
-    int instance = 0, port=0;
     PORT_Type *driverEnPortBase = g_portBase[driverInstance.uiDriverEnPortInstance];
     PORT_Type *driverPwmChAPortBase = g_portBase[driverInstance.uiDriverPwmChAPortInstance];
     PORT_Type *driverPwmChBPortBase = g_portBase[driverInstance.uiDriverPwmChBPortInstance];
-    GPIO_Type *driverEnGpioBase = g_gpioBase[driverInstance.uiDriverEnGpioInstance];//will it work? replace below
+    GPIO_Type *driverEnGpioBase = g_gpioBase[driverInstance.uiDriverEnGpioInstance];
 
     /* Configure Pins */
     /* Channel pins */
     CLOCK_SYS_EnablePortClock(driverInstance.uiDriverPwmChAPortInstance);
     CLOCK_SYS_EnablePortClock(driverInstance.uiDriverPwmChBPortInstance);
-    PORT_HAL_SetMuxMode(driverPwmChAPortBase, DRIVER_CHA_PIN_NUMBER, DRIVER_CHA_PORT_ALT);
-    PORT_HAL_SetMuxMode(driverPwmChBPortBase, DRIVER_CHB_PIN_NUMBER, DRIVER_CHB_PORT_ALT);
+    PORT_HAL_SetMuxMode(driverPwmChAPortBase, driverInstance.uiDriverPwmChAPinNumber, driverInstance.uiDriverPwmChAPortAlt);
+    PORT_HAL_SetMuxMode(driverPwmChBPortBase, driverInstance.uiDriverPwmChBPinNumber, driverInstance.uiDriverPwmChBPortAlt);
 
     /* Enable pin */
-    CLOCK_SYS_EnablePortClock(DRIVER_EN_PORT_INSTANCE);
+    CLOCK_SYS_EnablePortClock(driverInstance.uiDriverEnPortInstance);
     PORT_HAL_SetMuxMode(driverEnPortBase, driverInstance.uiDriverEnPinNumber, driverInstance.uiDriverEnPortAlt);
     GPIO_HAL_SetPinDir(driverEnGpioBase, driverInstance.uiDriverEnPinNumber, DRIVER_EN_PIN_DIR);
     GPIO_HAL_ClearPinOutput(driverEnGpioBase, driverInstance.uiDriverEnPinNumber);
@@ -79,11 +73,13 @@ void driver_initDriver(driver_instance_t *driverInstance)
     /* Will be using USB serial over OpenSDA, must enable Debug Mode */
     tpm_general_config_t config =
     {
-            .isDBGMode = true
+            .isDBGMode = DEBUG_MODE_ENABLE
     };
 
     TPM_DRV_Init(driverInstance.uiDriverTpmInstance, &config);
     TPM_DRV_SetClock(driverInstance.uiDriverTpmInstance, kTpmClockSourceModuleClk, driverInstance.tTpmClkPrescaler);
+
+    driver_disableDriver(driverInstance);
 
     /* Configure PWM channels. 50% duty cycle is idle, since the driver is bipolar */
     tpm_pwm_param_t pwmA =
@@ -110,13 +106,65 @@ void driver_initDriver(driver_instance_t *driverInstance)
 
 }
 
+void driver_appendDriver(driver_instance_t driverInstance)
+{
+	PORT_Type *driverEnPortBase = g_portBase[driverInstance.uiDriverEnPortInstance];
+	PORT_Type *driverPwmChAPortBase = g_portBase[driverInstance.uiDriverPwmChAPortInstance];
+	PORT_Type *driverPwmChBPortBase = g_portBase[driverInstance.uiDriverPwmChBPortInstance];
+	GPIO_Type *driverEnGpioBase = g_gpioBase[driverInstance.uiDriverEnGpioInstance];
+
+	/* Configure Pins */
+	/* Channel pins */
+	CLOCK_SYS_EnablePortClock(driverInstance.uiDriverPwmChAPortInstance);
+	CLOCK_SYS_EnablePortClock(driverInstance.uiDriverPwmChBPortInstance);
+	PORT_HAL_SetMuxMode(driverPwmChAPortBase, driverInstance.uiDriverPwmChAPinNumber, driverInstance.uiDriverPwmChAPortAlt);
+	PORT_HAL_SetMuxMode(driverPwmChBPortBase, driverInstance.uiDriverPwmChBPinNumber, driverInstance.uiDriverPwmChBPortAlt);
+
+	/* Enable pin */
+	CLOCK_SYS_EnablePortClock(driverInstance.uiDriverEnPortInstance);
+	PORT_HAL_SetMuxMode(driverEnPortBase, driverInstance.uiDriverEnPinNumber, driverInstance.uiDriverEnPortAlt);
+	GPIO_HAL_SetPinDir(driverEnGpioBase, driverInstance.uiDriverEnPinNumber, DRIVER_EN_PIN_DIR);
+	GPIO_HAL_ClearPinOutput(driverEnGpioBase, driverInstance.uiDriverEnPinNumber);
+
+	/* Configure TPM module */
+	/* Using 8MHz external clock source */
+	CLOCK_SYS_SetTpmSrc(driverInstance.uiDriverTpmInstance, kClockTpmSrcOsc0erClk);
+
+	TPM_DRV_SetClock(driverInstance.uiDriverTpmInstance, kTpmClockSourceModuleClk, driverInstance.tTpmClkPrescaler);
+
+	driver_disableDriver(driverInstance);
+
+	/* Configure PWM channels. 50% duty cycle is idle, since the driver is bipolar */
+	tpm_pwm_param_t pwmA =
+		{
+				.mode = kTpmEdgeAlignedPWM,
+				.edgeMode = kTpmHighTrue, /* High true, on when channel B is off */
+				.uFrequencyHZ = DRIVER_FREQUENCY,
+				.uDutyCyclePercent = 50,
+
+		};
+	tpm_pwm_param_t pwmB =
+	{
+			.mode = kTpmEdgeAlignedPWM,
+			.edgeMode = kTpmLowTrue, /* Low true, on when channel A is off*/
+			.uFrequencyHZ = DRIVER_FREQUENCY,
+			.uDutyCyclePercent = 50,
+
+	};
+
+	TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmA, driverInstance.uiDriverPwmChAChannelInstance);
+	TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmB, driverInstance.uiDriverPwmChBChannelInstance);
+
+	driver_enableDriver(driverInstance);
+}
+
 
 /**
  * @brief Disables the driver by clearing the enable pin.
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_disableDriver(driver_instance_t *driverInstance)
+void driver_disableDriver(driver_instance_t driverInstance)
 {
     GPIO_Type *driverEnGpioBase = g_gpioBase[driverInstance.uiDriverEnGpioInstance];
     GPIO_HAL_ClearPinOutput(driverEnGpioBase, driverInstance.uiDriverEnPinNumber);
@@ -128,7 +176,7 @@ void driver_disableDriver(driver_instance_t *driverInstance)
  * 
  * @param driverInstance driver_instance_t struct.
  */
-void driver_enableDriver(driver_instance_t *driverInstance)
+void driver_enableDriver(driver_instance_t driverInstance)
 {
     GPIO_Type *driverEnGpioBase = g_gpioBase[driverInstance.uiDriverEnGpioInstance];
     GPIO_HAL_SetPinOutput(driverEnGpioBase, driverInstance.uiDriverEnPinNumber);
@@ -141,7 +189,7 @@ void driver_enableDriver(driver_instance_t *driverInstance)
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setChannelADutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent)
+void driver_setChannelADutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent)
 {
     TPM_Type *tpmBase = g_tpmBase[driverInstance.uiDriverTpmInstance];
     TPM_HAL_SetChnCountVal(tpmBase, driverInstance.uiDriverPwmChAChannelInstance, ((TPM_HAL_GetMod(tpmBase)*uiDutyCyclePercent)/100));
@@ -154,7 +202,7 @@ void driver_setChannelADutyCycle(driver_instance_t *driverInstance, int uiDutyCy
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage.
  */
-void driver_setChannelBDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent)
+void driver_setChannelBDutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent)
 {
     TPM_Type *tpmBase = g_tpmBase[driverInstance.uiDriverTpmInstance];
     TPM_HAL_SetChnCountVal(tpmBase, driverInstance.uiDriverPwmChBChannelInstance, ((TPM_HAL_GetMod(tpmBase)*uiDutyCyclePercent)/100));
@@ -167,7 +215,7 @@ void driver_setChannelBDutyCycle(driver_instance_t *driverInstance, int uiDutyCy
  * @param driverInstance driver_instance_t struct.
  * @param uiDutyCyclePercent Duty cycle in percentage (0% is full reverse, 100% is full ahead).
  */
-void driver_setHBridgeDutyCycle(driver_instance_t *driverInstance, int uiDutyCyclePercent)
+void driver_setHBridgeDutyCycle(driver_instance_t driverInstance, int uiDutyCyclePercent)
 {
     TPM_Type *tpmBase = g_tpmBase[driverInstance.uiDriverTpmInstance];
     uint32_t uichannelCnV = (TPM_HAL_GetMod(tpmBase)*uiDutyCyclePercent)/100;
@@ -182,7 +230,7 @@ void driver_setHBridgeDutyCycle(driver_instance_t *driverInstance, int uiDutyCyc
  * @param driverInstance driver_instance_t struct.
  * @param input -100 to 100.
  */
-void driver_setDriver(driver_instance_t *driverInstance, int input)
+void driver_setDriver(driver_instance_t driverInstance, int input)
 {
     /* Cap out-of-bound input */
     if(input < -100)
