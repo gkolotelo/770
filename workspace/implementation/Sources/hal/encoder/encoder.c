@@ -9,11 +9,11 @@
  */
 
 
-/* Project Includes */
+/* Project includes */
 #include "encoder.h"
 #include "hal/target_definitions.h"
 
-/* System Includes */
+/* System includes */
 #include "fsl_tpm_hal.h"
 #include "fsl_tpm_driver.h"
 #include "fsl_gpio_driver.h"

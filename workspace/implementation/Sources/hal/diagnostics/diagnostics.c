@@ -2,50 +2,51 @@
  * @file diagnostics.c
  * @author Guilherme Kairalla Kolotelo
  * @author Bruno de Souza Ferreira
- * @version 1.1
+ * @version 1.2
  * @date 27 Jun 2016
- * @date 27 Sep 2016
+ * @date 07 Oct 2016
  * @brief File containing the methods for executing a self-diagnostics routine.
  */
 
+/* System includes */
 #include <stdbool.h>
 #include <MKL25Z4.h>
+
+/* Project includes */
 #include "diagnostics.h"
+#include "hal/target_definitions.h"
+#include "hal/util/util.h"
 #include "hal/encoder/encoder.h"
 #include "hal/driver/driver.h"
 #include "hal/ir_array/ir_array.h"
-#include "hal/hmi/hmi.h"
 #include "hal/vsense/vsense.h"
-#include "hal/ir_array/ir_array.h"
-#include "hal/util/util.h"
-#include "hal/target_definitions.h"
-#include "diagnostics.h"
+#include "hal/hmi/hmi.h"
 
 
+/** Uses instances defined on main.c file */
 extern encoder_instance_t tencoderL;
 extern encoder_instance_t tencoderR;
 extern driver_instance_t tdriverL;
 extern driver_instance_t tdriverR;
 
+/**
+ * @brief Initiates diagnostics sequence.
+ * @details Executes each system component test independently and reports the system status.
+ * IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
+ *
+ */
 void diagnostics_startDiagnostics()
 {
-	hmi_initHmi();
 	bool VS_flag, IR_flag, MOT_flag,ENC_flag;
+
+	hmi_initHmi();
 	hmi_transmitS(HMI_DIAG_UITEXT_INIT);
 	hmi_transmitNewLine();
-	ir_array_initArray();
-	encoder_initEncoder(tencoderL);
-	encoder_initEncoder(tencoderR);
-	driver_enableDriver(tdriverL);
-	driver_enableDriver(tdriverR);
-	ir_array_ledArrayOff();
-	driver_disableDriver(tdriverL);
-	driver_disableDriver(tdriverR);
 
-	VS_flag = diagnostics_stestVSense();
-	IR_flag = diagnostics_stestIrArray();
-	MOT_flag = diagnostics_stestMotors();
-	ENC_flag = diagnostics_stestEncoders();
+	VS_flag = diagnostics_btestVSense();
+	IR_flag = diagnostics_btestIrArray();
+	MOT_flag = diagnostics_btestMotors();
+	ENC_flag = diagnostics_btestEncoders();
 
 	hmi_transmitS(HMI_DIAG_UITEXT_SUMMARY);
 	if(VS_flag) hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
@@ -66,7 +67,15 @@ void diagnostics_startDiagnostics()
 	return;
 }
 
-bool diagnostics_stestVSense()
+/**
+ * @brief Tests operation of the voltage sense.
+ * @details Tests Vsense1 and Vsense2 pins, if main system voltage
+ * (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed.
+ * If Vsense2 > Vsense1, an unexpected behavior, the test is not passed.
+ * 
+ * @return True if test was NOT succesfull.
+ */
+bool diagnostics_btestVSense()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_RUNNING);
 	bool error_flag = false;
@@ -107,14 +116,23 @@ bool diagnostics_stestVSense()
 	}
 	hmi_transmitNewLine();
 	return error_flag;
-
 }
 
-bool diagnostics_stestIrArray()
+/**
+ * @brief Tests operation of the IR Array.
+ * @details For each LED/Sensor pair on the IR array, a measurement is taken
+ * with the LED off, and a measurement is taken with the LED on, if the latter
+ * measurement is not greater than the former, the test is not successful.
+ * 
+ * @return True if test was NOT succesfull.
+ */
+bool diagnostics_btestIrArray()
 {
-	hmi_transmitS(HMI_DIAG_UITEXT_IR_RUNNING);
 	bool error_flag = false;
 	uint32_t meas1 = 0, meas2 = 0;
+
+	hmi_transmitS(HMI_DIAG_UITEXT_IR_RUNNING);
+	ir_array_ledArrayOff();
 	for(int i = 0; i < 6; i++)
 	{
 		meas1 = 0, meas2 = 0;
@@ -144,7 +162,15 @@ bool diagnostics_stestIrArray()
 	return error_flag;
 }
 
-bool diagnostics_stestMotors()
+/**
+ * @brief Tests operation of the motors.
+ * @details For each motor, the system current is measured with the motor on
+ * and with the motor off. If the former measurement is not greater than 
+ * MOTOR_MIN_CURR above the quiescent system current, the test is not successful.
+ * 
+ * @return True if test was NOT succesfull.
+ */
+bool diagnostics_btestMotors()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_MOT_RUNNING);
 	bool error_flag = false;
@@ -156,14 +182,14 @@ bool diagnostics_stestMotors()
 		return true;
 	}
 	/* Testing L */
-	driver_initDriver(tdriverL);
+	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
 	driver_setDriver(tdriverL, 90);
 	driver_enableDriver(tdriverL);
 	for(int i = 0; i < 100; i++) util_genDelay10ms();
 	meas1 = vsense_getCurrent();
 	driver_disableDriver(tdriverL);
 	driver_setDriver(tdriverL, 0);
-	hmi_initHmi();
+	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
 	if(meas1 < sscurr + MOTOR_MIN_CURR)
 	{
 		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR);
@@ -199,7 +225,15 @@ bool diagnostics_stestMotors()
 	return error_flag;
 }
 
-bool diagnostics_stestEncoders()
+/**
+ * @brief Tests operation of the encoders.
+ * @details For each encoder, the encoder count is reset and the motor is
+ * turned on. If the encoder measurement is not greater than MOTOR_MIN_VEL
+ * the test is not successful.
+ * 
+ * @return True if test was NOT succesfull.
+ */
+bool diagnostics_btestEncoders()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_ENC_RUNNING);
 	bool error_flag = false;
@@ -208,7 +242,7 @@ bool diagnostics_stestEncoders()
 	encoder_resetCounter(tencoderL);
 	encoder_resetCounter(tencoderR);
 
-	driver_initDriver(tdriverL);
+	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
 	driver_setDriver(tdriverL, 90);
 	driver_enableDriver(tdriverL);
 	driver_setDriver(tdriverR, 90);
@@ -222,7 +256,7 @@ bool diagnostics_stestEncoders()
 	driver_setDriver(tdriverR, 0);
 	driver_disableDriver(tdriverL);
 	driver_setDriver(tdriverL, 0);
-	hmi_initHmi();
+	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
 	for(int i = 0; i < 100; i++) util_genDelay10ms();
 
 	if(meas1 < MOTOR_MIN_VEL)

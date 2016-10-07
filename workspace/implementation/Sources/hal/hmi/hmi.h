@@ -4,16 +4,12 @@
  * @author Bruno de Souza Ferreira
  * @version 1.1
  * @date 20 Jun 2016
- * @date 27 Sep 2016
+ * @date 07 Oct 2016
  * @brief File containing the definition of methods for the interaction with a host device via a serial connection.
  */
 
 #ifndef SOURCES_HMI_H_
 #define SOURCES_HMI_H_
-
-
-
-
 
 
 /* IR Text */
@@ -60,19 +56,61 @@
 #define HMI_DIAG_UITEXT_COMPLETE_ERR	(char *)"Self-Diagnostics Routine Complete! Errors Found. Check Log For Errors! System Halted..."
 #define HMI_DIAG_UITEXT_SUMMARY			(char *)"------------------ Summary: ------------------"
 
-
+/**
+ * @brief Initializes HMI interface.
+ * 
+ */
 void hmi_initHmi();
 
+/**
+ * @brief Transmits a newline.
+ *
+ */
 void hmi_transmitNewLine();
 
+/**
+ * @brief Transmits a char array.
+ * 
+ * @param string Char array pointer.
+ */
 void hmi_transmitS(char* string);
 
+/**
+ * @brief Transmits a char array followed by a single character, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ */
 void hmi_transmitSCS(char* string1, char id, char* string2);
 
+/**
+ * @brief Transmits a char array followed by an integer, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ */
 void hmi_transmitSIS(char* string1, int id, char* string2);
 
+/**
+ * @brief Transmits a char array followed by a single character followed by another char array, followed by a float.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ * @param reading A float number.
+ */
 void hmi_transmitSCSF(char* string1, char id, char* string2, float reading);
 
+/**
+ * @brief Transmits a char array followed by an integer followed by another char array, followed by an integer.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ * @param reading An integer number.
+ */
 void hmi_transmitSISI(char* string1, int id, char* string2, int reading);
 
 #endif /* SOURCES_HMI_H_ */

@@ -4,7 +4,7 @@
  * @author Bruno de Souza Ferreira
  * @version 1.1
  * @date 20 Jun 2016
- * @date 27 Sep 2016
+ * @date 07 Oct 2016
  * @brief File containing the methods for the interaction with a host device via a serial connection.
  */
 
@@ -18,10 +18,14 @@
 #include "fsl_gpio_driver.h"
 
 /* Project includes */
-#include "hal/target_definitions.h"
 #include "hmi.h"
-#include "hal/controller/controller.h"
+#include "hal/target_definitions.h"
 
+
+/**
+ * @brief Initializes HMI interface.
+ * 
+ */
 void hmi_initHmi()
 {
 	PORT_Type *hmiEnPortBase = g_portBase[HMI_UART_PORT_INSTANCE];
@@ -39,73 +43,70 @@ void hmi_initHmi()
     DbgConsole_Init(HMI_UART_INSTANCE, HMI_UART_BAUD, kDebugConsoleLPSCI);
 }
 
-///**
-// * Method name:         hmi_receive
-// * Method description:  Receives and interprets data sent from the host device.
-// * Input params:        n/a
-// * Output params:       n/a
-// */
-//void hmi_receive()
-//{
-//    /* Check if there are characters on buffer */
-//    if(0 == UART0_BRD_S1_RDRF(HMI_UART_BASE)) return;
-//    char uiReceiveCommand;
-//    int iReceiveNumber;
-//    SCANF("%c%d", &uiReceiveCommand, &iReceiveNumber);
-//    //PRINTF("Received: %c%d\r\n", uiReceiveCommand, iReceiveNumber);
-//    switch(uiReceiveCommand)
-//    {
-//        case 'P':
-//        case 'p':
-//            iReceiveNumber = abs(iReceiveNumber);
-//            controller_setKp(&pidData, ((double)iReceiveNumber/10000));
-//            break;
-//        case 'I':
-//        case 'i':
-//            iReceiveNumber = abs(iReceiveNumber);
-//            controller_setKi(&pidData, ((double)iReceiveNumber/10000));
-//            break;
-//        case 'D':
-//        case 'd':
-//            iReceiveNumber = abs(iReceiveNumber);
-//            controller_setKd(&pidData, ((double)iReceiveNumber/10000));
-//            break;
-//        case 'V':
-//        case 'v':
-//            iReceiveNumber = abs(iReceiveNumber);
-//            dReferenceVelocity = iReceiveNumber;
-//            break;
-//        default:
-//            break;
-//    }
-//}
-
-
+/**
+ * @brief Transmits a newline.
+ *
+ */
 void hmi_transmitNewLine()
 {
 	PRINTF("\r\n");
 }
 
+/**
+ * @brief Transmits a char array.
+ * 
+ * @param string Char array pointer.
+ */
 void hmi_transmitS(char* string)
 {
     PRINTF("%s\r\n", string);
 }
 
+/**
+ * @brief Transmits a char array followed by a single character, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ */
 void hmi_transmitSCS(char* string1, char id, char* string2)
 {
     PRINTF("%s%c%s\r\n", string1, id, string2);
 }
 
+/**
+ * @brief Transmits a char array followed by an integer, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ */
 void hmi_transmitSIS(char* string1, int id, char* string2)
 {
     PRINTF("%s%d%s\r\n", string1, id, string2);
 }
 
+/**
+ * @brief Transmits a char array followed by a single character followed by another char array, followed by a float.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ * @param reading A float number.
+ */
 void hmi_transmitSCSF(char* string1, char id, char* string2, float reading)
 {
     PRINTF("%s%c%s%f\r\n", string1, id, string2, reading);
 }
 
+/**
+ * @brief Transmits a char array followed by an integer followed by another char array, followed by an integer.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ * @param reading An integer number.
+ */
 void hmi_transmitSISI(char* string1, int id, char* string2, int reading)
 {
     PRINTF("%s%d%s%d\r\n", string1, id, string2, reading);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/implementation/SDK/fsl_lptmr_common.c" element2="/implementation/SDK/fsl_lptmr_driver.c" element3="/implementation/SDK/fsl_lptmr_irq.c" element4="/implementation/SDK/fsl_lptmr_lpm_callback.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1475877931794"/>
+</session>

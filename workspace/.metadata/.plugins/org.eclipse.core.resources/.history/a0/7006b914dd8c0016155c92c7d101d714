@@ -1,0 +1,256 @@
+/**
+ * @file diagnostics.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 27 Jun 2016
+ * @date 27 Sep 2016
+ * @brief File containing the methods for executing a self-diagnostics routine.
+ */
+
+#include <stdbool.h>
+#include <MKL25Z4.h>
+#include "diagnostics.h"
+#include "hal/encoder/encoder.h"
+#include "hal/driver/driver.h"
+#include "hal/ir_array/ir_array.h"
+#include "hal/hmi/hmi.h"
+#include "hal/vsense/vsense.h"
+#include "hal/ir_array/ir_array.h"
+#include "hal/util/util.h"
+#include "hal/target_definitions.h"
+#include "diagnostics.h"
+
+/** Uses instances defined on main.c file */
+extern encoder_instance_t tencoderL;
+extern encoder_instance_t tencoderR;
+extern driver_instance_t tdriverL;
+extern driver_instance_t tdriverR;
+
+void diagnostics_startDiagnostics()
+{
+	bool VS_flag, IR_flag, MOT_flag,ENC_flag;
+
+	hmi_initHmi();
+	hmi_transmitS(HMI_DIAG_UITEXT_INIT);
+	hmi_transmitNewLine();
+
+	driver_enableDriver(tdriverL);
+	driver_enableDriver(tdriverR);
+	ir_array_ledArrayOff();
+	driver_disableDriver(tdriverL);
+	driver_disableDriver(tdriverR);
+
+	VS_flag = diagnostics_btestVSense();
+	IR_flag = diagnostics_btestIrArray();
+	MOT_flag = diagnostics_btestMotors();
+	ENC_flag = diagnostics_btestEncoders();
+
+	hmi_transmitS(HMI_DIAG_UITEXT_SUMMARY);
+	if(VS_flag) hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
+	else hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_OK);
+	if(IR_flag) hmi_transmitS(HMI_DIAG_UITEXT_IR_ERR);
+	else hmi_transmitS(HMI_DIAG_UITEXT_IR_OK);
+	if(MOT_flag) hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
+	else hmi_transmitS(HMI_DIAG_UITEXT_MOT_OK);
+	if(ENC_flag) hmi_transmitS(HMI_DIAG_UITEXT_ENC_ERR);
+	else hmi_transmitS(HMI_DIAG_UITEXT_ENC_OK);
+	hmi_transmitNewLine();
+	if(VS_flag || IR_flag || MOT_flag || ENC_flag)
+	{
+		hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_ERR);
+		while(1); //Halt!
+	}
+	hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_OK);
+	return;
+}
+
+bool diagnostics_btestVSense()
+{
+	hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_RUNNING);
+	bool error_flag = false;
+	float meas1, meas2, meas3, meas4;
+	for(int i = 0; i < 6; i++) meas1 += vsense_getV1();
+	meas1 = meas1/6;
+	meas1 = vsense_getRawV1();
+	for(int i = 0; i < 6; i++) meas2 += vsense_getV2();
+	meas2 = meas2/6;
+	meas2 = vsense_getRawV2();
+	meas3 = vsense_getCurrent();
+	meas4 = vsense_getPower();
+	if(meas1 < VSENSE_MIN_VOLTAGE)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_OK, meas1);
+	}
+	if(meas2 < VSENSE_MIN_VOLTAGE)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_OK, meas2);
+	}
+	if(error_flag)
+		hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_CURR, meas3);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_PWR, meas4);
+		hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_OK);
+	}
+	hmi_transmitNewLine();
+	return error_flag;
+
+}
+
+bool diagnostics_btestIrArray()
+{
+	bool error_flag = false;
+	uint32_t meas1 = 0, meas2 = 0;
+	hmi_transmitS(HMI_DIAG_UITEXT_IR_RUNNING);
+	ir_array_ledArrayOff();
+	for(int i = 0; i < 6; i++)
+	{
+		meas1 = 0, meas2 = 0;
+		ir_array_ledSingleOn(i);
+		util_genDelay10ms();
+		for(int i = 0; i < 6; i++) meas1 += ir_array_takeSingleMeasurement(i);
+		ir_array_ledSingleOff(i);
+		util_genDelay10ms();
+		for(int i = 0; i < 6; i++) meas2 += ir_array_takeSingleMeasurement(i);
+		if(meas1 < meas2)
+		{
+			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_ERR);
+			hmi_transmitSIS(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_ERR);
+			error_flag = true;
+		}
+		else
+		{
+			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_OK);
+			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_OK, ir_array_takeSingleMeasurement(i));
+		}
+	}
+	if(error_flag)
+		hmi_transmitS(HMI_DIAG_UITEXT_IR_ERR);
+	else
+		hmi_transmitS(HMI_DIAG_UITEXT_IR_OK);
+	hmi_transmitNewLine();
+	return error_flag;
+}
+
+bool diagnostics_btestMotors()
+{
+	hmi_transmitS(HMI_DIAG_UITEXT_MOT_RUNNING);
+	bool error_flag = false;
+	float sscurr = 0, meas1 = 0, meas2 = 0;
+	sscurr = vsense_getCurrent();
+	if(sscurr == 0)
+	{
+		hmi_transmitS(HMI_DIAG_UITEXT_MOT_INNACURATE);
+		return true;
+	}
+	/* Testing L */
+	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
+	driver_setDriver(tdriverL, 90);
+	driver_enableDriver(tdriverL);
+	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	meas1 = vsense_getCurrent();
+	driver_disableDriver(tdriverL);
+	driver_setDriver(tdriverL, 0);
+	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
+	if(meas1 < sscurr + MOTOR_MIN_CURR)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas1-sscurr);
+	}
+	/* Testing R */
+	driver_setDriver(tdriverR, 90);
+	driver_enableDriver(tdriverR);
+	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	meas2 = vsense_getCurrent();
+	if(meas2 < sscurr + MOTOR_MIN_CURR)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas2-sscurr);
+	}
+	driver_disableDriver(tdriverR);
+	driver_setDriver(tdriverR, 0);
+
+	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	if(error_flag)
+		hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
+	else
+		hmi_transmitS(HMI_DIAG_UITEXT_MOT_OK);
+	hmi_transmitNewLine();
+	return error_flag;
+}
+
+bool diagnostics_btestEncoders()
+{
+	hmi_transmitS(HMI_DIAG_UITEXT_ENC_RUNNING);
+	bool error_flag = false;
+	uint32_t meas1 = 0, meas2 = 0;
+	/* Test L */
+	encoder_resetCounter(tencoderL);
+	encoder_resetCounter(tencoderR);
+
+	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
+	driver_setDriver(tdriverL, 90);
+	driver_enableDriver(tdriverL);
+	driver_setDriver(tdriverR, 90);
+	driver_enableDriver(tdriverR);
+	for(int i = 0; i < 100; i++) util_genDelay10ms();
+
+	meas1 = encoder_getAngularVelocityRPM(tencoderL);
+	meas2 = encoder_getAngularVelocityRPM(tencoderR);
+
+	driver_disableDriver(tdriverR);
+	driver_setDriver(tdriverR, 0);
+	driver_disableDriver(tdriverL);
+	driver_setDriver(tdriverL, 0);
+	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
+	for(int i = 0; i < 100; i++) util_genDelay10ms();
+
+	if(meas1 < MOTOR_MIN_VEL)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas1);
+	}
+
+	if(meas2 < MOTOR_MIN_VEL)
+	{
+		hmi_transmitSCS(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR);
+		error_flag = true;
+	}
+	else
+	{
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas1);
+	}
+
+	if(error_flag)
+		hmi_transmitS(HMI_DIAG_UITEXT_ENC_ERR);
+	else
+		hmi_transmitS(HMI_DIAG_UITEXT_ENC_OK);
+	hmi_transmitNewLine();
+	return error_flag;
+}
+
+
