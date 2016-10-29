@@ -37,11 +37,15 @@
  * @brief File containing the main entry point of the program.
  */
 
+
+/* System includes */
 #include "fsl_device_registers.h"
 #include "fsl_debug_console.h"
+#include "fsl_clock_manager.h"
 #include "hal/mcg/mcg.h"
 #include <stdbool.h>
 
+/* Project includes */
 #include "hal/adc/adc.h"
 #include "hal/controller/controller.h"
 #include "hal/diagnostics/diagnostics.h"
@@ -54,7 +58,7 @@
 #include "hal/target_definitions.h"
 #include "hal/util/tc_hal.h"
 
-/* globals */
+/* Globals */
 volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
 
 void main_cyclicExecuteIsr(void)
@@ -63,6 +67,7 @@ void main_cyclicExecuteIsr(void)
     uiFlagNextPeriod = 1;
 }
 
+/* Configuration structures for encoder instances and driver instances */
 encoder_instance_t tencoderL = {
 		/* Config section */
 		.cEncoderInstance = 'L',
@@ -137,33 +142,54 @@ driver_instance_t tdriverR = {
 		.uiDriverEnPortInstance = DRIVER_RW_EN_PORT_INSTANCE,
 		.uiDriverEnGpioInstance = DRIVER_RW_EN_GPIO_INSTANCE
 };
+
+
+/**
+ * @brief Initializes board clock configurations.
+ *
+ */
 void boardInit()
 {
 	mcg_clockInit();
 }
 
 /**
- * @brief foo brief
- * @details foo details
+ * @brief Initializes board peripherals and component instances.
  * 
- * @param foo integer
- * @param bar character
  */
 void peripheralInit()
 {
+	/* Setup Red LED for Status */
+	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
+	PORTB_PCR18 = PORT_PCR_MUX(1);
+	PTB_BASE_PTR->PDDR = 1 << 18;
+
+	/* Setup peripherals */
 	adc_initAdc();
 	hmi_initHmi();
 	ir_array_initArray();
 	vsense_initVsense();
+	hmi_initHmi();
+	/* Setup instances */
 	driver_initDriver(tdriverL);
 	driver_appendDriver(tdriverR);
 	encoder_initEncoder(tencoderL);
 	encoder_initEncoder(tencoderR);
-	hmi_initHmi();
+	/* Setup cyclic executive timer */
 	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
 }
 
+/**
+ * @brief Main entry point.
+ *
+ */
 
+/*
+
+Status led on diagnotics.
+//assert(uiLedInstance < 6);
+
+*/
 int main(void)
 {
 	boardInit();
@@ -192,12 +218,8 @@ int main(void)
 
 	diagnostics_startDiagnostics();
 
-	/* Setup Red LED for Status */
-	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
-	PORTB_PCR18 = PORT_PCR_MUX(1);
-	PTB_BASE_PTR->PDDR = 1 << 18;
 
-	//diagnostics_startDiagnostics();
+
 
 	while(1)
 	{

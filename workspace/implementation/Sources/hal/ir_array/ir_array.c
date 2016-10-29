@@ -4,17 +4,27 @@
  * @author Bruno de Souza Ferreira
  * @version 1.1
  * @date 27 Jun 2016
- * @date 27 Sep 2016
+ * @date 07 Oct 2016
  * @brief File containing the methods for interacting with an IR array .
  */
 
+/* System includes */
 #include <MKL25Z4.h>
-#include "hal/adc/adc.h"
+#include "fsl_clock_manager.h"
 #include "fsl_gpio_driver.h"
 #include "fsl_gpio_hal.h"
-#include "hal/target_definitions.h"
-#include "fsl_clock_manager.h"
 
+/* Project includes */
+#include "ir_array.h"
+#include "hal/util/util.h"
+#include "hal/target_definitions.h"
+#include "hal/adc/adc.h"
+
+
+/**
+ * @brief Initializes IR Array.
+ * 
+ */
 void ir_array_initArray()
 {
 	PORT_Type *irPortBase;
@@ -43,12 +53,22 @@ void ir_array_initArray()
 	// Re-do adc library
 }
 
+/**
+ * @brief Turns on a single LED.
+ * 
+ * @param uiLedInstance LED index [0-5].
+ */
 void ir_array_ledSingleOn(uint8_t uiLedInstance)
 {
+	//assert(uiLedInstance < 6);
 	GPIO_Type *irGpioBase = g_gpioBase[ADC_IRX_EN_GPIO_INSTANCE[uiLedInstance]];
 	GPIO_HAL_SetPinOutput(irGpioBase, ADC_IRX_EN_PIN_NUMBER[uiLedInstance]);
 }
 
+/**
+ * @brief Turns on all LEDS of the array.
+ *
+ */
 void ir_array_ledArrayOn()
 {
 	for(int i = 0; i < 6; i++)
@@ -57,12 +77,21 @@ void ir_array_ledArrayOn()
 	}
 }
 
+/**
+ * @brief Turns off a single LED.
+ * 
+ * @param uiLedInstance LED index [0-5].
+ */
 void ir_array_ledSingleOff(uint8_t uiLedInstance)
 {
 	GPIO_Type *irGpioBase = g_gpioBase[ADC_IRX_EN_GPIO_INSTANCE[uiLedInstance]];
 	GPIO_HAL_ClearPinOutput(irGpioBase, ADC_IRX_EN_PIN_NUMBER[uiLedInstance]);
 }
 
+/**
+ * @brief Turns off all LEDS of the array.
+ *
+ */
 void ir_array_ledArrayOff()
 {
 	for(int i = 0; i < 6; i++)
@@ -71,8 +100,12 @@ void ir_array_ledArrayOff()
 	}
 }
 
-
-
+/**
+ * @brief Takes a measurement of a single LED/sensor pair.
+ * 
+ * @param uiIrChannelInstance LED index [0-5].
+ * @return Raw sensor measurement
+ */
 uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance)
 {
 	adc_startConversion(ADC_IRX_ADC_CH_NUMBER[uiIrChannelInstance]);
@@ -81,7 +114,11 @@ uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance)
 	else return 0;
 }
 
-
+/**
+ * @brief Takes a measurement of all LED/sensor pairs.
+ * 
+ * @param uiIrVector Array pointer to store raw sensor measurements
+ */
 void ir_array_takeMeasurement(uint16_t* uiIrVector)
 {
 	for(int i = 0; i < 6; i++)
