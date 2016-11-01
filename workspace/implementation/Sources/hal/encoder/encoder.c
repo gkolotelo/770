@@ -149,11 +149,13 @@ void encoder_resetCounter(encoder_instance_t encoderInstance)
  * 
  * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_takeMeasurement(encoder_instance_t encoderInstance)
+void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
 {
-    TPM_Type *tpmBase = g_tpmBase[encoderInstance.uiEncoderTpmInstance];
-    encoderInstance.uiEncoderPulsesPerSecond = (double)(1000*TPM_HAL_GetCounterVal(tpmBase))/(double)encoderInstance.uiEncoderAcqPeriodUs;
-    encoder_resetCounter(encoderInstance);
+	double tmp;
+    TPM_Type *tpmBase = g_tpmBase[encoderInstance->uiEncoderTpmInstance];
+    tmp = (double)(1000000*TPM_HAL_GetCounterVal(tpmBase))/(double)encoderInstance->uiEncoderAcqPeriodUs;
+    encoderInstance->uiEncoderPulsesPerSecond = tmp;
+    encoder_resetCounter(*encoderInstance);
 }
 
 

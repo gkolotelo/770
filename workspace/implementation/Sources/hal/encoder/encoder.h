@@ -94,7 +94,7 @@ void encoder_resetCounter(encoder_instance_t encoderInstance);
  * 
  * @param encoderInstance encoder_instance_t struct.
  */
-void encoder_takeMeasurement(encoder_instance_t encoderInstance);
+void encoder_takeMeasurement(encoder_instance_t *encoderInstance);
 
 
 /* Data retrieval methods */

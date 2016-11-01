@@ -105,3 +105,24 @@ void util_genDelay10ms(void)
     util_genDelay1ms();
     util_genDelay1ms();
 }
+
+
+/* ************************************************ */
+/* Method name:        util_genDelay100ms           */
+/* Method description: generates ~   100 mili sec   */
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
+void util_genDelay100ms(void)
+{
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+    util_genDelay10ms();
+}

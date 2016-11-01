@@ -49,4 +49,13 @@ void util_genDelay1ms(void);
 void util_genDelay10ms(void);
 
 
+/* ************************************************ */
+/* Method name:        util_genDelay100ms           */
+/* Method description: generates ~   100 mili sec   */
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
+void util_genDelay100ms(void);
+
+
 #endif /* UTIL_H */

@@ -45,6 +45,7 @@ void diagnostics_startDiagnostics()
 
 	VS_flag = diagnostics_btestVSense();
 	IR_flag = diagnostics_btestIrArray();
+	for(int i = 0; i < 50; i++) util_genDelay100ms();
 	MOT_flag = diagnostics_btestMotors();
 	ENC_flag = diagnostics_btestEncoders();
 
@@ -82,10 +83,10 @@ bool diagnostics_btestVSense()
 	float meas1, meas2, meas3, meas4;
 	for(int i = 0; i < 6; i++) meas1 += vsense_getV1();
 	meas1 = meas1/6;
-	meas1 = vsense_getRawV1();
+	//meas1 = vsense_getRawV1();
 	for(int i = 0; i < 6; i++) meas2 += vsense_getV2();
 	meas2 = meas2/6;
-	meas2 = vsense_getRawV2();
+	//meas2 = vsense_getRawV2();
 	meas3 = vsense_getCurrent();
 	meas4 = vsense_getPower();
 	if(meas1 < VSENSE_MIN_VOLTAGE)
@@ -181,42 +182,46 @@ bool diagnostics_btestMotors()
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_INNACURATE);
 		return true;
 	}
-	/* Testing L */
-	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
-	driver_setDriver(tdriverL, 90);
-	driver_enableDriver(tdriverL);
-	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	/* Testing R */
+	driver_initDriver(tdriverL);
+	driver_appendDriver(tdriverR);// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	util_genDelay100ms();
+	driver_setDriver(tdriverR, 90);
+	driver_enableDriver(tdriverR);
+	for(int i = 0; i < 10; i++) util_genDelay100ms();
 	meas1 = vsense_getCurrent();
-	driver_disableDriver(tdriverL);
-	driver_setDriver(tdriverL, 0);
-	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
+	driver_disableDriver(tdriverR);
+	driver_setDriver(tdriverR, 0);
+	util_genDelay100ms();
+	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	util_genDelay100ms();
 	if(meas1 < sscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR);
+		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR);
 		error_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas1-sscurr);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas1-sscurr);
 	}
-	/* Testing R */
-	driver_setDriver(tdriverR, 90);
-	driver_enableDriver(tdriverR);
-	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	/* Testing L */
+	driver_setDriver(tdriverL, 90);
+	driver_enableDriver(tdriverL);
+	for(int i = 0; i < 10; i++) util_genDelay100ms();
 	meas2 = vsense_getCurrent();
 	if(meas2 < sscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR);
+		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR);
 		error_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas2-sscurr);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas2-sscurr);
 	}
-	driver_disableDriver(tdriverR);
-	driver_setDriver(tdriverR, 0);
+	driver_disableDriver(tdriverL);
+	driver_setDriver(tdriverL, 0);
+	for(int i = 0; i < 10; i++) util_genDelay100ms();
 
-	for(int i = 0; i < 100; i++) util_genDelay10ms();
 	if(error_flag)
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
 	else
@@ -231,24 +236,27 @@ bool diagnostics_btestMotors()
  * turned on. If the encoder measurement is not greater than MOTOR_MIN_VEL
  * the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestEncoders()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_ENC_RUNNING);
 	bool error_flag = false;
 	uint32_t meas1 = 0, meas2 = 0;
-	/* Test L */
+	/* Test R */
 	encoder_resetCounter(tencoderL);
 	encoder_resetCounter(tencoderR);
 
-	driver_initDriver(tdriverL);// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
-	driver_setDriver(tdriverL, 90);
-	driver_enableDriver(tdriverL);
+	driver_initDriver(tdriverL);
+	driver_appendDriver(tdriverR);// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
 	driver_setDriver(tdriverR, 90);
 	driver_enableDriver(tdriverR);
-	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	driver_setDriver(tdriverL, 90);
+	driver_enableDriver(tdriverL);
+	for(int i = 0; i < 10; i++) util_genDelay100ms();
 
+	encoder_takeMeasurement(&tencoderL);
+	encoder_takeMeasurement(&tencoderR);
 	meas1 = encoder_getAngularVelocityRPM(tencoderL);
 	meas2 = encoder_getAngularVelocityRPM(tencoderR);
 
@@ -256,8 +264,8 @@ bool diagnostics_btestEncoders()
 	driver_setDriver(tdriverR, 0);
 	driver_disableDriver(tdriverL);
 	driver_setDriver(tdriverL, 0);
-	hmi_initHmi();// Driver instance tdriverL uses shared pin with UART0, this sets up the mux for proper behavior.
-	for(int i = 0; i < 100; i++) util_genDelay10ms();
+	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	for(int i = 0; i < 10; i++) util_genDelay100ms();
 
 	if(meas1 < MOTOR_MIN_VEL)
 	{

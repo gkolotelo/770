@@ -162,7 +162,12 @@ void peripheralInit()
 	/* Setup Red LED for Status */
 	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
 	PORTB_PCR18 = PORT_PCR_MUX(1);
-	PTB_BASE_PTR->PDDR = 1 << 18;
+	PTB_BASE_PTR->PDDR |= 1 << 18;
+
+	/* Setup Buttons */
+	SIM_SCGC5 |= (SIM_SCGC5_PORTD_MASK);
+	PORTD_PCR2 = PORT_PCR_MUX(1);
+	PORTD_PCR3 = PORT_PCR_MUX(1);
 
 	/* Setup peripherals */
 	adc_initAdc();
@@ -216,15 +221,19 @@ int main(void)
 //	meas = ir_array_takeSingleMeasurement(5);
 //	meas = ir_array_takeSingleMeasurement(5);
 
+	//while((GPIOD->PDIR & 0b1000))
+	//{
+	//	if(!(GPIOD->PDIR & 0b100))
+	//		diagnostics_startDiagnostics();
+	//}
+	// Fix pushbuttons
+
 	diagnostics_startDiagnostics();
-
-
-
 
 	while(1)
 	{
 		/* Blink Red LED for Status */
-		PTB_BASE_PTR->PTOR = 1 << 18;
+		PTB_BASE_PTR->PTOR |= 1 << 18;
 
 		CLOCK_SYS_EnablePortClock(PORTB_IDX);
 //		PORT_HAL_SetMuxMode(PORTB, 0, 0);

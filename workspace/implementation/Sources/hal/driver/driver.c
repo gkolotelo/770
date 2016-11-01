@@ -102,7 +102,6 @@ void driver_initDriver(driver_instance_t driverInstance)
     TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmA, driverInstance.uiDriverPwmChAChannelInstance);
     TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmB, driverInstance.uiDriverPwmChBChannelInstance);
 
-    driver_enableDriver(driverInstance);
 
 }
 
@@ -155,7 +154,6 @@ void driver_appendDriver(driver_instance_t driverInstance)
 	TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmA, driverInstance.uiDriverPwmChAChannelInstance);
 	TPM_DRV_PwmStart(driverInstance.uiDriverTpmInstance, &pwmB, driverInstance.uiDriverPwmChBChannelInstance);
 
-	driver_enableDriver(driverInstance);
 }
 
 

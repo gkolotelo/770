@@ -23,7 +23,7 @@
 /*                    General uC Definitions             */
 /* Cyclic executive period in microseconds */
 /* 20ms */
-#define CYCLIC_EXECUTIVE_PERIOD			10 * 10000 /* 1000000 micro seconds */
+#define CYCLIC_EXECUTIVE_PERIOD			10 * 10000 /* 100000 micro seconds */
 #define DEBUG_MODE_ENABLE				true
 /* Clock gate control */
 #define  CGC_CLOCK_DISABLED         	0x00U
@@ -44,8 +44,8 @@
 #define VSENSE1_CORRECTION_FACTOR		0.0001758113
 #define VSENSE2_CORRECTION_FACTOR		0.0001751376
 #define VSENSE_RESISTOR_VALUE			0.52 * 1000 //	Ohm * 1000
-#define VSENSE_MIN_VOLTAGE				10	 		//V
-#define MOTOR_MIN_CURR					100			//mA
+#define VSENSE_MIN_VOLTAGE				9	 		//V
+#define MOTOR_MIN_CURR					10			//mA
 #define MOTOR_MIN_VEL					60			//RPM
 /*                 END OF General uC Definitions         */
 
@@ -98,7 +98,7 @@
 #define ENCODER_RW_TPM_INSTANCE			TPM1_IDX
 #define ENCODER_RW_FTM_CLKIN_SRC		kSimTpmClkSel1 //FTM_CLKIN1
 #define ENCODER_RW_MAX_PULSE_COUNT		1000
-#define ENCODER_RW_PULSE_COUNT			1000
+#define ENCODER_RW_PULSE_COUNT			27
 #define ENCODER_RW_ACQ_PERIOD_US		CYCLIC_EXECUTIVE_PERIOD
 
 #define ENCODER_LW_PIN_NUMBER			12U
@@ -107,7 +107,7 @@
 #define ENCODER_LW_TPM_INSTANCE			TPM2_IDX
 #define ENCODER_LW_FTM_CLKIN_SRC		kSimTpmClkSel0 //FTM_CLKIN0
 #define ENCODER_LW_MAX_PULSE_COUNT		1000
-#define ENCODER_LW_PULSE_COUNT			1000
+#define ENCODER_LW_PULSE_COUNT			27
 #define ENCODER_LW_ACQ_PERIOD_US		CYCLIC_EXECUTIVE_PERIOD
 /*                  END OF Encoder Definitions           */
 
