@@ -257,8 +257,8 @@ bool diagnostics_btestEncoders()
 
 	encoder_takeMeasurement(&tencoderL);
 	encoder_takeMeasurement(&tencoderR);
-	meas1 = encoder_getAngularVelocityRPM(tencoderL);
-	meas2 = encoder_getAngularVelocityRPM(tencoderR);
+	meas1 = encoder_getAngularVelocity(tencoderL);
+	meas2 = encoder_getAngularVelocity(tencoderR);
 
 	driver_disableDriver(tdriverR);
 	driver_setDriver(tdriverR, 0);

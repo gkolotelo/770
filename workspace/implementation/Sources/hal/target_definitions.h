@@ -23,7 +23,7 @@
 /*                    General uC Definitions             */
 /* Cyclic executive period in microseconds */
 /* 20ms */
-#define CYCLIC_EXECUTIVE_PERIOD			10 * 10000 /* 100000 micro seconds */
+#define CYCLIC_EXECUTIVE_PERIOD			10 * 10000 /* 100 000 micro seconds */
 #define DEBUG_MODE_ENABLE				true
 /* Clock gate control */
 #define  CGC_CLOCK_DISABLED         	0x00U
