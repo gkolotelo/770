@@ -465,3 +465,6 @@
 09, 23, 2016 (20:08:29): UR named: package_diagram, of type IDiagram, and ID: 604328de-2202-48b3-9d1a-353bbeb75331 was created. Owned by the ES770 Project.
 09, 23, 2016 (20:08:29): UR named: Final_Project, of type ISubsystem, and ID: 00000000-0000-0000-0000-000000000000 was created. Owned by the ES770 Project.
 09, 23, 2016 (20:08:29): UR named: File, of type IStereotype, and ID: bdee0ab5-d5a0-4569-8f02-ac8f107b96c3 was created. Owned by the Final_Project Package.
+11, 05, 2016 (15:14:19): UR named: package_diagram, of type IDiagram, and ID: 604328de-2202-48b3-9d1a-353bbeb75331 was created. Owned by the ES770 Project.
+11, 05, 2016 (15:14:19): UR named: Final_Project, of type ISubsystem, and ID: 00000000-0000-0000-0000-000000000000 was created. Owned by the ES770 Project.
+11, 05, 2016 (15:14:19): UR named: File, of type IStereotype, and ID: bdee0ab5-d5a0-4569-8f02-ac8f107b96c3 was created. Owned by the Final_Project Package.

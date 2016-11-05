@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 79b61cec-acf8-4488-909b-1988c728e3a0;
 	- _myState = 8192;
 	- _name = "Battery";
-	- _objectCreation = "1912847111520161312828919";
-	- _umlDependencyID = "2379";
+	- _objectCreation = "132049654720161778891113";
+	- _umlDependencyID = "2334";
 	- Stereotypes = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -35,8 +35,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		- _id = GUID 8b843885-6aa7-476d-9f38-7b6822b3c718;
 		- _myState = 73728;
 		- _name = "Files";
-		- _objectCreation = "1912849111520161312826919";
-		- _umlDependencyID = "2147";
+		- _objectCreation = "132049854720161778871113";
+		- _umlDependencyID = "2102";
 		- m_path = "";
 		- Elements = { IRPYRawContainer 
 			- size = 0;
@@ -56,8 +56,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID b9f3db6f-f51c-4c00-8e48-a4de20ca619a;
 			- _myState = 8192;
 			- _name = "DefaultConfig";
-			- _objectCreation = "1912851111520161312824919";
-			- _umlDependencyID = "2946";
+			- _objectCreation = "132050054720161778851113";
+			- _umlDependencyID = "2892";
 			- _scopeType = Explicit;
 			- _libraries = "";
 			- _additionalSources = "";
@@ -80,8 +80,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				- _id = GUID 8c8240e1-b0ba-4029-a3e9-34eeb5e11826;
 				- _myState = 8192;
 				- _name = "DefaultConfig";
-				- _objectCreation = "1912853111520161312822919";
-				- _umlDependencyID = "2946";
+				- _objectCreation = "132050254720161778831113";
+				- _umlDependencyID = "2892";
 				- m_path = "";
 				- Elements = { IRPYRawContainer 
 					- size = 0;
