@@ -60,6 +60,7 @@
 
 /* Globals */
 volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
+uint16_t uiIrReadings[6] = {0, 0, 0, 0, 0, 0};
 
 void main_cyclicExecuteIsr(void)
 {
@@ -159,10 +160,14 @@ void boardInit()
  */
 void peripheralInit()
 {
-	/* Setup Red LED for Status */
+	/* Setup Red and Green LEDs for Status */
 	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
 	PORTB_PCR18 = PORT_PCR_MUX(1);
+	PORTB_PCR19 = PORT_PCR_MUX(1);
 	PTB_BASE_PTR->PDDR |= 1 << 18;
+	PTB_BASE_PTR->PDDR |= 1 << 19;
+	PTB_BASE_PTR->PCOR |= 1 << 19;
+	PTB_BASE_PTR->PSOR |= 1 << 18;
 
 	/* Setup Buttons */
 	SIM_SCGC5 |= (SIM_SCGC5_PORTD_MASK);
@@ -175,11 +180,13 @@ void peripheralInit()
 	ir_array_initArray();
 	vsense_initVsense();
 	hmi_initHmi();
-	/* Setup instances */
+
+	/* Setup peripheral instances */
 	driver_initDriver(tdriverL);
 	driver_appendDriver(tdriverR);
 	encoder_initEncoder(tencoderL);
 	encoder_initEncoder(tencoderR);
+
 	/* Setup cyclic executive timer */
 	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
 }
@@ -189,53 +196,32 @@ void peripheralInit()
  *
  */
 
-/*
 
-Status led on diagnotics.
-//assert(uiLedInstance < 6);
-
-*/
 int main(void)
 {
 	boardInit();
 	peripheralInit();
-//	uint16_t meas = 0;
-//	ir_array_ledArrayOn();
-//	ir_array_ledArrayOff();
-//	ir_array_ledArrayOn();
-//	meas = ir_array_takeSingleMeasurement(0);
-//	meas = ir_array_takeSingleMeasurement(0);
-//
-//	meas = ir_array_takeSingleMeasurement(1);
-//	meas = ir_array_takeSingleMeasurement(1);
-//
-//	meas = ir_array_takeSingleMeasurement(2);
-//	meas = ir_array_takeSingleMeasurement(2);
-//
-//	meas = ir_array_takeSingleMeasurement(3);
-//	meas = ir_array_takeSingleMeasurement(3);
-//
-//	meas = ir_array_takeSingleMeasurement(4);
-//	meas = ir_array_takeSingleMeasurement(4);
-//
-//	meas = ir_array_takeSingleMeasurement(5);
-//	meas = ir_array_takeSingleMeasurement(5);
 
-	//while((GPIOD->PDIR & 0b1000))
-	//{
-	//	if(!(GPIOD->PDIR & 0b100))
-	//		diagnostics_startDiagnostics();
-	//}
-	// Fix pushbuttons
+	while((GPIOD->PDIR & 0b1000)) // While start button not pressed (grounded)
+	{
+		if(!(GPIOD->PDIR & 0b100)) // If diag. button pressed (grounded)
+			
+		// IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
+		if(diagnostics_startDiagnostics() == true)
+		{
+			PTB_BASE_PTR->PSOR |= 1 << 19;
+			PTB_BASE_PTR->PCOR |= 1 << 18;
+			while(1);
+		}
+	}
 
-	diagnostics_startDiagnostics();
-
+	hmi_initHmi();
 	while(1)
 	{
-		/* Blink Red LED for Status */
-		PTB_BASE_PTR->PTOR |= 1 << 18;
+		/* Blink Green LED for Status */
+		PTB_BASE_PTR->PTOR |= 1 << 19;
 
-		CLOCK_SYS_EnablePortClock(PORTB_IDX);
+//		CLOCK_SYS_EnablePortClock(PORTB_IDX);
 //		PORT_HAL_SetMuxMode(PORTB, 0, 0);
 //
 //		//meas = ir_array_takeSingleMeasurement(1);
@@ -243,6 +229,11 @@ int main(void)
 //		//for(int i = 0; i < ADC_10MS_MULTIPLE_WAIT_PERIOD; i++) util_genDelay10ms();
 //		meas = vsense_getRawV2();//adc_getValue();
 //		hmi_transmitSISI("ADC",0,": ",meas);
+
+		ir_array_ledArrayOn();
+
+		ir_array_takeMeasurement(uiIrReadings);
+		hmi_transmitIrArray(uiIrReadings);
 
 		/* Wait for next cycle */
 		while(!uiFlagNextPeriod);

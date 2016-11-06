@@ -13,8 +13,9 @@
  * @details Executes each system component test independently and reports the system status.
  * IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
  *
+ * @return True if tests were NOT successful.
  */
-void diagnostics_startDiagnostics();
+bool diagnostics_startDiagnostics();
 
 /**
  * @brief Tests operation of the voltage sense.
@@ -22,7 +23,7 @@ void diagnostics_startDiagnostics();
  * (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed.
  * If Vsense2 > Vsense1, an unexpected behavior, the test is not passed.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestVSense();
 
@@ -32,7 +33,7 @@ bool diagnostics_btestVSense();
  * with the LED off, and a measurement is taken with the LED on, if the latter
  * measurement is not greater than the former, the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestIrArray();
 
@@ -42,7 +43,7 @@ bool diagnostics_btestIrArray();
  * and with the motor off. If the former measurement is not greater than 
  * MOTOR_MIN_CURR above the quiescent system current, the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestMotors();
 
@@ -52,6 +53,6 @@ bool diagnostics_btestMotors();
  * turned on. If the encoder measurement is not greater than MOTOR_MIN_VEL
  * the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestEncoders();

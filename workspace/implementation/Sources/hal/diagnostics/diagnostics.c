@@ -32,10 +32,10 @@ extern driver_instance_t tdriverR;
 /**
  * @brief Initiates diagnostics sequence.
  * @details Executes each system component test independently and reports the system status.
- * IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
  *
+ * @return True if tests were NOT successful.
  */
-void diagnostics_startDiagnostics()
+bool diagnostics_startDiagnostics()
 {
 	bool VS_flag, IR_flag, MOT_flag,ENC_flag;
 
@@ -49,6 +49,7 @@ void diagnostics_startDiagnostics()
 	MOT_flag = diagnostics_btestMotors();
 	ENC_flag = diagnostics_btestEncoders();
 
+	/* Transmit summary */
 	hmi_transmitS(HMI_DIAG_UITEXT_SUMMARY);
 	if(VS_flag) hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
 	else hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_OK);
@@ -62,10 +63,10 @@ void diagnostics_startDiagnostics()
 	if(VS_flag || IR_flag || MOT_flag || ENC_flag)
 	{
 		hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_ERR);
-		while(1); //Halt!
+		return true;
 	}
 	hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_OK);
-	return;
+	return false;
 }
 
 /**
@@ -74,7 +75,7 @@ void diagnostics_startDiagnostics()
  * (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed.
  * If Vsense2 > Vsense1, an unexpected behavior, the test is not passed.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestVSense()
 {
@@ -91,7 +92,7 @@ bool diagnostics_btestVSense()
 	meas4 = vsense_getPower();
 	if(meas1 < VSENSE_MIN_VOLTAGE)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR, meas1);
 		error_flag = true;
 	}
 	else
@@ -100,7 +101,7 @@ bool diagnostics_btestVSense()
 	}
 	if(meas2 < VSENSE_MIN_VOLTAGE)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR, meas2);
 		error_flag = true;
 	}
 	else
@@ -125,7 +126,7 @@ bool diagnostics_btestVSense()
  * with the LED off, and a measurement is taken with the LED on, if the latter
  * measurement is not greater than the former, the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestIrArray()
 {
@@ -139,20 +140,20 @@ bool diagnostics_btestIrArray()
 		meas1 = 0, meas2 = 0;
 		ir_array_ledSingleOn(i);
 		util_genDelay10ms();
-		for(int i = 0; i < 6; i++) meas1 += ir_array_takeSingleMeasurement(i);
+		meas1 = ir_array_takeSingleMeasurement(i);
 		ir_array_ledSingleOff(i);
 		util_genDelay10ms();
-		for(int i = 0; i < 6; i++) meas2 += ir_array_takeSingleMeasurement(i);
+		meas2 = ir_array_takeSingleMeasurement(i);
 		if(meas1 < meas2)
 		{
 			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_ERR);
-			hmi_transmitSIS(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_ERR);
+			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_ERR, meas1);
 			error_flag = true;
 		}
 		else
 		{
 			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_OK);
-			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_OK, ir_array_takeSingleMeasurement(i));
+			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_OK, meas1);
 		}
 	}
 	if(error_flag)
@@ -169,7 +170,7 @@ bool diagnostics_btestIrArray()
  * and with the motor off. If the former measurement is not greater than 
  * MOTOR_MIN_CURR above the quiescent system current, the test is not successful.
  * 
- * @return True if test was NOT succesfull.
+ * @return True if test was NOT successful.
  */
 bool diagnostics_btestMotors()
 {
@@ -197,7 +198,7 @@ bool diagnostics_btestMotors()
 	util_genDelay100ms();
 	if(meas1 < sscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR, meas1-sscurr);
 		error_flag = true;
 	}
 	else
@@ -211,7 +212,7 @@ bool diagnostics_btestMotors()
 	meas2 = vsense_getCurrent();
 	if(meas2 < sscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR, meas2-sscurr);
 		error_flag = true;
 	}
 	else
@@ -269,7 +270,7 @@ bool diagnostics_btestEncoders()
 
 	if(meas1 < MOTOR_MIN_VEL)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, meas1);
 		error_flag = true;
 	}
 	else
@@ -279,12 +280,12 @@ bool diagnostics_btestEncoders()
 
 	if(meas2 < MOTOR_MIN_VEL)
 	{
-		hmi_transmitSCS(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, meas2);
 		error_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas1);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas2);
 	}
 
 	if(error_flag)

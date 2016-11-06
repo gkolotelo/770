@@ -119,7 +119,7 @@ uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance)
  * 
  * @param uiIrVector Array pointer to store raw sensor measurements
  */
-void ir_array_takeMeasurement(uint16_t* uiIrVector)
+void ir_array_takeMeasurement()
 {
 	for(int i = 0; i < 6; i++)
 	{
@@ -128,6 +128,44 @@ void ir_array_takeMeasurement(uint16_t* uiIrVector)
 	// Return all conversions successful (within waiting time)
 	// Figure out timing for each conversion
 	// Play with faster conversion times and low power mode
+}
+
+/**
+ * @brief Calibrates minimum and maximum values of readings.
+ * 
+ * @param uiIrMinVector Array pointer to store minimum raw sensor measurements
+ * @param uiIrMaxVector Array pointer to store minimum raw sensor measurements
+ */
+void ir_array_calibrate()
+{
+	ir_array_ledArrayOff();
+	ir_array_takeMeasurement(uiIrMinreadings);
+	ir_array_ledArrayOn();
+	ir_array_takeMeasurement(uiIrMaxreadings);
+}
+
+/**
+ * @brief Calibrates minimum and maximum values of readings.
+ * 
+ * @param uiIrMinVector Array pointer to store minimum raw sensor measurements
+ * @param uiIrMaxVector Array pointer to store minimum raw sensor measurements
+ */
+void ir_array_getNormalizedReadings()
+{
+	ir_array_takeMeasurement();
+	for(int i = 0; i < 6; i++)
+	{
+		dIrNormalizedReadings[i] = ((double)(uiIrReadings[i]-uiIrMinreadings[i]))/((double)uiIrMaxreadings[i]);
+	}
+}
+
+/**
+ * @brief Finds position of track
+ * 
+ */
+void ir_array_getTrackPosition()
+{
+
 }
 
 

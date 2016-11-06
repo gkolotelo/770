@@ -21,7 +21,7 @@
 #define HMI_DIAG_UITEXT_IRX_ERR			(char *)" ERROR!"
 #define HMI_DIAG_UITEXT_IRAX			(char *)"		IR Sensor #"
 #define HMI_DIAG_UITEXT_IRAX_OK			(char *)" OK! Reading: "
-#define HMI_DIAG_UITEXT_IRAX_ERR		(char *)" ERROR!"
+#define HMI_DIAG_UITEXT_IRAX_ERR		(char *)" ERROR! Reading: "
 
 /* Encoder Text */
 #define HMI_DIAG_UITEXT_ENC_RUNNING		(char *)"Encoders: 		Running Diagnostics..."
@@ -29,7 +29,7 @@
 #define HMI_DIAG_UITEXT_ENC_OK			(char *)"Encoders: 		A-OK!"
 #define HMI_DIAG_UITEXT_ENCX			(char *)"		Encoder #"
 #define HMI_DIAG_UITEXT_ENCX_OK			(char *)" OK! Reading: "
-#define HMI_DIAG_UITEXT_ENCX_ERR		(char *)" ERROR!"
+#define HMI_DIAG_UITEXT_ENCX_ERR		(char *)" ERROR!  Reading: "
 
 /* Motor Text */
 #define HMI_DIAG_UITEXT_MOT_RUNNING		(char *)"Motors: 		Running Diagnostics..."
@@ -37,7 +37,7 @@
 #define HMI_DIAG_UITEXT_MOT_OK			(char *)"Motors: 		A-OK!"
 #define HMI_DIAG_UITEXT_MOTX			(char *)"		Motor #"
 #define HMI_DIAG_UITEXT_MOTX_OK			(char *)" OK! Current [mA]: "
-#define HMI_DIAG_UITEXT_MOTX_ERR		(char *)" ERROR!"
+#define HMI_DIAG_UITEXT_MOTX_ERR		(char *)" ERROR!  Current [mA]: "
 #define HMI_DIAG_UITEXT_MOT_INNACURATE	(char *)"Skipping Motor Diagnostics: Voltage Sense Test Failed!"
 
 /* Vsense Text */
@@ -46,7 +46,7 @@
 #define HMI_DIAG_UITEXT_VSENSE_OK		(char *)"Voltage Sense: 	A-OK!"
 #define HMI_DIAG_UITEXT_VSENSEX			(char *)"		VSense #"
 #define HMI_DIAG_UITEXT_VSENSEX_OK		(char *)" OK! Voltage [V]: "
-#define HMI_DIAG_UITEXT_VSENSEX_ERR		(char *)" ERROR!"
+#define HMI_DIAG_UITEXT_VSENSEX_ERR		(char *)" ERROR! Voltage [V]: "
 #define HMI_DIAG_UITEXT_VSENSE_CURR		(char *)" Current [mA]: "
 #define HMI_DIAG_UITEXT_VSENSE_PWR		(char *)" Power [mW]: "
 
@@ -112,5 +112,12 @@ void hmi_transmitSCSF(char* string1, char id, char* string2, float reading);
  * @param reading An integer number.
  */
 void hmi_transmitSISI(char* string1, int id, char* string2, int reading);
+
+/**
+ * @brief Transmits the IR array readings.
+ * 
+ * @param IR readings vector
+ */
+void hmi_transmitIrArray(uint16_t* uiIrVector);
 
 #endif /* SOURCES_HMI_H_ */

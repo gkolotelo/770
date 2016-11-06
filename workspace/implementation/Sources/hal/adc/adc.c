@@ -95,7 +95,7 @@ void adc_initAdc(void)
 void adc_startConversion(uint8_t adcChannel)
 {
 	//ADC0_SC1A &= (ADC_SC1_ADCH(0b00100) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
-	ADC0_SC1A &= (ADC_SC1_ADCH(adcChannel) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
+	ADC0_SC1A = (ADC_SC1_ADCH(adcChannel) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
 
     /*
     ADC_SC1_COCO(x) // conversion complete flag HW-set

@@ -11,6 +11,11 @@
 #ifndef SOURCES_IR_ARRAY_H_
 #define SOURCES_IR_ARRAY_H_
 
+uint16_t uiIrReadings[6] = {0, 0, 0, 0, 0, 0};
+double dIrNormalizedReadings[6] = {0, 0, 0, 0, 0, 0};
+uint16_t uiIrMinreadings[6] = {0, 0, 0, 0, 0, 0};
+uint16_t uiIrMaxreadings[6] = {65535, 65535, 65535, 65535, 65535, 65535};
+
 /**
  * @brief Initializes IR Array.
  * 
@@ -56,6 +61,6 @@ uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance);
  * 
  * @param uiIrVector Array pointer to store raw sensor measurements
  */
-void ir_array_takeMeasurement(uint16_t* uiIrVector);
+void ir_array_takeMeasurement();
 
 #endif /* SOURCES_IR_ARRAY_H_ */

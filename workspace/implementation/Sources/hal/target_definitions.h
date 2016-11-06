@@ -1,3 +1,4 @@
+
 /**
  *
  * File name:           target_definitions.h
@@ -41,8 +42,8 @@
 #define VSENSE1_CH_NUMBER				0b01000
 #define VSENSE2_CH_NUMBER				0b01010
 #define VSENSE_PORT_ALT					kPortPinDisabled
-#define VSENSE1_CORRECTION_FACTOR		0.0001758113
-#define VSENSE2_CORRECTION_FACTOR		0.0001751376
+#define VSENSE1_CORRECTION_FACTOR		0.0001996597234
+#define VSENSE2_CORRECTION_FACTOR		0.0004402183833
 #define VSENSE_RESISTOR_VALUE			0.52 * 1000 //	Ohm * 1000
 #define VSENSE_MIN_VOLTAGE				9	 		//V
 #define MOTOR_MIN_CURR					10			//mA

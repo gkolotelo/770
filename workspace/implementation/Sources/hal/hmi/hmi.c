@@ -111,3 +111,14 @@ void hmi_transmitSISI(char* string1, int id, char* string2, int reading)
 {
     PRINTF("%s%d%s%d\r\n", string1, id, string2, reading);
 }
+
+/**
+ * @brief Transmits the IR array readings.
+ * 
+ * @param IR readings vector
+ */
+void hmi_transmitIrArray(uint16_t* uiIrVector)
+{
+    PRINTF("%5d %5d %5d %5d %5d %5d\r\n", uiIrVector[0], uiIrVector[1], uiIrVector[2],
+           uiIrVector[3], uiIrVector[4], uiIrVector[5]);
+}
