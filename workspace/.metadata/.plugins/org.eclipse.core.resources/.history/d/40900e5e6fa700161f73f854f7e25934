@@ -1,0 +1,250 @@
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * o Redistributions of source code must retain the above copyright notice, this list
+ *   of conditions and the following disclaimer.
+ *
+ * o Redistributions in binary form must reproduce the above copyright notice, this
+ *   list of conditions and the following disclaimer in the documentation and/or
+ *   other materials provided with the distribution.
+ *
+ * o Neither the name of Freescale Semiconductor, Inc. nor the names of its
+ *   contributors may be used to endorse or promote products derived from this
+ *   software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/**
+ * @file main.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.0
+ * @date 9 Sep 2016
+ * @brief File containing the main entry point of the program.
+ */
+
+
+/* System includes */
+#include "fsl_device_registers.h"
+#include "fsl_debug_console.h"
+#include "fsl_clock_manager.h"
+#include "hal/mcg/mcg.h"
+#include <stdbool.h>
+
+/* Project includes */
+#include "hal/adc/adc.h"
+#include "hal/controller/controller.h"
+#include "hal/diagnostics/diagnostics.h"
+#include "hal/driver/driver.h"
+#include "hal/encoder/encoder.h"
+#include "hal/hmi/hmi.h"
+#include "hal/ir_array/ir_array.h"
+#include "hal/util/util.h"
+#include "hal/vsense/vsense.h"
+#include "hal/target_definitions.h"
+#include "hal/util/tc_hal.h"
+
+/* Globals */
+volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
+//uint16_t uiIrReadings[6] = {0, 0, 0, 0, 0, 0};
+
+void main_cyclicExecuteIsr(void)
+{
+    /* set the cyclic executive flag */
+    uiFlagNextPeriod = 1;
+}
+
+/* Configuration structures for encoder instances and driver instances */
+encoder_instance_t tencoderL = {
+		/* Config section */
+		.cEncoderInstance = 'L',
+		.uiEncoderPortInstance = ENCODER_LW_PORT_INSTANCE,
+		.uiEncoderPinNumber = ENCODER_LW_PIN_NUMBER,
+		.uiEncoderPortAlt = ENCODER_LW_PORT_ALT,
+		.uiEncoderTpmInstance = ENCODER_LW_TPM_INSTANCE,
+		.uiEncoderTpmClkinSrc = ENCODER_LW_FTM_CLKIN_SRC,
+		/* Encoder Hardware Setup section */
+		.uiEncoderMaxPulseCount = ENCODER_LW_MAX_PULSE_COUNT,
+		.uiEncoderPulseCount = ENCODER_LW_PULSE_COUNT,
+		.uiEncoderAcqPeriodUs = ENCODER_LW_ACQ_PERIOD_US,
+
+		/* Data section */
+		.uiEncoderPulsesPerSecond = 0
+};
+encoder_instance_t tencoderR = {
+		/* Config section */
+		.cEncoderInstance = 'R',
+		.uiEncoderPortInstance = ENCODER_RW_PORT_INSTANCE,
+		.uiEncoderPinNumber = ENCODER_RW_PIN_NUMBER,
+		.uiEncoderPortAlt = ENCODER_RW_PORT_ALT,
+		.uiEncoderTpmInstance = ENCODER_RW_TPM_INSTANCE,
+		.uiEncoderTpmClkinSrc = ENCODER_RW_FTM_CLKIN_SRC,
+		/* Encoder Hardware Setup section */
+		.uiEncoderMaxPulseCount = ENCODER_RW_MAX_PULSE_COUNT,
+		.uiEncoderPulseCount = ENCODER_RW_PULSE_COUNT,
+		.uiEncoderAcqPeriodUs = ENCODER_RW_ACQ_PERIOD_US,
+
+		/* Data section */
+		.uiEncoderPulsesPerSecond = 0
+};
+driver_instance_t tdriverL = {
+		/* Config section */
+		.cDriverInstance = 'L',
+		.uiDriverPwmChAPortInstance = DRIVER_LW_CHA_PORT_INSTANCE,
+		.uiDriverPwmChAPinNumber = DRIVER_LW_CHA_PIN_NUMBER,
+		.uiDriverPwmChAPortAlt = DRIVER_LW_CHA_PORT_ALT,
+		.uiDriverPwmChAChannelInstance = DRIVER_LW_CHA_INSTANCE,
+		.uiDriverPwmChBPortInstance = DRIVER_LW_CHB_PORT_INSTANCE,
+		.uiDriverPwmChBPinNumber = DRIVER_LW_CHB_PIN_NUMBER,
+		.uiDriverPwmChBPortAlt = DRIVER_LW_CHB_PORT_ALT,
+		.uiDriverPwmChBChannelInstance = DRIVER_LW_CHB_INSTANCE,
+		//uiDriverTpmInstance = DRIVER_LW_TPM_INSTANCE,
+		.uiDriverTpmClkinInstance = DRIVER_LW_TPM_CLK_SRC,
+		.tTpmClkSrc = DRIVER_LW_TPM_CLK_SRC,
+		.tTpmClkPrescaler = DRIVER_LW_TPM_CLK_PS, // kTpmDividedBy1
+
+		.uiDriverEnPinNumber = DRIVER_LW_EN_PIN_NUMBER,
+		.uiDriverEnPortAlt = DRIVER_LW_EN_PORT_ALT,
+		.uiDriverEnPortInstance = DRIVER_LW_EN_PORT_INSTANCE,
+		.uiDriverEnGpioInstance = DRIVER_LW_EN_GPIO_INSTANCE
+};
+driver_instance_t tdriverR = {
+		/* Config section */
+		.cDriverInstance = 'R',
+		.uiDriverPwmChAPortInstance = DRIVER_RW_CHA_PORT_INSTANCE,
+		.uiDriverPwmChAPinNumber = DRIVER_RW_CHA_PIN_NUMBER,
+		.uiDriverPwmChAPortAlt = DRIVER_RW_CHA_PORT_ALT,
+		.uiDriverPwmChAChannelInstance = DRIVER_RW_CHA_INSTANCE,
+		.uiDriverPwmChBPortInstance = DRIVER_RW_CHB_PORT_INSTANCE,
+		.uiDriverPwmChBPinNumber = DRIVER_RW_CHB_PIN_NUMBER,
+		.uiDriverPwmChBPortAlt = DRIVER_RW_CHB_PORT_ALT,
+		.uiDriverPwmChBChannelInstance = DRIVER_RW_CHB_INSTANCE,
+		//uiDriverTpmInstance = DRIVER_RW_TPM_INSTANCE,
+		.uiDriverTpmClkinInstance = DRIVER_RW_TPM_CLK_SRC,
+		.tTpmClkSrc = DRIVER_RW_TPM_CLK_SRC,
+		.tTpmClkPrescaler = DRIVER_RW_TPM_CLK_PS, // kTpmDividedBy1
+
+		.uiDriverEnPinNumber = DRIVER_RW_EN_PIN_NUMBER,
+		.uiDriverEnPortAlt = DRIVER_RW_EN_PORT_ALT,
+		.uiDriverEnPortInstance = DRIVER_RW_EN_PORT_INSTANCE,
+		.uiDriverEnGpioInstance = DRIVER_RW_EN_GPIO_INSTANCE
+};
+
+
+/**
+ * @brief Initializes board clock configurations.
+ *
+ */
+void boardInit()
+{
+	mcg_clockInit();
+}
+
+/**
+ * @brief Initializes board peripherals and component instances.
+ * 
+ */
+void peripheralInit()
+{
+	/* Setup Red and Green LEDs for Status */
+	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
+	PORTB_PCR18 = PORT_PCR_MUX(1);
+	PORTB_PCR19 = PORT_PCR_MUX(1);
+	PTB_BASE_PTR->PDDR |= 1 << 18;
+	PTB_BASE_PTR->PDDR |= 1 << 19;
+	PTB_BASE_PTR->PCOR |= 1 << 19;
+	PTB_BASE_PTR->PSOR |= 1 << 18;
+
+	/* Setup Buttons */
+	SIM_SCGC5 |= (SIM_SCGC5_PORTD_MASK);
+	PORTD_PCR2 = PORT_PCR_MUX(1);
+	PORTD_PCR3 = PORT_PCR_MUX(1);
+
+	/* Setup peripherals */
+	adc_initAdc();
+	hmi_initHmi();
+	ir_array_initArray();
+	vsense_initVsense();
+	hmi_initHmi();
+
+	/* Setup peripheral instances */
+	driver_initDriver(tdriverL);
+	driver_appendDriver(tdriverR);
+	encoder_initEncoder(tencoderL);
+	encoder_initEncoder(tencoderR);
+
+	/* Setup cyclic executive timer */
+	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
+}
+
+/**
+ * @brief Main entry point.
+ *
+ */
+
+
+int main(void)
+{
+	boardInit();
+	peripheralInit();
+
+	while((GPIOD->PDIR & 0b1000)) // While start button not pressed (grounded)
+	{
+		if(!(GPIOD->PDIR & 0b100)) // If diag. button pressed (grounded)
+			
+		// IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
+		if(diagnostics_startDiagnostics() == true)
+		{
+			PTB_BASE_PTR->PSOR |= 1 << 19;
+			PTB_BASE_PTR->PCOR |= 1 << 18;
+			while(1);
+		}
+	}
+
+	hmi_initHmi();
+	uint16_t irv[6] = {0};
+	while(1)
+	{
+		/* Blink Green LED for Status */
+		PTB_BASE_PTR->PTOR |= 1 << 19;
+
+
+		ir_array_ledArrayOn();
+
+		ir_array_takeMeasurement(uiIrReadings);
+		ir_array_normalizeReadings(uiIrReadings, fIrNormalizedReadings);
+
+		//hmi_transmitIrArray(uiIrReadings);
+		for(int i=0; i<6; i++)
+		{
+			irv[i] = (uint16_t)(fIrNormalizedReadings[i]*1000);
+		}
+		hmi_transmitIrArray(irv);
+
+		// change adc for while(!is_adcDone()) and test before going forward, code above is good!!!!!!!!!	
+		// Test MAX and MIN ir constants			
+
+		/* Wait for next cycle */
+		while(!uiFlagNextPeriod);
+		uiFlagNextPeriod = 0;
+	}
+
+
+}
+////////////////////////////////////////////////////////////////////////////////
+// EOF
+////////////////////////////////////////////////////////////////////////////////
