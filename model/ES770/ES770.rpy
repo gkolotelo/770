@@ -3,8 +3,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID 25bca5c2-3f14-482b-97d9-efb6fc58d91f;
 	- _myState = 8192;
 	- _name = "ES770";
-	- _objectCreation = "2515330129201620151671125";
-	- _umlDependencyID = "1936";
+	- _objectCreation = "2316656194920161838601123";
+	- _umlDependencyID = "1959";
 	- _lastID = 23;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -306,8 +306,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				}
 			}
 			- _name = "overview";
-			- _objectCreation = "2515400129201620150971125";
-			- _umlDependencyID = "2513";
+			- _objectCreation = "2316766194920161837501123";
+			- _umlDependencyID = "2536";
 			- _lastModifiedTime = "9.14.2016::2:24:25";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 5e9ecb70-0443-4ff1-8317-73ce5b577cae;
@@ -3324,8 +3324,8 @@ Overview of System";
 				}
 			}
 			- _name = "requirements";
-			- _objectCreation = "2515402129201620150951125";
-			- _umlDependencyID = "2942";
+			- _objectCreation = "2316768194920161837481123";
+			- _umlDependencyID = "2974";
 			- _lastModifiedTime = "11.5.2016::18:50:47";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 1e1f683c-3117-43aa-9e5b-d696ba919192;
@@ -8209,8 +8209,8 @@ Overview of System";
 				}
 			}
 			- _name = "packages";
-			- _objectCreation = "2515404129201620150931125";
-			- _umlDependencyID = "2457";
+			- _objectCreation = "2316770194920161837461123";
+			- _umlDependencyID = "2480";
 			- _lastModifiedTime = "11.12.2016::22:9:49";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID f24cd695-9d8b-41ba-a9c1-3787ad2bdbe6;
@@ -11345,7 +11345,7 @@ Overview of System";
 					{ IPropertySubject 
 						- _Name = "Format";
 						- Metaclasses = { IRPYRawContainer 
-							- size = 4;
+							- size = 5;
 							- value = 
 							{ IPropertyMetaclass 
 								- _Name = "Association";
@@ -11505,6 +11505,38 @@ Overview of System";
 									}
 								}
 							}
+							{ IPropertyMetaclass 
+								- _Name = "Inheritance";
+								- Properties = { IRPYRawContainer 
+									- size = 5;
+									- value = 
+									{ IProperty 
+										- _Name = "Font.Font";
+										- _Value = "Arial";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "Font.FontColor";
+										- _Value = "0,0,128";
+										- _Type = Color;
+									}
+									{ IProperty 
+										- _Name = "Font.Size";
+										- _Value = "10";
+										- _Type = Int;
+									}
+									{ IProperty 
+										- _Name = "Line.LineColor";
+										- _Value = "0,16,230";
+										- _Type = Color;
+									}
+									{ IProperty 
+										- _Name = "Line.LineWidth";
+										- _Value = "1";
+										- _Type = Int;
+									}
+								}
+							}
 						}
 					}
 					{ IPropertySubject 
@@ -11534,9 +11566,21 @@ Overview of System";
 				}
 			}
 			- _name = "definition";
-			- _objectCreation = "2515406129201620150911125";
-			- _umlDependencyID = "2691";
-			- _lastModifiedTime = "11.5.2016::19:2:38";
+			- _objectCreation = "2316772194920161837441123";
+			- _umlDependencyID = "2714";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "Sources.sbs";
+					- _subsystem = "Sources";
+					- _class = "";
+					- _name = "stereotype_48";
+					- _id = GUID 0a977eba-eb27-4b00-b55e-293fb7574be1;
+				}
+			}
+			- _lastModifiedTime = "11.19.2016::20:7:36";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 5fba9a0b-8c32-48fd-9714-e70d7196aaf8;
 				- m_type = 0;
@@ -11560,7 +11604,7 @@ Overview of System";
 				}
 				- m_drawBehavior = 0;
 				- m_bIsPreferencesInitialized = 0;
-				- elementList = 69;
+				- elementList = 72;
 				{ CGIClass 
 					- _id = GUID 30b86204-7654-490a-aee3-e3c056b75669;
 					- m_type = 78;
@@ -11681,7 +11725,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.135722 0 0 0.056263 539.729 221.49 ;
+					- m_transform = 0.135722 0 0 0.056263 559.729 413.49 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -11779,7 +11823,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.135722 0 0 0.056263 935.593 221.177 ;
+					- m_transform = 0.135722 0 0 0.056263 955.593 413.177 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -11877,7 +11921,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.102535 0 0 0.056263 1091.47 221.864 ;
+					- m_transform = 0.102535 0 0 0.056263 1111.47 413.864 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -11976,7 +12020,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.147981 0 0 0.056263 1211.22 221.551 ;
+					- m_transform = 0.147981 0 0 0.056263 1231.22 413.551 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12074,7 +12118,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.102205 0 0 0.056263 695.7 221.239 ;
+					- m_transform = 0.102205 0 0 0.056263 715.7 413.239 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12173,7 +12217,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.113096 0 0 0.056263 1451.99 305.926 ;
+					- m_transform = 0.113096 0 0 0.056263 1471.99 497.926 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12271,7 +12315,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.102205 0 0 0.056263 815.95 221.613 ;
+					- m_transform = 0.102205 0 0 0.056263 835.95 413.613 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12369,7 +12413,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.113561 0 0 0.056263 1379.52 161.301 ;
+					- m_transform = 0.113561 0 0 0.056263 1399.52 353.301 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12467,7 +12511,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.101276 0 0 0.056263 1416.03 233.988 ;
+					- m_transform = 0.101276 0 0 0.056263 1436.03 425.988 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12565,7 +12609,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.0912708 0 0 0.056263 1931.56 221.675 ;
+					- m_transform = 0.0912708 0 0 0.056263 1951.56 413.675 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12663,7 +12707,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.0903932 0 0 0.056263 1584.09 221.362 ;
+					- m_transform = 0.0903932 0 0 0.056263 1604.09 413.362 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12761,7 +12805,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.260469 0 0 0.0962564 215.479 316.331 ;
+					- m_transform = 0.260469 0 0 0.0962564 235.479 508.331 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -12885,7 +12929,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.65069 0 0 0.160427 214.567 1003.22 ;
+					- m_transform = 0.65069 0 0 0.160427 238.567 1487.22 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -13033,7 +13077,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.602098 0 0 0.139038 214.837 830.257 ;
+					- m_transform = 0.602098 0 0 0.205883 238.837 1200.27 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -13059,7 +13103,7 @@ Overview of System";
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 5;
+						- size = 9;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
@@ -13100,6 +13144,38 @@ Overview of System";
 							- _class = "driver";
 							- _name = "setDriver(driver_instance_t,int)";
 							- _id = GUID ebc8bb19-731f-4427-893f-a94fcdedd64a;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "driver.sbs";
+							- _subsystem = "Sources::hal::driver";
+							- _class = "driver";
+							- _name = "appendDriver(driver_instance_t)";
+							- _id = GUID 8aae3ace-bec9-4c02-885e-d78b6593a907;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "driver.sbs";
+							- _subsystem = "Sources::hal::driver";
+							- _class = "driver";
+							- _name = "setChannelADutyCycle(driver_instance_t,int)";
+							- _id = GUID 34b7a0b9-1cf8-4618-a443-f4f5f020eecc;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "driver.sbs";
+							- _subsystem = "Sources::hal::driver";
+							- _class = "driver";
+							- _name = "Operation_46()";
+							- _id = GUID fad5db8d-d42e-4dce-91b7-9138ef665360;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "driver.sbs";
+							- _subsystem = "Sources::hal::driver";
+							- _class = "driver";
+							- _name = "setChannelBDutyCycle(driver_instance_t,int)";
+							- _id = GUID 1bbdafcd-f720-4745-a8e4-e6072b4f4352;
 						}
 					}
 				}
@@ -13173,7 +13249,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.547362 0 0 0.203208 214.927 557.145 ;
+					- m_transform = 0.547362 0 0 0.227272 242.927 905.228 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -13199,7 +13275,7 @@ Overview of System";
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 9;
+						- size = 10;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
@@ -13273,6 +13349,14 @@ Overview of System";
 							- _name = "getAngularVelocity(encoder_instance_t)";
 							- _id = GUID b5b59a5f-3157-4b57-bd8c-7d04e9f70a53;
 						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "encoder.sbs";
+							- _subsystem = "Sources::hal::encoder";
+							- _class = "encoder";
+							- _name = "enableChOInterrupt(encoder_instance_t)";
+							- _id = GUID 05e0aa51-e41c-4fc6-b2f5-b6ec41515029;
+						}
 					}
 				}
 				{ CGIClass 
@@ -13345,7 +13429,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.261122 0 0 0.106952 215.144 168.813 ;
+					- m_transform = 0.261122 0 0 0.106952 235.144 360.813 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -13470,7 +13554,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.496401 0 0 0.0695187 539.319 133.128 ;
+					- m_transform = 0.496401 0 0 0.0695187 559.319 325.128 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -13559,7 +13643,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.497639 0 0 1.34759 1883 -23.3584 ;
+					- m_transform = 0.497639 0 0 1.34759 1907 460.642 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -14312,7 +14396,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.283286 0 0 0.117647 215.434 441.292 ;
+					- m_transform = 0.40321 0 0 0.202317 239.194 637.434 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -14338,39 +14422,71 @@ Overview of System";
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 4;
+						- size = 8;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
 							- _filename = "hmi.sbs";
 							- _subsystem = "Sources::hal::hmi";
 							- _class = "hmi";
-							- _name = "initLogger()";
-							- _id = GUID 3df38e58-bedd-4408-adaf-1eae9c5c5ccc;
+							- _name = "transmitSISI(char*,int,char*,int)";
+							- _id = GUID 1e1ba5ac-5c82-48a1-beec-fb5c6694aa38;
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
 							- _filename = "hmi.sbs";
 							- _subsystem = "Sources::hal::hmi";
 							- _class = "hmi";
-							- _name = "log(logContainer)";
-							- _id = GUID 0a545ad8-e426-4ea7-86cb-5e2d261dbc34;
+							- _name = "initHmi()";
+							- _id = GUID 3441fdb3-e9dc-4c7f-b610-1180d7343ad8;
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
 							- _filename = "hmi.sbs";
 							- _subsystem = "Sources::hal::hmi";
 							- _class = "hmi";
-							- _name = "initButtons()";
-							- _id = GUID c75c5706-51ff-44e3-bc7a-9e471b598374;
+							- _name = "transmitNewLine()";
+							- _id = GUID d478dd47-30b8-4301-8a70-f46bd017be3b;
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
 							- _filename = "hmi.sbs";
 							- _subsystem = "Sources::hal::hmi";
 							- _class = "hmi";
-							- _name = "initDebug()";
-							- _id = GUID 5a32e610-c33c-413a-a046-6f51c5119678;
+							- _name = "transmitS(char*)";
+							- _id = GUID a579df28-5369-4aa2-b1ce-0a0efc11a02a;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "hmi.sbs";
+							- _subsystem = "Sources::hal::hmi";
+							- _class = "hmi";
+							- _name = "transmitSCS(char*,char,char*)";
+							- _id = GUID 376a2bfb-32f2-472e-a728-6c7109c7514a;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "hmi.sbs";
+							- _subsystem = "Sources::hal::hmi";
+							- _class = "hmi";
+							- _name = "transmitSCSF(char*,char,char*,float)";
+							- _id = GUID 3efdbdbb-eb68-4efc-bd16-cc93e1530355;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "hmi.sbs";
+							- _subsystem = "Sources::hal::hmi";
+							- _class = "hmi";
+							- _name = "receive()";
+							- _id = GUID cc658a00-b6da-4b97-b39c-23edaaf5407b;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "hmi.sbs";
+							- _subsystem = "Sources::hal::hmi";
+							- _class = "hmi";
+							- _name = "transmitIrArray(uiIRVector)";
+							- _id = GUID c02073f7-4823-43dc-ad21-8f6ed6177fd8;
 						}
 					}
 				}
@@ -14425,7 +14541,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.373938 0 0 0.128342 215.252 1217.77 ;
+					- m_transform = 0.373938 0 0 0.128342 239.252 1701.77 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -14538,7 +14654,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.294618 0 0 0.0748663 215.411 1403.37 ;
+					- m_transform = 0.294618 0 0 0.159537 239.411 1861.51 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -14564,7 +14680,7 @@ Overview of System";
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 1;
+						- size = 5;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
@@ -14573,6 +14689,38 @@ Overview of System";
 							- _class = "diagnostics";
 							- _name = "runDiagnostics()";
 							- _id = GUID 40b1e726-10e7-4513-9106-e9cf53a27297;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "diagnostics.sbs";
+							- _subsystem = "Sources::hal::diagnostics";
+							- _class = "diagnostics";
+							- _name = "btestIrArray()";
+							- _id = GUID 1ec7aef0-1739-41d2-b2de-429093805fa5;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "diagnostics.sbs";
+							- _subsystem = "Sources::hal::diagnostics";
+							- _class = "diagnostics";
+							- _name = "btestMotors()";
+							- _id = GUID a60da37a-dd6e-43ce-8e1e-b5d773140566;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "diagnostics.sbs";
+							- _subsystem = "Sources::hal::diagnostics";
+							- _class = "diagnostics";
+							- _name = "btestEncoders()";
+							- _id = GUID 882aff1a-e368-4ce7-9619-dd70121b8491;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "diagnostics.sbs";
+							- _subsystem = "Sources::hal::diagnostics";
+							- _class = "diagnostics";
+							- _name = "btestVSense()";
+							- _id = GUID 96d779c6-ebb9-4587-ba9e-46412a3877d5;
 						}
 					}
 				}
@@ -14724,9 +14872,10 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 1210 637  1210 952  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1058 1337 ;
 					- m_TargetPort = 2 347 ;
 					- m_ShowName = 0;
@@ -14886,9 +15035,10 @@ Overview of System";
 						- m_nVerticalSpacing = -5;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 1393 1462  1393 1492  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1033 1271 ;
 					- m_TargetPort = 2 765 ;
 					- m_ShowName = 0;
@@ -14967,10 +15117,11 @@ Overview of System";
 						- m_nVerticalSpacing = -6;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 1223 788  1223 1072  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1061 1247 ;
+					- m_line_style = 2;
+					- m_SourcePort = 1061 744 ;
 					- m_TargetPort = 2 454 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -15129,7 +15280,7 @@ Overview of System";
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 1020 1130 ;
+					- m_SourcePort = 1020 693 ;
 					- m_TargetPort = 2 1121 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -15207,7 +15358,7 @@ Overview of System";
 						- m_nVerticalSpacing = -6;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 563 324  ;
+					- m_arrow = 1 583 516  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 0;
@@ -15289,12 +15440,11 @@ Overview of System";
 						- m_nVerticalSpacing = 37;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 588 588  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1061 1247 ;
-					- m_TargetPort = 356 1395 ;
+					- m_line_style = 2;
+					- m_SourcePort = 977 863 ;
+					- m_TargetPort = 540 1395 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
 				}
@@ -15371,9 +15521,10 @@ Overview of System";
 						- m_nVerticalSpacing = 10;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 786 737  777 737  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 992 329 ;
 					- m_TargetPort = 600 1382 ;
 					- m_ShowName = 0;
@@ -15452,11 +15603,11 @@ Overview of System";
 						- m_nVerticalSpacing = 199;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 2 936 600  936 1119  ;
+					- m_arrow = 1 906 910  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1061 1349 ;
+					- m_line_style = 2;
+					- m_SourcePort = 1061 1347 ;
 					- m_TargetPort = 1025 722 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -15534,10 +15685,10 @@ Overview of System";
 						- m_nVerticalSpacing = -58;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1141 816  ;
+					- m_arrow = 1 1161 1195  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1056 1274 ;
 					- m_TargetPort = 483 1389 ;
 					- m_ShowName = 0;
@@ -15616,10 +15767,10 @@ Overview of System";
 						- m_nVerticalSpacing = -114;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1284 816  ;
+					- m_arrow = 1 1304 1196  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1056 1279 ;
 					- m_TargetPort = 492 1394 ;
 					- m_ShowName = 0;
@@ -15698,10 +15849,10 @@ Overview of System";
 						- m_nVerticalSpacing = -114;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1392 816  ;
+					- m_arrow = 1 1412 1195  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1056 1274 ;
 					- m_TargetPort = 110 1399 ;
 					- m_ShowName = 0;
@@ -15780,10 +15931,10 @@ Overview of System";
 						- m_nVerticalSpacing = -114;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1428 816  ;
+					- m_arrow = 2 1130 1195  1130 496  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1056 1274 ;
 					- m_TargetPort = 98 1244 ;
 					- m_ShowName = 0;
@@ -15862,10 +16013,10 @@ Overview of System";
 						- m_nVerticalSpacing = 8;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1154 1007  ;
+					- m_arrow = 1 1174 1463  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1057 1278 ;
 					- m_TargetPort = 610 1389 ;
 					- m_ShowName = 0;
@@ -15944,10 +16095,10 @@ Overview of System";
 						- m_nVerticalSpacing = -77;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1404 1007  ;
+					- m_arrow = 1 1424 1462  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1057 1271 ;
 					- m_TargetPort = 216 1185 ;
 					- m_ShowName = 0;
@@ -16026,10 +16177,10 @@ Overview of System";
 						- m_nVerticalSpacing = -77;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1440 1007  ;
+					- m_arrow = 1 1460 1462  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1057 1271 ;
 					- m_TargetPort = 237 1387 ;
 					- m_ShowName = 0;
@@ -16108,10 +16259,10 @@ Overview of System";
 						- m_nVerticalSpacing = -125;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1536 1007  ;
+					- m_arrow = 1 1556 1462  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1057 1271 ;
 					- m_TargetPort = 743 1388 ;
 					- m_ShowName = 0;
@@ -16187,7 +16338,7 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1612 1188  ;
+					- m_arrow = 1 1636 1672  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 0;
@@ -16266,7 +16417,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.0906516 0 0 0.0534759 1691.82 222.406 ;
+					- m_transform = 0.0906516 0 0 0.0534759 1711.82 414.406 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -16368,7 +16519,7 @@ Overview of System";
 						- m_nVerticalSpacing = -69;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1728 1395  ;
+					- m_arrow = 1 1752 1879  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 0;
@@ -16450,11 +16601,11 @@ Overview of System";
 						- m_nVerticalSpacing = -66;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1008 588  ;
+					- m_arrow = 1 1028 890  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1061 1247 ;
+					- m_line_style = 2;
+					- m_SourcePort = 1061 1248 ;
 					- m_TargetPort = 533 1188 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -16532,7 +16683,7 @@ Overview of System";
 						- m_nVerticalSpacing = -6;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 780 324  ;
+					- m_arrow = 1 800 516  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 0;
@@ -16614,7 +16765,7 @@ Overview of System";
 						- m_nVerticalSpacing = -18;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 876 324  ;
+					- m_arrow = 1 896 516  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 0;
@@ -16696,11 +16847,11 @@ Overview of System";
 						- m_nVerticalSpacing = -40;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 729 588  ;
+					- m_arrow = 1 749 892  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1019 1256 ;
+					- m_line_style = 2;
+					- m_SourcePort = 1019 1258 ;
 					- m_TargetPort = 326 1400 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -16778,11 +16929,12 @@ Overview of System";
 						- m_nVerticalSpacing = 10;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 651 737  680 737  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 746 329 ;
-					- m_TargetPort = 621 1395 ;
+					- m_TargetPort = 886 1395 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
 				}
@@ -16859,10 +17011,10 @@ Overview of System";
 						- m_nVerticalSpacing = -5;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1129 1487  ;
+					- m_arrow = 1 1149 2040  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1020 1117 ;
 					- m_TargetPort = 366 1175 ;
 					- m_ShowName = 0;
@@ -16941,11 +17093,11 @@ Overview of System";
 						- m_nVerticalSpacing = -66;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 852 588  ;
+					- m_arrow = 1 872 890  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
-					- m_SourcePort = 1061 1247 ;
+					- m_line_style = 2;
+					- m_SourcePort = 1061 1248 ;
 					- m_TargetPort = 353 1393 ;
 					- m_ShowName = 0;
 					- m_ShowStereotype = 1;
@@ -17001,7 +17153,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.294618 0 0 0.0748663 215.411 1511.37 ;
+					- m_transform = 0.294618 0 0 0.0748663 240.411 2097.37 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -17109,7 +17261,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.113314 0 0 0.0534759 1799.77 222.406 ;
+					- m_transform = 0.113314 0 0 0.0534759 1819.77 414.406 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -17210,10 +17362,10 @@ Overview of System";
 						- m_nVerticalSpacing = -42;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1836 1596  ;
+					- m_arrow = 1 1855 2182  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1061 1130 ;
 					- m_TargetPort = 311 1432 ;
 					- m_ShowName = 0;
@@ -17317,7 +17469,7 @@ Overview of System";
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.351275 0 0 0.101604 215.297 1610.57 ;
+					- m_transform = 0.539188 0 0 0.221925 238.921 2178.98 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -17336,14 +17488,14 @@ Overview of System";
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=25%,75%>
+					- frameset = "<frameset rows=6%,94%>
 <frame name=AttributeListCompartment>
 <frame name=PrimitiveOperationListCompartment>";
 					- Attrs = { IRPYRawContainer 
 						- size = 0;
 					}
 					- Operations = { IRPYRawContainer 
-						- size = 3;
+						- size = 11;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
@@ -17368,6 +17520,70 @@ Overview of System";
 							- _class = "ir_array";
 							- _name = "trackPos(array_instance_t)";
 							- _id = GUID 94a11be2-2081-4430-8e51-1fe95fe7238e;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "ledSingleOn(uint8_t)";
+							- _id = GUID 7ce5b5ab-377f-4e12-8d9a-9176bdb30584;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "ledArrayOn()";
+							- _id = GUID cc3e56dc-7c1e-4037-b847-389def745a46;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "ledSingleOff(uint8_t)";
+							- _id = GUID eb823cd0-a2e5-465a-a317-d7269e0609aa;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "takeSingleMeasurement(uint8_t)";
+							- _id = GUID 0c02abef-d91a-46d0-93d9-b85bc05050f0;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "takeMeasurement()";
+							- _id = GUID 939f54da-ee5a-44ec-aef4-82a45a4021bf;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "normalizeReadings(uint8_t,float)";
+							- _id = GUID 11eb7676-be1c-44d5-b0ac-40e975c5dbe6;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "minMaxValuePosition(float,float,float,float,float,float,int)";
+							- _id = GUID 8faae539-e346-47ed-9c23-19cc5d7c8f34;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "ir_array.sbs";
+							- _subsystem = "Sources::hal::ir_array";
+							- _class = "ir_array";
+							- _name = "getPosition()";
+							- _id = GUID 2a46afa5-2315-4dde-a5f7-e3076a44dcbd;
 						}
 					}
 				}
@@ -17441,9 +17657,10 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 8;
 					}
+					- m_arrow = 2 1359 2433  1359 2213  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1024 1146 ;
 					- m_TargetPort = 2 1300 ;
 					- m_ShowName = 0;
@@ -17522,10 +17739,10 @@ Overview of System";
 						- m_nVerticalSpacing = -51;
 						- m_nOrientationCtrlPt = 8;
 					}
-					- m_arrow = 1 1752 1728  ;
+					- m_arrow = 1 1773 2436  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
-					- m_line_style = 0;
+					- m_line_style = 2;
 					- m_SourcePort = 1024 1156 ;
 					- m_TargetPort = 675 1414 ;
 					- m_ShowName = 0;
@@ -17601,12 +17818,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 95 400  95 552  ;
+					- m_arrow = 2 119 592  119 776  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
 					- m_SourcePort = 186 869 ;
-					- m_TargetPort = 299 941 ;
+					- m_TargetPort = 300 685 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -17774,12 +17991,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 95 400  95 720  ;
+					- m_arrow = 2 119 568  119 1204  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 48 869 ;
-					- m_TargetPort = 134 801 ;
+					- m_SourcePort = 48 620 ;
+					- m_TargetPort = 134 1315 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -17947,12 +18164,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 400  96 913  ;
+					- m_arrow = 2 120 568  120 1397  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 48 869 ;
-					- m_TargetPort = 25 595 ;
+					- m_SourcePort = 48 620 ;
+					- m_TargetPort = 25 956 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -18120,11 +18337,11 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 399  96 1152  ;
+					- m_arrow = 2 120 567  120 1636  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 17 859 ;
+					- m_SourcePort = 17 610 ;
 					- m_TargetPort = 88 927 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
@@ -18293,11 +18510,11 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 400  96 1380  ;
+					- m_arrow = 2 120 568  120 1864  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 2 869 ;
+					- m_SourcePort = 2 620 ;
 					- m_TargetPort = 34 1264 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
@@ -18466,12 +18683,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 400  96 1476  ;
+					- m_arrow = 2 120 568  120 1960  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 48 869 ;
-					- m_TargetPort = 165 970 ;
+					- m_SourcePort = 48 620 ;
+					- m_TargetPort = 165 617 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -18639,12 +18856,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 399  96 1584  ;
+					- m_arrow = 2 120 567  120 2131  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 90 859 ;
-					- m_TargetPort = 206 970 ;
+					- m_SourcePort = 90 610 ;
+					- m_TargetPort = 206 449 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -18812,12 +19029,12 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 400  96 1704  ;
+					- m_arrow = 2 120 568  120 2269  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 140 869 ;
-					- m_TargetPort = 70 920 ;
+					- m_SourcePort = 140 620 ;
+					- m_TargetPort = 69 406 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -18985,7 +19202,7 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 399  96 266  ;
+					- m_arrow = 2 119 591  119 458  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
@@ -19158,7 +19375,7 @@ Overview of System";
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 96 399  96 181  ;
+					- m_arrow = 2 120 591  120 373  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
@@ -19337,6 +19554,407 @@ Overview of System";
 					- m_SourcePort = -1 1293 ;
 					- m_TargetPort = 1037 497 ;
 					- m_ShowName = 0;
+					- m_ShowStereotype = 1;
+				}
+				{ CGIClass 
+					- _id = GUID 538a5e25-591a-4c0a-b84b-e17a7a3f1fb3;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "FitBoxToItsTextuals";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 87;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IClass";
+						- _filename = "vsense.sbs";
+						- _subsystem = "Sources::hal::vsense";
+						- _class = "";
+						- _name = "vsense";
+						- _id = GUID 1f0755b2-306c-4f25-b173-413abeb1548f;
+					}
+					- m_pParent = GUID 30b86204-7654-490a-aee3-e3c056b75669;
+					- m_name = { CGIText 
+						- m_str = "hal::vsense::vsense";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 5;
+					}
+					- m_drawBehavior = 2088;
+					- m_transform = 0.250236 0 0 0.190731 241.5 2488.25 ;
+					- m_bIsPreferencesInitialized = 1;
+					- m_AdditionalLabel = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 1;
+					}
+					- m_bFramesetModified = 1;
+					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
+					- m_nNameFormat = 0;
+					- m_nIsNameFormat = 0;
+					- frameset = "<frameset rows=15%,85%>
+<frame name=AttributeListCompartment>
+<frame name=PrimitiveOperationListCompartment>";
+					- Attrs = { IRPYRawContainer 
+						- size = 0;
+					}
+					- Operations = { IRPYRawContainer 
+						- size = 8;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "initVsense()";
+							- _id = GUID 5e155c0a-90af-44df-b03e-731c9f306b66;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getRawV1()";
+							- _id = GUID 9e841726-ce06-4402-90e7-ddf114cc5390;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getRawV2()";
+							- _id = GUID c0345f85-0ee0-4081-ae6b-a16a9e6f8914;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getV1()";
+							- _id = GUID b46fedc6-10f3-48b7-acd5-31c7f8997ff3;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getV2()";
+							- _id = GUID 96784cb2-3799-4972-bdd6-fcdad6aab5bf;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getSystemVoltage()";
+							- _id = GUID d2cbb5b8-ad26-4ef9-8682-8f6308dca410;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getCurrent()";
+							- _id = GUID fec96cde-e1d0-4c79-bcba-da5feddeb451;
+						}
+						{ IHandle 
+							- _m2Class = "IPrimitiveOperation";
+							- _filename = "vsense.sbs";
+							- _subsystem = "Sources::hal::vsense";
+							- _class = "vsense";
+							- _name = "getPower()";
+							- _id = GUID a55284c6-1ae6-4ba1-9156-c06ac7e0316b;
+						}
+					}
+				}
+				{ CGIAssociationEnd 
+					- _id = GUID 5a009c46-355c-447c-92de-db8b26e4c3fb;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "ShowLabels";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 92;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "main.sbs";
+						- _subsystem = "Sources::main";
+						- _class = "ES770";
+						- _name = "itsVsense";
+						- _id = GUID d886eb5e-d9ef-4aba-87c5-28388817a2f4;
+					}
+					- m_pParent = ;
+					- m_name = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_drawBehavior = 0;
+					- m_bIsPreferencesInitialized = 1;
+					- m_pSource = GUID b5f6a8dc-1dcf-476a-9445-9ca434ee7a7f;
+					- m_sourceType = 'F';
+					- m_pTarget = GUID 538a5e25-591a-4c0a-b84b-e17a7a3f1fb3;
+					- m_targetType = 'T';
+					- m_direction = ' ';
+					- m_rpn = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 7;
+					}
+					- m_arrow = 2 120 592  120 2692  ;
+					- m_anglePoint1 = 0 0 ;
+					- m_anglePoint2 = 0 0 ;
+					- m_line_style = 2;
+					- m_SourcePort = 37 869 ;
+					- m_TargetPort = 74 1068 ;
+					- m_pInverseModelObject = { IAssociationEndHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "vsense.sbs";
+						- _subsystem = "Sources::hal::vsense";
+						- _class = "vsense";
+						- _name = "itsES770";
+						- _id = GUID a5b057cb-a11b-4841-9997-19d8b5772598;
+					}
+					- m_pInstance = { IObjectLinkHandle 
+						- _m2Class = "";
+					}
+					- m_pInverseInstance = { IObjectLinkHandle 
+						- _m2Class = "";
+					}
+					- m_bShowSourceMultiplicity = 1;
+					- m_bShowSourceRole = 0;
+					- m_bShowTargetMultiplicity = 1;
+					- m_bShowTargetRole = 0;
+					- m_bShowLinkName = 1;
+					- m_bShowSpecificType = 0;
+					- m_bInstance = 0;
+					- m_bShowQualifier1 = 1;
+					- m_bShowQualifier2 = 1;
+					- m_sourceRole = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 2;
+						- m_bImplicitSetRectPoints = 0;
+					}
+					- m_targetRole = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 3;
+						- m_bImplicitSetRectPoints = 0;
+					}
+					- m_sourceMultiplicity = { CGIText 
+						- m_str = "1";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 4;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 4;
+					}
+					- m_targetMultiplicity = { CGIText 
+						- m_str = "1";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 5;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 4;
+					}
+					- m_sourceQualifier = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 6;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_targetQualifier = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 7;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_specificType = symmetric_type;
+				}
+				{ CGIInheritance 
+					- _id = GUID 614624a8-1846-4a68-bf25-e76c5be2de02;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "ShowLabels";
+												- _Value = "True";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 128;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IDependency";
+						- _filename = "vsense.sbs";
+						- _subsystem = "Sources::hal::vsense";
+						- _class = "vsense";
+						- _name = "target_pins";
+						- _id = GUID e3a49fe3-0047-479e-810a-0e7583812144;
+					}
+					- m_pParent = ;
+					- m_name = { CGIText 
+						- m_str = "target_pins";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_drawBehavior = 8;
+					- m_bIsPreferencesInitialized = 1;
+					- m_pSource = GUID 538a5e25-591a-4c0a-b84b-e17a7a3f1fb3;
+					- m_sourceType = 'F';
+					- m_pTarget = GUID da185fd8-2eb7-44de-ab23-fc7519e2e0bb;
+					- m_targetType = 'T';
+					- m_direction = ' ';
+					- m_rpn = { CGIText 
+						- m_str = "Usage";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_arrow = 2 1207 2682  1207 2062  ;
+					- m_anglePoint1 = 0 0 ;
+					- m_anglePoint2 = 0 0 ;
+					- m_line_style = 2;
+					- m_SourcePort = 933 1016 ;
+					- m_TargetPort = 277 1188 ;
+					- m_ShowName = 1;
 					- m_ShowStereotype = 1;
 				}
 				
