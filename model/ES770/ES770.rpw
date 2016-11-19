@@ -14,7 +14,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 182;
 				- m_nTop = 182;
 				- m_nRight = 1323;
@@ -29,20 +29,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "StatechartDiagram";
 				- _id = GUID 43cb9d19-cb26-4555-85eb-bb328240381c;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1104 536 ;
+			- _UpLeft = 256 0 ;
+			- _DownRight = 1250 483 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 3;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 0;
-				- m_showCmd = 1;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 156;
 				- m_nTop = 156;
 				- m_nRight = 1297;
@@ -57,8 +57,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "StatechartDiagram";
 				- _id = GUID be58c322-df43-44e8-b753-353b5355f0b7;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1724 837 ;
+			- _UpLeft = 0 25 ;
+			- _DownRight = 1203 860 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 4;
 		}
@@ -70,7 +70,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 260;
 				- m_nTop = 260;
 				- m_nRight = 1177;
@@ -86,7 +86,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _id = GUID 2eaf399e-4808-4897-aeab-e3e24a163732;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 880 502 ;
+			- _DownRight = 880 503 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 1;
 		}
@@ -98,7 +98,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 234;
 				- m_nTop = 234;
 				- m_nRight = 1375;
@@ -114,7 +114,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _id = GUID cb708348-5eed-4745-af96-358bf9e07341;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 1104 505 ;
+			- _DownRight = 1104 506 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 2;
 		}
@@ -126,7 +126,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 0;
 				- m_nTop = 0;
 				- m_nRight = 917;
@@ -141,8 +141,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "main sequence";
 				- _id = GUID e3b79f6a-287f-4e51-acd0-7d7cdcc36dc0;
 			}
-			- _UpLeft = 31 0 ;
-			- _DownRight = 853 479 ;
+			- _UpLeft = 138 0 ;
+			- _DownRight = 945 471 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
@@ -154,7 +154,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 156;
 				- m_nTop = 156;
 				- m_nRight = 1823;
@@ -169,8 +169,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "definition";
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
-			- _UpLeft = 0 496 ;
-			- _DownRight = 1630 1289 ;
+			- _UpLeft = 0 0 ;
+			- _DownRight = 4075 1985 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 5;
 		}
@@ -182,7 +182,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 52;
 				- m_nTop = 52;
 				- m_nRight = 1193;
@@ -197,8 +197,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "overview";
 				- _id = GUID bc5b3b92-b5fc-4a8d-8558-b5ba0e29f33f;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 1104 536 ;
+			- _UpLeft = 4 0 ;
+			- _DownRight = 1272 617 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 8;
 		}
@@ -210,7 +210,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 104;
 				- m_nTop = 104;
 				- m_nRight = 1245;
@@ -225,20 +225,20 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "packages";
 				- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 			}
-			- _UpLeft = 0 69 ;
-			- _DownRight = 1149 627 ;
+			- _UpLeft = 0 10 ;
+			- _DownRight = 1298 642 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 6;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -31;
+				- m_ptMaxPositionY = -30;
 				- m_nLeft = 78;
 				- m_nTop = 78;
 				- m_nRight = 1219;
@@ -253,13 +253,13 @@ I-Logix-RPY-Archive version 8.5.2 Modeler * 1159120
 				- _name = "requirements";
 				- _id = GUID c745a580-9e49-477a-b69d-9fed186430f0;
 			}
-			- _UpLeft = 235 233 ;
-			- _DownRight = 1839 1188 ;
+			- _UpLeft = 29 0 ;
+			- _DownRight = 1899 910 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 7;
 		}
 	}
-	- _fullName = "C:\\cygwin64\\home\\770\\model\\ES770\\ES770";
+	- _fullName = "\\\\vmware-host\\Shared Folders\\Documents\\University\\Current Semester\\ES770\\model\\ES770\\ES770";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
