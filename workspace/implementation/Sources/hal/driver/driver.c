@@ -238,3 +238,22 @@ void driver_setDriver(driver_instance_t driverInstance, int input)
     input = (input + 100)/2;
     driver_setHBridgeDutyCycle(driverInstance, input);
 }
+
+/**
+ * @brief setDriver but takes another argument to multiply duty cycle
+ * 
+ * @param driverInstance driver_instance_t struct.
+ * @param input -100 to 100.
+ * @param factor to multiply input.
+ */
+void driver_setDriver2(driver_instance_t driverInstance, int input, float factor)
+{
+    /* Cap out-of-bound input */
+    if(input < -100)
+        input = -100;
+    if(input > 100)
+        input = 100;
+    input = (int)((float)input*factor);
+    input = (input + 100)/2;
+    driver_setHBridgeDutyCycle(driverInstance, input);
+}

@@ -19,8 +19,10 @@
 
 /* Project includes */
 #include "hmi.h"
+#include "hal/controller/controller.h"
 #include "hal/target_definitions.h"
 
+extern controller_instance_t tpidP, tpidL, tpidR;
 
 /**
  * @brief Initializes HMI interface.
@@ -117,8 +119,56 @@ void hmi_transmitSISI(char* string1, int id, char* string2, int reading)
  * 
  * @param IR readings vector
  */
-void hmi_transmitIrArray(uint16_t* uiIrVector)
+void hmi_transmitArray(uint32_t* uiIrVector, uint16_t size)
 {
-    PRINTF("%5d %5d %5d %5d %5d %5d\r\n", uiIrVector[0], uiIrVector[1], uiIrVector[2],
-           uiIrVector[3], uiIrVector[4], uiIrVector[5]);
+	for(int i=0; i<size; i++)
+	{
+		 PRINTF("%5d ", uiIrVector[i]);
+		 util_genDelay500us();
+	}
+    PRINTF("\r\n");
+}
+
+/**
+ * @brief Receives and interprets data sent from the host device.
+ *
+ */
+void hmi_receive()
+{
+    /* Check if there are characters on buffer */
+    if(0 == UART0_BRD_S1_RDRF(HMI_UART_BASE)) return;
+    char cReceiveCommand, cReceiveInstance;
+    int iReceiveNumber;
+    controller_instance_t *controllerInstance;
+    SCANF("%c%c%d", &cReceiveInstance, &cReceiveCommand, &iReceiveNumber);
+    if((&tpidP)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidP;
+    else if((&tpidL)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidL;
+    else if((&tpidR)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidR;
+    else return;
+    switch(cReceiveCommand)
+    {
+        case 'P':
+        case 'p':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKp(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKp);
+            break;
+        case 'I':
+        case 'i':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKi(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKi);
+            break;
+        case 'D':
+        case 'd':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKd(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKd);
+            break;
+        default:
+            break;
+    }
 }

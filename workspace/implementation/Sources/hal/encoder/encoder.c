@@ -151,9 +151,9 @@ void encoder_resetCounter(encoder_instance_t encoderInstance)
  */
 void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
 {
-	double tmp;
+	float tmp;
     TPM_Type *tpmBase = g_tpmBase[encoderInstance->uiEncoderTpmInstance];
-    tmp = (double)(1000000*TPM_HAL_GetCounterVal(tpmBase))/(double)encoderInstance->uiEncoderAcqPeriodUs;
+    tmp = ((float)(1000000*TPM_HAL_GetCounterVal(tpmBase)))/((float)encoderInstance->uiEncoderAcqPeriodUs);
     encoderInstance->uiEncoderPulsesPerSecond = tmp;
     encoder_resetCounter(*encoderInstance);
 }
@@ -168,9 +168,9 @@ void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in degrees.
  */
-//double encoder_getAngularPositionDegree(encoder_instance_t encoderInstance)
+//float encoder_getAngularPositionDegree(encoder_instance_t encoderInstance)
 //{
-//    return 360*((double)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
+//    return 360*((float)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
 //}
 
 
@@ -180,9 +180,9 @@ void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in radians.
  */
-//double encoder_getAngularPositionRad(encoder_instance_t encoderInstance)
+//float encoder_getAngularPositionRad(encoder_instance_t encoderInstance)
 //{
-//    return CONST_2PI*((double)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
+//    return CONST_2PI*((float)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
 //}
 
 
@@ -192,7 +192,7 @@ void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in pps.
  */
-double encoder_getAngularVelocity(encoder_instance_t encoderInstance)
+float encoder_getAngularVelocity(encoder_instance_t encoderInstance)
 {
     return encoderInstance.uiEncoderPulsesPerSecond;
 }
@@ -204,9 +204,9 @@ double encoder_getAngularVelocity(encoder_instance_t encoderInstance)
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in Rad/s.
  */
-double encoder_getAngularVelocityRad(encoder_instance_t encoderInstance)
+float encoder_getAngularVelocityRad(encoder_instance_t encoderInstance)
 {
-    return CONST_2PI*(encoderInstance.uiEncoderPulsesPerSecond/encoderInstance.uiEncoderPulseCount);
+    return CONST_2PI*(encoderInstance.uiEncoderPulsesPerSecond/((float)encoderInstance.uiEncoderPulseCount));
 }
 
 
@@ -216,9 +216,9 @@ double encoder_getAngularVelocityRad(encoder_instance_t encoderInstance)
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in RPM.
  */
-double encoder_getAngularVelocityRPM(encoder_instance_t encoderInstance)
+float encoder_getAngularVelocityRPM(encoder_instance_t encoderInstance)
 {
-    return 60*(encoderInstance.uiEncoderPulsesPerSecond/encoderInstance.uiEncoderPulseCount);
+    return 60*(encoderInstance.uiEncoderPulsesPerSecond/((float)encoderInstance.uiEncoderPulseCount));
 }
 
 

@@ -21,6 +21,23 @@
 #include "hal/adc/adc.h"
 
 
+
+
+
+/**
+ * @brief Interpolation algorithm
+ * @details Catmull-Rom
+ * 
+ *     points: x:   0     1     2     3     4     5		(array sensor position)
+ *     		   y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]	(normalized sensor reading)
+ *     		   
+ *     Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
+ *     with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
+ *     points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
+ *     x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.
+ * 
+ */
+
 /**
  * @brief Initializes IR Array.
  * 
@@ -109,7 +126,8 @@ void ir_array_ledArrayOff()
 uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance)
 {
 	adc_startConversion(ADC_IRX_ADC_CH_NUMBER[uiIrChannelInstance]);
-	for(int i = 0; i < ADC_10MS_MULTIPLE_WAIT_PERIOD; i++) util_genDelay10ms();
+	//for(int i = 0; i < ADC_10MS_MULTIPLE_WAIT_PERIOD; i++) util_genDelay10ms();
+	util_genDelay500us();
 	if(adc_isAdcDone()) return adc_getValue();
 	else return 0;
 }
@@ -119,7 +137,7 @@ uint16_t ir_array_takeSingleMeasurement(uint8_t uiIrChannelInstance)
  * 
  * @param uiIrVector Array pointer to store raw sensor measurements
  */
-void ir_array_takeMeasurement()
+void ir_array_takeMeasurement(uint16_t* uiIrVector)
 {
 	for(int i = 0; i < 6; i++)
 	{
@@ -131,42 +149,206 @@ void ir_array_takeMeasurement()
 }
 
 /**
- * @brief Calibrates minimum and maximum values of readings.
+ * @brief Normalizes the IR sensor readings according to min and max values from calibration.
  * 
- * @param uiIrMinVector Array pointer to store minimum raw sensor measurements
- * @param uiIrMaxVector Array pointer to store minimum raw sensor measurements
+ * @param uiIrVector Array pointer to store raw sensor measurements
+ * @param fIrNormalizedReadings Array pointer to store raw normalized measurements
  */
-void ir_array_calibrate()
+void ir_array_normalizeReadings(uint16_t* uiIrVector, float* fIrNormalizedReadings)
 {
-	ir_array_ledArrayOff();
-	ir_array_takeMeasurement(uiIrMinreadings);
-	ir_array_ledArrayOn();
-	ir_array_takeMeasurement(uiIrMaxreadings);
-}
-
-/**
- * @brief Calibrates minimum and maximum values of readings.
- * 
- * @param uiIrMinVector Array pointer to store minimum raw sensor measurements
- * @param uiIrMaxVector Array pointer to store minimum raw sensor measurements
- */
-void ir_array_getNormalizedReadings()
-{
-	ir_array_takeMeasurement();
-	for(int i = 0; i < 6; i++)
+	for(int i=0; i<6; i++)
 	{
-		dIrNormalizedReadings[i] = ((double)(uiIrReadings[i]-uiIrMinreadings[i]))/((double)uiIrMaxreadings[i]);
+		if(uiIrVector[i] < uiIrMinreadings[i])
+			fIrNormalizedReadings[i] = 0;
+		else if(uiIrVector[i] > uiIrMaxreadings[i])
+			fIrNormalizedReadings[i] = 1;
+		else
+			fIrNormalizedReadings[i] = ((float)(uiIrVector[i] - uiIrMinreadings[i]))/
+								   	   ((float)(uiIrMaxreadings[i] - uiIrMinreadings[i]));
 	}
 }
 
 /**
- * @brief Finds position of track
+ * @brief Executes the calibration routine for all LED/sensor pairs.
+ * @details Store minimum and maximum reading values on uiIrMinreadings and uiIrMaxreadings respectively.
  * 
+ * @param uiIrVector Array pointer to store raw sensor measurements
  */
-void ir_array_getTrackPosition()
+void ir_array_calibrate(uint16_t* uiIrVector)
 {
+	uint32_t readingsOff[6] = { 0 };
+	uint32_t readingsOn[6] = { 0 };
+
+	// Take average of readings with array off
+	ir_array_ledArrayOff();
+	for(int i = 0; i < 50; i++) util_genDelay10ms();
+
+	for(int i=0; i<8; i++)
+	{
+		for(int j=0; j<6; j++)
+		{
+			ir_array_takeMeasurement(uiIrReadings);
+			readingsOff[j] = readingsOff[j] + uiIrReadings[j];
+			util_genDelay10ms();
+		}
+	}
+	for(int j=0; j<6; j++)
+	{
+		readingsOff[j] = readingsOff[j] >> 3;
+	}
+
+	// Take average of readings with array on
+	ir_array_ledArrayOn();
+	for(int i = 0; i < 50; i++) util_genDelay10ms();
+		
+	for(int i=0; i<8; i++)
+	{
+		for(int j=0; j<6; j++)
+		{
+			ir_array_takeMeasurement(uiIrReadings);
+			readingsOn[j] = readingsOn[j] + uiIrReadings[j];
+			util_genDelay10ms();
+		}
+	}
+	for(int j=0; j<6; j++)
+	{
+		readingsOn[j] = readingsOn[j] >> 3;
+	}
+
+	// Set calibration data
+	for(int i=0; i<6; i++)
+	{
+		uiIrMinreadings[i] = readingsOff[i];
+	}
+	for(int i=0; i<6; i++)
+	{
+		uiIrMaxreadings[i] = readingsOn[i];
+	}
+}
+
+/**
+ * @brief Implements the uniform Catmull-Rom spline algorithm between point p1 and p2.
+ * @details Uniform Catmull-Rom using float precision data-type given 4 points and position t.
+ * 
+ * @param p0 Point 0
+ * @param p1 Point 1
+ * @param p2 Point 2
+ * @param p3 Point 3
+ * @param t Position
+ * @return Returns the interpolated points fot position t between p1 and p2.
+ */
+float ir_array_catmullRom(float p0, float p1, float p2, float p3, float t)
+{
+	// Uniform Catmull-Rom implementation
+    float t2 = t*t;
+    float t3 = t2*t;
+    float f1 = -0.5 * t3 +t2 - 0.5 * t;
+    float f2 = 1.5 * t3 - 2.5 * t2 +1.0;
+    float f3 = -1.5 * t3 +2.0 * t2 +0.5 * t;
+    float f4 = 0.5 * t3 - 0.5 * t2;
+    return p0*f1 +p1*f2 +p2*f3 +p3*f4;
+}
+
+/**
+ * @brief Executes the Catmull-Rom algorithm for all pairs of sensors (0-1, 1-2, 2-3, 3-4, 4-5).
+ * @details Generates a 46 point vector from position 0 to position 5 (sensor 0 to 5) with 9 
+ * control points between each sensor:
+ * sensor:		0			  1		 ...      2						5
+ * position:	0, 1, ..., 8, 9, 10, ..., 17, 18, 19, ..........44, 45
+ * 
+ * @param y Array pointer to store interpolated values
+ * @param y0 sensor 0 normalized measurement
+ * @param y1 sensor 1 normalized measurement
+ * @param y2 sensor 2 normalized measurement
+ * @param y3 sensor 3 normalized measurement
+ * @param y4 sensor 4 normalized measurement
+ * @param y5 sensor 5 normalized measurement
+ */
+void ir_array_interpolate(float* y, float y0, float y1, float y2, float y3, float y4, float y5)
+{
+	// No need to interpolate x, spacing is fixed, just sum index. x[i] = fcx[i] + 1,2,...
+	for(int i=0; i<9; i++)
+	{
+		y[i]      = ir_array_catmullRom(y0, y0, y1, y2, fcx[i]);
+		y[i+10-1] = ir_array_catmullRom(y0, y1, y2, y3, fcx[i]);
+		y[i+20-2] = ir_array_catmullRom(y1, y2, y3, y4, fcx[i]);
+		y[i+30-3] = ir_array_catmullRom(y2, y3, y4, y5, fcx[i]);
+		y[i+40-4] = ir_array_catmullRom(y3, y4, y5, y5, fcx[i]);
+	}
+	y[45] = ir_array_catmullRom(y3, y4, y5, y5, fcx[9]);
+}
+
+/**
+ * @brief Evaluates the position of the trough, or occurence of a command bar.
+ * @details Evaluates the position of the trough(pos), or occurence of a command bar(-1). If both are 
+ * inexistent returns invalid (-2).
+ * 
+ * @param y0 sensor 0 normalized measurement
+ * @param y1 sensor 1 normalized measurement
+ * @param y2 sensor 2 normalized measurement
+ * @param y3 sensor 3 normalized measurement
+ * @param y4 sensor 4 normalized measurement
+ * @param y5 sensor 5 normalized measurement
+ * @return Trough Pos or -10 (command bar) or -20 (invalid/other)
+ */
+float ir_array_minMaxValuePosition(float y0, float y1, float y2, float y3, float y4, float y5)
+{
+	// Execute interpolation for all points
+	float y[46] = { 0 };
+	ir_array_interpolate(y, y0, y1, y2, y3, y4, y5);
+
+	
+	// Find minimum
+	float minVal = 1;
+	float maxVal = 0;
+	int minPos = 0;
+	for(int i=0; i<46; i++)
+	{
+		if(y[i] < minVal)
+		{
+			minPos = i;
+			minVal = y[i];
+		}
+		if(y[i] > maxVal)
+		{
+			maxVal = y[i];
+		}
+	}
+
+	// Fix minPos: sensor arrays go from x=0 to x=5, y goes from 0 to 45
+	if((maxVal-minVal) > IR_MIN_DIFF)
+		return ((float)minPos)*5/45 -2.5;
+
+	// If command has been recognized (black perpendicular rectangle) return -1
+	if((maxVal-minVal) < IR_MAX_DIFF)
+		return -10;
+
+	// If no suitable trough has been found, return -2
+	return -20;
 
 }
+
+/**
+ * @brief Get position of trought or occurence of command bar.
+ * @details [long description]
+ * 
+ * @param  [description]
+ * @return [description]
+ */
+float ir_array_getPosition()
+{
+	ir_array_takeMeasurement(uiIrReadings);
+	ir_array_normalizeReadings(uiIrReadings, fIrNormalizedReadings);
+	return ir_array_minMaxValuePosition(fIrNormalizedReadings[0],
+												fIrNormalizedReadings[1],
+												fIrNormalizedReadings[2],
+												fIrNormalizedReadings[3],
+												fIrNormalizedReadings[4],
+												fIrNormalizedReadings[5]
+												);
+}
+
+
 
 
 

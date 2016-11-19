@@ -66,6 +66,8 @@ bool diagnostics_startDiagnostics()
 		return true;
 	}
 	hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_OK);
+	driver_initDriver(tdriverL);
+	driver_appendDriver(tdriverR);
 	return false;
 }
 
@@ -82,12 +84,18 @@ bool diagnostics_btestVSense()
 	hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_RUNNING);
 	bool error_flag = false;
 	float meas1, meas2, meas3, meas4;
-	for(int i = 0; i < 6; i++) meas1 += vsense_getV1();
-	meas1 = meas1/6;
-	//meas1 = vsense_getRawV1();
-	for(int i = 0; i < 6; i++) meas2 += vsense_getV2();
-	meas2 = meas2/6;
-	//meas2 = vsense_getRawV2();
+	for(int i = 0; i < 20; i++)
+	{
+		meas1 += vsense_getV1();
+		util_genDelay1ms();
+	}
+	meas1 = meas1/20;
+	for(int i = 0; i < 20; i++)
+	{
+		meas2 += vsense_getV2();
+		util_genDelay1ms();
+	}
+	meas2 = meas2/20;
 	meas3 = vsense_getCurrent();
 	meas4 = vsense_getPower();
 	if(meas1 < VSENSE_MIN_VOLTAGE)
@@ -243,7 +251,7 @@ bool diagnostics_btestEncoders()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_ENC_RUNNING);
 	bool error_flag = false;
-	uint32_t meas1 = 0, meas2 = 0;
+	float meas1 = 0, meas2 = 0;
 	/* Test R */
 	encoder_resetCounter(tencoderL);
 	encoder_resetCounter(tencoderR);

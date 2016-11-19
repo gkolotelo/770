@@ -19,12 +19,12 @@ typedef struct {
 	char cControllerInstance;
 
 	/* Data section */
-	double dControllerKp;
-	double dControllerKi;
-	double dControllerKd;
-	double dControllerSensorPreviousValue;
-	double dControllerErrorSum;
-	double dControllerMaxSumError;
+	float fControllerKp;
+	float fControllerKi;
+	float fControllerKd;
+	float fControllerSensorPreviousValue;
+	float fControllerErrorSum;
+	float fControllerMaxSumError;
 
 } controller_instance_t;
 
@@ -34,49 +34,50 @@ typedef struct {
  * 
  * @param controllerInstance controller_instance_t struct.
  */
-void controller_initPID(controller_instance_t *controllerInstance);
+void controller_initPID(controller_instance_t *controllerInstance, float fMaxSumError,
+                        float fPGain, float fIGain, float fDGain);
 
 /**
  * @brief Sets the maximum integrative error.
  * 
  * @param controllerinstance controller_instance_t struct.
- * @param dMaxSumError Maximum error acceptable
+ * @param fMaxSumError Maximum error acceptable
  */
-void controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError);
+void controller_setMaxSumError(controller_instance_t *controllerInstance, float fMaxSumError);
 
 /**
  * @brief Sets the Kp.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dPGain Proportional constant.
+ * @param fPGain Proportional constant.
  */
-void controller_setKp(controller_instance_t *controllerInstance, double dPGain);
+void controller_setKp(controller_instance_t *controllerInstance, float fPGain);
 
 /**
  * @brief Sets the Ki.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dIGain Integrative constant.
+ * @param fIGain Integrative constant.
  */
-void controller_setKi(controller_instance_t *controllerInstance, double dIGain);
+void controller_setKi(controller_instance_t *controllerInstance, float fIGain);
 
 /**
  * @brief Sets the Kd.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dDGain Derivative constant.
+ * @param fDGain Derivative constant.
  */
-void controller_setKd(controller_instance_t *controllerInstance, double dDGain);
+void controller_setKd(controller_instance_t *controllerInstance, float fDGain);
 
 /**
  * @brief Updates the active controller and retrieves the actuation value
  * @details [long description]
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dSensorValue Value from sensor.
- * @param dReferenceValue Reference value.
+ * @param fSensorValue Value from sensor.
+ * @param fReferenceValue Reference value.
  * @return Actuation value.
  */
-double controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue);
+float controller_PIDUpdate(controller_instance_t *controllerInstance, float fSensorValue, float fReferenceValue);
 
 #endif /* SOURCES_CONTROLLER_H_ */

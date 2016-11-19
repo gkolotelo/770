@@ -109,4 +109,14 @@ void driver_setHBridgeDutyCycle(driver_instance_t driverInstance, int uiDutyCycl
  */
 void driver_setDriver(driver_instance_t driverInstance, int input);
 
+
+/**
+ * @brief setDriver but takes another argument to multiply duty cycle
+ *
+ * @param driverInstance driver_instance_t struct.
+ * @param input -100 to 100.
+ * @param factor to multiply input.
+ */
+void driver_setDriver2(driver_instance_t driverInstance, int input, float factor);
+
 #endif /* SOURCES_DRIVER_H_ */

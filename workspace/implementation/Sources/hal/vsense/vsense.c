@@ -89,7 +89,7 @@ float vsense_getV2()
  */
 float vsense_getSystemVoltage()
 {
-	return vsense_getV1();
+	return vsense_getV2();
 }
 
 /**
@@ -102,7 +102,6 @@ float vsense_getCurrent()
 	float v1, v2;
 	v1 = vsense_getV1();
 	v2 = vsense_getV2();
-	if(v1 == 0 || v2 == 0) return 0;
 	return (v1 - v2)/(float)VSENSE_RESISTOR_VALUE;
 }
 

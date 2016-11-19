@@ -30,7 +30,7 @@ typedef struct {
 	uint32_t uiEncoderAcqPeriodUs;
 
 	/* Data section */
-	double uiEncoderPulsesPerSecond;
+	float uiEncoderPulsesPerSecond;
 
 } encoder_instance_t;
 
@@ -106,7 +106,7 @@ void encoder_takeMeasurement(encoder_instance_t *encoderInstance);
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in degrees.
  */
-double encoder_getAngularPositionDegree(encoder_instance_t encoderInstance);
+float encoder_getAngularPositionDegree(encoder_instance_t encoderInstance);
 
 
 /**
@@ -115,7 +115,7 @@ double encoder_getAngularPositionDegree(encoder_instance_t encoderInstance);
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular position of the encoder in radians.
  */
-double encoder_getAngularPositionRad(encoder_instance_t encoderInstance);
+float encoder_getAngularPositionRad(encoder_instance_t encoderInstance);
 
 
 /**
@@ -124,7 +124,7 @@ double encoder_getAngularPositionRad(encoder_instance_t encoderInstance);
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in pps.
  */
-double encoder_getAngularVelocity(encoder_instance_t encoderInstance);
+float encoder_getAngularVelocity(encoder_instance_t encoderInstance);
 
 
 /**
@@ -133,7 +133,7 @@ double encoder_getAngularVelocity(encoder_instance_t encoderInstance);
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in Rad/s.
  */
-double encoder_getAngularVelocityRad(encoder_instance_t encoderInstance);
+float encoder_getAngularVelocityRad(encoder_instance_t encoderInstance);
 
 
 /**
@@ -142,6 +142,6 @@ double encoder_getAngularVelocityRad(encoder_instance_t encoderInstance);
  * @param encoderInstance encoder_instance_t struct.
  * @return Angular velocity of the encoder in RPM.
  */
-double encoder_getAngularVelocityRPM(encoder_instance_t encoderInstance);
+float encoder_getAngularVelocityRPM(encoder_instance_t encoderInstance);
 
 #endif /* SOURCES_ENCODER_H_ */

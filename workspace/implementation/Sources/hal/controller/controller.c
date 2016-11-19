@@ -20,58 +20,59 @@
  * 
  * @param controllerInstance controller_instance_t struct.
  */
-void controller_initPID(controller_instance_t *controllerInstance)
+void controller_initPID(controller_instance_t *controllerInstance, float fMaxSumError,
+                        float fPGain, float fIGain, float fDGain)
 {
-    controllerInstance->dControllerKp = 0;
-    controllerInstance->dControllerKi = 0;
-    controllerInstance->dControllerKd = 0;
-    controllerInstance->dControllerSensorPreviousValue = 0;
-    controllerInstance->dControllerErrorSum = 0;
-    controllerInstance->dControllerMaxSumError = 0;
+    controllerInstance->fControllerKp = fPGain;
+    controllerInstance->fControllerKi = fIGain;
+    controllerInstance->fControllerKd = fDGain;
+    controllerInstance->fControllerSensorPreviousValue = 0;
+    controllerInstance->fControllerErrorSum = 0;
+    controllerInstance->fControllerMaxSumError = fMaxSumError;
 }
 
 /**
  * @brief Sets the maximum integrative error.
  * 
  * @param controllerinstance controller_instance_t struct.
- * @param dMaxSumError Maximum error acceptable
+ * @param fMaxSumError Maximum error acceptable
  */
-void controller_setMaxSumError(controller_instance_t *controllerInstance, double dMaxSumError)
+void controller_setMaxSumError(controller_instance_t *controllerInstance, float fMaxSumError)
 {
-    controllerInstance->dControllerMaxSumError = dMaxSumError;
+    controllerInstance->fControllerMaxSumError = fMaxSumError;
 }
 
 /**
  * @brief Sets the Kp.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dPGain Proportional constant.
+ * @param fPGain Proportional constant.
  */
-void controller_setKp(controller_instance_t *controllerInstance, double dPGain)
+void controller_setKp(controller_instance_t *controllerInstance, float fPGain)
 {
-    controllerInstance->dControllerKp = dPGain;
+    controllerInstance->fControllerKp = fPGain;
 }
 
 /**
  * @brief Sets the Ki.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dIGain Integrative constant.
+ * @param fIGain Integrative constant.
  */
-void controller_setKi(controller_instance_t *controllerInstance, double dIGain)
+void controller_setKi(controller_instance_t *controllerInstance, float fIGain)
 {
-    controllerInstance->dControllerKi = dIGain;
+    controllerInstance->fControllerKi = fIGain;
 }
 
 /**
  * @brief Sets the Kd.
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dDGain Derivative constant.
+ * @param fDGain Derivative constant.
  */
-void controller_setKd(controller_instance_t *controllerInstance, double dDGain)
+void controller_setKd(controller_instance_t *controllerInstance, float fDGain)
 {
-    controllerInstance->dControllerKd = dDGain;
+    controllerInstance->fControllerKd = fDGain;
 }
 
 /**
@@ -79,32 +80,32 @@ void controller_setKd(controller_instance_t *controllerInstance, double dDGain)
  * @details [long description]
  * 
  * @param controllerInstance controller_instance_t struct.
- * @param dSensorValue Value from sensor.
- * @param dReferenceValue Reference value.
+ * @param fSensorValue Value from sensor.
+ * @param fReferenceValue Reference value.
  * @return Actuation value.
  */
-double controller_PIDUpdate(controller_instance_t *controllerInstance, double dSensorValue, double dReferenceValue)
+float controller_PIDUpdate(controller_instance_t *controllerInstance, float fSensorValue, float fReferenceValue)
 {
-    if(dReferenceValue < 20) return 0;
-    double dPterm, dIterm, dDterm;
-    double dError, dDifference, dItemp;
+    //if(fReferenceValue < 0.06) return 0;
+    float fPterm, fIterm, fDterm;
+    float fError, fDifference, fItemp;
 
-    dError = dReferenceValue - dSensorValue;
+    fError = fReferenceValue - fSensorValue;
 
     /* Proportional */
-    dPterm = controllerInstance->dControllerKp * dError;
+    fPterm = controllerInstance->fControllerKp * fError;
 
     /*  Integrative */
-    dItemp = controllerInstance->dControllerErrorSum + dError;
-    if(abs(dItemp) < controllerInstance->dControllerMaxSumError)
-        controllerInstance->dControllerErrorSum = dItemp;
-    dIterm = controllerInstance->dControllerKi * controllerInstance->dControllerErrorSum;
+    fItemp = controllerInstance->fControllerErrorSum + fError;
+    if(abs(fItemp) < controllerInstance->fControllerMaxSumError)
+        controllerInstance->fControllerErrorSum = fItemp;
+    fIterm = controllerInstance->fControllerKi * controllerInstance->fControllerErrorSum;
 
     /*  Derivative  */
-    dDifference = controllerInstance->dControllerSensorPreviousValue - dSensorValue;
-    controllerInstance->dControllerSensorPreviousValue = dSensorValue;
-    dDterm = controllerInstance->dControllerKd * dDifference;
+    fDifference = controllerInstance->fControllerSensorPreviousValue - fSensorValue;
+    controllerInstance->fControllerSensorPreviousValue = fSensorValue;
+    fDterm = controllerInstance->fControllerKd * fDifference;
 
-    return (dPterm + dIterm + dDterm);
+    return (fPterm + fIterm + fDterm);
 }
 
