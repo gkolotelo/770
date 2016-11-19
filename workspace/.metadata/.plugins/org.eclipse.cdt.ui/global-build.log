@@ -358,3 +358,204 @@ Total             1002524
 
 Finished building: implementation.siz
  
+14:15:42 **** Incremental Build of configuration Debug for project implementation ****
+make all 
+Building file: ../Sources/hal/hmi/hmi.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -D"CPU_MKL25Z128VLK4" -I"../Sources" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/include" -I"../Project_Settings/Startup_Code" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/inc" -I"C:\Freescale\KSDK_1.2.0/platform/CMSIS/Include" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/src" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/osa/src" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup/gcc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcglite" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/interrupt" -I"C:\Freescale\KSDK_1.2.0/platform/osa/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/devices" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lpuart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/system/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcg" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/sim/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/ftm" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/hwtimer" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/power" -I"C:\Freescale\KSDK_1.2.0/platform/composite/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/sai" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/port" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/irtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lpsci" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/osc" -std=c99 -MMD -MP -MF"Sources/hal/hmi/hmi.d" -MT"Sources/hal/hmi/hmi.o" -c -o "Sources/hal/hmi/hmi.o" "../Sources/hal/hmi/hmi.c"
+../Sources/hal/hmi/hmi.c: In function 'hmi_transmitArray':
+../Sources/hal/hmi/hmi.c:127:4: warning: implicit declaration of function 'util_genDelay500us' [-Wimplicit-function-declaration]
+    util_genDelay500us();
+    ^
+Finished building: ../Sources/hal/hmi/hmi.c
+ 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -D"CPU_MKL25Z128VLK4" -I"../Sources" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/include" -I"../Project_Settings/Startup_Code" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/inc" -I"C:\Freescale\KSDK_1.2.0/platform/CMSIS/Include" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/src" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/osa/src" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup/gcc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcglite" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/interrupt" -I"C:\Freescale\KSDK_1.2.0/platform/osa/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/devices" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lpuart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/system/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcg" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/sim/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/ftm" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/hwtimer" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/power" -I"C:\Freescale\KSDK_1.2.0/platform/composite/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/sai" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/port" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/irtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lpsci" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/osc" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:288:8: warning: unused variable 'transition' [-Wunused-variable]
+   bool transition = false;
+        ^
+../Sources/main.c:287:8: warning: unused variable 'command_found' [-Wunused-variable]
+   bool command_found = false;
+        ^
+../Sources/main.c:286:8: warning: unused variable 'slow_down' [-Wunused-variable]
+   bool slow_down = false;
+        ^
+Finished building: ../Sources/main.c
+ 
+Building target: implementation.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"//vmware-host/Shared Folders/Documents/University/Current Semester/ES770/workspace/implementation/Project_Settings/Linker_Files" -Wl,-Map,"implementation.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "implementation.elf"  ./Sources/hal/vsense/vsense.o  ./Sources/hal/util/tc_hal.o ./Sources/hal/util/util.o  ./Sources/hal/uart/fsl_debug_console.o ./Sources/hal/uart/print_scan.o  ./Sources/hal/mcg/mcg.o  ./Sources/hal/ir_array/ir_array.o  ./Sources/hal/hmi/hmi.o  ./Sources/hal/encoder/encoder.o  ./Sources/hal/driver/driver.o  ./Sources/hal/diagnostics/diagnostics.o  ./Sources/hal/controller/controller.o  ./Sources/hal/adc/adc.o  ./Sources/main.o  ./SDK/platform/system/src/clock/MKL25Z4/fsl_clock_MKL25Z4.o  ./SDK/platform/system/src/clock/fsl_clock_manager.o ./SDK/platform/system/src/clock/fsl_clock_manager_common.o  ./SDK/platform/hal/src/uart/fsl_uart_hal.o  ./SDK/platform/hal/src/tpm/fsl_tpm_hal.o  ./SDK/platform/hal/src/sim/MKL25Z4/fsl_sim_hal_MKL25Z4.o  ./SDK/platform/hal/src/osc/fsl_osc_hal.o  ./SDK/platform/hal/src/mcg/fsl_mcg_hal.o ./SDK/platform/hal/src/mcg/fsl_mcg_hal_modes.o  ./SDK/platform/hal/src/lptmr/fsl_lptmr_hal.o  ./SDK/platform/hal/src/lpsci/fsl_lpsci_hal.o  ./SDK/platform/hal/src/gpio/fsl_gpio_hal.o  ./SDK/platform/drivers/src/tpm/fsl_tpm_common.o ./SDK/platform/drivers/src/tpm/fsl_tpm_driver.o ./SDK/platform/drivers/src/tpm/fsl_tpm_irq.o ./SDK/platform/drivers/src/tpm/fsl_tpm_lpm_callback.o  ./SDK/platform/drivers/src/lptmr/fsl_lptmr_common.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_driver.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_irq.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_lpm_callback.o  ./SDK/platform/drivers/src/gpio/fsl_gpio_common.o ./SDK/platform/drivers/src/gpio/fsl_gpio_driver.o ./SDK/platform/drivers/src/gpio/fsl_gpio_lpm_callback.o  ./Project_Settings/Startup_Code/startup.o ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: implementation.elf
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=sysv --totals "implementation.elf"
+implementation.elf  :
+section              size        addr
+.interrupts           192           0
+.flash_config          16        1024
+.text               64028        1040
+.ARM                    8       65068
+.init_array             4       65076
+.fini_array             4       65080
+.data                 356   536866816
+.bss                  168   536867176
+.heap                1024   536867344
+.stack               1024   536868368
+.ARM.attributes        40           0
+.debug_info         68382           0
+.debug_abbrev       13474           0
+.debug_aranges       4256           0
+.debug_ranges        3672           0
+.debug_macro        94053           0
+.debug_line         51870           0
+.debug_str         680351           0
+.comment              112           0
+.debug_frame        19132           0
+.stab                 156           0
+.stabstr              335           0
+Total             1002657
+
+
+Finished building: implementation.siz
+ 
+15:42:55 **** Incremental Build of configuration Debug for project implementation ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -D"CPU_MKL25Z128VLK4" -I"../Sources" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/include" -I"../Project_Settings/Startup_Code" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/inc" -I"C:\Freescale\KSDK_1.2.0/platform/CMSIS/Include" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/src" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/osa/src" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup/gcc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcglite" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/interrupt" -I"C:\Freescale\KSDK_1.2.0/platform/osa/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/devices" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lpuart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/system/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcg" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/sim/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/ftm" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/hwtimer" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/power" -I"C:\Freescale\KSDK_1.2.0/platform/composite/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/sai" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/port" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/irtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lpsci" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/osc" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:288:8: warning: unused variable 'transition' [-Wunused-variable]
+   bool transition = false;
+        ^
+../Sources/main.c:287:8: warning: unused variable 'command_found' [-Wunused-variable]
+   bool command_found = false;
+        ^
+../Sources/main.c:286:8: warning: unused variable 'slow_down' [-Wunused-variable]
+   bool slow_down = false;
+        ^
+Finished building: ../Sources/main.c
+ 
+Building target: implementation.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"//vmware-host/Shared Folders/Documents/University/Current Semester/ES770/workspace/implementation/Project_Settings/Linker_Files" -Wl,-Map,"implementation.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "implementation.elf"  ./Sources/hal/vsense/vsense.o  ./Sources/hal/util/tc_hal.o ./Sources/hal/util/util.o  ./Sources/hal/uart/fsl_debug_console.o ./Sources/hal/uart/print_scan.o  ./Sources/hal/mcg/mcg.o  ./Sources/hal/ir_array/ir_array.o  ./Sources/hal/hmi/hmi.o  ./Sources/hal/encoder/encoder.o  ./Sources/hal/driver/driver.o  ./Sources/hal/diagnostics/diagnostics.o  ./Sources/hal/controller/controller.o  ./Sources/hal/adc/adc.o  ./Sources/main.o  ./SDK/platform/system/src/clock/MKL25Z4/fsl_clock_MKL25Z4.o  ./SDK/platform/system/src/clock/fsl_clock_manager.o ./SDK/platform/system/src/clock/fsl_clock_manager_common.o  ./SDK/platform/hal/src/uart/fsl_uart_hal.o  ./SDK/platform/hal/src/tpm/fsl_tpm_hal.o  ./SDK/platform/hal/src/sim/MKL25Z4/fsl_sim_hal_MKL25Z4.o  ./SDK/platform/hal/src/osc/fsl_osc_hal.o  ./SDK/platform/hal/src/mcg/fsl_mcg_hal.o ./SDK/platform/hal/src/mcg/fsl_mcg_hal_modes.o  ./SDK/platform/hal/src/lptmr/fsl_lptmr_hal.o  ./SDK/platform/hal/src/lpsci/fsl_lpsci_hal.o  ./SDK/platform/hal/src/gpio/fsl_gpio_hal.o  ./SDK/platform/drivers/src/tpm/fsl_tpm_common.o ./SDK/platform/drivers/src/tpm/fsl_tpm_driver.o ./SDK/platform/drivers/src/tpm/fsl_tpm_irq.o ./SDK/platform/drivers/src/tpm/fsl_tpm_lpm_callback.o  ./SDK/platform/drivers/src/lptmr/fsl_lptmr_common.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_driver.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_irq.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_lpm_callback.o  ./SDK/platform/drivers/src/gpio/fsl_gpio_common.o ./SDK/platform/drivers/src/gpio/fsl_gpio_driver.o ./SDK/platform/drivers/src/gpio/fsl_gpio_lpm_callback.o  ./Project_Settings/Startup_Code/startup.o ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: implementation.elf
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=sysv --totals "implementation.elf"
+implementation.elf  :
+section              size        addr
+.interrupts           192           0
+.flash_config          16        1024
+.text               64028        1040
+.ARM                    8       65068
+.init_array             4       65076
+.fini_array             4       65080
+.data                 356   536866816
+.bss                  168   536867176
+.heap                1024   536867344
+.stack               1024   536868368
+.ARM.attributes        40           0
+.debug_info         68382           0
+.debug_abbrev       13474           0
+.debug_aranges       4256           0
+.debug_ranges        3672           0
+.debug_macro        94053           0
+.debug_line         51870           0
+.debug_str         680351           0
+.comment              112           0
+.debug_frame        19132           0
+.stab                 156           0
+.stabstr              335           0
+Total             1002657
+
+
+Finished building: implementation.siz
+ 
+15:53:05 **** Incremental Build of configuration Debug for project implementation ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -D"CPU_MKL25Z128VLK4" -I"../Sources" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/include" -I"../Project_Settings/Startup_Code" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/inc" -I"C:\Freescale\KSDK_1.2.0/platform/CMSIS/Include" -I"C:\Freescale\KSDK_1.2.0/platform/utilities/src" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/osa/src" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/wdog" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup/gcc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcglite" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/interrupt" -I"C:\Freescale\KSDK_1.2.0/platform/osa/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pwm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/devices" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lpuart" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/uart" -I"C:\Freescale\KSDK_1.2.0/platform/system/inc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/mcg" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/cmp" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/vref" -I"C:\Freescale\KSDK_1.2.0/platform/devices/MKL25Z4/startup" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/sim/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/clock/MKL25Z4" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/dac" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/pit" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/adc16" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/ftm" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/hwtimer" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/gpio" -I"C:\Freescale\KSDK_1.2.0/platform/system/src/power" -I"C:\Freescale\KSDK_1.2.0/platform/composite/inc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/sai" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/tpm" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/port" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/irtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/rtc" -I"C:\Freescale\KSDK_1.2.0/platform/drivers/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lpsci" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/lptmr" -I"C:\Freescale\KSDK_1.2.0/platform/hal/src/osc" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:288:8: warning: unused variable 'transition' [-Wunused-variable]
+   bool transition = false;
+        ^
+../Sources/main.c:287:8: warning: unused variable 'command_found' [-Wunused-variable]
+   bool command_found = false;
+        ^
+../Sources/main.c:286:8: warning: unused variable 'slow_down' [-Wunused-variable]
+   bool slow_down = false;
+        ^
+Finished building: ../Sources/main.c
+ 
+Building target: implementation.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"//vmware-host/Shared Folders/Documents/University/Current Semester/ES770/workspace/implementation/Project_Settings/Linker_Files" -Wl,-Map,"implementation.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "implementation.elf"  ./Sources/hal/vsense/vsense.o  ./Sources/hal/util/tc_hal.o ./Sources/hal/util/util.o  ./Sources/hal/uart/fsl_debug_console.o ./Sources/hal/uart/print_scan.o  ./Sources/hal/mcg/mcg.o  ./Sources/hal/ir_array/ir_array.o  ./Sources/hal/hmi/hmi.o  ./Sources/hal/encoder/encoder.o  ./Sources/hal/driver/driver.o  ./Sources/hal/diagnostics/diagnostics.o  ./Sources/hal/controller/controller.o  ./Sources/hal/adc/adc.o  ./Sources/main.o  ./SDK/platform/system/src/clock/MKL25Z4/fsl_clock_MKL25Z4.o  ./SDK/platform/system/src/clock/fsl_clock_manager.o ./SDK/platform/system/src/clock/fsl_clock_manager_common.o  ./SDK/platform/hal/src/uart/fsl_uart_hal.o  ./SDK/platform/hal/src/tpm/fsl_tpm_hal.o  ./SDK/platform/hal/src/sim/MKL25Z4/fsl_sim_hal_MKL25Z4.o  ./SDK/platform/hal/src/osc/fsl_osc_hal.o  ./SDK/platform/hal/src/mcg/fsl_mcg_hal.o ./SDK/platform/hal/src/mcg/fsl_mcg_hal_modes.o  ./SDK/platform/hal/src/lptmr/fsl_lptmr_hal.o  ./SDK/platform/hal/src/lpsci/fsl_lpsci_hal.o  ./SDK/platform/hal/src/gpio/fsl_gpio_hal.o  ./SDK/platform/drivers/src/tpm/fsl_tpm_common.o ./SDK/platform/drivers/src/tpm/fsl_tpm_driver.o ./SDK/platform/drivers/src/tpm/fsl_tpm_irq.o ./SDK/platform/drivers/src/tpm/fsl_tpm_lpm_callback.o  ./SDK/platform/drivers/src/lptmr/fsl_lptmr_common.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_driver.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_irq.o ./SDK/platform/drivers/src/lptmr/fsl_lptmr_lpm_callback.o  ./SDK/platform/drivers/src/gpio/fsl_gpio_common.o ./SDK/platform/drivers/src/gpio/fsl_gpio_driver.o ./SDK/platform/drivers/src/gpio/fsl_gpio_lpm_callback.o  ./Project_Settings/Startup_Code/startup.o ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: implementation.elf
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=sysv --totals "implementation.elf"
+implementation.elf  :
+section              size        addr
+.interrupts           192           0
+.flash_config          16        1024
+.text               63956        1040
+.ARM                    8       64996
+.init_array             4       65004
+.fini_array             4       65008
+.data                 356   536866816
+.bss                  168   536867176
+.heap                1024   536867344
+.stack               1024   536868368
+.ARM.attributes        40           0
+.debug_info         68382           0
+.debug_abbrev       13474           0
+.debug_aranges       4256           0
+.debug_ranges        3672           0
+.debug_macro        94053           0
+.debug_line         51866           0
+.debug_str         680351           0
+.comment              112           0
+.debug_frame        19132           0
+.stab                 156           0
+.stabstr              335           0
+Total             1002581
+
+
+Finished building: implementation.siz
+ 
+15:54:45 **** Incremental Build of configuration Debug for project implementation ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=sysv --totals "implementation.elf"
+implementation.elf  :
+section              size        addr
+.interrupts           192           0
+.flash_config          16        1024
+.text               63956        1040
+.ARM                    8       64996
+.init_array             4       65004
+.fini_array             4       65008
+.data                 356   536866816
+.bss                  168   536867176
+.heap                1024   536867344
+.stack               1024   536868368
+.ARM.attributes        40           0
+.debug_info         68382           0
+.debug_abbrev       13474           0
+.debug_aranges       4256           0
+.debug_ranges        3672           0
+.debug_macro        94053           0
+.debug_line         51866           0
+.debug_str         680351           0
+.comment              112           0
+.debug_frame        19132           0
+.stab                 156           0
+.stabstr              335           0
+Total             1002581
+
+
+Finished building: implementation.siz
+ 

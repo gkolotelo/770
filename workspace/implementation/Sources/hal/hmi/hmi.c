@@ -168,6 +168,12 @@ void hmi_receive()
             controller_setKd(controllerInstance, ((float)iReceiveNumber/100));
             PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKd);
             break;
+        case 'S':
+        case 's':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setMaxSumError(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerMaxSumError);
+            break;
         default:
             break;
     }

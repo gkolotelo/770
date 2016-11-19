@@ -206,9 +206,9 @@ void peripheralInit()
 	encoder_initEncoder(tencoderR);
 
 	/* Setup controller */
-	controller_initPID(&tpidP, 8, 20, 4, 25);
+	controller_initPID(&tpidP, 5, 15, 2, 2);
 	controller_initPID(&tpidR, 1.4, 1, 0.6, 0);
-	controller_initPID(&tpidL, 1.4, 3, 0.6, 0);
+	controller_initPID(&tpidL, 1.4, 1, 0.6, 0);
 
 	/* Setup cyclic executive timer */
 	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
@@ -286,8 +286,6 @@ int main(void)
 		bool slow_down = false;
 		bool command_found = false;
 		bool transition = false;
-		bool counter_on = false;
-		int counter = 0;
 
 
 		while(1)
@@ -366,12 +364,12 @@ int main(void)
 
 					/* Update PID Algorithm */
 					positionEffort = controller_PIDUpdate(&tpidP, positionError, 0);
-					//if(positionEffort > 70)
-					//	positionEffort = 70;
-					//else if(positionEffort < -70)
-					//	positionEffort = -70;
-					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (70.0-positionEffort));
-					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (70.0+positionEffort));
+					if(positionEffort > 70)
+						positionEffort = 70;
+					else if(positionEffort < -70)
+						positionEffort = -70;
+					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (100.0-positionEffort));
+					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (100.0+positionEffort));
 
 					/* Set Motors */
 					//driver_setDriver(tdriverR, (int)(rightWheelEffort*voltage_correction));

@@ -47,7 +47,7 @@
 #define VSENSE_MIN_VOLTAGE				9.0	 		//V
 #define MOTOR_MIN_CURR					10.0		//mA
 #define MOTOR_MIN_VEL					60.0		//RPM
-#define MOTOR_MAX_VOLTAGE				8.0			//V
+#define MOTOR_MAX_VOLTAGE				8.5			//V
 #define MOTOR_FAST_SPEED				80.0		//Pulses Per Second
 #define MOTOR_SLOW_SPEED				40.0		//Pulses Per Second
 #define IR_MAX_DIFF 					0.2			//Absolute

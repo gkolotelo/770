@@ -286,8 +286,6 @@ int main(void)
 		bool slow_down = false;
 		bool command_found = false;
 		bool transition = false;
-		bool counter_on = false;
-		int counter = 0;
 
 
 		while(1)
