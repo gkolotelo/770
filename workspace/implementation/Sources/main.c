@@ -62,6 +62,7 @@
 volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
 float sys_voltage = 0;
 float voltage_correction = 0;
+float motor_current_speed = MOTOR_FAST_SPEED;
 
 void main_cyclicExecuteIsr(void)
 {
@@ -206,9 +207,9 @@ void peripheralInit()
 	encoder_initEncoder(tencoderR);
 
 	/* Setup controller */
-	controller_initPID(&tpidP, 8, 20, 4, 25);
-	controller_initPID(&tpidR, 1.4, 1, 0.6, 0);
-	controller_initPID(&tpidL, 1.4, 3, 0.6, 0);
+	controller_initPID(&tpidP, 5, 80, 20, 1000);
+	controller_initPID(&tpidR, 100, 0.8, 0.8, 0.5);
+	controller_initPID(&tpidL, 100, 0.5, 0.8, 0.5);
 
 	/* Setup cyclic executive timer */
 	tc_installLptmr0(CYCLIC_EXECUTIVE_PERIOD, main_cyclicExecuteIsr);
@@ -241,6 +242,7 @@ int main(void)
 				PTB_BASE_PTR->PCOR |= 1 << 18;
 				while(1);
 			}
+
 		}
 		// Start execution until stop button is pressed
 
@@ -259,34 +261,20 @@ int main(void)
 		}
 		PTB_BASE_PTR->PSOR |= 1 << 19;
 
-
-		// hmi_initHmi();
-		// uint32_t irv[6] = {0};
-		// uint32_t y2[46] = {0};
-		// float y[46] = {0};
-		// uint32_t meas;
-
-		// hmi_initHmi();
-		// hmi_transmitSCSF("",' ',"",sys_voltage);
-		// hmi_transmitSCSF("",' ',"",(100.0*MOTOR_FAST_VOLTAGE/sys_voltage));
-		// driver_initDriver(tdriverL);
-		// driver_appendDriver(tdriverR);
-
+		encoder_resetCounter(tencoderL);
+		encoder_resetCounter(tencoderR);
 
 		driver_enableDriver(tdriverR);
 		driver_enableDriver(tdriverL);
 
-		// driver_setDriver(tdriverR, (int)(100.0*MOTOR_FAST_VOLTAGE/sys_voltage));
-		// driver_setDriver(tdriverL, (int)(100.0*MOTOR_FAST_VOLTAGE/sys_voltage));
-
-		hmi_initHmi();
+		//hmi_initHmi();
 
 		float positionError, leftWheelSpeed, rightWheelSpeed;
 		double positionEffort, leftWheelEffort, rightWheelEffort;
-		bool slow_down = false;
 		bool command_found = false;
-		bool transition = false;
 		bool counter_on = false;
+		bool command_stop = false;
+		bool command_slow = false;
 		int counter = 0;
 
 
@@ -295,42 +283,6 @@ int main(void)
 			/* Blink Blue LED for Status */
 			//PTD_BASE_PTR->PTOR |= 1 << 1;
 			PTD_BASE_PTR->PSOR |= 1 << 1;
-
-			
-
-			// ir_array_takeMeasurement(uiIrReadings);
-			// ir_array_normalizeReadings(uiIrReadings, fIrNormalizedReadings);
-			// ir_array_interpolate(y, fIrNormalizedReadings[0],
-			// 						fIrNormalizedReadings[1],
-			// 						fIrNormalizedReadings[2],
-			// 						fIrNormalizedReadings[3],
-			// 						fIrNormalizedReadings[4],
-			// 						fIrNormalizedReadings[5]
-			// 						);
-
-
-			// //hmi_transmitIrArray(uiIrReadings);
-			// for(int i=0; i<46; i++)
-			// {
-			// 	//irv[i] = (uint16_t)(fIrNormalizedReadings[i]*1000);
-			// 	y2[i] = (uint32_t)(y[i]*1000);
-			// }
-			// // for(int i=0; i<6; i++)
-			// // {
-			// // 	irv[i]=uiIrReadings[i];
-			// // }
-
-			// hmi_transmitArray(y2, 46);
-			// meas = (uint32_t)(ir_array_getPosition()*1000);
-			// PRINTF("%5d\r\n", meas);
-			// // hmi_transmitArray(irv, 6);
-
-
-			// encoder_takeMeasurement(&tencoderR);
-			// encoder_takeMeasurement(&tencoderL);
-
-			// hmi_transmitSCSF("R",':',"", encoder_getAngularVelocity(tencoderR));
-			// hmi_transmitSCSF("L",':',"", encoder_getAngularVelocity(tencoderL));
 
 			/* Take measurements */
 			encoder_takeMeasurement(&tencoderL);
@@ -344,19 +296,9 @@ int main(void)
 				if(positionError == -10)
 				{
 					PTB_BASE_PTR->PCOR |= 1 << 19; // Turn on Green LED
-					// if(transition)
-					// {
-					// 	if(counter < 20) // 2 seconds
-					// 	{
-					// 		if(slow_down) // Toggle slowdown if transition
-					// 			slow_down = false;
-					// 		else
-					// 			slow_down = true;
-					// 	}
-					// 	command_found = false;
-					// }
-					// else
-					// 	command_found = true;
+					PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
+					command_found = true;
+					counter_on = true;
 				}
 				else
 				{
@@ -365,29 +307,63 @@ int main(void)
 					rightWheelSpeed = encoder_getAngularVelocity(tencoderR);
 
 					/* Update PID Algorithm */
-					positionEffort = controller_PIDUpdate(&tpidP, positionError, 0);
-					//if(positionEffort > 70)
-					//	positionEffort = 70;
-					//else if(positionEffort < -70)
-					//	positionEffort = -70;
-					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (70.0-positionEffort));
-					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (70.0+positionEffort));
+					positionEffort = controller_PIDUpdate(&tpidP, positionError, -0.05);
 
 					/* Set Motors */
-					//driver_setDriver(tdriverR, (int)(rightWheelEffort*voltage_correction));
-					//driver_setDriver(tdriverL, (int)(leftWheelEffort*voltage_correction));
+					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (motor_current_speed - positionEffort));
+					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (motor_current_speed + positionEffort));
 
+
+					/* Avoid spinning in the opposite direction */
+					if(rightWheelEffort < -10)
+						rightWheelEffort = 0;
+					if(leftWheelEffort < -10)
+						leftWheelEffort = 0;
 					driver_setDriver2(tdriverR, rightWheelEffort, voltage_correction);
 					driver_setDriver2(tdriverL, leftWheelEffort, voltage_correction);
 
-					// if(command_found)
-					// {
-					// 	if(transition)
-					// 		transition = false;
-					// 	else
-					// 		transition = true;
-					// 	command_found = false;
-					// }
+
+					if(command_found)
+					{
+						if(command_slow)
+						{
+//							PRINTF("going fast!\r\n");
+							motor_current_speed = MOTOR_FAST_SPEED;
+							command_slow = false;
+							counter_on = false;
+						}
+						else if(counter > 1) // Command to STOP
+						{
+							command_stop = true;
+						}
+						command_found = false;
+					}
+
+					if(counter_on){
+						counter++;
+//						PRINTF("%d\r\n", counter);
+					}
+					// can probably be commented out:
+					else
+						counter = 0;
+
+					if(counter > 5 && !command_stop) // Command to Slow Down
+					{
+//						PRINTF("going slow!\r\n");
+						motor_current_speed = MOTOR_SLOW_SPEED;
+						command_slow = true;
+						counter_on = false;
+						counter = 0;
+					}
+					else if(counter > STOP_COUNTER_2METER && command_stop) // approx. 2 meters
+					{
+						driver_setDriver(tdriverR, 0);
+						driver_setDriver(tdriverL, 0);
+						for(int i=0; i<30; i++) util_genDelay100ms();
+						command_stop = false;
+						counter_on = false;
+						counter = 0;
+					}
 
 
 				}
@@ -395,19 +371,20 @@ int main(void)
 			else
 			{
 				PTB_BASE_PTR->PCOR |= 1 << 18; // Turn on Red LED
+				PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
 			}
-			hmi_transmitSCSF("Pos",':',"", positionError);
-			hmi_transmitSCSF("RS ",':',"", rightWheelSpeed);
-			hmi_transmitSCSF("LS ",':',"", leftWheelSpeed);
-
-			hmi_transmitSCSF("PE ",':',"", positionEffort);
-			hmi_transmitSCSF("RE ",':',"", rightWheelEffort);
-			hmi_transmitSCSF("LE ",':',"", leftWheelEffort);
-			
-			PRINTF("\r\n");
-
-			hmi_receive();
-
+//			hmi_transmitSCSF("Pos",':',"", positionError);
+//			hmi_transmitSCSF("RS ",':',"", rightWheelSpeed);
+//			hmi_transmitSCSF("LS ",':',"", leftWheelSpeed);
+//
+//			hmi_transmitSCSF("PE ",':',"", positionEffort);
+//			hmi_transmitSCSF("RE ",':',"", rightWheelEffort);
+//			hmi_transmitSCSF("LE ",':',"", leftWheelEffort);
+//
+//			PRINTF("\r\n");
+//
+//
+//			hmi_receive();
 			
 
 
@@ -431,7 +408,7 @@ int main(void)
 				}
 			}
 
-			PTD_BASE_PTR->PCOR |= 1 << 1;
+			PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
 			/* Wait for next cycle */
 			while(!uiFlagNextPeriod);
 			uiFlagNextPeriod = 0;

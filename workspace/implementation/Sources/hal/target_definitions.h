@@ -23,7 +23,7 @@
 
 /*                    General uC Definitions             */
 /* Cyclic executive period in microseconds */
-#define CYCLIC_EXECUTIVE_PERIOD			100 * 1000 //micro seconds
+#define CYCLIC_EXECUTIVE_PERIOD			50 * 1000 //micro seconds
 #define DEBUG_MODE_ENABLE				true
 /* Clock gate control */
 #define  CGC_CLOCK_DISABLED         	0x00U
@@ -48,11 +48,12 @@
 #define MOTOR_MIN_CURR					10.0		//mA
 #define MOTOR_MIN_VEL					60.0		//RPM
 #define MOTOR_MAX_VOLTAGE				8.0			//V
-#define MOTOR_FAST_SPEED				80.0		//Pulses Per Second
-#define MOTOR_SLOW_SPEED				40.0		//Pulses Per Second
+#define MOTOR_FAST_SPEED				60.0		//Pulses Per Second
+#define MOTOR_SLOW_SPEED				10.0		//Pulses Per Second
 #define IR_MAX_DIFF 					0.2			//Absolute
 #define IR_MIN_DIFF 					0.5			//Absolute
 #define MAX_POSITION_EFFORT				0			//Absolute
+#define STOP_COUNTER_2METER				120			//Cycles
 /*                 END OF General uC Definitions         */
 
 /*                     Driver Definitions                */

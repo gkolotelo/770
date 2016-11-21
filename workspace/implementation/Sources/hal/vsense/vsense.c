@@ -89,7 +89,7 @@ float vsense_getV2()
  */
 float vsense_getSystemVoltage()
 {
-	return vsense_getV2();
+	return vsense_getV1();
 }
 
 /**

@@ -320,7 +320,7 @@ float ir_array_minMaxValuePosition(float y0, float y1, float y2, float y3, float
 		return ((float)minPos)*5/45 -2.5;
 
 	// If command has been recognized (black perpendicular rectangle) return -1
-	if((maxVal-minVal) < IR_MAX_DIFF)
+	if(((maxVal-minVal) < IR_MAX_DIFF) && maxVal < IR_MIN_DIFF)
 		return -10;
 
 	// If no suitable trough has been found, return -2

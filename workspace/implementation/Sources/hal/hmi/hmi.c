@@ -23,6 +23,7 @@
 #include "hal/target_definitions.h"
 
 extern controller_instance_t tpidP, tpidL, tpidR;
+extern float motor_current_speed;
 
 /**
  * @brief Initializes HMI interface.
@@ -172,8 +173,15 @@ void hmi_receive()
         case 's':
             iReceiveNumber = abs(iReceiveNumber);
             controller_setMaxSumError(controllerInstance, ((float)iReceiveNumber/100));
+            controllerInstance->fControllerErrorSum = 0;
             PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerMaxSumError);
             break;
+        case 'V':
+		case 'v':
+			iReceiveNumber = abs(iReceiveNumber);
+			motor_current_speed = ((float)iReceiveNumber/100);
+			PRINTF("Received: motor %c%f\r\n", cReceiveCommand, motor_current_speed);
+			break;
         default:
             break;
     }

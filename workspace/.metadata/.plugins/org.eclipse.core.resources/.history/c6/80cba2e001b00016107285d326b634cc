@@ -1,0 +1,189 @@
+/**
+ * @file hmi.c
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 20 Jun 2016
+ * @date 07 Oct 2016
+ * @brief File containing the methods for the interaction with a host device via a serial connection.
+ */
+
+
+
+/* System includes */
+#include "fsl_clock_manager.h"
+#include "fsl_port_hal.h"
+#include "fsl_smc_hal.h"
+#include "fsl_debug_console.h"
+#include "fsl_gpio_driver.h"
+
+/* Project includes */
+#include "hmi.h"
+#include "hal/controller/controller.h"
+#include "hal/target_definitions.h"
+
+extern controller_instance_t tpidP, tpidL, tpidR;
+extern float motor_current_speed;
+
+/**
+ * @brief Initializes HMI interface.
+ * 
+ */
+void hmi_initHmi()
+{
+	PORT_Type *hmiEnPortBase = g_portBase[HMI_UART_PORT_INSTANCE];
+    /* LPSCI0 */
+    CLOCK_SYS_EnablePortClock(HMI_UART_PORT_INSTANCE);
+    /* UART0_RX */
+    PORT_HAL_SetMuxMode(hmiEnPortBase, HMI_UART_PIN_RX, HMI_UART_PIN_ALT);
+    /* UART0_TX */
+    PORT_HAL_SetMuxMode(hmiEnPortBase, HMI_UART_PIN_TX, HMI_UART_PIN_ALT);
+
+    /* Select different clock source for LPSCI */
+    CLOCK_SYS_SetLpsciSrc(HMI_UART_INSTANCE, kClockLpsciSrcPllFllSel);
+
+    /* Initialize the debug console */
+    DbgConsole_Init(HMI_UART_INSTANCE, HMI_UART_BAUD, kDebugConsoleLPSCI);
+}
+
+/**
+ * @brief Transmits a newline.
+ *
+ */
+void hmi_transmitNewLine()
+{
+	PRINTF("\r\n");
+}
+
+/**
+ * @brief Transmits a char array.
+ * 
+ * @param string Char array pointer.
+ */
+void hmi_transmitS(char* string)
+{
+    PRINTF("%s\r\n", string);
+}
+
+/**
+ * @brief Transmits a char array followed by a single character, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ */
+void hmi_transmitSCS(char* string1, char id, char* string2)
+{
+    PRINTF("%s%c%s\r\n", string1, id, string2);
+}
+
+/**
+ * @brief Transmits a char array followed by an integer, followed by another char array.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ */
+void hmi_transmitSIS(char* string1, int id, char* string2)
+{
+    PRINTF("%s%d%s\r\n", string1, id, string2);
+}
+
+/**
+ * @brief Transmits a char array followed by a single character followed by another char array, followed by a float.
+ * 
+ * @param string1 Char array pointer.
+ * @param id A single character.
+ * @param string2 Char array pointer.
+ * @param reading A float number.
+ */
+void hmi_transmitSCSF(char* string1, char id, char* string2, float reading)
+{
+    PRINTF("%s%c%s%f\r\n", string1, id, string2, reading);
+}
+
+/**
+ * @brief Transmits a char array followed by an integer followed by another char array, followed by an integer.
+ * 
+ * @param string1 Char array pointer.
+ * @param id An integer number.
+ * @param string2 Char array pointer.
+ * @param reading An integer number.
+ */
+void hmi_transmitSISI(char* string1, int id, char* string2, int reading)
+{
+    PRINTF("%s%d%s%d\r\n", string1, id, string2, reading);
+}
+
+/**
+ * @brief Transmits the IR array readings.
+ * 
+ * @param IR readings vector
+ */
+void hmi_transmitArray(uint32_t* uiIrVector, uint16_t size)
+{
+	for(int i=0; i<size; i++)
+	{
+		 PRINTF("%5d ", uiIrVector[i]);
+		 util_genDelay500us();
+	}
+    PRINTF("\r\n");
+}
+
+/**
+ * @brief Receives and interprets data sent from the host device.
+ *
+ */
+void hmi_receive()
+{
+    /* Check if there are characters on buffer */
+    if(0 == UART0_BRD_S1_RDRF(HMI_UART_BASE)) return;
+    char cReceiveCommand, cReceiveInstance;
+    int iReceiveNumber;
+    controller_instance_t *controllerInstance;
+    SCANF("%c%c%d", &cReceiveInstance, &cReceiveCommand, &iReceiveNumber);
+    if((&tpidP)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidP;
+    else if((&tpidL)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidL;
+    else if((&tpidR)->cControllerInstance == cReceiveInstance)
+        controllerInstance = &tpidR;
+    else return;
+    switch(cReceiveCommand)
+    {
+        case 'P':
+        case 'p':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKp(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKp);
+            break;
+        case 'I':
+        case 'i':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKi(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKi);
+            break;
+        case 'D':
+        case 'd':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setKd(controllerInstance, ((float)iReceiveNumber/100));
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerKd);
+            break;
+        case 'S':
+        case 's':
+            iReceiveNumber = abs(iReceiveNumber);
+            controller_setMaxSumError(controllerInstance, ((float)iReceiveNumber/100));
+            controllerInstance->fControllerErrorSum = 0;
+            PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerMaxSumError);
+            break;
+        case 'V':
+		case 'v':
+			iReceiveNumber = abs(iReceiveNumber);
+			controller_setMaxSumError(controllerInstance, ((float)iReceiveNumber/100));
+			controllerInstance->fControllerErrorSum = 0;
+			PRINTF("Received: %c%c%f\r\n", cReceiveInstance, cReceiveCommand, controllerInstance->fControllerMaxSumError);
+			break;
+        default:
+            break;
+    }
+}
