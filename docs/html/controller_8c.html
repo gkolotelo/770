@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,24 +98,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5e91534531bf36d3f18210673874cdfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a5e91534531bf36d3f18210673874cdfb">controller_initPID</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance)</td></tr>
-<tr class="memdesc:a5e91534531bf36d3f18210673874cdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the controller with safe values.  <a href="#a5e91534531bf36d3f18210673874cdfb">More...</a><br/></td></tr>
-<tr class="separator:a5e91534531bf36d3f18210673874cdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7d1b10ff8c3eb61839949340f00ae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a1f7d1b10ff8c3eb61839949340f00ae8">controller_setMaxSumError</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, double dMaxSumError)</td></tr>
-<tr class="memdesc:a1f7d1b10ff8c3eb61839949340f00ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum integrative error.  <a href="#a1f7d1b10ff8c3eb61839949340f00ae8">More...</a><br/></td></tr>
-<tr class="separator:a1f7d1b10ff8c3eb61839949340f00ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac047818e1fe3a2e87ef4131a0b92158e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ac047818e1fe3a2e87ef4131a0b92158e">controller_setKp</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, double dPGain)</td></tr>
-<tr class="memdesc:ac047818e1fe3a2e87ef4131a0b92158e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Kp.  <a href="#ac047818e1fe3a2e87ef4131a0b92158e">More...</a><br/></td></tr>
-<tr class="separator:ac047818e1fe3a2e87ef4131a0b92158e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bdd536cd9d13533f83ff1169ae0412c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a7bdd536cd9d13533f83ff1169ae0412c">controller_setKi</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, double dIGain)</td></tr>
-<tr class="memdesc:a7bdd536cd9d13533f83ff1169ae0412c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Ki.  <a href="#a7bdd536cd9d13533f83ff1169ae0412c">More...</a><br/></td></tr>
-<tr class="separator:a7bdd536cd9d13533f83ff1169ae0412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269a9385ede641a4493b8d47ab1d1542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a269a9385ede641a4493b8d47ab1d1542">controller_setKd</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, double dDGain)</td></tr>
-<tr class="memdesc:a269a9385ede641a4493b8d47ab1d1542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Kd.  <a href="#a269a9385ede641a4493b8d47ab1d1542">More...</a><br/></td></tr>
-<tr class="separator:a269a9385ede641a4493b8d47ab1d1542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a26e90ddeb6c4d9363f22678b1d507c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a8a26e90ddeb6c4d9363f22678b1d507c">controller_PIDUpdate</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, double dSensorValue, double dReferenceValue)</td></tr>
-<tr class="memdesc:a8a26e90ddeb6c4d9363f22678b1d507c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the active controller and retrieves the actuation value.  <a href="#a8a26e90ddeb6c4d9363f22678b1d507c">More...</a><br/></td></tr>
-<tr class="separator:a8a26e90ddeb6c4d9363f22678b1d507c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4642240ee45eecb168f4981863703bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a4642240ee45eecb168f4981863703bea">controller_initPID</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fMaxSumError, float fPGain, float fIGain, float fDGain)</td></tr>
+<tr class="memdesc:a4642240ee45eecb168f4981863703bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the controller with safe values.  <a href="#a4642240ee45eecb168f4981863703bea">More...</a><br/></td></tr>
+<tr class="separator:a4642240ee45eecb168f4981863703bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6815440a320e01758466b31720b9dfdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a6815440a320e01758466b31720b9dfdc">controller_setMaxSumError</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fMaxSumError)</td></tr>
+<tr class="memdesc:a6815440a320e01758466b31720b9dfdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum integrative error.  <a href="#a6815440a320e01758466b31720b9dfdc">More...</a><br/></td></tr>
+<tr class="separator:a6815440a320e01758466b31720b9dfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f70ab888c2e99339232f143f509229f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a2f70ab888c2e99339232f143f509229f">controller_setKp</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fPGain)</td></tr>
+<tr class="memdesc:a2f70ab888c2e99339232f143f509229f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Kp.  <a href="#a2f70ab888c2e99339232f143f509229f">More...</a><br/></td></tr>
+<tr class="separator:a2f70ab888c2e99339232f143f509229f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4854135a9f4f175cee7af3a01db71c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a2b4854135a9f4f175cee7af3a01db71c">controller_setKi</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fIGain)</td></tr>
+<tr class="memdesc:a2b4854135a9f4f175cee7af3a01db71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Ki.  <a href="#a2b4854135a9f4f175cee7af3a01db71c">More...</a><br/></td></tr>
+<tr class="separator:a2b4854135a9f4f175cee7af3a01db71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4edebd583fa848cbc5e705882b541a3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a4edebd583fa848cbc5e705882b541a3d">controller_setKd</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fDGain)</td></tr>
+<tr class="memdesc:a4edebd583fa848cbc5e705882b541a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Kd.  <a href="#a4edebd583fa848cbc5e705882b541a3d">More...</a><br/></td></tr>
+<tr class="separator:a4edebd583fa848cbc5e705882b541a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8c2bdf80632c5906e7f8ddfa023c95"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a9d8c2bdf80632c5906e7f8ddfa023c95">controller_PIDUpdate</a> (<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *controllerInstance, float fSensorValue, float fReferenceValue)</td></tr>
+<tr class="memdesc:a9d8c2bdf80632c5906e7f8ddfa023c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the active controller and retrieves the actuation value.  <a href="#a9d8c2bdf80632c5906e7f8ddfa023c95">More...</a><br/></td></tr>
+<tr class="separator:a9d8c2bdf80632c5906e7f8ddfa023c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the methods implementing a PID controller. </p>
@@ -127,7 +127,7 @@ Bruno de Souza Ferreira </dd></dl>
 <dd>
 26 Sep 2016 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a5e91534531bf36d3f18210673874cdfb"></a>
+<a class="anchor" id="a4642240ee45eecb168f4981863703bea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -135,8 +135,36 @@ Bruno de Souza Ferreira </dd></dl>
           <td class="memname">void controller_initPID </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>controllerInstance</em></td><td>)</td>
+          <td class="paramname"><em>controllerInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fMaxSumError</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fPGain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fIGain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fDGain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -151,12 +179,12 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8a26e90ddeb6c4d9363f22678b1d507c"></a>
+<a class="anchor" id="a9d8c2bdf80632c5906e7f8ddfa023c95"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double controller_PIDUpdate </td>
+          <td class="memname">float controller_PIDUpdate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structcontroller__instance__t.html">controller_instance_t</a> *&#160;</td>
           <td class="paramname"><em>controllerInstance</em>, </td>
@@ -164,14 +192,14 @@ Bruno de Souza Ferreira </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dSensorValue</em>, </td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fSensorValue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dReferenceValue</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fReferenceValue</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,8 +214,8 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">controllerInstance</td><td><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> struct. </td></tr>
-    <tr><td class="paramname">dSensorValue</td><td>Value from sensor. </td></tr>
-    <tr><td class="paramname">dReferenceValue</td><td>Reference value. </td></tr>
+    <tr><td class="paramname">fSensorValue</td><td>Value from sensor. </td></tr>
+    <tr><td class="paramname">fReferenceValue</td><td>Reference value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -195,7 +223,7 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a269a9385ede641a4493b8d47ab1d1542"></a>
+<a class="anchor" id="a4edebd583fa848cbc5e705882b541a3d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -208,8 +236,8 @@ Bruno de Souza Ferreira </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dDGain</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fDGain</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -223,14 +251,14 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">controllerInstance</td><td><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> struct. </td></tr>
-    <tr><td class="paramname">dDGain</td><td>Derivative constant. </td></tr>
+    <tr><td class="paramname">fDGain</td><td>Derivative constant. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a7bdd536cd9d13533f83ff1169ae0412c"></a>
+<a class="anchor" id="a2b4854135a9f4f175cee7af3a01db71c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -243,8 +271,8 @@ Bruno de Souza Ferreira </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dIGain</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fIGain</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -258,14 +286,14 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">controllerInstance</td><td><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> struct. </td></tr>
-    <tr><td class="paramname">dIGain</td><td>Integrative constant. </td></tr>
+    <tr><td class="paramname">fIGain</td><td>Integrative constant. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ac047818e1fe3a2e87ef4131a0b92158e"></a>
+<a class="anchor" id="a2f70ab888c2e99339232f143f509229f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -278,8 +306,8 @@ Bruno de Souza Ferreira </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dPGain</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fPGain</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -293,14 +321,14 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">controllerInstance</td><td><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> struct. </td></tr>
-    <tr><td class="paramname">dPGain</td><td>Proportional constant. </td></tr>
+    <tr><td class="paramname">fPGain</td><td>Proportional constant. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a1f7d1b10ff8c3eb61839949340f00ae8"></a>
+<a class="anchor" id="a6815440a320e01758466b31720b9dfdc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -313,8 +341,8 @@ Bruno de Souza Ferreira </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dMaxSumError</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fMaxSumError</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -328,7 +356,7 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">controllerinstance</td><td><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> struct. </td></tr>
-    <tr><td class="paramname">dMaxSumError</td><td>Maximum error acceptable </td></tr>
+    <tr><td class="paramname">fMaxSumError</td><td>Maximum error acceptable </td></tr>
   </table>
   </dd>
 </dl>
@@ -338,7 +366,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:27 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:08 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

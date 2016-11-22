@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,7 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>File containing the definition of methods for the reading of an incremental encoder.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;MKL25Z4.h&gt;</code><br/>
+</div>
 <p><a href="encoder_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -105,46 +106,36 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a422bab10376a2ec78bdb73b88a876ec2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a422bab10376a2ec78bdb73b88a876ec2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a422bab10376a2ec78bdb73b88a876ec2">ENCODER_CHO_IRQ_HANDLER</a> ()</td></tr>
-<tr class="memdesc:a422bab10376a2ec78bdb73b88a876ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel O IRQ handler. <br/></td></tr>
-<tr class="separator:a422bab10376a2ec78bdb73b88a876ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53f98a8633104a2f7c020bee3c0a2519"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a53f98a8633104a2f7c020bee3c0a2519">encoder_initEncoder</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:a53f98a8633104a2f7c020bee3c0a2519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the encoder for an incremental encoder.  <a href="#a53f98a8633104a2f7c020bee3c0a2519">More...</a><br/></td></tr>
-<tr class="separator:a53f98a8633104a2f7c020bee3c0a2519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af252727d31974e447de971018fceaacf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#af252727d31974e447de971018fceaacf">encoder_enableCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:af252727d31974e447de971018fceaacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the counter.  <a href="#af252727d31974e447de971018fceaacf">More...</a><br/></td></tr>
-<tr class="separator:af252727d31974e447de971018fceaacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae919bb94de6e36d4d3aeb5cb78805308"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ae919bb94de6e36d4d3aeb5cb78805308">encoder_disableCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:ae919bb94de6e36d4d3aeb5cb78805308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the counter.  <a href="#ae919bb94de6e36d4d3aeb5cb78805308">More...</a><br/></td></tr>
-<tr class="separator:ae919bb94de6e36d4d3aeb5cb78805308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94d9d391fffb515c228facb256fe4c16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a94d9d391fffb515c228facb256fe4c16">encoder_resetCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:a94d9d391fffb515c228facb256fe4c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the counter.  <a href="#a94d9d391fffb515c228facb256fe4c16">More...</a><br/></td></tr>
-<tr class="separator:a94d9d391fffb515c228facb256fe4c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa630cea255bd5e0ec5574e270292c50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#afa630cea255bd5e0ec5574e270292c50">encoder_enableChOInterrupt</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:afa630cea255bd5e0ec5574e270292c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the interrupt on Channel O.  <a href="#afa630cea255bd5e0ec5574e270292c50">More...</a><br/></td></tr>
-<tr class="separator:afa630cea255bd5e0ec5574e270292c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8706f491977f9e3cab7e88ed9940bf68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a8706f491977f9e3cab7e88ed9940bf68">encoder_disableChOInterrupt</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:a8706f491977f9e3cab7e88ed9940bf68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the interrupt on channel O.  <a href="#a8706f491977f9e3cab7e88ed9940bf68">More...</a><br/></td></tr>
-<tr class="separator:a8706f491977f9e3cab7e88ed9940bf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a373dfc5709103db00f5431f9211e0e0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a373dfc5709103db00f5431f9211e0e0a">encoder_takeMeasurement</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:a373dfc5709103db00f5431f9211e0e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a measurement of speed, direction and position.  <a href="#a373dfc5709103db00f5431f9211e0e0a">More...</a><br/></td></tr>
-<tr class="separator:a373dfc5709103db00f5431f9211e0e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8accae7c5df6cd952b7c29bbfb84231"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ad8accae7c5df6cd952b7c29bbfb84231">encoder_getAngularPositionDegree</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:ad8accae7c5df6cd952b7c29bbfb84231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular position of the encoder in degrees.  <a href="#ad8accae7c5df6cd952b7c29bbfb84231">More...</a><br/></td></tr>
-<tr class="separator:ad8accae7c5df6cd952b7c29bbfb84231"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8ffb453211af228b596b71315e5176a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ae8ffb453211af228b596b71315e5176a">encoder_getAngularPositionRad</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:ae8ffb453211af228b596b71315e5176a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular position of the encoder in radians.  <a href="#ae8ffb453211af228b596b71315e5176a">More...</a><br/></td></tr>
-<tr class="separator:ae8ffb453211af228b596b71315e5176a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9575c865e7b27adf814d5d6ac9c6906"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ae9575c865e7b27adf814d5d6ac9c6906">encoder_getAngularVelocity</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:ae9575c865e7b27adf814d5d6ac9c6906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in pulses per second.  <a href="#ae9575c865e7b27adf814d5d6ac9c6906">More...</a><br/></td></tr>
-<tr class="separator:ae9575c865e7b27adf814d5d6ac9c6906"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaba4f66f8620db09e710364d50782ca"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#afaba4f66f8620db09e710364d50782ca">encoder_getAngularVelocityRad</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:afaba4f66f8620db09e710364d50782ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in Rad/s.  <a href="#afaba4f66f8620db09e710364d50782ca">More...</a><br/></td></tr>
-<tr class="separator:afaba4f66f8620db09e710364d50782ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc760417707877d05b47ee03a547a92"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#affc760417707877d05b47ee03a547a92">encoder_getAngularVelocityRPM</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoder_instance)</td></tr>
-<tr class="memdesc:affc760417707877d05b47ee03a547a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in RPM.  <a href="#affc760417707877d05b47ee03a547a92">More...</a><br/></td></tr>
-<tr class="separator:affc760417707877d05b47ee03a547a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc86ef6d2e1644454e6248aecde1388"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#abfc86ef6d2e1644454e6248aecde1388">encoder_initEncoder</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:abfc86ef6d2e1644454e6248aecde1388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel O IRQ handler.  <a href="#abfc86ef6d2e1644454e6248aecde1388">More...</a><br/></td></tr>
+<tr class="separator:abfc86ef6d2e1644454e6248aecde1388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ef940df942b5cc4be4c1d8a217d54a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a75ef940df942b5cc4be4c1d8a217d54a">encoder_enableCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:a75ef940df942b5cc4be4c1d8a217d54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the counter.  <a href="#a75ef940df942b5cc4be4c1d8a217d54a">More...</a><br/></td></tr>
+<tr class="separator:a75ef940df942b5cc4be4c1d8a217d54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76fd4bbff8102a38e8193b1e8af3c7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ae76fd4bbff8102a38e8193b1e8af3c7e">encoder_disableCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:ae76fd4bbff8102a38e8193b1e8af3c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the counter.  <a href="#ae76fd4bbff8102a38e8193b1e8af3c7e">More...</a><br/></td></tr>
+<tr class="separator:ae76fd4bbff8102a38e8193b1e8af3c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac201acdd550a514294b3613424813e81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#ac201acdd550a514294b3613424813e81">encoder_resetCounter</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:ac201acdd550a514294b3613424813e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the counter.  <a href="#ac201acdd550a514294b3613424813e81">More...</a><br/></td></tr>
+<tr class="separator:ac201acdd550a514294b3613424813e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a9f3d64ef13f140f800ef50672efd12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a1a9f3d64ef13f140f800ef50672efd12">encoder_takeMeasurement</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *encoderInstance)</td></tr>
+<tr class="memdesc:a1a9f3d64ef13f140f800ef50672efd12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the interrupt on Channel O.  <a href="#a1a9f3d64ef13f140f800ef50672efd12">More...</a><br/></td></tr>
+<tr class="separator:a1a9f3d64ef13f140f800ef50672efd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe005b448f1a7d6cf3d9f3ca27a13b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a6fe005b448f1a7d6cf3d9f3ca27a13b1">encoder_getAngularPositionDegree</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:a6fe005b448f1a7d6cf3d9f3ca27a13b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular position of the encoder in degrees.  <a href="#a6fe005b448f1a7d6cf3d9f3ca27a13b1">More...</a><br/></td></tr>
+<tr class="separator:a6fe005b448f1a7d6cf3d9f3ca27a13b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c18145b3689a03025147738c6c0fc0a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a6c18145b3689a03025147738c6c0fc0a">encoder_getAngularPositionRad</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:a6c18145b3689a03025147738c6c0fc0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular position of the encoder in radians.  <a href="#a6c18145b3689a03025147738c6c0fc0a">More...</a><br/></td></tr>
+<tr class="separator:a6c18145b3689a03025147738c6c0fc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7abc624d0b8fff9052fed2031ebc8e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a5b7abc624d0b8fff9052fed2031ebc8e">encoder_getAngularVelocity</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:a5b7abc624d0b8fff9052fed2031ebc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in pulses per second.  <a href="#a5b7abc624d0b8fff9052fed2031ebc8e">More...</a><br/></td></tr>
+<tr class="separator:a5b7abc624d0b8fff9052fed2031ebc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab03043ac53526a29d7a022770b41348"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#aab03043ac53526a29d7a022770b41348">encoder_getAngularVelocityRad</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:aab03043ac53526a29d7a022770b41348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in Rad/s.  <a href="#aab03043ac53526a29d7a022770b41348">More...</a><br/></td></tr>
+<tr class="separator:aab03043ac53526a29d7a022770b41348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5bca221bf4012b34a8d51bc916b077"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#aad5bca221bf4012b34a8d51bc916b077">encoder_getAngularVelocityRPM</a> (<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> encoderInstance)</td></tr>
+<tr class="memdesc:aad5bca221bf4012b34a8d51bc916b077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angular velocity of the encoder in RPM.  <a href="#aad5bca221bf4012b34a8d51bc916b077">More...</a><br/></td></tr>
+<tr class="separator:aad5bca221bf4012b34a8d51bc916b077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the definition of methods for the reading of an incremental encoder. </p>
@@ -156,39 +147,15 @@ Bruno de Souza Ferreira </dd></dl>
 <dd>
 27 Sep 2016 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a8706f491977f9e3cab7e88ed9940bf68"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void encoder_disableChOInterrupt </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Disables the interrupt on channel O. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae919bb94de6e36d4d3aeb5cb78805308"></a>
+<a class="anchor" id="ae76fd4bbff8102a38e8193b1e8af3c7e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void encoder_disableCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -197,46 +164,22 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Disables the counter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="afa630cea255bd5e0ec5574e270292c50"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void encoder_enableChOInterrupt </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enables the interrupt on Channel O. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="af252727d31974e447de971018fceaacf"></a>
+<a class="anchor" id="a75ef940df942b5cc4be4c1d8a217d54a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void encoder_enableCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -245,22 +188,22 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Enables the counter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ad8accae7c5df6cd952b7c29bbfb84231"></a>
+<a class="anchor" id="a6fe005b448f1a7d6cf3d9f3ca27a13b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double encoder_getAngularPositionDegree </td>
+          <td class="memname">float encoder_getAngularPositionDegree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -269,7 +212,7 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Returns the angular position of the encoder in degrees. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -277,15 +220,15 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae8ffb453211af228b596b71315e5176a"></a>
+<a class="anchor" id="a6c18145b3689a03025147738c6c0fc0a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double encoder_getAngularPositionRad </td>
+          <td class="memname">float encoder_getAngularPositionRad </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -294,7 +237,7 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Returns the angular position of the encoder in radians. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,15 +245,15 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae9575c865e7b27adf814d5d6ac9c6906"></a>
+<a class="anchor" id="a5b7abc624d0b8fff9052fed2031ebc8e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double encoder_getAngularVelocity </td>
+          <td class="memname">float encoder_getAngularVelocity </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -319,7 +262,29 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Returns the angular velocity of the encoder in pulses per second. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Angular velocity of the encoder in pps.</dd></dl>
+<p>Returns the angular velocity of the encoder in pulses per second.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Angular position of the encoder in degrees. Returns the angular position of the encoder in radians.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Angular position of the encoder in radians. Returns the angular velocity of the encoder in pulses per second.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -327,15 +292,15 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afaba4f66f8620db09e710364d50782ca"></a>
+<a class="anchor" id="aab03043ac53526a29d7a022770b41348"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double encoder_getAngularVelocityRad </td>
+          <td class="memname">float encoder_getAngularVelocityRad </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -344,7 +309,7 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Returns the angular velocity of the encoder in Rad/s. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -352,15 +317,15 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="affc760417707877d05b47ee03a547a92"></a>
+<a class="anchor" id="aad5bca221bf4012b34a8d51bc916b077"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double encoder_getAngularVelocityRPM </td>
+          <td class="memname">float encoder_getAngularVelocityRPM </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -369,7 +334,7 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Returns the angular velocity of the encoder in RPM. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -377,39 +342,40 @@ Bruno de Souza Ferreira </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a53f98a8633104a2f7c020bee3c0a2519"></a>
+<a class="anchor" id="abfc86ef6d2e1644454e6248aecde1388"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void encoder_initEncoder </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the encoder for an incremental encoder. </p>
+<p>Channel O IRQ handler. </p>
+<p>Initializes the encoder for an incremental encoder.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a94d9d391fffb515c228facb256fe4c16"></a>
+<a class="anchor" id="ac201acdd550a514294b3613424813e81"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void encoder_resetCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -418,14 +384,14 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Resets the counter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a373dfc5709103db00f5431f9211e0e0a"></a>
+<a class="anchor" id="a1a9f3d64ef13f140f800ef50672efd12"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -433,16 +399,18 @@ Bruno de Souza Ferreira </dd></dl>
           <td class="memname">void encoder_takeMeasurement </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> *&#160;</td>
-          <td class="paramname"><em>encoder_instance</em></td><td>)</td>
+          <td class="paramname"><em>encoderInstance</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Takes a measurement of speed, direction and position. </p>
+<p>Enables the interrupt on Channel O. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoder_instance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. Disables the interrupt on channel O.</td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. Takes a measurement of speed, direction and position.</td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -452,7 +420,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:27 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:08 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

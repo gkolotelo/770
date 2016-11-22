@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ir_array.h File Reference</div>  </div>
 </div><!--header-->
@@ -93,6 +96,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#details">More...</a></p>
 
 <p><a href="ir__array_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4fd8266adc502e4318a8a585d6fd139a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a4fd8266adc502e4318a8a585d6fd139a">ir_array_initArray</a> ()</td></tr>
+<tr class="memdesc:a4fd8266adc502e4318a8a585d6fd139a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes IR Array.  <a href="#a4fd8266adc502e4318a8a585d6fd139a">More...</a><br/></td></tr>
+<tr class="separator:a4fd8266adc502e4318a8a585d6fd139a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0a1885be09822b842977aa4a43eea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a7e0a1885be09822b842977aa4a43eea7">ir_array_ledSingleOn</a> (uint8_t uiLedInstance)</td></tr>
+<tr class="memdesc:a7e0a1885be09822b842977aa4a43eea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on a single LED.  <a href="#a7e0a1885be09822b842977aa4a43eea7">More...</a><br/></td></tr>
+<tr class="separator:a7e0a1885be09822b842977aa4a43eea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe4a631bc382ade04618359985734548"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe4a631bc382ade04618359985734548"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#afe4a631bc382ade04618359985734548">ir_array_ledArrayOn</a> ()</td></tr>
+<tr class="memdesc:afe4a631bc382ade04618359985734548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on all LEDS of the array. <br/></td></tr>
+<tr class="separator:afe4a631bc382ade04618359985734548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8ed7daf83f3f6175e99393bce44680"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a9a8ed7daf83f3f6175e99393bce44680">ir_array_ledSingleOff</a> (uint8_t uiLedInstance)</td></tr>
+<tr class="memdesc:a9a8ed7daf83f3f6175e99393bce44680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns off a single LED.  <a href="#a9a8ed7daf83f3f6175e99393bce44680">More...</a><br/></td></tr>
+<tr class="separator:a9a8ed7daf83f3f6175e99393bce44680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03327ce02bc630a8e761686602390c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac03327ce02bc630a8e761686602390c1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#ac03327ce02bc630a8e761686602390c1">ir_array_ledArrayOff</a> ()</td></tr>
+<tr class="memdesc:ac03327ce02bc630a8e761686602390c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns off all LEDS of the array. <br/></td></tr>
+<tr class="separator:ac03327ce02bc630a8e761686602390c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f7dff63e47da52db2824b614c56b40"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#aa1f7dff63e47da52db2824b614c56b40">ir_array_takeSingleMeasurement</a> (uint8_t uiIrChannelInstance)</td></tr>
+<tr class="memdesc:aa1f7dff63e47da52db2824b614c56b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a measurement of a single LED/sensor pair.  <a href="#aa1f7dff63e47da52db2824b614c56b40">More...</a><br/></td></tr>
+<tr class="separator:aa1f7dff63e47da52db2824b614c56b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c55eb771eb8d247496271198c9ffad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#ae8c55eb771eb8d247496271198c9ffad">ir_array_takeMeasurement</a> ()</td></tr>
+<tr class="memdesc:ae8c55eb771eb8d247496271198c9ffad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a measurement of all LED/sensor pairs.  <a href="#ae8c55eb771eb8d247496271198c9ffad">More...</a><br/></td></tr>
+<tr class="separator:ae8c55eb771eb8d247496271198c9ffad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2679a982ce823ecaedffd9bbc4b1bfac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a2679a982ce823ecaedffd9bbc4b1bfac">ir_array_normalizeReadings</a> (uint16_t *uiIrVector, float *fIrNormalizedReadings)</td></tr>
+<tr class="memdesc:a2679a982ce823ecaedffd9bbc4b1bfac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the IR sensor readings according to min and max values from calibration.  <a href="#a2679a982ce823ecaedffd9bbc4b1bfac">More...</a><br/></td></tr>
+<tr class="separator:a2679a982ce823ecaedffd9bbc4b1bfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746f190da520172c3eeedabb130f8aec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a746f190da520172c3eeedabb130f8aec">ir_array_calibrate</a> (uint16_t *uiIrVector)</td></tr>
+<tr class="memdesc:a746f190da520172c3eeedabb130f8aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the calibration routine for all LED/sensor pairs.  <a href="#a746f190da520172c3eeedabb130f8aec">More...</a><br/></td></tr>
+<tr class="separator:a746f190da520172c3eeedabb130f8aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2563d722d3952a07d27f9c0620190f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a7a2563d722d3952a07d27f9c0620190f">ir_array_catmullRom</a> (float p0, float p1, float p2, float p3, float t)</td></tr>
+<tr class="memdesc:a7a2563d722d3952a07d27f9c0620190f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the uniform Catmull-Rom spline algorithm between point p1 and p2.  <a href="#a7a2563d722d3952a07d27f9c0620190f">More...</a><br/></td></tr>
+<tr class="separator:a7a2563d722d3952a07d27f9c0620190f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0999e095416168045f30914008c70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#a3c0999e095416168045f30914008c70c">ir_array_interpolate</a> (float *y, float y0, float y1, float y2, float y3, float y4, float y5)</td></tr>
+<tr class="memdesc:a3c0999e095416168045f30914008c70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the Catmull-Rom algorithm for all pairs of sensors (0-1, 1-2, 2-3, 3-4, 4-5).  <a href="#a3c0999e095416168045f30914008c70c">More...</a><br/></td></tr>
+<tr class="separator:a3c0999e095416168045f30914008c70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95117d9c44ea5c28ba09f587f17532b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#ad95117d9c44ea5c28ba09f587f17532b">ir_array_minMaxValuePosition</a> (float y0, float y1, float y2, float y3, float y4, float y5)</td></tr>
+<tr class="memdesc:ad95117d9c44ea5c28ba09f587f17532b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the position of the trough, or occurence of a command bar.  <a href="#ad95117d9c44ea5c28ba09f587f17532b">More...</a><br/></td></tr>
+<tr class="separator:ad95117d9c44ea5c28ba09f587f17532b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add844dbc6589a57e1b4a92a4cdc1948f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8h.html#add844dbc6589a57e1b4a92a4cdc1948f">ir_array_getPosition</a> ()</td></tr>
+<tr class="memdesc:add844dbc6589a57e1b4a92a4cdc1948f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get position of trought or occurence of command bar.  <a href="#add844dbc6589a57e1b4a92a4cdc1948f">More...</a><br/></td></tr>
+<tr class="separator:add844dbc6589a57e1b4a92a4cdc1948f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9da14ea40d7dad3a7f215d3bfc737779"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9da14ea40d7dad3a7f215d3bfc737779"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiIrReadings</b> [6] = {0, 0, 0, 0, 0, 0}</td></tr>
+<tr class="separator:a9da14ea40d7dad3a7f215d3bfc737779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac484cf06ca78ae882fb74146cee0501b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac484cf06ca78ae882fb74146cee0501b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fIrNormalizedReadings</b> [6] = {0, 0, 0, 0, 0, 0}</td></tr>
+<tr class="separator:ac484cf06ca78ae882fb74146cee0501b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e1d004d1f8e76813e51377e6fca8f7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e1d004d1f8e76813e51377e6fca8f7f"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiIrMinreadings</b> [6] = {0, 0, 0, 0, 0, 0}</td></tr>
+<tr class="separator:a4e1d004d1f8e76813e51377e6fca8f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f833590fd95fe37643a52627c52a81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30f833590fd95fe37643a52627c52a81"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiIrMaxreadings</b> [6] = {65535, 65535, 65535, 65535, 65535, 65535}</td></tr>
+<tr class="separator:a30f833590fd95fe37643a52627c52a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b7982137aa76d56d01cc8613cb05b5"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><b>fcx</b> [10]</td></tr>
+<tr class="separator:aa9b7982137aa76d56d01cc8613cb05b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the definition of methods for interacting with an IR array . </p>
 <dl class="section author"><dt>Author</dt><dd>Guilherme Kairalla Kolotelo </dd>
@@ -101,11 +166,441 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27 Jun 2016 </dd>
 <dd>
-27 Sep 2016 </dd></dl>
-</div></div><!-- contents -->
+07 Oct 2016 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a746f190da520172c3eeedabb130f8aec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_calibrate </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>uiIrVector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the calibration routine for all LED/sensor pairs. </p>
+<p>Store minimum and maximum reading values on uiIrMinreadings and uiIrMaxreadings respectively.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiIrVector</td><td>Array pointer to store raw sensor measurements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a2563d722d3952a07d27f9c0620190f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ir_array_catmullRom </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements the uniform Catmull-Rom spline algorithm between point p1 and p2. </p>
+<p>Uniform Catmull-Rom using float precision data-type given 4 points and position t.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p0</td><td>Point 0 </td></tr>
+    <tr><td class="paramname">p1</td><td>Point 1 </td></tr>
+    <tr><td class="paramname">p2</td><td>Point 2 </td></tr>
+    <tr><td class="paramname">p3</td><td>Point 3 </td></tr>
+    <tr><td class="paramname">t</td><td>Position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the interpolated points fot position t between p1 and p2. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="add844dbc6589a57e1b4a92a4cdc1948f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ir_array_getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get position of trought or occurence of command bar. </p>
+<p>[long description]</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[description]</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>[description] </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4fd8266adc502e4318a8a585d6fd139a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_initArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes IR Array. </p>
+<p>Initializes IR Array.</p>
+<p>Catmull-Rom </p>
+<pre class="fragment">points: x:   0     1     2     3     4     5        (array sensor position)
+           y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]   (normalized sensor reading)
+
+Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
+with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
+points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
+x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.</pre><p>Initializes IR Array. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3c0999e095416168045f30914008c70c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_interpolate </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y5</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the Catmull-Rom algorithm for all pairs of sensors (0-1, 1-2, 2-3, 3-4, 4-5). </p>
+<p>Generates a 46 point vector from position 0 to position 5 (sensor 0 to 5) with 9 control points between each sensor: sensor: 0 1 ... 2 5 position: 0, 1, ..., 8, 9, 10, ..., 17, 18, 19, ..........44, 45</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Array pointer to store interpolated values </td></tr>
+    <tr><td class="paramname">y0</td><td>sensor 0 normalized measurement </td></tr>
+    <tr><td class="paramname">y1</td><td>sensor 1 normalized measurement </td></tr>
+    <tr><td class="paramname">y2</td><td>sensor 2 normalized measurement </td></tr>
+    <tr><td class="paramname">y3</td><td>sensor 3 normalized measurement </td></tr>
+    <tr><td class="paramname">y4</td><td>sensor 4 normalized measurement </td></tr>
+    <tr><td class="paramname">y5</td><td>sensor 5 normalized measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9a8ed7daf83f3f6175e99393bce44680"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_ledSingleOff </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>uiLedInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns off a single LED. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiLedInstance</td><td>LED index [0-5]. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7e0a1885be09822b842977aa4a43eea7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_ledSingleOn </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>uiLedInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns on a single LED. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiLedInstance</td><td>LED index [0-5]. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad95117d9c44ea5c28ba09f587f17532b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ir_array_minMaxValuePosition </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y5</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the position of the trough, or occurence of a command bar. </p>
+<p>Evaluates the position of the trough(pos), or occurence of a command bar(-1). If both are inexistent returns invalid (-2).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y0</td><td>sensor 0 normalized measurement </td></tr>
+    <tr><td class="paramname">y1</td><td>sensor 1 normalized measurement </td></tr>
+    <tr><td class="paramname">y2</td><td>sensor 2 normalized measurement </td></tr>
+    <tr><td class="paramname">y3</td><td>sensor 3 normalized measurement </td></tr>
+    <tr><td class="paramname">y4</td><td>sensor 4 normalized measurement </td></tr>
+    <tr><td class="paramname">y5</td><td>sensor 5 normalized measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trough Pos or -1 (command bar) or -2 (invalid/other)</dd></dl>
+<p>Evaluates the position of the trough(pos), or occurence of a command bar(-1). If both are inexistent returns invalid (-2).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y0</td><td>sensor 0 normalized measurement </td></tr>
+    <tr><td class="paramname">y1</td><td>sensor 1 normalized measurement </td></tr>
+    <tr><td class="paramname">y2</td><td>sensor 2 normalized measurement </td></tr>
+    <tr><td class="paramname">y3</td><td>sensor 3 normalized measurement </td></tr>
+    <tr><td class="paramname">y4</td><td>sensor 4 normalized measurement </td></tr>
+    <tr><td class="paramname">y5</td><td>sensor 5 normalized measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trough Pos or -10 (command bar) or -20 (invalid/other) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2679a982ce823ecaedffd9bbc4b1bfac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_normalizeReadings </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>uiIrVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>fIrNormalizedReadings</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normalizes the IR sensor readings according to min and max values from calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiIrVector</td><td>Array pointer to store raw sensor measurements </td></tr>
+    <tr><td class="paramname">fIrNormalizedReadings</td><td>Array pointer to store raw normalized measurements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae8c55eb771eb8d247496271198c9ffad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_array_takeMeasurement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Takes a measurement of all LED/sensor pairs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiIrVector</td><td>Array pointer to store raw sensor measurements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1f7dff63e47da52db2824b614c56b40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ir_array_takeSingleMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>uiIrChannelInstance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Takes a measurement of a single LED/sensor pair. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiIrChannelInstance</td><td>LED index [0-5]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Raw sensor measurement </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aa9b7982137aa76d56d01cc8613cb05b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const fcx[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= { 0.0, 0.111111, 0.222222, 0.333333, 0.444444,</div>
+<div class="line">                         0.555556, 0.666667, 0.777778, 0.888889, 1.0 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:28 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:09 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

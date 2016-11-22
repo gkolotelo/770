@@ -1,0 +1,108 @@
+\hypertarget{adc_8c}{\section{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/adc/adc.c File Reference}
+\label{adc_8c}\index{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/adc/adc.\-c@{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/adc/adc.\-c}}
+}
+
+
+File containing the methods for interacting with the A\-D\-C module.  
+
+
+{\ttfamily \#include $<$M\-K\-L25\-Z4.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{adc_8c_a17add8102fe6c37f198d969c0a15db63}{\#define {\bfseries A\-D\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-D\-O\-N\-E}~1}\label{adc_8c_a17add8102fe6c37f198d969c0a15db63}
+
+\item 
+\hypertarget{adc_8c_aac69ea00a101edd3967aaa69e197b2a6}{\#define {\bfseries A\-D\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G}~1}\label{adc_8c_aac69ea00a101edd3967aaa69e197b2a6}
+
+\item 
+\hypertarget{adc_8c_a8b79768e5fe2646be936fdfdaf6c0fa4}{\#define {\bfseries A\-D\-C\-\_\-\-P\-I\-N\-\_\-\-T\-E\-M\-P}~21\-U}\label{adc_8c_a8b79768e5fe2646be936fdfdaf6c0fa4}
+
+\item 
+\hypertarget{adc_8c_a88b13af54e591be511f6287735dc35cc}{\#define {\bfseries A\-D\-C\-\_\-\-P\-I\-N\-\_\-\-V\-S\-E\-N\-S\-E}~20\-U}\label{adc_8c_a88b13af54e591be511f6287735dc35cc}
+
+\item 
+\hypertarget{adc_8c_a9e34321dba05f7715abe4e0e7c28c639}{\#define {\bfseries A\-D\-C\-\_\-\-A\-L\-T}~0\-U}\label{adc_8c_a9e34321dba05f7715abe4e0e7c28c639}
+
+\item 
+\hypertarget{adc_8c_a96a4be398c8e68f88f8054d34536a22a}{\#define {\bfseries A\-D\-C0\-\_\-\-S\-C1\-A\-\_\-\-C\-O\-C\-O}~(A\-D\-C0\-\_\-\-S\-C1\-A $>$$>$ 7)}\label{adc_8c_a96a4be398c8e68f88f8054d34536a22a}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{adc_8c_aa44c35c660d6b177c4a0860e419956eb}{void \hyperlink{adc_8c_aa44c35c660d6b177c4a0860e419956eb}{adc\-\_\-init\-Adc} (void)}\label{adc_8c_aa44c35c660d6b177c4a0860e419956eb}
+
+\begin{DoxyCompactList}\small\item\em configure A\-D\-C module \end{DoxyCompactList}\item 
+void \hyperlink{adc_8c_a602ca40954d24b68e73d1216dfe679f8}{adc\-\_\-start\-Conversion} (uint8\-\_\-t adc\-Channel)
+\begin{DoxyCompactList}\small\item\em init a conversion from A to D \end{DoxyCompactList}\item 
+int \hyperlink{adc_8c_a6a3d82289c66a9482e04495104bb2b66}{adc\-\_\-is\-Adc\-Done} (void)
+\begin{DoxyCompactList}\small\item\em check if conversion is done \end{DoxyCompactList}\item 
+int \hyperlink{adc_8c_af94ca2a4b1f91ed0a9c60fd562fe263e}{adc\-\_\-get\-Value} (void)
+\begin{DoxyCompactList}\small\item\em retrieve converted value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the methods for interacting with the A\-D\-C module. \begin{DoxyAuthor}{Author}
+msoliveira 
+
+Guilherme Kairalla Kolotelo 
+
+Bruno de Souza Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06 Jun 2016 
+
+27 Sep 2016 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{adc_8c_af94ca2a4b1f91ed0a9c60fd562fe263e}{\index{adc.\-c@{adc.\-c}!adc\-\_\-get\-Value@{adc\-\_\-get\-Value}}
+\index{adc\-\_\-get\-Value@{adc\-\_\-get\-Value}!adc.c@{adc.\-c}}
+\subsubsection[{adc\-\_\-get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int adc\-\_\-get\-Value (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{adc_8c_af94ca2a4b1f91ed0a9c60fd562fe263e}
+
+
+retrieve converted value 
+
+\begin{DoxyReturn}{Returns}
+Converted value 
+\end{DoxyReturn}
+\hypertarget{adc_8c_a6a3d82289c66a9482e04495104bb2b66}{\index{adc.\-c@{adc.\-c}!adc\-\_\-is\-Adc\-Done@{adc\-\_\-is\-Adc\-Done}}
+\index{adc\-\_\-is\-Adc\-Done@{adc\-\_\-is\-Adc\-Done}!adc.c@{adc.\-c}}
+\subsubsection[{adc\-\_\-is\-Adc\-Done}]{\setlength{\rightskip}{0pt plus 5cm}int adc\-\_\-is\-Adc\-Done (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{adc_8c_a6a3d82289c66a9482e04495104bb2b66}
+
+
+check if conversion is done 
+
+\begin{DoxyReturn}{Returns}
+1 if complete, 0 otherwise 
+\end{DoxyReturn}
+\hypertarget{adc_8c_a602ca40954d24b68e73d1216dfe679f8}{\index{adc.\-c@{adc.\-c}!adc\-\_\-start\-Conversion@{adc\-\_\-start\-Conversion}}
+\index{adc\-\_\-start\-Conversion@{adc\-\_\-start\-Conversion}!adc.c@{adc.\-c}}
+\subsubsection[{adc\-\_\-start\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}void adc\-\_\-start\-Conversion (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{adc\-Channel}
+\end{DoxyParamCaption}
+)}}\label{adc_8c_a602ca40954d24b68e73d1216dfe679f8}
+
+
+init a conversion from A to D 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\-Channel} & A\-D\-C channel to convert. Given in bytes. \\
+\hline
+\end{DoxyParams}

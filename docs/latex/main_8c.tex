@@ -7,13 +7,64 @@ File containing the main entry point of the program.
 
 
 {\ttfamily \#include \char`\"{}fsl\-\_\-device\-\_\-registers.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-debug\-\_\-console.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-clock\-\_\-manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/mcg/mcg.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}hal/adc/adc.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/controller/controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/diagnostics/diagnostics.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/driver/driver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/encoder/encoder.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/hmi/hmi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/ir\-\_\-array/ir\-\_\-array.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/util/util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/vsense/vsense.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/util/tc\-\_\-hal.\-h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{main_8c_ad8e0accfe2e176631c2ca3f5ef51c2cf}{foo} (int foo, char bar)
-\begin{DoxyCompactList}\small\item\em foo brief \end{DoxyCompactList}\item 
-\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{int {\bfseries main} (void)}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{main_8c_a7c1ec1b3e7c8830636d1e68e9b016444}{void {\bfseries main\-\_\-cyclic\-Execute\-Isr} (void)}\label{main_8c_a7c1ec1b3e7c8830636d1e68e9b016444}
 
+\item 
+\hypertarget{main_8c_afc9da530ebb6d2fa4a3e16d2f2b0c016}{void \hyperlink{main_8c_afc9da530ebb6d2fa4a3e16d2f2b0c016}{board\-Init} ()}\label{main_8c_afc9da530ebb6d2fa4a3e16d2f2b0c016}
+
+\begin{DoxyCompactList}\small\item\em Initializes board clock configurations. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a30a7d8752f7cae1b72189d3ede3128a1}{void \hyperlink{main_8c_a30a7d8752f7cae1b72189d3ede3128a1}{peripheral\-Init} ()}\label{main_8c_a30a7d8752f7cae1b72189d3ede3128a1}
+
+\begin{DoxyCompactList}\small\item\em Initializes board peripherals and component instances. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+\begin{DoxyCompactList}\small\item\em Main entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a3dc5914d8273abdc63c341888e603d06}{volatile unsigned int {\bfseries ui\-Flag\-Next\-Period} = 0}\label{main_8c_a3dc5914d8273abdc63c341888e603d06}
+
+\item 
+\hypertarget{main_8c_afa30a6d0c7a2eae00ba3af73ba4f150b}{float {\bfseries sys\-\_\-voltage} = 0}\label{main_8c_afa30a6d0c7a2eae00ba3af73ba4f150b}
+
+\item 
+\hypertarget{main_8c_a048314c85c3b13c968e11c193b1bfabb}{float {\bfseries voltage\-\_\-correction} = 0}\label{main_8c_a048314c85c3b13c968e11c193b1bfabb}
+
+\item 
+\hypertarget{main_8c_a6ebc88a4af3c3ced4590f987d1e894ce}{float {\bfseries motor\-\_\-current\-\_\-speed} = M\-O\-T\-O\-R\-\_\-\-F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D}\label{main_8c_a6ebc88a4af3c3ced4590f987d1e894ce}
+
+\item 
+\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} \hyperlink{main_8c_a90052c39e2dc9678876e1aed077feff3}{tencoder\-L}
+\item 
+\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} {\bfseries tencoder\-R}
+\item 
+\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} {\bfseries tdriver\-L}
+\item 
+\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} {\bfseries tdriver\-R}
+\item 
+\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-P}
+\item 
+\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-L}
+\item 
+\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-R}
 \end{DoxyCompactItemize}
 
 
@@ -31,25 +82,132 @@ Bruno de Souza Ferreira
 \end{DoxyDate}
 
 
-\subsection{Function Documentation}
-\hypertarget{main_8c_ad8e0accfe2e176631c2ca3f5ef51c2cf}{\index{main.\-c@{main.\-c}!foo@{foo}}
-\index{foo@{foo}!main.c@{main.\-c}}
-\subsubsection[{foo}]{\setlength{\rightskip}{0pt plus 5cm}void foo (
-\begin{DoxyParamCaption}
-\item[{int}]{foo, }
-\item[{char}]{bar}
-\end{DoxyParamCaption}
-)}}\label{main_8c_ad8e0accfe2e176631c2ca3f5ef51c2cf}
+\subsection{Variable Documentation}
+\hypertarget{main_8c_ae71c13261eba66587ee7a0d8c2d3ff18}{\index{main.\-c@{main.\-c}!tdriver\-L@{tdriver\-L}}
+\index{tdriver\-L@{tdriver\-L}!main.c@{main.\-c}}
+\subsubsection[{tdriver\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf driver\-\_\-instance\-\_\-t} tdriver\-L}}\label{main_8c_ae71c13261eba66587ee7a0d8c2d3ff18}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cDriverInstance = \textcolor{charliteral}{'L'},
+    .uiDriverPwmChAPortInstance = DRIVER\_LW\_CHA\_PORT\_INSTANCE,
+    .uiDriverPwmChAPinNumber = DRIVER\_LW\_CHA\_PIN\_NUMBER,
+    .uiDriverPwmChAPortAlt = DRIVER\_LW\_CHA\_PORT\_ALT,
+    .uiDriverPwmChAChannelInstance = DRIVER\_LW\_CHA\_INSTANCE,
+    .uiDriverPwmChBPortInstance = DRIVER\_LW\_CHB\_PORT\_INSTANCE,
+    .uiDriverPwmChBPinNumber = DRIVER\_LW\_CHB\_PIN\_NUMBER,
+    .uiDriverPwmChBPortAlt = DRIVER\_LW\_CHB\_PORT\_ALT,
+    .uiDriverPwmChBChannelInstance = DRIVER\_LW\_CHB\_INSTANCE,
+    
+    .uiDriverTpmClkinInstance = DRIVER\_LW\_TPM\_CLK\_SRC,
+    .tTpmClkSrc = DRIVER\_LW\_TPM\_CLK\_SRC,
+    .tTpmClkPrescaler = DRIVER\_LW\_TPM\_CLK\_PS, 
 
+    .uiDriverEnPinNumber = DRIVER\_LW\_EN\_PIN\_NUMBER,
+    .uiDriverEnPortAlt = DRIVER\_LW\_EN\_PORT\_ALT,
+    .uiDriverEnPortInstance = DRIVER\_LW\_EN\_PORT\_INSTANCE,
+    .uiDriverEnGpioInstance = DRIVER\_LW\_EN\_GPIO\_INSTANCE
+\}
+\end{DoxyCode}
+\hypertarget{main_8c_a85c6c52b26f78c3272d721ae67bce90b}{\index{main.\-c@{main.\-c}!tdriver\-R@{tdriver\-R}}
+\index{tdriver\-R@{tdriver\-R}!main.c@{main.\-c}}
+\subsubsection[{tdriver\-R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf driver\-\_\-instance\-\_\-t} tdriver\-R}}\label{main_8c_a85c6c52b26f78c3272d721ae67bce90b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cDriverInstance = \textcolor{charliteral}{'R'},
+    .uiDriverPwmChAPortInstance = DRIVER\_RW\_CHA\_PORT\_INSTANCE,
+    .uiDriverPwmChAPinNumber = DRIVER\_RW\_CHA\_PIN\_NUMBER,
+    .uiDriverPwmChAPortAlt = DRIVER\_RW\_CHA\_PORT\_ALT,
+    .uiDriverPwmChAChannelInstance = DRIVER\_RW\_CHA\_INSTANCE,
+    .uiDriverPwmChBPortInstance = DRIVER\_RW\_CHB\_PORT\_INSTANCE,
+    .uiDriverPwmChBPinNumber = DRIVER\_RW\_CHB\_PIN\_NUMBER,
+    .uiDriverPwmChBPortAlt = DRIVER\_RW\_CHB\_PORT\_ALT,
+    .uiDriverPwmChBChannelInstance = DRIVER\_RW\_CHB\_INSTANCE,
+    
+    .uiDriverTpmClkinInstance = DRIVER\_RW\_TPM\_CLK\_SRC,
+    .tTpmClkSrc = DRIVER\_RW\_TPM\_CLK\_SRC,
+    .tTpmClkPrescaler = DRIVER\_RW\_TPM\_CLK\_PS, 
 
-foo brief 
+    .uiDriverEnPinNumber = DRIVER\_RW\_EN\_PIN\_NUMBER,
+    .uiDriverEnPortAlt = DRIVER\_RW\_EN\_PORT\_ALT,
+    .uiDriverEnPortInstance = DRIVER\_RW\_EN\_PORT\_INSTANCE,
+    .uiDriverEnGpioInstance = DRIVER\_RW\_EN\_GPIO\_INSTANCE
+\}
+\end{DoxyCode}
+\hypertarget{main_8c_a90052c39e2dc9678876e1aed077feff3}{\index{main.\-c@{main.\-c}!tencoder\-L@{tencoder\-L}}
+\index{tencoder\-L@{tencoder\-L}!main.c@{main.\-c}}
+\subsubsection[{tencoder\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf encoder\-\_\-instance\-\_\-t} tencoder\-L}}\label{main_8c_a90052c39e2dc9678876e1aed077feff3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cEncoderInstance = \textcolor{charliteral}{'L'},
+    .uiEncoderPortInstance = ENCODER\_LW\_PORT\_INSTANCE,
+    .uiEncoderPinNumber = ENCODER\_LW\_PIN\_NUMBER,
+    .uiEncoderPortAlt = ENCODER\_LW\_PORT\_ALT,
+    .uiEncoderTpmInstance = ENCODER\_LW\_TPM\_INSTANCE,
+    .uiEncoderTpmClkinSrc = ENCODER\_LW\_FTM\_CLKIN\_SRC,
+    
+    .uiEncoderMaxPulseCount = ENCODER\_LW\_MAX\_PULSE\_COUNT,
+    .uiEncoderPulseCount = ENCODER\_LW\_PULSE\_COUNT,
+    .uiEncoderAcqPeriodUs = ENCODER\_LW\_ACQ\_PERIOD\_US,
 
-foo details
+    
+    .uiEncoderPulsesPerSecond = 0
+\}
+\end{DoxyCode}
+Uses instances defined on \hyperlink{main_8c}{main.\-c} file \hypertarget{main_8c_af032f1863b545b3764bf9ff9bf7e6ada}{\index{main.\-c@{main.\-c}!tencoder\-R@{tencoder\-R}}
+\index{tencoder\-R@{tencoder\-R}!main.c@{main.\-c}}
+\subsubsection[{tencoder\-R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf encoder\-\_\-instance\-\_\-t} tencoder\-R}}\label{main_8c_af032f1863b545b3764bf9ff9bf7e6ada}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cEncoderInstance = \textcolor{charliteral}{'R'},
+    .uiEncoderPortInstance = ENCODER\_RW\_PORT\_INSTANCE,
+    .uiEncoderPinNumber = ENCODER\_RW\_PIN\_NUMBER,
+    .uiEncoderPortAlt = ENCODER\_RW\_PORT\_ALT,
+    .uiEncoderTpmInstance = ENCODER\_RW\_TPM\_INSTANCE,
+    .uiEncoderTpmClkinSrc = ENCODER\_RW\_FTM\_CLKIN\_SRC,
+    
+    .uiEncoderMaxPulseCount = ENCODER\_RW\_MAX\_PULSE\_COUNT,
+    .uiEncoderPulseCount = ENCODER\_RW\_PULSE\_COUNT,
+    .uiEncoderAcqPeriodUs = ENCODER\_RW\_ACQ\_PERIOD\_US,
 
-
-\begin{DoxyParams}{Parameters}
-{\em foo} & integer \\
-\hline
-{\em bar} & character \\
-\hline
-\end{DoxyParams}
+    
+    .uiEncoderPulsesPerSecond = 0
+\}
+\end{DoxyCode}
+\hypertarget{main_8c_a3d0402a2da19edf89f235d489fba3487}{\index{main.\-c@{main.\-c}!tpid\-L@{tpid\-L}}
+\index{tpid\-L@{tpid\-L}!main.c@{main.\-c}}
+\subsubsection[{tpid\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-instance\-\_\-t} tpid\-L}}\label{main_8c_a3d0402a2da19edf89f235d489fba3487}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cControllerInstance = \textcolor{charliteral}{'L'}
+\}
+\end{DoxyCode}
+\hypertarget{main_8c_ad373d66120668929942d9a2087315641}{\index{main.\-c@{main.\-c}!tpid\-P@{tpid\-P}}
+\index{tpid\-P@{tpid\-P}!main.c@{main.\-c}}
+\subsubsection[{tpid\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-instance\-\_\-t} tpid\-P}}\label{main_8c_ad373d66120668929942d9a2087315641}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cControllerInstance = \textcolor{charliteral}{'P'}
+\}
+\end{DoxyCode}
+\hypertarget{main_8c_a0b3eea58513ede92b45d134c8754cdca}{\index{main.\-c@{main.\-c}!tpid\-R@{tpid\-R}}
+\index{tpid\-R@{tpid\-R}!main.c@{main.\-c}}
+\subsubsection[{tpid\-R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-instance\-\_\-t} tpid\-R}}\label{main_8c_a0b3eea58513ede92b45d134c8754cdca}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    
+    .cControllerInstance = \textcolor{charliteral}{'R'}
+\}
+\end{DoxyCode}

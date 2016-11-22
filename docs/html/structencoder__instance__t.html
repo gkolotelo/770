@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,15 +116,15 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderTpmClkinS
 <tr class="memitem:a15bf7d23dc7e26e68483543a2c713f50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15bf7d23dc7e26e68483543a2c713f50"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderMaxPulseCount</b></td></tr>
 <tr class="separator:a15bf7d23dc7e26e68483543a2c713f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7e850409d161f5b5d72c799abda8afb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7e850409d161f5b5d72c799abda8afb"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderPulseCount</b></td></tr>
-<tr class="separator:ad7e850409d161f5b5d72c799abda8afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e71a959f4aa54139f44d76265298afb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e71a959f4aa54139f44d76265298afb"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderPulseCount</b></td></tr>
+<tr class="separator:a0e71a959f4aa54139f44d76265298afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a890a706134fbcadc0a8d51126cab4252"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a890a706134fbcadc0a8d51126cab4252"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderAcqPeriodUs</b></td></tr>
 <tr class="separator:a890a706134fbcadc0a8d51126cab4252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3084c16da2d098001d335109df7febb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3084c16da2d098001d335109df7febb2"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderPulsesPerSecond</b> = 0</td></tr>
-<tr class="separator:a3084c16da2d098001d335109df7febb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25418e3e4e1d572bd2c7d7eeb911aba0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25418e3e4e1d572bd2c7d7eeb911aba0"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderPulsesPerSecond</b></td></tr>
+<tr class="separator:a25418e3e4e1d572bd2c7d7eeb911aba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structdriver__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">driver_instance_t</a> Struct containing specific data for a motor driver instance. </p>
@@ -134,7 +134,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>uiEncoderPulsesPe
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:28 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:09 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

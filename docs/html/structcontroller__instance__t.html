@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,24 +98,24 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a542ee3f3788e7b8a76c27770ccf642e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a542ee3f3788e7b8a76c27770ccf642e2"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>cControllerInstance</b></td></tr>
 <tr class="separator:a542ee3f3788e7b8a76c27770ccf642e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ffd97af3cfab4ac4c9732a77817e3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31ffd97af3cfab4ac4c9732a77817e3f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerKp</b></td></tr>
-<tr class="separator:a31ffd97af3cfab4ac4c9732a77817e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d402050e7c103a34c5b1e1fdb8d7b6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d402050e7c103a34c5b1e1fdb8d7b6a"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerKi</b></td></tr>
-<tr class="separator:a0d402050e7c103a34c5b1e1fdb8d7b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e2aa79eeec38d61c3d5166efcd3e695"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e2aa79eeec38d61c3d5166efcd3e695"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerKd</b></td></tr>
-<tr class="separator:a8e2aa79eeec38d61c3d5166efcd3e695"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d2417c751791f4abd6791c87a298c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95d2417c751791f4abd6791c87a298c1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerSensorPreviousValue</b></td></tr>
-<tr class="separator:a95d2417c751791f4abd6791c87a298c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2b397d199c20d3fbd355dc98d044103"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2b397d199c20d3fbd355dc98d044103"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerErrorSum</b></td></tr>
-<tr class="separator:ae2b397d199c20d3fbd355dc98d044103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca59901607351c2349c56c80ecd69a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ca59901607351c2349c56c80ecd69a5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerMaxSumError</b></td></tr>
-<tr class="separator:a8ca59901607351c2349c56c80ecd69a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a7cac17406d3b2c70b728e5ed2c1a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4a7cac17406d3b2c70b728e5ed2c1a1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerKp</b></td></tr>
+<tr class="separator:aa4a7cac17406d3b2c70b728e5ed2c1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d290c37a027fcb177e0e69e5714e38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6d290c37a027fcb177e0e69e5714e38"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerKi</b></td></tr>
+<tr class="separator:ac6d290c37a027fcb177e0e69e5714e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486a5d3a3d070dc70140baac4faac439"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a486a5d3a3d070dc70140baac4faac439"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerKd</b></td></tr>
+<tr class="separator:a486a5d3a3d070dc70140baac4faac439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c41460a0e5572f3c640a3b8d1b27ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0c41460a0e5572f3c640a3b8d1b27ec"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerSensorPreviousValue</b></td></tr>
+<tr class="separator:af0c41460a0e5572f3c640a3b8d1b27ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d6fce60554a736e37447164109fb47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8d6fce60554a736e37447164109fb47"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerErrorSum</b></td></tr>
+<tr class="separator:ac8d6fce60554a736e37447164109fb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1add4421d287595001560ca7e07796ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1add4421d287595001560ca7e07796ff"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fControllerMaxSumError</b></td></tr>
+<tr class="separator:a1add4421d287595001560ca7e07796ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structcontroller__instance__t.html" title="controller_instance_t Struct containing specific data for a PID controller instance. ">controller_instance_t</a> Struct containing specific data for a PID controller instance. </p>
@@ -125,7 +125,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>dControllerMaxSumEr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:28 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:09 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

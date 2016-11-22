@@ -6,6 +6,45 @@
 File containing the methods for interacting with an I\-R array .  
 
 
+{\ttfamily \#include $<$M\-K\-L25\-Z4.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-clock\-\_\-manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-gpio\-\_\-driver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-gpio\-\_\-hal.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ir\-\_\-array.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/util/util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/adc/adc.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ir__array_8c_a4fd8266adc502e4318a8a585d6fd139a}{ir\-\_\-array\-\_\-init\-Array} ()
+\begin{DoxyCompactList}\small\item\em Interpolation algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_a7e0a1885be09822b842977aa4a43eea7}{ir\-\_\-array\-\_\-led\-Single\-On} (uint8\-\_\-t ui\-Led\-Instance)
+\begin{DoxyCompactList}\small\item\em Turns on a single L\-E\-D. \end{DoxyCompactList}\item 
+\hypertarget{ir__array_8c_afe4a631bc382ade04618359985734548}{void \hyperlink{ir__array_8c_afe4a631bc382ade04618359985734548}{ir\-\_\-array\-\_\-led\-Array\-On} ()}\label{ir__array_8c_afe4a631bc382ade04618359985734548}
+
+\begin{DoxyCompactList}\small\item\em Turns on all L\-E\-D\-S of the array. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_a9a8ed7daf83f3f6175e99393bce44680}{ir\-\_\-array\-\_\-led\-Single\-Off} (uint8\-\_\-t ui\-Led\-Instance)
+\begin{DoxyCompactList}\small\item\em Turns off a single L\-E\-D. \end{DoxyCompactList}\item 
+\hypertarget{ir__array_8c_ac03327ce02bc630a8e761686602390c1}{void \hyperlink{ir__array_8c_ac03327ce02bc630a8e761686602390c1}{ir\-\_\-array\-\_\-led\-Array\-Off} ()}\label{ir__array_8c_ac03327ce02bc630a8e761686602390c1}
+
+\begin{DoxyCompactList}\small\item\em Turns off all L\-E\-D\-S of the array. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{ir__array_8c_aa1f7dff63e47da52db2824b614c56b40}{ir\-\_\-array\-\_\-take\-Single\-Measurement} (uint8\-\_\-t ui\-Ir\-Channel\-Instance)
+\begin{DoxyCompactList}\small\item\em Takes a measurement of a single L\-E\-D/sensor pair. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_aec0b5f5f06a75bcec6530ce97e5b10da}{ir\-\_\-array\-\_\-take\-Measurement} (uint16\-\_\-t $\ast$ui\-Ir\-Vector)
+\begin{DoxyCompactList}\small\item\em Takes a measurement of all L\-E\-D/sensor pairs. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_a2679a982ce823ecaedffd9bbc4b1bfac}{ir\-\_\-array\-\_\-normalize\-Readings} (uint16\-\_\-t $\ast$ui\-Ir\-Vector, float $\ast$f\-Ir\-Normalized\-Readings)
+\begin{DoxyCompactList}\small\item\em Normalizes the I\-R sensor readings according to min and max values from calibration. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_a746f190da520172c3eeedabb130f8aec}{ir\-\_\-array\-\_\-calibrate} (uint16\-\_\-t $\ast$ui\-Ir\-Vector)
+\begin{DoxyCompactList}\small\item\em Executes the calibration routine for all L\-E\-D/sensor pairs. \end{DoxyCompactList}\item 
+float \hyperlink{ir__array_8c_a7a2563d722d3952a07d27f9c0620190f}{ir\-\_\-array\-\_\-catmull\-Rom} (float p0, float p1, float p2, float p3, float t)
+\begin{DoxyCompactList}\small\item\em Implements the uniform Catmull-\/\-Rom spline algorithm between point p1 and p2. \end{DoxyCompactList}\item 
+void \hyperlink{ir__array_8c_a3c0999e095416168045f30914008c70c}{ir\-\_\-array\-\_\-interpolate} (float $\ast$y, float y0, float y1, float y2, float y3, float y4, float y5)
+\begin{DoxyCompactList}\small\item\em Executes the Catmull-\/\-Rom algorithm for all pairs of sensors (0-\/1, 1-\/2, 2-\/3, 3-\/4, 4-\/5). \end{DoxyCompactList}\item 
+float \hyperlink{ir__array_8c_ad95117d9c44ea5c28ba09f587f17532b}{ir\-\_\-array\-\_\-min\-Max\-Value\-Position} (float y0, float y1, float y2, float y3, float y4, float y5)
+\begin{DoxyCompactList}\small\item\em Evaluates the position of the trough, or occurence of a command bar. \end{DoxyCompactList}\item 
+float \hyperlink{ir__array_8c_add844dbc6589a57e1b4a92a4cdc1948f}{ir\-\_\-array\-\_\-get\-Position} ()
+\begin{DoxyCompactList}\small\item\em Get position of trought or occurence of command bar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -20,5 +59,260 @@ Bruno de Souza Ferreira
 \begin{DoxyDate}{Date}
 27 Jun 2016 
 
-27 Sep 2016 
+07 Oct 2016 
 \end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{ir__array_8c_a746f190da520172c3eeedabb130f8aec}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-calibrate@{ir\-\_\-array\-\_\-calibrate}}
+\index{ir\-\_\-array\-\_\-calibrate@{ir\-\_\-array\-\_\-calibrate}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-calibrate}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-calibrate (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t $\ast$}]{ui\-Ir\-Vector}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a746f190da520172c3eeedabb130f8aec}
+
+
+Executes the calibration routine for all L\-E\-D/sensor pairs. 
+
+Store minimum and maximum reading values on ui\-Ir\-Minreadings and ui\-Ir\-Maxreadings respectively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Ir\-Vector} & Array pointer to store raw sensor measurements \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_a7a2563d722d3952a07d27f9c0620190f}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-catmull\-Rom@{ir\-\_\-array\-\_\-catmull\-Rom}}
+\index{ir\-\_\-array\-\_\-catmull\-Rom@{ir\-\_\-array\-\_\-catmull\-Rom}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-catmull\-Rom}]{\setlength{\rightskip}{0pt plus 5cm}float ir\-\_\-array\-\_\-catmull\-Rom (
+\begin{DoxyParamCaption}
+\item[{float}]{p0, }
+\item[{float}]{p1, }
+\item[{float}]{p2, }
+\item[{float}]{p3, }
+\item[{float}]{t}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a7a2563d722d3952a07d27f9c0620190f}
+
+
+Implements the uniform Catmull-\/\-Rom spline algorithm between point p1 and p2. 
+
+Uniform Catmull-\/\-Rom using float precision data-\/type given 4 points and position t.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p0} & Point 0 \\
+\hline
+{\em p1} & Point 1 \\
+\hline
+{\em p2} & Point 2 \\
+\hline
+{\em p3} & Point 3 \\
+\hline
+{\em t} & Position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the interpolated points fot position t between p1 and p2. 
+\end{DoxyReturn}
+\hypertarget{ir__array_8c_add844dbc6589a57e1b4a92a4cdc1948f}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-get\-Position@{ir\-\_\-array\-\_\-get\-Position}}
+\index{ir\-\_\-array\-\_\-get\-Position@{ir\-\_\-array\-\_\-get\-Position}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}float ir\-\_\-array\-\_\-get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_add844dbc6589a57e1b4a92a4cdc1948f}
+
+
+Get position of trought or occurence of command bar. 
+
+\mbox{[}long description\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}description\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{[}description\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{ir__array_8c_a4fd8266adc502e4318a8a585d6fd139a}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-init\-Array@{ir\-\_\-array\-\_\-init\-Array}}
+\index{ir\-\_\-array\-\_\-init\-Array@{ir\-\_\-array\-\_\-init\-Array}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-init\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-init\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a4fd8266adc502e4318a8a585d6fd139a}
+
+
+Interpolation algorithm. 
+
+Initializes I\-R Array.
+
+Catmull-\/\-Rom \begin{DoxyVerb}points: x:   0     1     2     3     4     5        (array sensor position)
+           y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]   (normalized sensor reading)
+
+Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
+with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
+points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
+x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.\end{DoxyVerb}
+
+
+Initializes I\-R Array. \hypertarget{ir__array_8c_a3c0999e095416168045f30914008c70c}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-interpolate@{ir\-\_\-array\-\_\-interpolate}}
+\index{ir\-\_\-array\-\_\-interpolate@{ir\-\_\-array\-\_\-interpolate}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-interpolate}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-interpolate (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{y, }
+\item[{float}]{y0, }
+\item[{float}]{y1, }
+\item[{float}]{y2, }
+\item[{float}]{y3, }
+\item[{float}]{y4, }
+\item[{float}]{y5}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a3c0999e095416168045f30914008c70c}
+
+
+Executes the Catmull-\/\-Rom algorithm for all pairs of sensors (0-\/1, 1-\/2, 2-\/3, 3-\/4, 4-\/5). 
+
+Generates a 46 point vector from position 0 to position 5 (sensor 0 to 5) with 9 control points between each sensor\-: sensor\-: 0 1 ... 2 5 position\-: 0, 1, ..., 8, 9, 10, ..., 17, 18, 19, ..........44, 45
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Array pointer to store interpolated values \\
+\hline
+{\em y0} & sensor 0 normalized measurement \\
+\hline
+{\em y1} & sensor 1 normalized measurement \\
+\hline
+{\em y2} & sensor 2 normalized measurement \\
+\hline
+{\em y3} & sensor 3 normalized measurement \\
+\hline
+{\em y4} & sensor 4 normalized measurement \\
+\hline
+{\em y5} & sensor 5 normalized measurement \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_a9a8ed7daf83f3f6175e99393bce44680}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-led\-Single\-Off@{ir\-\_\-array\-\_\-led\-Single\-Off}}
+\index{ir\-\_\-array\-\_\-led\-Single\-Off@{ir\-\_\-array\-\_\-led\-Single\-Off}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-led\-Single\-Off}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-led\-Single\-Off (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ui\-Led\-Instance}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a9a8ed7daf83f3f6175e99393bce44680}
+
+
+Turns off a single L\-E\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Led\-Instance} & L\-E\-D index \mbox{[}0-\/5\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_a7e0a1885be09822b842977aa4a43eea7}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-led\-Single\-On@{ir\-\_\-array\-\_\-led\-Single\-On}}
+\index{ir\-\_\-array\-\_\-led\-Single\-On@{ir\-\_\-array\-\_\-led\-Single\-On}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-led\-Single\-On}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-led\-Single\-On (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ui\-Led\-Instance}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a7e0a1885be09822b842977aa4a43eea7}
+
+
+Turns on a single L\-E\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Led\-Instance} & L\-E\-D index \mbox{[}0-\/5\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_ad95117d9c44ea5c28ba09f587f17532b}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-min\-Max\-Value\-Position@{ir\-\_\-array\-\_\-min\-Max\-Value\-Position}}
+\index{ir\-\_\-array\-\_\-min\-Max\-Value\-Position@{ir\-\_\-array\-\_\-min\-Max\-Value\-Position}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-min\-Max\-Value\-Position}]{\setlength{\rightskip}{0pt plus 5cm}float ir\-\_\-array\-\_\-min\-Max\-Value\-Position (
+\begin{DoxyParamCaption}
+\item[{float}]{y0, }
+\item[{float}]{y1, }
+\item[{float}]{y2, }
+\item[{float}]{y3, }
+\item[{float}]{y4, }
+\item[{float}]{y5}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_ad95117d9c44ea5c28ba09f587f17532b}
+
+
+Evaluates the position of the trough, or occurence of a command bar. 
+
+Evaluates the position of the trough(pos), or occurence of a command bar(-\/1). If both are inexistent returns invalid (-\/2).
+
+
+\begin{DoxyParams}{Parameters}
+{\em y0} & sensor 0 normalized measurement \\
+\hline
+{\em y1} & sensor 1 normalized measurement \\
+\hline
+{\em y2} & sensor 2 normalized measurement \\
+\hline
+{\em y3} & sensor 3 normalized measurement \\
+\hline
+{\em y4} & sensor 4 normalized measurement \\
+\hline
+{\em y5} & sensor 5 normalized measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trough Pos or -\/10 (command bar) or -\/20 (invalid/other) 
+\end{DoxyReturn}
+\hypertarget{ir__array_8c_a2679a982ce823ecaedffd9bbc4b1bfac}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-normalize\-Readings@{ir\-\_\-array\-\_\-normalize\-Readings}}
+\index{ir\-\_\-array\-\_\-normalize\-Readings@{ir\-\_\-array\-\_\-normalize\-Readings}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-normalize\-Readings}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-normalize\-Readings (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t $\ast$}]{ui\-Ir\-Vector, }
+\item[{float $\ast$}]{f\-Ir\-Normalized\-Readings}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_a2679a982ce823ecaedffd9bbc4b1bfac}
+
+
+Normalizes the I\-R sensor readings according to min and max values from calibration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Ir\-Vector} & Array pointer to store raw sensor measurements \\
+\hline
+{\em f\-Ir\-Normalized\-Readings} & Array pointer to store raw normalized measurements \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_aec0b5f5f06a75bcec6530ce97e5b10da}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-take\-Measurement@{ir\-\_\-array\-\_\-take\-Measurement}}
+\index{ir\-\_\-array\-\_\-take\-Measurement@{ir\-\_\-array\-\_\-take\-Measurement}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-take\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-take\-Measurement (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t $\ast$}]{ui\-Ir\-Vector}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_aec0b5f5f06a75bcec6530ce97e5b10da}
+
+
+Takes a measurement of all L\-E\-D/sensor pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Ir\-Vector} & Array pointer to store raw sensor measurements \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__array_8c_aa1f7dff63e47da52db2824b614c56b40}{\index{ir\-\_\-array.\-c@{ir\-\_\-array.\-c}!ir\-\_\-array\-\_\-take\-Single\-Measurement@{ir\-\_\-array\-\_\-take\-Single\-Measurement}}
+\index{ir\-\_\-array\-\_\-take\-Single\-Measurement@{ir\-\_\-array\-\_\-take\-Single\-Measurement}!ir_array.c@{ir\-\_\-array.\-c}}
+\subsubsection[{ir\-\_\-array\-\_\-take\-Single\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ir\-\_\-array\-\_\-take\-Single\-Measurement (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ui\-Ir\-Channel\-Instance}
+\end{DoxyParamCaption}
+)}}\label{ir__array_8c_aa1f7dff63e47da52db2824b614c56b40}
+
+
+Takes a measurement of a single L\-E\-D/sensor pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\-Ir\-Channel\-Instance} & L\-E\-D index \mbox{[}0-\/5\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Raw sensor measurement 
+\end{DoxyReturn}

@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,30 +98,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;fsl_port_hal.h&quot;</code><br/>
 <code>#include &quot;fsl_smc_hal.h&quot;</code><br/>
 <code>#include &quot;fsl_debug_console.h&quot;</code><br/>
-<code>#include &quot;hal/target_definitions.h&quot;</code><br/>
+<code>#include &quot;fsl_gpio_driver.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="hmi_8h_source.html">hmi.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="controller_8h_source.html">hal/controller/controller.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="target__definitions_8h_source.html">hal/target_definitions.h</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acad7e4bc65abcf24172ea2ca377d421a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#acad7e4bc65abcf24172ea2ca377d421a">hmi_initHmi</a> ()</td></tr>
+<tr class="memitem:acad7e4bc65abcf24172ea2ca377d421a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acad7e4bc65abcf24172ea2ca377d421a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#acad7e4bc65abcf24172ea2ca377d421a">hmi_initHmi</a> ()</td></tr>
+<tr class="memdesc:acad7e4bc65abcf24172ea2ca377d421a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes HMI interface. <br/></td></tr>
 <tr class="separator:acad7e4bc65abcf24172ea2ca377d421a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a007fe375820a1c841f2668515ec9171e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a007fe375820a1c841f2668515ec9171e">hmi_receive</a> ()</td></tr>
+<tr class="memitem:ae82e5d8f34dad504b80697f85f8bc44a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae82e5d8f34dad504b80697f85f8bc44a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#ae82e5d8f34dad504b80697f85f8bc44a">hmi_transmitNewLine</a> ()</td></tr>
+<tr class="memdesc:ae82e5d8f34dad504b80697f85f8bc44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a newline. <br/></td></tr>
+<tr class="separator:ae82e5d8f34dad504b80697f85f8bc44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2040544c682f19186dc13eb581fb245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#ae2040544c682f19186dc13eb581fb245">hmi_transmitS</a> (char *string)</td></tr>
+<tr class="memdesc:ae2040544c682f19186dc13eb581fb245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a char array.  <a href="#ae2040544c682f19186dc13eb581fb245">More...</a><br/></td></tr>
+<tr class="separator:ae2040544c682f19186dc13eb581fb245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab086ed629219dadd8df55cc22fe3bf22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#ab086ed629219dadd8df55cc22fe3bf22">hmi_transmitSCS</a> (char *string1, char id, char *string2)</td></tr>
+<tr class="memdesc:ab086ed629219dadd8df55cc22fe3bf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a char array followed by a single character, followed by another char array.  <a href="#ab086ed629219dadd8df55cc22fe3bf22">More...</a><br/></td></tr>
+<tr class="separator:ab086ed629219dadd8df55cc22fe3bf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfc42a99749b05ae849a6bfe54effee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a0bfc42a99749b05ae849a6bfe54effee">hmi_transmitSIS</a> (char *string1, int id, char *string2)</td></tr>
+<tr class="memdesc:a0bfc42a99749b05ae849a6bfe54effee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a char array followed by an integer, followed by another char array.  <a href="#a0bfc42a99749b05ae849a6bfe54effee">More...</a><br/></td></tr>
+<tr class="separator:a0bfc42a99749b05ae849a6bfe54effee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42da887645c3b8bec9f84f3bc78681bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a42da887645c3b8bec9f84f3bc78681bb">hmi_transmitSCSF</a> (char *string1, char id, char *string2, float reading)</td></tr>
+<tr class="memdesc:a42da887645c3b8bec9f84f3bc78681bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a char array followed by a single character followed by another char array, followed by a float.  <a href="#a42da887645c3b8bec9f84f3bc78681bb">More...</a><br/></td></tr>
+<tr class="separator:a42da887645c3b8bec9f84f3bc78681bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9da3e6e3ba765016ac65e215efb2466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#af9da3e6e3ba765016ac65e215efb2466">hmi_transmitSISI</a> (char *string1, int id, char *string2, int reading)</td></tr>
+<tr class="memdesc:af9da3e6e3ba765016ac65e215efb2466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a char array followed by an integer followed by another char array, followed by an integer.  <a href="#af9da3e6e3ba765016ac65e215efb2466">More...</a><br/></td></tr>
+<tr class="separator:af9da3e6e3ba765016ac65e215efb2466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117f9bde4ce6870c9fbd92b495904dc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a117f9bde4ce6870c9fbd92b495904dc9">hmi_transmitArray</a> (uint32_t *uiIrVector, uint16_t size)</td></tr>
+<tr class="memdesc:a117f9bde4ce6870c9fbd92b495904dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits the IR array readings.  <a href="#a117f9bde4ce6870c9fbd92b495904dc9">More...</a><br/></td></tr>
+<tr class="separator:a117f9bde4ce6870c9fbd92b495904dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007fe375820a1c841f2668515ec9171e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a007fe375820a1c841f2668515ec9171e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a007fe375820a1c841f2668515ec9171e">hmi_receive</a> ()</td></tr>
+<tr class="memdesc:a007fe375820a1c841f2668515ec9171e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives and interprets data sent from the host device. <br/></td></tr>
 <tr class="separator:a007fe375820a1c841f2668515ec9171e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4d4322ad06ab42132c2f3d5fd68bb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmi_8c.html#a3b4d4322ad06ab42132c2f3d5fd68bb7">hmi_transmit</a> (double dVelocity, double dPosition, double dActuator)</td></tr>
-<tr class="separator:a3b4d4322ad06ab42132c2f3d5fd68bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4a87227fa0eb2141b4cfe7d95ee4d32c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a87227fa0eb2141b4cfe7d95ee4d32c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dReferenceVelocity</b></td></tr>
-<tr class="separator:a4a87227fa0eb2141b4cfe7d95ee4d32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50af83930c00988bbb89058b51735974"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50af83930c00988bbb89058b51735974"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dReferenceDirection</b></td></tr>
-<tr class="separator:a50af83930c00988bbb89058b51735974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6004db8fadfd3f917e03b574be174089"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6004db8fadfd3f917e03b574be174089"></a>
-t_PID_Data&#160;</td><td class="memItemRight" valign="bottom"><b>pidData</b></td></tr>
-<tr class="separator:a6004db8fadfd3f917e03b574be174089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad373d66120668929942d9a2087315641"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad373d66120668929942d9a2087315641"></a>
+<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tpidP</b></td></tr>
+<tr class="separator:ad373d66120668929942d9a2087315641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0402a2da19edf89f235d489fba3487"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d0402a2da19edf89f235d489fba3487"></a>
+<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tpidL</b></td></tr>
+<tr class="separator:a3d0402a2da19edf89f235d489fba3487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3eea58513ede92b45d134c8754cdca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b3eea58513ede92b45d134c8754cdca"></a>
+<a class="el" href="structcontroller__instance__t.html">controller_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tpidR</b></td></tr>
+<tr class="separator:a0b3eea58513ede92b45d134c8754cdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebc88a4af3c3ced4590f987d1e894ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ebc88a4af3c3ced4590f987d1e894ce"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>motor_current_speed</b></td></tr>
+<tr class="separator:a6ebc88a4af3c3ced4590f987d1e894ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the methods for the interaction with a host device via a serial connection. </p>
@@ -131,61 +159,23 @@ Bruno de Souza Ferreira </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>20 Jun 2016 </dd>
 <dd>
-27 Sep 2016 </dd></dl>
+07 Oct 2016 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="acad7e4bc65abcf24172ea2ca377d421a"></a>
+<a class="anchor" id="a117f9bde4ce6870c9fbd92b495904dc9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void hmi_initHmi </td>
+          <td class="memname">void hmi_transmitArray </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Method name: hmi_initHmi Method description: Initializes UART0 for debug mode for serial over USB, provided by OpenSDA. Input params: n/a Output params: n/a </p>
-
-</div>
-</div>
-<a class="anchor" id="a007fe375820a1c841f2668515ec9171e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hmi_receive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Method name: hmi_receive Method description: Receives and interprets data sent from the host device. Input params: n/a Output params: n/a </p>
-
-</div>
-</div>
-<a class="anchor" id="a3b4d4322ad06ab42132c2f3d5fd68bb7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hmi_transmit </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dVelocity</em>, </td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>uiIrVector</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dPosition</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dActuator</em>&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,14 +184,227 @@ Bruno de Souza Ferreira </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method name: hmi_transmit Method description: Transmits required data to the host device. Uses space as separator Input params: dVelocity: Velocity reading from encoder dPosition: Position reading from encoder dActuator: Actuator value from controller Output params: n/a </p>
+
+<p>Transmits the IR array readings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IR</td><td>readings vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2040544c682f19186dc13eb581fb245"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmi_transmitS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmits a char array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>Char array pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab086ed629219dadd8df55cc22fe3bf22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmi_transmitSCS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmits a char array followed by a single character, followed by another char array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string1</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">id</td><td>A single character. </td></tr>
+    <tr><td class="paramname">string2</td><td>Char array pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42da887645c3b8bec9f84f3bc78681bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmi_transmitSCSF </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>reading</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmits a char array followed by a single character followed by another char array, followed by a float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string1</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">id</td><td>A single character. </td></tr>
+    <tr><td class="paramname">string2</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">reading</td><td>A float number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0bfc42a99749b05ae849a6bfe54effee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmi_transmitSIS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmits a char array followed by an integer, followed by another char array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string1</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">id</td><td>An integer number. </td></tr>
+    <tr><td class="paramname">string2</td><td>Char array pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af9da3e6e3ba765016ac65e215efb2466"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmi_transmitSISI </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>reading</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmits a char array followed by an integer followed by another char array, followed by an integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string1</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">id</td><td>An integer number. </td></tr>
+    <tr><td class="paramname">string2</td><td>Char array pointer. </td></tr>
+    <tr><td class="paramname">reading</td><td>An integer number. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:27 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:08 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

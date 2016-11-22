@@ -1,18 +1,12 @@
 var searchData=
 [
-  ['encoder_2eh',['encoder.h',['../encoder_8h.html',1,'']]],
-  ['encoder_5fcho_5firq_5fhandler',['ENCODER_CHO_IRQ_HANDLER',['../encoder_8h.html#a422bab10376a2ec78bdb73b88a876ec2',1,'encoder.c']]],
-  ['encoder_5fdisablechointerrupt',['encoder_disableChOInterrupt',['../encoder_8h.html#a8706f491977f9e3cab7e88ed9940bf68',1,'encoder.c']]],
-  ['encoder_5fdisablecounter',['encoder_disableCounter',['../encoder_8h.html#ae919bb94de6e36d4d3aeb5cb78805308',1,'encoder.c']]],
-  ['encoder_5fenablechointerrupt',['encoder_enableChOInterrupt',['../encoder_8h.html#afa630cea255bd5e0ec5574e270292c50',1,'encoder.c']]],
-  ['encoder_5fenablecounter',['encoder_enableCounter',['../encoder_8h.html#af252727d31974e447de971018fceaacf',1,'encoder.c']]],
-  ['encoder_5fgetangularpositiondegree',['encoder_getAngularPositionDegree',['../encoder_8h.html#ad8accae7c5df6cd952b7c29bbfb84231',1,'encoder.c']]],
-  ['encoder_5fgetangularpositionrad',['encoder_getAngularPositionRad',['../encoder_8h.html#ae8ffb453211af228b596b71315e5176a',1,'encoder.c']]],
-  ['encoder_5fgetangularvelocity',['encoder_getAngularVelocity',['../encoder_8h.html#ae9575c865e7b27adf814d5d6ac9c6906',1,'encoder.c']]],
-  ['encoder_5fgetangularvelocityrad',['encoder_getAngularVelocityRad',['../encoder_8h.html#afaba4f66f8620db09e710364d50782ca',1,'encoder.c']]],
-  ['encoder_5fgetangularvelocityrpm',['encoder_getAngularVelocityRPM',['../encoder_8h.html#affc760417707877d05b47ee03a547a92',1,'encoder.c']]],
-  ['encoder_5finitencoder',['encoder_initEncoder',['../encoder_8h.html#a53f98a8633104a2f7c020bee3c0a2519',1,'encoder.c']]],
-  ['encoder_5finstance_5ft',['encoder_instance_t',['../structencoder__instance__t.html',1,'']]],
-  ['encoder_5fresetcounter',['encoder_resetCounter',['../encoder_8h.html#a94d9d391fffb515c228facb256fe4c16',1,'encoder.c']]],
-  ['encoder_5ftakemeasurement',['encoder_takeMeasurement',['../encoder_8h.html#a373dfc5709103db00f5431f9211e0e0a',1,'encoder.c']]]
+  ['controller_2ec',['controller.c',['../controller_8c.html',1,'']]],
+  ['controller_2eh',['controller.h',['../controller_8h.html',1,'']]],
+  ['controller_5finitpid',['controller_initPID',['../controller_8c.html#a4642240ee45eecb168f4981863703bea',1,'controller_initPID(controller_instance_t *controllerInstance, float fMaxSumError, float fPGain, float fIGain, float fDGain):&#160;controller.c'],['../controller_8h.html#a4642240ee45eecb168f4981863703bea',1,'controller_initPID(controller_instance_t *controllerInstance, float fMaxSumError, float fPGain, float fIGain, float fDGain):&#160;controller.c']]],
+  ['controller_5finstance_5ft',['controller_instance_t',['../structcontroller__instance__t.html',1,'']]],
+  ['controller_5fpidupdate',['controller_PIDUpdate',['../controller_8c.html#a9d8c2bdf80632c5906e7f8ddfa023c95',1,'controller_PIDUpdate(controller_instance_t *controllerInstance, float fSensorValue, float fReferenceValue):&#160;controller.c'],['../controller_8h.html#a9d8c2bdf80632c5906e7f8ddfa023c95',1,'controller_PIDUpdate(controller_instance_t *controllerInstance, float fSensorValue, float fReferenceValue):&#160;controller.c']]],
+  ['controller_5fsetkd',['controller_setKd',['../controller_8c.html#a4edebd583fa848cbc5e705882b541a3d',1,'controller_setKd(controller_instance_t *controllerInstance, float fDGain):&#160;controller.c'],['../controller_8h.html#a4edebd583fa848cbc5e705882b541a3d',1,'controller_setKd(controller_instance_t *controllerInstance, float fDGain):&#160;controller.c']]],
+  ['controller_5fsetki',['controller_setKi',['../controller_8c.html#a2b4854135a9f4f175cee7af3a01db71c',1,'controller_setKi(controller_instance_t *controllerInstance, float fIGain):&#160;controller.c'],['../controller_8h.html#a2b4854135a9f4f175cee7af3a01db71c',1,'controller_setKi(controller_instance_t *controllerInstance, float fIGain):&#160;controller.c']]],
+  ['controller_5fsetkp',['controller_setKp',['../controller_8c.html#a2f70ab888c2e99339232f143f509229f',1,'controller_setKp(controller_instance_t *controllerInstance, float fPGain):&#160;controller.c'],['../controller_8h.html#a2f70ab888c2e99339232f143f509229f',1,'controller_setKp(controller_instance_t *controllerInstance, float fPGain):&#160;controller.c']]],
+  ['controller_5fsetmaxsumerror',['controller_setMaxSumError',['../controller_8c.html#a6815440a320e01758466b31720b9dfdc',1,'controller_setMaxSumError(controller_instance_t *controllerInstance, float fMaxSumError):&#160;controller.c'],['../controller_8h.html#a6815440a320e01758466b31720b9dfdc',1,'controller_setMaxSumError(controller_instance_t *controllerInstance, float fMaxSumError):&#160;controller.c']]]
 ];

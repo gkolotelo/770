@@ -6,21 +6,41 @@
 File containing the methods for executing a self-\/diagnostics routine.  
 
 
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$M\-K\-L25\-Z4.\-h$>$}\\*
 {\ttfamily \#include \char`\"{}diagnostics.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/util/util.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hal/encoder/encoder.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hal/driver/driver.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hal/ir\-\_\-array/ir\-\_\-array.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/vsense/vsense.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hal/hmi/hmi.\-h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{diagnostics_8c_a3dff5d513a97902454ba1ae636d775d9}{{\bfseries test\-Ir\-Array} ()}\label{diagnostics_8c_a3dff5d513a97902454ba1ae636d775d9}
+bool \hyperlink{diagnostics_8c_a1bd399d9f3f1020523d1cf06f535d640}{diagnostics\-\_\-start\-Diagnostics} ()
+\begin{DoxyCompactList}\small\item\em Initiates diagnostics sequence. \end{DoxyCompactList}\item 
+bool \hyperlink{diagnostics_8c_a35cf672d2b71e0fef3499cd4d7a3f767}{diagnostics\-\_\-btest\-V\-Sense} ()
+\begin{DoxyCompactList}\small\item\em Tests operation of the voltage sense. \end{DoxyCompactList}\item 
+bool \hyperlink{diagnostics_8c_a6822acc32ab72e580235fd045b399e54}{diagnostics\-\_\-btest\-Ir\-Array} ()
+\begin{DoxyCompactList}\small\item\em Tests operation of the I\-R Array. \end{DoxyCompactList}\item 
+bool \hyperlink{diagnostics_8c_a6b1d8a81a26173705816b17a4d64f078}{diagnostics\-\_\-btest\-Motors} ()
+\begin{DoxyCompactList}\small\item\em Tests operation of the motors. \end{DoxyCompactList}\item 
+bool \hyperlink{diagnostics_8c_a1ffc9d2b02b80c8b96063b24ed1d76d9}{diagnostics\-\_\-btest\-Encoders} ()
+\begin{DoxyCompactList}\small\item\em Tests operation of the encoders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} \hyperlink{diagnostics_8c_a90052c39e2dc9678876e1aed077feff3}{tencoder\-L}
+\item 
+\hypertarget{diagnostics_8c_af032f1863b545b3764bf9ff9bf7e6ada}{\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} {\bfseries tencoder\-R}}\label{diagnostics_8c_af032f1863b545b3764bf9ff9bf7e6ada}
 
 \item 
-\hypertarget{diagnostics_8c_ac6af3f3627a46f3ecc0ebe7ca58231ba}{{\bfseries test\-Encoders} ()}\label{diagnostics_8c_ac6af3f3627a46f3ecc0ebe7ca58231ba}
+\hypertarget{diagnostics_8c_ae71c13261eba66587ee7a0d8c2d3ff18}{\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} {\bfseries tdriver\-L}}\label{diagnostics_8c_ae71c13261eba66587ee7a0d8c2d3ff18}
 
 \item 
-\hypertarget{diagnostics_8c_a4bb27fb33525affd987df0595cdb2626}{{\bfseries test\-Motors} ()}\label{diagnostics_8c_a4bb27fb33525affd987df0595cdb2626}
+\hypertarget{diagnostics_8c_a85c6c52b26f78c3272d721ae67bce90b}{\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} {\bfseries tdriver\-R}}\label{diagnostics_8c_a85c6c52b26f78c3272d721ae67bce90b}
 
 \end{DoxyCompactItemize}
 
@@ -32,10 +52,100 @@ Guilherme Kairalla Kolotelo
 Bruno de Souza Ferreira 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1 
+1.\-2 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 27 Jun 2016 
 
-27 Sep 2016 
+07 Oct 2016 
 \end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{diagnostics_8c_a1ffc9d2b02b80c8b96063b24ed1d76d9}{\index{diagnostics.\-c@{diagnostics.\-c}!diagnostics\-\_\-btest\-Encoders@{diagnostics\-\_\-btest\-Encoders}}
+\index{diagnostics\-\_\-btest\-Encoders@{diagnostics\-\_\-btest\-Encoders}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{diagnostics\-\_\-btest\-Encoders}]{\setlength{\rightskip}{0pt plus 5cm}bool diagnostics\-\_\-btest\-Encoders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{diagnostics_8c_a1ffc9d2b02b80c8b96063b24ed1d76d9}
+
+
+Tests operation of the encoders. 
+
+For each encoder, the encoder count is reset and the motor is turned on. If the encoder measurement is not greater than M\-O\-T\-O\-R\-\_\-\-M\-I\-N\-\_\-\-V\-E\-L the test is not successful.
+
+\begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful. 
+\end{DoxyReturn}
+\hypertarget{diagnostics_8c_a6822acc32ab72e580235fd045b399e54}{\index{diagnostics.\-c@{diagnostics.\-c}!diagnostics\-\_\-btest\-Ir\-Array@{diagnostics\-\_\-btest\-Ir\-Array}}
+\index{diagnostics\-\_\-btest\-Ir\-Array@{diagnostics\-\_\-btest\-Ir\-Array}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{diagnostics\-\_\-btest\-Ir\-Array}]{\setlength{\rightskip}{0pt plus 5cm}bool diagnostics\-\_\-btest\-Ir\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{diagnostics_8c_a6822acc32ab72e580235fd045b399e54}
+
+
+Tests operation of the I\-R Array. 
+
+For each L\-E\-D/\-Sensor pair on the I\-R array, a measurement is taken with the L\-E\-D off, and a measurement is taken with the L\-E\-D on, if the latter measurement is not greater than the former, the test is not successful.
+
+\begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful. 
+\end{DoxyReturn}
+\hypertarget{diagnostics_8c_a6b1d8a81a26173705816b17a4d64f078}{\index{diagnostics.\-c@{diagnostics.\-c}!diagnostics\-\_\-btest\-Motors@{diagnostics\-\_\-btest\-Motors}}
+\index{diagnostics\-\_\-btest\-Motors@{diagnostics\-\_\-btest\-Motors}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{diagnostics\-\_\-btest\-Motors}]{\setlength{\rightskip}{0pt plus 5cm}bool diagnostics\-\_\-btest\-Motors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{diagnostics_8c_a6b1d8a81a26173705816b17a4d64f078}
+
+
+Tests operation of the motors. 
+
+For each motor, the system current is measured with the motor on and with the motor off. If the former measurement is not greater than M\-O\-T\-O\-R\-\_\-\-M\-I\-N\-\_\-\-C\-U\-R\-R above the quiescent system current, the test is not successful.
+
+\begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful. 
+\end{DoxyReturn}
+\hypertarget{diagnostics_8c_a35cf672d2b71e0fef3499cd4d7a3f767}{\index{diagnostics.\-c@{diagnostics.\-c}!diagnostics\-\_\-btest\-V\-Sense@{diagnostics\-\_\-btest\-V\-Sense}}
+\index{diagnostics\-\_\-btest\-V\-Sense@{diagnostics\-\_\-btest\-V\-Sense}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{diagnostics\-\_\-btest\-V\-Sense}]{\setlength{\rightskip}{0pt plus 5cm}bool diagnostics\-\_\-btest\-V\-Sense (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{diagnostics_8c_a35cf672d2b71e0fef3499cd4d7a3f767}
+
+
+Tests operation of the voltage sense. 
+
+Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than V\-S\-E\-N\-S\-E\-\_\-\-M\-I\-N\-\_\-\-V\-O\-L\-T\-A\-G\-E, the test is not passed. If Vsense2 $>$ Vsense1, an unexpected behavior, the test is not passed.
+
+\begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful. 
+\end{DoxyReturn}
+\hypertarget{diagnostics_8c_a1bd399d9f3f1020523d1cf06f535d640}{\index{diagnostics.\-c@{diagnostics.\-c}!diagnostics\-\_\-start\-Diagnostics@{diagnostics\-\_\-start\-Diagnostics}}
+\index{diagnostics\-\_\-start\-Diagnostics@{diagnostics\-\_\-start\-Diagnostics}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{diagnostics\-\_\-start\-Diagnostics}]{\setlength{\rightskip}{0pt plus 5cm}bool diagnostics\-\_\-start\-Diagnostics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{diagnostics_8c_a1bd399d9f3f1020523d1cf06f535d640}
+
+
+Initiates diagnostics sequence. 
+
+Executes each system component test independently and reports the system status.
+
+\begin{DoxyReturn}{Returns}
+True if tests were N\-O\-T successful. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{diagnostics_8c_a90052c39e2dc9678876e1aed077feff3}{\index{diagnostics.\-c@{diagnostics.\-c}!tencoder\-L@{tencoder\-L}}
+\index{tencoder\-L@{tencoder\-L}!diagnostics.c@{diagnostics.\-c}}
+\subsubsection[{tencoder\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf encoder\-\_\-instance\-\_\-t} tencoder\-L}}\label{diagnostics_8c_a90052c39e2dc9678876e1aed077feff3}
+Uses instances defined on \hyperlink{main_8c}{main.\-c} file 

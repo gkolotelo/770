@@ -6,6 +6,7 @@
 File containing the definition of methods for the reading of an incremental encoder.  
 
 
+{\ttfamily \#include $<$M\-K\-L25\-Z4.\-h$>$}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,32 +15,25 @@ struct \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{encoder_8h_a422bab10376a2ec78bdb73b88a876ec2}{void \hyperlink{encoder_8h_a422bab10376a2ec78bdb73b88a876ec2}{E\-N\-C\-O\-D\-E\-R\-\_\-\-C\-H\-O\-\_\-\-I\-R\-Q\-\_\-\-H\-A\-N\-D\-L\-E\-R} ()}\label{encoder_8h_a422bab10376a2ec78bdb73b88a876ec2}
-
+void \hyperlink{encoder_8h_abfc86ef6d2e1644454e6248aecde1388}{encoder\-\_\-init\-Encoder} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Channel O I\-R\-Q handler. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_a53f98a8633104a2f7c020bee3c0a2519}{encoder\-\_\-init\-Encoder} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
-\begin{DoxyCompactList}\small\item\em Initializes the encoder for an incremental encoder. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_af252727d31974e447de971018fceaacf}{encoder\-\_\-enable\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+void \hyperlink{encoder_8h_a75ef940df942b5cc4be4c1d8a217d54a}{encoder\-\_\-enable\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Enables the counter. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_ae919bb94de6e36d4d3aeb5cb78805308}{encoder\-\_\-disable\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+void \hyperlink{encoder_8h_ae76fd4bbff8102a38e8193b1e8af3c7e}{encoder\-\_\-disable\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Disables the counter. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_a94d9d391fffb515c228facb256fe4c16}{encoder\-\_\-reset\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+void \hyperlink{encoder_8h_ac201acdd550a514294b3613424813e81}{encoder\-\_\-reset\-Counter} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Resets the counter. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_afa630cea255bd5e0ec5574e270292c50}{encoder\-\_\-enable\-Ch\-O\-Interrupt} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+void \hyperlink{encoder_8h_a1a9f3d64ef13f140f800ef50672efd12}{encoder\-\_\-take\-Measurement} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Enables the interrupt on Channel O. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_a8706f491977f9e3cab7e88ed9940bf68}{encoder\-\_\-disable\-Ch\-O\-Interrupt} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
-\begin{DoxyCompactList}\small\item\em Disables the interrupt on channel O. \end{DoxyCompactList}\item 
-void \hyperlink{encoder_8h_a373dfc5709103db00f5431f9211e0e0a}{encoder\-\_\-take\-Measurement} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
-\begin{DoxyCompactList}\small\item\em Takes a measurement of speed, direction and position. \end{DoxyCompactList}\item 
-double \hyperlink{encoder_8h_ad8accae7c5df6cd952b7c29bbfb84231}{encoder\-\_\-get\-Angular\-Position\-Degree} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+float \hyperlink{encoder_8h_a6fe005b448f1a7d6cf3d9f3ca27a13b1}{encoder\-\_\-get\-Angular\-Position\-Degree} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Returns the angular position of the encoder in degrees. \end{DoxyCompactList}\item 
-double \hyperlink{encoder_8h_ae8ffb453211af228b596b71315e5176a}{encoder\-\_\-get\-Angular\-Position\-Rad} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+float \hyperlink{encoder_8h_a6c18145b3689a03025147738c6c0fc0a}{encoder\-\_\-get\-Angular\-Position\-Rad} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Returns the angular position of the encoder in radians. \end{DoxyCompactList}\item 
-double \hyperlink{encoder_8h_ae9575c865e7b27adf814d5d6ac9c6906}{encoder\-\_\-get\-Angular\-Velocity} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+float \hyperlink{encoder_8h_a5b7abc624d0b8fff9052fed2031ebc8e}{encoder\-\_\-get\-Angular\-Velocity} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Returns the angular velocity of the encoder in pulses per second. \end{DoxyCompactList}\item 
-double \hyperlink{encoder_8h_afaba4f66f8620db09e710364d50782ca}{encoder\-\_\-get\-Angular\-Velocity\-Rad} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+float \hyperlink{encoder_8h_aab03043ac53526a29d7a022770b41348}{encoder\-\_\-get\-Angular\-Velocity\-Rad} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Returns the angular velocity of the encoder in Rad/s. \end{DoxyCompactList}\item 
-double \hyperlink{encoder_8h_affc760417707877d05b47ee03a547a92}{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} $\ast$encoder\-\_\-instance)
+float \hyperlink{encoder_8h_aad5bca221bf4012b34a8d51bc916b077}{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M} (\hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} encoder\-Instance)
 \begin{DoxyCompactList}\small\item\em Returns the angular velocity of the encoder in R\-P\-M. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -60,210 +54,210 @@ Bruno de Souza Ferreira
 
 
 \subsection{Function Documentation}
-\hypertarget{encoder_8h_a8706f491977f9e3cab7e88ed9940bf68}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-disable\-Ch\-O\-Interrupt@{encoder\-\_\-disable\-Ch\-O\-Interrupt}}
-\index{encoder\-\_\-disable\-Ch\-O\-Interrupt@{encoder\-\_\-disable\-Ch\-O\-Interrupt}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-disable\-Ch\-O\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-disable\-Ch\-O\-Interrupt (
-\begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
-\end{DoxyParamCaption}
-)}}\label{encoder_8h_a8706f491977f9e3cab7e88ed9940bf68}
-
-
-Disables the interrupt on channel O. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
-\hline
-\end{DoxyParams}
-\hypertarget{encoder_8h_ae919bb94de6e36d4d3aeb5cb78805308}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-disable\-Counter@{encoder\-\_\-disable\-Counter}}
+\hypertarget{encoder_8h_ae76fd4bbff8102a38e8193b1e8af3c7e}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-disable\-Counter@{encoder\-\_\-disable\-Counter}}
 \index{encoder\-\_\-disable\-Counter@{encoder\-\_\-disable\-Counter}!encoder.h@{encoder.\-h}}
 \subsubsection[{encoder\-\_\-disable\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-disable\-Counter (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_ae919bb94de6e36d4d3aeb5cb78805308}
+)}}\label{encoder_8h_ae76fd4bbff8102a38e8193b1e8af3c7e}
 
 
 Disables the counter. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{encoder_8h_afa630cea255bd5e0ec5574e270292c50}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-enable\-Ch\-O\-Interrupt@{encoder\-\_\-enable\-Ch\-O\-Interrupt}}
-\index{encoder\-\_\-enable\-Ch\-O\-Interrupt@{encoder\-\_\-enable\-Ch\-O\-Interrupt}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-enable\-Ch\-O\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-enable\-Ch\-O\-Interrupt (
-\begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
-\end{DoxyParamCaption}
-)}}\label{encoder_8h_afa630cea255bd5e0ec5574e270292c50}
-
-
-Enables the interrupt on Channel O. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
-\hline
-\end{DoxyParams}
-\hypertarget{encoder_8h_af252727d31974e447de971018fceaacf}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-enable\-Counter@{encoder\-\_\-enable\-Counter}}
+\hypertarget{encoder_8h_a75ef940df942b5cc4be4c1d8a217d54a}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-enable\-Counter@{encoder\-\_\-enable\-Counter}}
 \index{encoder\-\_\-enable\-Counter@{encoder\-\_\-enable\-Counter}!encoder.h@{encoder.\-h}}
 \subsubsection[{encoder\-\_\-enable\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-enable\-Counter (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_af252727d31974e447de971018fceaacf}
+)}}\label{encoder_8h_a75ef940df942b5cc4be4c1d8a217d54a}
 
 
 Enables the counter. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{encoder_8h_ad8accae7c5df6cd952b7c29bbfb84231}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Position\-Degree@{encoder\-\_\-get\-Angular\-Position\-Degree}}
+\hypertarget{encoder_8h_a6fe005b448f1a7d6cf3d9f3ca27a13b1}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Position\-Degree@{encoder\-\_\-get\-Angular\-Position\-Degree}}
 \index{encoder\-\_\-get\-Angular\-Position\-Degree@{encoder\-\_\-get\-Angular\-Position\-Degree}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-get\-Angular\-Position\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double encoder\-\_\-get\-Angular\-Position\-Degree (
+\subsubsection[{encoder\-\_\-get\-Angular\-Position\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}float encoder\-\_\-get\-Angular\-Position\-Degree (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_ad8accae7c5df6cd952b7c29bbfb84231}
+)}}\label{encoder_8h_a6fe005b448f1a7d6cf3d9f3ca27a13b1}
 
 
 Returns the angular position of the encoder in degrees. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Angular position of the encoder in degrees. 
 \end{DoxyReturn}
-\hypertarget{encoder_8h_ae8ffb453211af228b596b71315e5176a}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Position\-Rad@{encoder\-\_\-get\-Angular\-Position\-Rad}}
+\hypertarget{encoder_8h_a6c18145b3689a03025147738c6c0fc0a}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Position\-Rad@{encoder\-\_\-get\-Angular\-Position\-Rad}}
 \index{encoder\-\_\-get\-Angular\-Position\-Rad@{encoder\-\_\-get\-Angular\-Position\-Rad}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-get\-Angular\-Position\-Rad}]{\setlength{\rightskip}{0pt plus 5cm}double encoder\-\_\-get\-Angular\-Position\-Rad (
+\subsubsection[{encoder\-\_\-get\-Angular\-Position\-Rad}]{\setlength{\rightskip}{0pt plus 5cm}float encoder\-\_\-get\-Angular\-Position\-Rad (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_ae8ffb453211af228b596b71315e5176a}
+)}}\label{encoder_8h_a6c18145b3689a03025147738c6c0fc0a}
 
 
 Returns the angular position of the encoder in radians. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Angular position of the encoder in radians. 
 \end{DoxyReturn}
-\hypertarget{encoder_8h_ae9575c865e7b27adf814d5d6ac9c6906}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity@{encoder\-\_\-get\-Angular\-Velocity}}
+\hypertarget{encoder_8h_a5b7abc624d0b8fff9052fed2031ebc8e}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity@{encoder\-\_\-get\-Angular\-Velocity}}
 \index{encoder\-\_\-get\-Angular\-Velocity@{encoder\-\_\-get\-Angular\-Velocity}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-get\-Angular\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}double encoder\-\_\-get\-Angular\-Velocity (
+\subsubsection[{encoder\-\_\-get\-Angular\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}float encoder\-\_\-get\-Angular\-Velocity (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_ae9575c865e7b27adf814d5d6ac9c6906}
+)}}\label{encoder_8h_a5b7abc624d0b8fff9052fed2031ebc8e}
 
 
 Returns the angular velocity of the encoder in pulses per second. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular velocity of the encoder in pps.
+\end{DoxyReturn}
+Returns the angular velocity of the encoder in pulses per second.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular position of the encoder in degrees. Returns the angular position of the encoder in radians.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular position of the encoder in radians. Returns the angular velocity of the encoder in pulses per second.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Angular velocity of the encoder in pps. 
 \end{DoxyReturn}
-\hypertarget{encoder_8h_afaba4f66f8620db09e710364d50782ca}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity\-Rad@{encoder\-\_\-get\-Angular\-Velocity\-Rad}}
+\hypertarget{encoder_8h_aab03043ac53526a29d7a022770b41348}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity\-Rad@{encoder\-\_\-get\-Angular\-Velocity\-Rad}}
 \index{encoder\-\_\-get\-Angular\-Velocity\-Rad@{encoder\-\_\-get\-Angular\-Velocity\-Rad}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-get\-Angular\-Velocity\-Rad}]{\setlength{\rightskip}{0pt plus 5cm}double encoder\-\_\-get\-Angular\-Velocity\-Rad (
+\subsubsection[{encoder\-\_\-get\-Angular\-Velocity\-Rad}]{\setlength{\rightskip}{0pt plus 5cm}float encoder\-\_\-get\-Angular\-Velocity\-Rad (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_afaba4f66f8620db09e710364d50782ca}
+)}}\label{encoder_8h_aab03043ac53526a29d7a022770b41348}
 
 
 Returns the angular velocity of the encoder in Rad/s. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Angular velocity of the encoder in Rad/s. 
 \end{DoxyReturn}
-\hypertarget{encoder_8h_affc760417707877d05b47ee03a547a92}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M@{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M}}
+\hypertarget{encoder_8h_aad5bca221bf4012b34a8d51bc916b077}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M@{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M}}
 \index{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M@{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M}!encoder.h@{encoder.\-h}}
-\subsubsection[{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}double encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M (
+\subsubsection[{encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}float encoder\-\_\-get\-Angular\-Velocity\-R\-P\-M (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_affc760417707877d05b47ee03a547a92}
+)}}\label{encoder_8h_aad5bca221bf4012b34a8d51bc916b077}
 
 
 Returns the angular velocity of the encoder in R\-P\-M. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Angular velocity of the encoder in R\-P\-M. 
 \end{DoxyReturn}
-\hypertarget{encoder_8h_a53f98a8633104a2f7c020bee3c0a2519}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-init\-Encoder@{encoder\-\_\-init\-Encoder}}
+\hypertarget{encoder_8h_abfc86ef6d2e1644454e6248aecde1388}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-init\-Encoder@{encoder\-\_\-init\-Encoder}}
 \index{encoder\-\_\-init\-Encoder@{encoder\-\_\-init\-Encoder}!encoder.h@{encoder.\-h}}
 \subsubsection[{encoder\-\_\-init\-Encoder}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-init\-Encoder (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_a53f98a8633104a2f7c020bee3c0a2519}
+)}}\label{encoder_8h_abfc86ef6d2e1644454e6248aecde1388}
 
 
-Initializes the encoder for an incremental encoder. 
+Channel O I\-R\-Q handler. 
+
+Initializes the encoder for an incremental encoder.
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{encoder_8h_a94d9d391fffb515c228facb256fe4c16}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-reset\-Counter@{encoder\-\_\-reset\-Counter}}
+\hypertarget{encoder_8h_ac201acdd550a514294b3613424813e81}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-reset\-Counter@{encoder\-\_\-reset\-Counter}}
 \index{encoder\-\_\-reset\-Counter@{encoder\-\_\-reset\-Counter}!encoder.h@{encoder.\-h}}
 \subsubsection[{encoder\-\_\-reset\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-reset\-Counter (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t}}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_a94d9d391fffb515c228facb256fe4c16}
+)}}\label{encoder_8h_ac201acdd550a514294b3613424813e81}
 
 
 Resets the counter. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{encoder_8h_a373dfc5709103db00f5431f9211e0e0a}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-take\-Measurement@{encoder\-\_\-take\-Measurement}}
+\hypertarget{encoder_8h_a1a9f3d64ef13f140f800ef50672efd12}{\index{encoder.\-h@{encoder.\-h}!encoder\-\_\-take\-Measurement@{encoder\-\_\-take\-Measurement}}
 \index{encoder\-\_\-take\-Measurement@{encoder\-\_\-take\-Measurement}!encoder.h@{encoder.\-h}}
 \subsubsection[{encoder\-\_\-take\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}void encoder\-\_\-take\-Measurement (
 \begin{DoxyParamCaption}
-\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-\_\-instance}
+\item[{{\bf encoder\-\_\-instance\-\_\-t} $\ast$}]{encoder\-Instance}
 \end{DoxyParamCaption}
-)}}\label{encoder_8h_a373dfc5709103db00f5431f9211e0e0a}
+)}}\label{encoder_8h_a1a9f3d64ef13f140f800ef50672efd12}
 
 
-Takes a measurement of speed, direction and position. 
+Enables the interrupt on Channel O. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em encoder\-\_\-instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. Disables the interrupt on channel O.\\
+\hline
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. Takes a measurement of speed, direction and position.\\
+\hline
+{\em encoder\-Instance} & \hyperlink{structencoder__instance__t}{encoder\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}

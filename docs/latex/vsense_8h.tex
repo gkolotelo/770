@@ -1,0 +1,143 @@
+\hypertarget{vsense_8h}{\section{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/vsense/vsense.h File Reference}
+\label{vsense_8h}\index{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/vsense/vsense.\-h@{/mnt/d/\-Users/guilherme/\-Documents/\-University/\-Current Semester/\-E\-S770/workspace/implementation/\-Sources/hal/vsense/vsense.\-h}}
+}
+
+
+File containing the definition of methods for interacting with the sense resistors.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{vsense_8h_ad5b830c2bbebb30c03fbbec26b5b5a82}{void \hyperlink{vsense_8h_ad5b830c2bbebb30c03fbbec26b5b5a82}{vsense\-\_\-init\-Vsense} ()}\label{vsense_8h_ad5b830c2bbebb30c03fbbec26b5b5a82}
+
+\begin{DoxyCompactList}\small\item\em Sets up pin configuration for voltage sense. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{vsense_8h_a79e9cf80d0c0a46f3867de25d7ac7d6f}{vsense\-\_\-get\-Raw\-V1} ()
+\begin{DoxyCompactList}\small\item\em Returns raw A\-D\-C reading from V\-Sense1 pin. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{vsense_8h_aff36aac1b82c201cf5c9199445d4c891}{vsense\-\_\-get\-Raw\-V2} ()
+\begin{DoxyCompactList}\small\item\em Returns raw A\-D\-C reading from V\-Sense2 pin. \end{DoxyCompactList}\item 
+float \hyperlink{vsense_8h_a333080413b5294132f0207762cf1455f}{vsense\-\_\-get\-V1} ()
+\begin{DoxyCompactList}\small\item\em Returns voltage reading from V\-Sense1 pin. \end{DoxyCompactList}\item 
+float \hyperlink{vsense_8h_a89fd85142a6df5224bd4d4da51623183}{vsense\-\_\-get\-V2} ()
+\begin{DoxyCompactList}\small\item\em Returns voltage reading from V\-Sense2 pin. \end{DoxyCompactList}\item 
+float \hyperlink{vsense_8h_ac216a594bfab6cfeab5a9d815cee3070}{vsense\-\_\-get\-System\-Voltage} ()
+\begin{DoxyCompactList}\small\item\em Returns system voltage the Vsense1 pin. Same as get\-V1(). \end{DoxyCompactList}\item 
+float \hyperlink{vsense_8h_aaf634a5650f7004291433a44ea596199}{vsense\-\_\-get\-Current} ()
+\begin{DoxyCompactList}\small\item\em Returns system current in m\-A. \end{DoxyCompactList}\item 
+float \hyperlink{vsense_8h_af9dcc8672a400658a9b09f8dac4c3870}{vsense\-\_\-get\-Power} ()
+\begin{DoxyCompactList}\small\item\em Returns system power in m\-W. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the definition of methods for interacting with the sense resistors. \begin{DoxyAuthor}{Author}
+Guilherme Kairalla Kolotelo 
+
+Bruno de Souza Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07 Oct 2016 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{vsense_8h_aaf634a5650f7004291433a44ea596199}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-Current@{vsense\-\_\-get\-Current}}
+\index{vsense\-\_\-get\-Current@{vsense\-\_\-get\-Current}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-Current}]{\setlength{\rightskip}{0pt plus 5cm}float vsense\-\_\-get\-Current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_aaf634a5650f7004291433a44ea596199}
+
+
+Returns system current in m\-A. 
+
+\begin{DoxyReturn}{Returns}
+System current in m\-A. 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_af9dcc8672a400658a9b09f8dac4c3870}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-Power@{vsense\-\_\-get\-Power}}
+\index{vsense\-\_\-get\-Power@{vsense\-\_\-get\-Power}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-Power}]{\setlength{\rightskip}{0pt plus 5cm}float vsense\-\_\-get\-Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_af9dcc8672a400658a9b09f8dac4c3870}
+
+
+Returns system power in m\-W. 
+
+\begin{DoxyReturn}{Returns}
+System power in m\-W. 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_a79e9cf80d0c0a46f3867de25d7ac7d6f}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-Raw\-V1@{vsense\-\_\-get\-Raw\-V1}}
+\index{vsense\-\_\-get\-Raw\-V1@{vsense\-\_\-get\-Raw\-V1}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-Raw\-V1}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t vsense\-\_\-get\-Raw\-V1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_a79e9cf80d0c0a46f3867de25d7ac7d6f}
+
+
+Returns raw A\-D\-C reading from V\-Sense1 pin. 
+
+\begin{DoxyReturn}{Returns}
+Raw A\-D\-C reading from V\-Sense1 pin 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_aff36aac1b82c201cf5c9199445d4c891}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-Raw\-V2@{vsense\-\_\-get\-Raw\-V2}}
+\index{vsense\-\_\-get\-Raw\-V2@{vsense\-\_\-get\-Raw\-V2}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-Raw\-V2}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t vsense\-\_\-get\-Raw\-V2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_aff36aac1b82c201cf5c9199445d4c891}
+
+
+Returns raw A\-D\-C reading from V\-Sense2 pin. 
+
+\begin{DoxyReturn}{Returns}
+Raw A\-D\-C reading from V\-Sense2 pin 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_ac216a594bfab6cfeab5a9d815cee3070}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-System\-Voltage@{vsense\-\_\-get\-System\-Voltage}}
+\index{vsense\-\_\-get\-System\-Voltage@{vsense\-\_\-get\-System\-Voltage}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-System\-Voltage}]{\setlength{\rightskip}{0pt plus 5cm}float vsense\-\_\-get\-System\-Voltage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_ac216a594bfab6cfeab5a9d815cee3070}
+
+
+Returns system voltage the Vsense1 pin. Same as get\-V1(). 
+
+\begin{DoxyReturn}{Returns}
+System voltage reading. 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_a333080413b5294132f0207762cf1455f}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-V1@{vsense\-\_\-get\-V1}}
+\index{vsense\-\_\-get\-V1@{vsense\-\_\-get\-V1}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-V1}]{\setlength{\rightskip}{0pt plus 5cm}float vsense\-\_\-get\-V1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_a333080413b5294132f0207762cf1455f}
+
+
+Returns voltage reading from V\-Sense1 pin. 
+
+\begin{DoxyReturn}{Returns}
+Voltage reading from V\-Sense1 pin 
+\end{DoxyReturn}
+\hypertarget{vsense_8h_a89fd85142a6df5224bd4d4da51623183}{\index{vsense.\-h@{vsense.\-h}!vsense\-\_\-get\-V2@{vsense\-\_\-get\-V2}}
+\index{vsense\-\_\-get\-V2@{vsense\-\_\-get\-V2}!vsense.h@{vsense.\-h}}
+\subsubsection[{vsense\-\_\-get\-V2}]{\setlength{\rightskip}{0pt plus 5cm}float vsense\-\_\-get\-V2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{vsense_8h_a89fd85142a6df5224bd4d4da51623183}
+
+
+Returns voltage reading from V\-Sense2 pin. 
+
+\begin{DoxyReturn}{Returns}
+Voltage reading from V\-Sense2 pin. 
+\end{DoxyReturn}

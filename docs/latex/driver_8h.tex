@@ -6,6 +6,9 @@
 File containing the definition of methods for the operation of an H-\/\-Bridge in bipolar operation mode.  File containing the definition of methods for the operation of an H-\/\-Bridge in bipolar operation mode.  
 
 
+{\ttfamily \#include $<$M\-K\-L25\-Z4.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-sim\-\_\-hal.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-tpm\-\_\-hal.\-h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,20 +17,24 @@ struct \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{driver_8h_a0119b875b4c5d904b9b436b7033c1e20}{driver\-\_\-init\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance)
+void \hyperlink{driver_8h_af86b1f57ab6512bbe7e821430dc5b31a}{driver\-\_\-init\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance)
 \begin{DoxyCompactList}\small\item\em Initializes the driver with the load in idle (50\% duty cycle). \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_a6e91fce6c6c4203aafc0e7ccd88e2b7d}{driver\-\_\-disable\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance)
+void \hyperlink{driver_8h_ab84ee77f331b3f9406d47111b3c6dba4}{driver\-\_\-append\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance)
+\begin{DoxyCompactList}\small\item\em Add another driver instance to an already active driver session with the load in idle (50\% duty cycle). \end{DoxyCompactList}\item 
+void \hyperlink{driver_8h_a90261a2da5f9b4191799071314f6cafd}{driver\-\_\-disable\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance)
 \begin{DoxyCompactList}\small\item\em Disables the driver by clearing the enable pin. \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_ace5313a5d228df83d6f3fc0417b282c5}{driver\-\_\-enable\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance)
+void \hyperlink{driver_8h_a3fcb1af8dbbc448e353bbf820ccb58d3}{driver\-\_\-enable\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance)
 \begin{DoxyCompactList}\small\item\em Enables the driver by setting the enable pin. \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_ac10598e4c478cfa0efe4de219633162f}{driver\-\_\-set\-Channel\-A\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance, int ui\-Duty\-Cycle\-Percent)
+void \hyperlink{driver_8h_a0a6bf060e78bcd4a8dd0f28ee1e756e7}{driver\-\_\-set\-Channel\-A\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance, int ui\-Duty\-Cycle\-Percent)
 \begin{DoxyCompactList}\small\item\em Sets duty cycle for Channel A only. \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_a84e25a53a2721461fffd06b0d7153c2f}{driver\-\_\-set\-Channel\-B\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance, int ui\-Duty\-Cycle\-Percent)
+void \hyperlink{driver_8h_a90b032abe937a8da2f5abd476be491e1}{driver\-\_\-set\-Channel\-B\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance, int ui\-Duty\-Cycle\-Percent)
 \begin{DoxyCompactList}\small\item\em Sets duty cycle for Channel B only. \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_ad263b85561a69c2186f7f80755c21a1f}{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance, int ui\-Duty\-Cycle\-Percent)
+void \hyperlink{driver_8h_a0ada5a76e1ef5a39dc738a33ea3f7ffe}{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance, int ui\-Duty\-Cycle\-Percent)
 \begin{DoxyCompactList}\small\item\em Sets duty cycle for H-\/\-Bridge operation. Both Ch\-A and Ch\-B. \end{DoxyCompactList}\item 
-void \hyperlink{driver_8h_a6388db7083b14ae140ec5cf78f575e08}{driver\-\_\-set\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} $\ast$driver\-Instance, int input)
-\begin{DoxyCompactList}\small\item\em Sets the driver from -\/100 to 100, the former being full reverse, and the latter, full steam ahead. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{driver_8h_aa6ea954a395c1a2bbcce00f425290b56}{driver\-\_\-set\-Driver} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance, int input)
+\begin{DoxyCompactList}\small\item\em Sets the driver from -\/100 to 100, the former being full reverse, and the latter, full steam ahead. \end{DoxyCompactList}\item 
+void \hyperlink{driver_8h_a8406c2cb72b66a7a43808da977cab97d}{driver\-\_\-set\-Driver2} (\hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} driver\-Instance, int input, float factor)
+\begin{DoxyCompactList}\small\item\em set\-Driver but takes another argument to multiply duty cycle \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,13 +59,29 @@ Bruno de Souza Ferreira
 
 
 \subsection{Function Documentation}
-\hypertarget{driver_8h_a6e91fce6c6c4203aafc0e7ccd88e2b7d}{\index{driver.\-h@{driver.\-h}!driver\-\_\-disable\-Driver@{driver\-\_\-disable\-Driver}}
+\hypertarget{driver_8h_ab84ee77f331b3f9406d47111b3c6dba4}{\index{driver.\-h@{driver.\-h}!driver\-\_\-append\-Driver@{driver\-\_\-append\-Driver}}
+\index{driver\-\_\-append\-Driver@{driver\-\_\-append\-Driver}!driver.h@{driver.\-h}}
+\subsubsection[{driver\-\_\-append\-Driver}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-append\-Driver (
+\begin{DoxyParamCaption}
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance}
+\end{DoxyParamCaption}
+)}}\label{driver_8h_ab84ee77f331b3f9406d47111b3c6dba4}
+
+
+Add another driver instance to an already active driver session with the load in idle (50\% duty cycle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver\-Instance} & \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} struct. \\
+\hline
+\end{DoxyParams}
+\hypertarget{driver_8h_a90261a2da5f9b4191799071314f6cafd}{\index{driver.\-h@{driver.\-h}!driver\-\_\-disable\-Driver@{driver\-\_\-disable\-Driver}}
 \index{driver\-\_\-disable\-Driver@{driver\-\_\-disable\-Driver}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-disable\-Driver}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-disable\-Driver (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance}
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_a6e91fce6c6c4203aafc0e7ccd88e2b7d}
+)}}\label{driver_8h_a90261a2da5f9b4191799071314f6cafd}
 
 
 Disables the driver by clearing the enable pin. 
@@ -68,13 +91,13 @@ Disables the driver by clearing the enable pin.
 {\em driver\-Instance} & \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_ace5313a5d228df83d6f3fc0417b282c5}{\index{driver.\-h@{driver.\-h}!driver\-\_\-enable\-Driver@{driver\-\_\-enable\-Driver}}
+\hypertarget{driver_8h_a3fcb1af8dbbc448e353bbf820ccb58d3}{\index{driver.\-h@{driver.\-h}!driver\-\_\-enable\-Driver@{driver\-\_\-enable\-Driver}}
 \index{driver\-\_\-enable\-Driver@{driver\-\_\-enable\-Driver}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-enable\-Driver}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-enable\-Driver (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance}
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_ace5313a5d228df83d6f3fc0417b282c5}
+)}}\label{driver_8h_a3fcb1af8dbbc448e353bbf820ccb58d3}
 
 
 Enables the driver by setting the enable pin. 
@@ -84,13 +107,13 @@ Enables the driver by setting the enable pin.
 {\em driver\-Instance} & \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_a0119b875b4c5d904b9b436b7033c1e20}{\index{driver.\-h@{driver.\-h}!driver\-\_\-init\-Driver@{driver\-\_\-init\-Driver}}
+\hypertarget{driver_8h_af86b1f57ab6512bbe7e821430dc5b31a}{\index{driver.\-h@{driver.\-h}!driver\-\_\-init\-Driver@{driver\-\_\-init\-Driver}}
 \index{driver\-\_\-init\-Driver@{driver\-\_\-init\-Driver}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-init\-Driver}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-init\-Driver (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance}
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_a0119b875b4c5d904b9b436b7033c1e20}
+)}}\label{driver_8h_af86b1f57ab6512bbe7e821430dc5b31a}
 
 
 Initializes the driver with the load in idle (50\% duty cycle). 
@@ -100,14 +123,14 @@ Initializes the driver with the load in idle (50\% duty cycle).
 {\em driver\-Instance} & \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} struct. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_ac10598e4c478cfa0efe4de219633162f}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Channel\-A\-Duty\-Cycle@{driver\-\_\-set\-Channel\-A\-Duty\-Cycle}}
+\hypertarget{driver_8h_a0a6bf060e78bcd4a8dd0f28ee1e756e7}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Channel\-A\-Duty\-Cycle@{driver\-\_\-set\-Channel\-A\-Duty\-Cycle}}
 \index{driver\-\_\-set\-Channel\-A\-Duty\-Cycle@{driver\-\_\-set\-Channel\-A\-Duty\-Cycle}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-set\-Channel\-A\-Duty\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-set\-Channel\-A\-Duty\-Cycle (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance, }
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance, }
 \item[{int}]{ui\-Duty\-Cycle\-Percent}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_ac10598e4c478cfa0efe4de219633162f}
+)}}\label{driver_8h_a0a6bf060e78bcd4a8dd0f28ee1e756e7}
 
 
 Sets duty cycle for Channel A only. 
@@ -119,14 +142,14 @@ Sets duty cycle for Channel A only.
 {\em ui\-Duty\-Cycle\-Percent} & Duty cycle in percentage. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_a84e25a53a2721461fffd06b0d7153c2f}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Channel\-B\-Duty\-Cycle@{driver\-\_\-set\-Channel\-B\-Duty\-Cycle}}
+\hypertarget{driver_8h_a90b032abe937a8da2f5abd476be491e1}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Channel\-B\-Duty\-Cycle@{driver\-\_\-set\-Channel\-B\-Duty\-Cycle}}
 \index{driver\-\_\-set\-Channel\-B\-Duty\-Cycle@{driver\-\_\-set\-Channel\-B\-Duty\-Cycle}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-set\-Channel\-B\-Duty\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-set\-Channel\-B\-Duty\-Cycle (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance, }
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance, }
 \item[{int}]{ui\-Duty\-Cycle\-Percent}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_a84e25a53a2721461fffd06b0d7153c2f}
+)}}\label{driver_8h_a90b032abe937a8da2f5abd476be491e1}
 
 
 Sets duty cycle for Channel B only. 
@@ -138,14 +161,14 @@ Sets duty cycle for Channel B only.
 {\em ui\-Duty\-Cycle\-Percent} & Duty cycle in percentage. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_a6388db7083b14ae140ec5cf78f575e08}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Driver@{driver\-\_\-set\-Driver}}
+\hypertarget{driver_8h_aa6ea954a395c1a2bbcce00f425290b56}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Driver@{driver\-\_\-set\-Driver}}
 \index{driver\-\_\-set\-Driver@{driver\-\_\-set\-Driver}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-set\-Driver}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-set\-Driver (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance, }
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance, }
 \item[{int}]{input}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_a6388db7083b14ae140ec5cf78f575e08}
+)}}\label{driver_8h_aa6ea954a395c1a2bbcce00f425290b56}
 
 
 Sets the driver from -\/100 to 100, the former being full reverse, and the latter, full steam ahead. 
@@ -157,14 +180,36 @@ Sets the driver from -\/100 to 100, the former being full reverse, and the latte
 {\em input} & -\/100 to 100. \\
 \hline
 \end{DoxyParams}
-\hypertarget{driver_8h_ad263b85561a69c2186f7f80755c21a1f}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-H\-Bridge\-Duty\-Cycle@{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle}}
+\hypertarget{driver_8h_a8406c2cb72b66a7a43808da977cab97d}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-Driver2@{driver\-\_\-set\-Driver2}}
+\index{driver\-\_\-set\-Driver2@{driver\-\_\-set\-Driver2}!driver.h@{driver.\-h}}
+\subsubsection[{driver\-\_\-set\-Driver2}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-set\-Driver2 (
+\begin{DoxyParamCaption}
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance, }
+\item[{int}]{input, }
+\item[{float}]{factor}
+\end{DoxyParamCaption}
+)}}\label{driver_8h_a8406c2cb72b66a7a43808da977cab97d}
+
+
+set\-Driver but takes another argument to multiply duty cycle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver\-Instance} & \hyperlink{structdriver__instance__t}{driver\-\_\-instance\-\_\-t} struct. \\
+\hline
+{\em input} & -\/100 to 100. \\
+\hline
+{\em factor} & to multiply input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{driver_8h_a0ada5a76e1ef5a39dc738a33ea3f7ffe}{\index{driver.\-h@{driver.\-h}!driver\-\_\-set\-H\-Bridge\-Duty\-Cycle@{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle}}
 \index{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle@{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle}!driver.h@{driver.\-h}}
 \subsubsection[{driver\-\_\-set\-H\-Bridge\-Duty\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void driver\-\_\-set\-H\-Bridge\-Duty\-Cycle (
 \begin{DoxyParamCaption}
-\item[{{\bf driver\-\_\-instance\-\_\-t} $\ast$}]{driver\-Instance, }
+\item[{{\bf driver\-\_\-instance\-\_\-t}}]{driver\-Instance, }
 \item[{int}]{ui\-Duty\-Cycle\-Percent}
 \end{DoxyParamCaption}
-)}}\label{driver_8h_ad263b85561a69c2186f7f80755c21a1f}
+)}}\label{driver_8h_a0ada5a76e1ef5a39dc738a33ea3f7ffe}
 
 
 Sets duty cycle for H-\/\-Bridge operation. Both Ch\-A and Ch\-B. 

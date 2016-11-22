@@ -10,28 +10,47 @@ File containing the methods for the interaction with a host device via a serial 
 {\ttfamily \#include \char`\"{}fsl\-\_\-port\-\_\-hal.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fsl\-\_\-smc\-\_\-hal.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fsl\-\_\-debug\-\_\-console.\-h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fsl\-\_\-gpio\-\_\-driver.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hmi.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}hal/controller/controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hal/target\-\_\-definitions.\-h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}{hmi\-\_\-init\-Hmi} ()
-\item 
-void \hyperlink{hmi_8c_a007fe375820a1c841f2668515ec9171e}{hmi\-\_\-receive} ()
-\item 
-void \hyperlink{hmi_8c_a3b4d4322ad06ab42132c2f3d5fd68bb7}{hmi\-\_\-transmit} (double d\-Velocity, double d\-Position, double d\-Actuator)
-\end{DoxyCompactItemize}
+\hypertarget{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}{void \hyperlink{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}{hmi\-\_\-init\-Hmi} ()}\label{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}
+
+\begin{DoxyCompactList}\small\item\em Initializes H\-M\-I interface. \end{DoxyCompactList}\item 
+\hypertarget{hmi_8c_ae82e5d8f34dad504b80697f85f8bc44a}{void \hyperlink{hmi_8c_ae82e5d8f34dad504b80697f85f8bc44a}{hmi\-\_\-transmit\-New\-Line} ()}\label{hmi_8c_ae82e5d8f34dad504b80697f85f8bc44a}
+
+\begin{DoxyCompactList}\small\item\em Transmits a newline. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_ae2040544c682f19186dc13eb581fb245}{hmi\-\_\-transmit\-S} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Transmits a char array. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_ab086ed629219dadd8df55cc22fe3bf22}{hmi\-\_\-transmit\-S\-C\-S} (char $\ast$string1, char id, char $\ast$string2)
+\begin{DoxyCompactList}\small\item\em Transmits a char array followed by a single character, followed by another char array. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_a0bfc42a99749b05ae849a6bfe54effee}{hmi\-\_\-transmit\-S\-I\-S} (char $\ast$string1, int id, char $\ast$string2)
+\begin{DoxyCompactList}\small\item\em Transmits a char array followed by an integer, followed by another char array. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_a42da887645c3b8bec9f84f3bc78681bb}{hmi\-\_\-transmit\-S\-C\-S\-F} (char $\ast$string1, char id, char $\ast$string2, float reading)
+\begin{DoxyCompactList}\small\item\em Transmits a char array followed by a single character followed by another char array, followed by a float. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_af9da3e6e3ba765016ac65e215efb2466}{hmi\-\_\-transmit\-S\-I\-S\-I} (char $\ast$string1, int id, char $\ast$string2, int reading)
+\begin{DoxyCompactList}\small\item\em Transmits a char array followed by an integer followed by another char array, followed by an integer. \end{DoxyCompactList}\item 
+void \hyperlink{hmi_8c_a117f9bde4ce6870c9fbd92b495904dc9}{hmi\-\_\-transmit\-Array} (uint32\-\_\-t $\ast$ui\-Ir\-Vector, uint16\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Transmits the I\-R array readings. \end{DoxyCompactList}\item 
+\hypertarget{hmi_8c_a007fe375820a1c841f2668515ec9171e}{void \hyperlink{hmi_8c_a007fe375820a1c841f2668515ec9171e}{hmi\-\_\-receive} ()}\label{hmi_8c_a007fe375820a1c841f2668515ec9171e}
+
+\begin{DoxyCompactList}\small\item\em Receives and interprets data sent from the host device. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{hmi_8c_a4a87227fa0eb2141b4cfe7d95ee4d32c}{double {\bfseries d\-Reference\-Velocity}}\label{hmi_8c_a4a87227fa0eb2141b4cfe7d95ee4d32c}
+\hypertarget{hmi_8c_ad373d66120668929942d9a2087315641}{\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-P}}\label{hmi_8c_ad373d66120668929942d9a2087315641}
 
 \item 
-\hypertarget{hmi_8c_a50af83930c00988bbb89058b51735974}{double {\bfseries d\-Reference\-Direction}}\label{hmi_8c_a50af83930c00988bbb89058b51735974}
+\hypertarget{hmi_8c_a3d0402a2da19edf89f235d489fba3487}{\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-L}}\label{hmi_8c_a3d0402a2da19edf89f235d489fba3487}
 
 \item 
-\hypertarget{hmi_8c_a6004db8fadfd3f917e03b574be174089}{t\-\_\-\-P\-I\-D\-\_\-\-Data {\bfseries pid\-Data}}\label{hmi_8c_a6004db8fadfd3f917e03b574be174089}
+\hypertarget{hmi_8c_a0b3eea58513ede92b45d134c8754cdca}{\hyperlink{structcontroller__instance__t}{controller\-\_\-instance\-\_\-t} {\bfseries tpid\-R}}\label{hmi_8c_a0b3eea58513ede92b45d134c8754cdca}
+
+\item 
+\hypertarget{hmi_8c_a6ebc88a4af3c3ced4590f987d1e894ce}{float {\bfseries motor\-\_\-current\-\_\-speed}}\label{hmi_8c_a6ebc88a4af3c3ced4590f987d1e894ce}
 
 \end{DoxyCompactItemize}
 
@@ -48,32 +67,135 @@ Bruno de Souza Ferreira
 \begin{DoxyDate}{Date}
 20 Jun 2016 
 
-27 Sep 2016 
+07 Oct 2016 
 \end{DoxyDate}
 
 
 \subsection{Function Documentation}
-\hypertarget{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-init\-Hmi@{hmi\-\_\-init\-Hmi}}
-\index{hmi\-\_\-init\-Hmi@{hmi\-\_\-init\-Hmi}!hmi.c@{hmi.\-c}}
-\subsubsection[{hmi\-\_\-init\-Hmi}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-init\-Hmi (
+\hypertarget{hmi_8c_a117f9bde4ce6870c9fbd92b495904dc9}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-Array@{hmi\-\_\-transmit\-Array}}
+\index{hmi\-\_\-transmit\-Array@{hmi\-\_\-transmit\-Array}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-Array (
 \begin{DoxyParamCaption}
-{}
+\item[{uint32\-\_\-t $\ast$}]{ui\-Ir\-Vector, }
+\item[{uint16\-\_\-t}]{size}
 \end{DoxyParamCaption}
-)}}\label{hmi_8c_acad7e4bc65abcf24172ea2ca377d421a}
-Method name\-: hmi\-\_\-init\-Hmi Method description\-: Initializes U\-A\-R\-T0 for debug mode for serial over U\-S\-B, provided by Open\-S\-D\-A. Input params\-: n/a Output params\-: n/a \hypertarget{hmi_8c_a007fe375820a1c841f2668515ec9171e}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-receive@{hmi\-\_\-receive}}
-\index{hmi\-\_\-receive@{hmi\-\_\-receive}!hmi.c@{hmi.\-c}}
-\subsubsection[{hmi\-\_\-receive}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-receive (
+)}}\label{hmi_8c_a117f9bde4ce6870c9fbd92b495904dc9}
+
+
+Transmits the I\-R array readings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\-R} & readings vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{hmi_8c_ae2040544c682f19186dc13eb581fb245}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-S@{hmi\-\_\-transmit\-S}}
+\index{hmi\-\_\-transmit\-S@{hmi\-\_\-transmit\-S}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-S}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-S (
 \begin{DoxyParamCaption}
-{}
+\item[{char $\ast$}]{string}
 \end{DoxyParamCaption}
-)}}\label{hmi_8c_a007fe375820a1c841f2668515ec9171e}
-Method name\-: hmi\-\_\-receive Method description\-: Receives and interprets data sent from the host device. Input params\-: n/a Output params\-: n/a \hypertarget{hmi_8c_a3b4d4322ad06ab42132c2f3d5fd68bb7}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit@{hmi\-\_\-transmit}}
-\index{hmi\-\_\-transmit@{hmi\-\_\-transmit}!hmi.c@{hmi.\-c}}
-\subsubsection[{hmi\-\_\-transmit}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit (
+)}}\label{hmi_8c_ae2040544c682f19186dc13eb581fb245}
+
+
+Transmits a char array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Char array pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{hmi_8c_ab086ed629219dadd8df55cc22fe3bf22}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-S\-C\-S@{hmi\-\_\-transmit\-S\-C\-S}}
+\index{hmi\-\_\-transmit\-S\-C\-S@{hmi\-\_\-transmit\-S\-C\-S}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-S\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-S\-C\-S (
 \begin{DoxyParamCaption}
-\item[{double}]{d\-Velocity, }
-\item[{double}]{d\-Position, }
-\item[{double}]{d\-Actuator}
+\item[{char $\ast$}]{string1, }
+\item[{char}]{id, }
+\item[{char $\ast$}]{string2}
 \end{DoxyParamCaption}
-)}}\label{hmi_8c_a3b4d4322ad06ab42132c2f3d5fd68bb7}
-Method name\-: hmi\-\_\-transmit Method description\-: Transmits required data to the host device. Uses space as separator Input params\-: d\-Velocity\-: Velocity reading from encoder d\-Position\-: Position reading from encoder d\-Actuator\-: Actuator value from controller Output params\-: n/a 
+)}}\label{hmi_8c_ab086ed629219dadd8df55cc22fe3bf22}
+
+
+Transmits a char array followed by a single character, followed by another char array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & Char array pointer. \\
+\hline
+{\em id} & A single character. \\
+\hline
+{\em string2} & Char array pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{hmi_8c_a42da887645c3b8bec9f84f3bc78681bb}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-S\-C\-S\-F@{hmi\-\_\-transmit\-S\-C\-S\-F}}
+\index{hmi\-\_\-transmit\-S\-C\-S\-F@{hmi\-\_\-transmit\-S\-C\-S\-F}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-S\-C\-S\-F}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-S\-C\-S\-F (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string1, }
+\item[{char}]{id, }
+\item[{char $\ast$}]{string2, }
+\item[{float}]{reading}
+\end{DoxyParamCaption}
+)}}\label{hmi_8c_a42da887645c3b8bec9f84f3bc78681bb}
+
+
+Transmits a char array followed by a single character followed by another char array, followed by a float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & Char array pointer. \\
+\hline
+{\em id} & A single character. \\
+\hline
+{\em string2} & Char array pointer. \\
+\hline
+{\em reading} & A float number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{hmi_8c_a0bfc42a99749b05ae849a6bfe54effee}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-S\-I\-S@{hmi\-\_\-transmit\-S\-I\-S}}
+\index{hmi\-\_\-transmit\-S\-I\-S@{hmi\-\_\-transmit\-S\-I\-S}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-S\-I\-S}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-S\-I\-S (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string1, }
+\item[{int}]{id, }
+\item[{char $\ast$}]{string2}
+\end{DoxyParamCaption}
+)}}\label{hmi_8c_a0bfc42a99749b05ae849a6bfe54effee}
+
+
+Transmits a char array followed by an integer, followed by another char array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & Char array pointer. \\
+\hline
+{\em id} & An integer number. \\
+\hline
+{\em string2} & Char array pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{hmi_8c_af9da3e6e3ba765016ac65e215efb2466}{\index{hmi.\-c@{hmi.\-c}!hmi\-\_\-transmit\-S\-I\-S\-I@{hmi\-\_\-transmit\-S\-I\-S\-I}}
+\index{hmi\-\_\-transmit\-S\-I\-S\-I@{hmi\-\_\-transmit\-S\-I\-S\-I}!hmi.c@{hmi.\-c}}
+\subsubsection[{hmi\-\_\-transmit\-S\-I\-S\-I}]{\setlength{\rightskip}{0pt plus 5cm}void hmi\-\_\-transmit\-S\-I\-S\-I (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string1, }
+\item[{int}]{id, }
+\item[{char $\ast$}]{string2, }
+\item[{int}]{reading}
+\end{DoxyParamCaption}
+)}}\label{hmi_8c_af9da3e6e3ba765016ac65e215efb2466}
+
+
+Transmits a char array followed by an integer followed by another char array, followed by an integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & Char array pointer. \\
+\hline
+{\em id} & An integer number. \\
+\hline
+{\em string2} & Char array pointer. \\
+\hline
+{\em reading} & An integer number. \\
+\hline
+\end{DoxyParams}

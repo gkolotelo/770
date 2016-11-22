@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,10 +89,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="diagnostics_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="diagnostics_8h.html#a1bd399d9f3f1020523d1cf06f535d640">diagnostics_startDiagnostics</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="diagnostics_8h.html#a35cf672d2b71e0fef3499cd4d7a3f767">diagnostics_btestVSense</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="diagnostics_8h.html#a6822acc32ab72e580235fd045b399e54">diagnostics_btestIrArray</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="diagnostics_8h.html#a6b1d8a81a26173705816b17a4d64f078">diagnostics_btestMotors</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="diagnostics_8h.html#a1ffc9d2b02b80c8b96063b24ed1d76d9">diagnostics_btestEncoders</a>();</div>
+<div class="ttc" id="diagnostics_8h_html_a6b1d8a81a26173705816b17a4d64f078"><div class="ttname"><a href="diagnostics_8h.html#a6b1d8a81a26173705816b17a4d64f078">diagnostics_btestMotors</a></div><div class="ttdeci">bool diagnostics_btestMotors()</div><div class="ttdoc">Tests operation of the motors. </div><div class="ttdef"><b>Definition:</b> diagnostics.c:183</div></div>
+<div class="ttc" id="diagnostics_8h_html_a1bd399d9f3f1020523d1cf06f535d640"><div class="ttname"><a href="diagnostics_8h.html#a1bd399d9f3f1020523d1cf06f535d640">diagnostics_startDiagnostics</a></div><div class="ttdeci">bool diagnostics_startDiagnostics()</div><div class="ttdoc">Initiates diagnostics sequence. </div><div class="ttdef"><b>Definition:</b> diagnostics.c:38</div></div>
+<div class="ttc" id="diagnostics_8h_html_a6822acc32ab72e580235fd045b399e54"><div class="ttname"><a href="diagnostics_8h.html#a6822acc32ab72e580235fd045b399e54">diagnostics_btestIrArray</a></div><div class="ttdeci">bool diagnostics_btestIrArray()</div><div class="ttdoc">Tests operation of the IR Array. </div><div class="ttdef"><b>Definition:</b> diagnostics.c:139</div></div>
+<div class="ttc" id="diagnostics_8h_html_a35cf672d2b71e0fef3499cd4d7a3f767"><div class="ttname"><a href="diagnostics_8h.html#a35cf672d2b71e0fef3499cd4d7a3f767">diagnostics_btestVSense</a></div><div class="ttdeci">bool diagnostics_btestVSense()</div><div class="ttdoc">Tests operation of the voltage sense. </div><div class="ttdef"><b>Definition:</b> diagnostics.c:82</div></div>
+<div class="ttc" id="diagnostics_8h_html_a1ffc9d2b02b80c8b96063b24ed1d76d9"><div class="ttname"><a href="diagnostics_8h.html#a1ffc9d2b02b80c8b96063b24ed1d76d9">diagnostics_btestEncoders</a></div><div class="ttdeci">bool diagnostics_btestEncoders()</div><div class="ttdoc">Tests operation of the encoders. </div><div class="ttdef"><b>Definition:</b> diagnostics.c:250</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:27 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:08 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

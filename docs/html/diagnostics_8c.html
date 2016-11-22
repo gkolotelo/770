@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">diagnostics.c File Reference</div>  </div>
 </div><!--header-->
@@ -93,37 +94,172 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>File containing the methods for executing a self-diagnostics routine.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="diagnostics_8h_source.html">diagnostics.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br/>
+<code>#include &lt;MKL25Z4.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="diagnostics_8h_source.html">diagnostics.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="target__definitions_8h_source.html">hal/target_definitions.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="util_8h_source.html">hal/util/util.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="encoder_8h_source.html">hal/encoder/encoder.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="driver_8h_source.html">hal/driver/driver.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="ir__array_8h_source.html">hal/ir_array/ir_array.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="vsense_8h_source.html">hal/vsense/vsense.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="hmi_8h_source.html">hal/hmi/hmi.h</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3dff5d513a97902454ba1ae636d775d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dff5d513a97902454ba1ae636d775d9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>testIrArray</b> ()</td></tr>
-<tr class="separator:a3dff5d513a97902454ba1ae636d775d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6af3f3627a46f3ecc0ebe7ca58231ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6af3f3627a46f3ecc0ebe7ca58231ba"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>testEncoders</b> ()</td></tr>
-<tr class="separator:ac6af3f3627a46f3ecc0ebe7ca58231ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb27fb33525affd987df0595cdb2626"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bb27fb33525affd987df0595cdb2626"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>testMotors</b> ()</td></tr>
-<tr class="separator:a4bb27fb33525affd987df0595cdb2626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd399d9f3f1020523d1cf06f535d640"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a1bd399d9f3f1020523d1cf06f535d640">diagnostics_startDiagnostics</a> ()</td></tr>
+<tr class="memdesc:a1bd399d9f3f1020523d1cf06f535d640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates diagnostics sequence.  <a href="#a1bd399d9f3f1020523d1cf06f535d640">More...</a><br/></td></tr>
+<tr class="separator:a1bd399d9f3f1020523d1cf06f535d640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cf672d2b71e0fef3499cd4d7a3f767"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a35cf672d2b71e0fef3499cd4d7a3f767">diagnostics_btestVSense</a> ()</td></tr>
+<tr class="memdesc:a35cf672d2b71e0fef3499cd4d7a3f767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests operation of the voltage sense.  <a href="#a35cf672d2b71e0fef3499cd4d7a3f767">More...</a><br/></td></tr>
+<tr class="separator:a35cf672d2b71e0fef3499cd4d7a3f767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6822acc32ab72e580235fd045b399e54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a6822acc32ab72e580235fd045b399e54">diagnostics_btestIrArray</a> ()</td></tr>
+<tr class="memdesc:a6822acc32ab72e580235fd045b399e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests operation of the IR Array.  <a href="#a6822acc32ab72e580235fd045b399e54">More...</a><br/></td></tr>
+<tr class="separator:a6822acc32ab72e580235fd045b399e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b1d8a81a26173705816b17a4d64f078"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a6b1d8a81a26173705816b17a4d64f078">diagnostics_btestMotors</a> ()</td></tr>
+<tr class="memdesc:a6b1d8a81a26173705816b17a4d64f078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests operation of the motors.  <a href="#a6b1d8a81a26173705816b17a4d64f078">More...</a><br/></td></tr>
+<tr class="separator:a6b1d8a81a26173705816b17a4d64f078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffc9d2b02b80c8b96063b24ed1d76d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a1ffc9d2b02b80c8b96063b24ed1d76d9">diagnostics_btestEncoders</a> ()</td></tr>
+<tr class="memdesc:a1ffc9d2b02b80c8b96063b24ed1d76d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests operation of the encoders.  <a href="#a1ffc9d2b02b80c8b96063b24ed1d76d9">More...</a><br/></td></tr>
+<tr class="separator:a1ffc9d2b02b80c8b96063b24ed1d76d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a90052c39e2dc9678876e1aed077feff3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostics_8c.html#a90052c39e2dc9678876e1aed077feff3">tencoderL</a></td></tr>
+<tr class="separator:a90052c39e2dc9678876e1aed077feff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af032f1863b545b3764bf9ff9bf7e6ada"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af032f1863b545b3764bf9ff9bf7e6ada"></a>
+<a class="el" href="structencoder__instance__t.html">encoder_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tencoderR</b></td></tr>
+<tr class="separator:af032f1863b545b3764bf9ff9bf7e6ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71c13261eba66587ee7a0d8c2d3ff18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae71c13261eba66587ee7a0d8c2d3ff18"></a>
+<a class="el" href="structdriver__instance__t.html">driver_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tdriverL</b></td></tr>
+<tr class="separator:ae71c13261eba66587ee7a0d8c2d3ff18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c6c52b26f78c3272d721ae67bce90b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85c6c52b26f78c3272d721ae67bce90b"></a>
+<a class="el" href="structdriver__instance__t.html">driver_instance_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tdriverR</b></td></tr>
+<tr class="separator:a85c6c52b26f78c3272d721ae67bce90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the methods for executing a self-diagnostics routine. </p>
 <dl class="section author"><dt>Author</dt><dd>Guilherme Kairalla Kolotelo </dd>
 <dd>
 Bruno de Souza Ferreira </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.2 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27 Jun 2016 </dd>
 <dd>
-27 Sep 2016 </dd></dl>
-</div></div><!-- contents -->
+07 Oct 2016 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a1ffc9d2b02b80c8b96063b24ed1d76d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool diagnostics_btestEncoders </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests operation of the encoders. </p>
+<p>For each encoder, the encoder count is reset and the motor is turned on. If the encoder measurement is not greater than MOTOR_MIN_VEL the test is not successful.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6822acc32ab72e580235fd045b399e54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool diagnostics_btestIrArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests operation of the IR Array. </p>
+<p>For each LED/Sensor pair on the IR array, a measurement is taken with the LED off, and a measurement is taken with the LED on, if the latter measurement is not greater than the former, the test is not successful.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b1d8a81a26173705816b17a4d64f078"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool diagnostics_btestMotors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests operation of the motors. </p>
+<p>For each motor, the system current is measured with the motor on and with the motor off. If the former measurement is not greater than MOTOR_MIN_CURR above the quiescent system current, the test is not successful.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a35cf672d2b71e0fef3499cd4d7a3f767"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool diagnostics_btestVSense </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests operation of the voltage sense. </p>
+<p>Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed. If Vsense2 &gt; Vsense1, an unexpected behavior, the test is not passed.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bd399d9f3f1020523d1cf06f535d640"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool diagnostics_startDiagnostics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initiates diagnostics sequence. </p>
+<p>Executes each system component test independently and reports the system status.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if tests were NOT successful. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a90052c39e2dc9678876e1aed077feff3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structencoder__instance__t.html">encoder_instance_t</a> tencoderL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uses instances defined on <a class="el" href="main_8c.html" title="File containing the main entry point of the program. ">main.c</a> file </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 27 2016 03:52:27 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 22 2016 03:49:08 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
