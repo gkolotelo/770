@@ -1,17 +1,11 @@
-
 /**
- *
- * File name:           target_definitions.h
- * File description:    File containing the methods implementing
- *                      a PID controller.
- *
- * Authors:             Bruno de Souza Ferreira
- *                      Guilherme Kairalla Kolotelo
- *                      Guilherme Bersi Pereira
- *
- * Creation date:       25Jun2016
- * Revision date:       25Jun2016
- *
+ * @file target_definitions.h
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.9
+ * @date 25 Jun 2016
+ * @date 21 Nov 2016
+ * @brief File containing the pin and module definitions and constants.
  */
 
 #ifndef SOURCES_TARGET_PINS_H_

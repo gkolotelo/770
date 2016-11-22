@@ -1,19 +1,14 @@
-/*
- * File name: adc.c
- *
- *  Created on: 06/06/2016
- *      Author: msoliveira
- */
-
 /**
- * @file ir_array.c
+ * @file adc.c
+ * @author msoliveira
  * @author Guilherme Kairalla Kolotelo
  * @author Bruno de Souza Ferreira
  * @version 1.1
- * @date 27 Jun 2016
+ * @date 06 Jun 2016
  * @date 27 Sep 2016
- * @brief File containing the methods for interacting with an IR array .
+ * @brief File containing the methods for interacting with the ADC module.
  */
+
 
 
 #include <MKL25Z4.h>
@@ -33,12 +28,9 @@
 
 #define ADC0_SC1A_COCO (ADC0_SC1A >> 7)
 
-/* ************************************************** */
-/* Method name: 	   adc_initAadc                   */
-/* Method description: configure ADC module           */
-/* Input params:	   n/a 							  */
-/* Output params:	   n/a 							  */
-/* ************************************************** */
+/**
+ * @brief configure ADC module
+ */
 void adc_initAdc(void)
 {
 	/* un-gate port clock*/
@@ -86,12 +78,10 @@ void adc_initAdc(void)
 }
 
 
-/* ************************************************** */
-/* Method name: 	   adc_startConversion            */
-/* Method description: init a conversion from D to A  */
-/* Input params:	   n/a 							  */
-/* Output params:	   n/a 							  */
-/* ************************************************** */
+/**
+ * @brief init a conversion from A to D
+ * @param adcChannel ADC channel to convert. Given in bytes.
+ */
 void adc_startConversion(uint8_t adcChannel)
 {
 	//ADC0_SC1A &= (ADC_SC1_ADCH(0b00100) | ADC_SC1_DIFF(0U) | ADC_SC1_AIEN(0U));
@@ -105,24 +95,22 @@ void adc_startConversion(uint8_t adcChannel)
 	*/
 }
 
-/* ************************************************** */
-/* Method name: 	   adc_isAdcDone                  */
-/* Method description: check if conversion is done    */
-/* Input params:	   n/a 							  */
-/* Outpu params:	   int= 1 if complete, 0 otherwise*/
-/* ************************************************** */
+
+/**
+ * @brief check if conversion is done
+ * @return 1 if complete, 0 otherwise
+ */
 int adc_isAdcDone(void)
 {
 	return ADC0_SC1A_COCO; // Returns 1 if conversion is complete, 0 otherwise
 
 }
 
-/* ************************************************** */
-/* Method name: 	   adc_getValue                   */
-/* Method description: retrieve converted value       */
-/* Input params:	   n/a 							  */
-/* Output params:	   int = Converted value          */
-/* ************************************************** */
+
+/**
+ * @brief retrieve converted value
+ * @return Converted value
+ */
 int adc_getValue(void)
 {
 	return ADC0_RA; // return the register value that keeps the result of conversion

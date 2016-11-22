@@ -1,25 +1,19 @@
-/* ***************************************************************** */
-/* File name:        util.c                                          */
-/* File description: This file has a couple of useful functions to   */
-/*                   make programming more productive                */
-/*                                                                   */
-/*                   Remarks: The soft delays consider               */
-/*                   core clock @ 40MHz                              */
-/*                   bus clock @ 20MHz                               */
-/*                                                                   */
-/* Author name:      dloubach                                        */
-/* Creation date:    09jan2015                                       */
-/* Revision date:    26out2015                                       */
-/* ***************************************************************** */
+/**
+ * @file util.c
+ * @author dloubach
+ * @author Guilherme Kairalla Kolotelo
+ * @author Bruno de Souza Ferreira
+ * @version 1.1
+ * @date 09 Jan 2015
+ * @date 27 Sep 2016
+ * @brief File containing the methods for software delays.
+ */
 
 #include "util.h"
 
-/* ************************************************ */
-/* Method name:        util_genDelay180us           */
-/* Method description: generates ~ 180 micro sec    */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/**
+ * @brief generates ~ 180 micro sec
+ */
 void util_genDelay180us(void)
 {
     char i;
@@ -45,12 +39,9 @@ void util_genDelay180us(void)
 
 
 
-/* ************************************************ */
-/* Method name:        util_genDelay500us           */
-/* Method description: generates ~   500 micro sec  */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/**
+ * @brief generates ~ 500 micro sec
+ */
 void util_genDelay500us(void)
 {
     char i;
@@ -73,12 +64,9 @@ void util_genDelay500us(void)
 
 
 
-/* ************************************************ */
-/* Method name:        util_genDelay1ms             */
-/* Method description: generates ~   1 mili sec     */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/**
+ * @brief generates ~ 1 milli sec
+ */
 void util_genDelay1ms(void)
 {
     util_genDelay500us();
@@ -86,12 +74,9 @@ void util_genDelay1ms(void)
 }
 
 
-/* ************************************************ */
-/* Method name:        util_genDelay10ms            */
-/* Method description: generates ~   10 mili sec    */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/**
+ * @brief generates ~ 10 milli sec
+ */
 void util_genDelay10ms(void)
 {
     util_genDelay1ms();
@@ -107,12 +92,9 @@ void util_genDelay10ms(void)
 }
 
 
-/* ************************************************ */
-/* Method name:        util_genDelay100ms           */
-/* Method description: generates ~   100 mili sec   */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/**
+ * @brief generates ~ 100 milli sec
+ */
 void util_genDelay100ms(void)
 {
     util_genDelay10ms();
