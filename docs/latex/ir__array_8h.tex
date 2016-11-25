@@ -9,7 +9,8 @@ File containing the definition of methods for interacting with an I\-R array .
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}{ir\-\_\-array\-\_\-init\-Array} ()
+\hypertarget{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}{void \hyperlink{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}{ir\-\_\-array\-\_\-init\-Array} ()}\label{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}
+
 \begin{DoxyCompactList}\small\item\em Initializes I\-R Array. \end{DoxyCompactList}\item 
 void \hyperlink{ir__array_8h_a7e0a1885be09822b842977aa4a43eea7}{ir\-\_\-array\-\_\-led\-Single\-On} (uint8\-\_\-t ui\-Led\-Instance)
 \begin{DoxyCompactList}\small\item\em Turns on a single L\-E\-D. \end{DoxyCompactList}\item 
@@ -145,29 +146,7 @@ Get position of trought or occurence of command bar.
 \begin{DoxyReturn}{Returns}
 \mbox{[}description\mbox{]} 
 \end{DoxyReturn}
-\hypertarget{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}{\index{ir\-\_\-array.\-h@{ir\-\_\-array.\-h}!ir\-\_\-array\-\_\-init\-Array@{ir\-\_\-array\-\_\-init\-Array}}
-\index{ir\-\_\-array\-\_\-init\-Array@{ir\-\_\-array\-\_\-init\-Array}!ir_array.h@{ir\-\_\-array.\-h}}
-\subsubsection[{ir\-\_\-array\-\_\-init\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-init\-Array (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{ir__array_8h_a4fd8266adc502e4318a8a585d6fd139a}
-
-
-Initializes I\-R Array. 
-
-Initializes I\-R Array.
-
-Catmull-\/\-Rom \begin{DoxyVerb}points: x:   0     1     2     3     4     5        (array sensor position)
-           y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]   (normalized sensor reading)
-
-Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
-with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
-points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
-x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.\end{DoxyVerb}
-
-
-Initializes I\-R Array. \hypertarget{ir__array_8h_a3c0999e095416168045f30914008c70c}{\index{ir\-\_\-array.\-h@{ir\-\_\-array.\-h}!ir\-\_\-array\-\_\-interpolate@{ir\-\_\-array\-\_\-interpolate}}
+\hypertarget{ir__array_8h_a3c0999e095416168045f30914008c70c}{\index{ir\-\_\-array.\-h@{ir\-\_\-array.\-h}!ir\-\_\-array\-\_\-interpolate@{ir\-\_\-array\-\_\-interpolate}}
 \index{ir\-\_\-array\-\_\-interpolate@{ir\-\_\-array\-\_\-interpolate}!ir_array.h@{ir\-\_\-array.\-h}}
 \subsubsection[{ir\-\_\-array\-\_\-interpolate}]{\setlength{\rightskip}{0pt plus 5cm}void ir\-\_\-array\-\_\-interpolate (
 \begin{DoxyParamCaption}

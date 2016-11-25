@@ -266,28 +266,6 @@ Bruno de Souza Ferreira </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Angular velocity of the encoder in pps.</dd></dl>
-<p>Returns the angular velocity of the encoder in pulses per second.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Angular position of the encoder in degrees. Returns the angular position of the encoder in radians.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Angular position of the encoder in radians. Returns the angular velocity of the encoder in pulses per second.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>Angular velocity of the encoder in pps. </dd></dl>
 
 </div>
@@ -360,6 +338,13 @@ Bruno de Souza Ferreira </dd></dl>
 <p>Initializes the encoder for an incremental encoder.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Channel O IRQ handler.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
@@ -410,6 +395,13 @@ Bruno de Souza Ferreira </dd></dl>
   <table class="params">
     <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. Disables the interrupt on channel O.</td></tr>
     <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. Takes a measurement of speed, direction and position.</td></tr>
+    <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Enables the interrupt on Channel O.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">encoderInstance</td><td><a class="el" href="structencoder__instance__t.html" title="driver_instance_t Struct containing specific data for a motor driver instance. ">encoder_instance_t</a> struct. </td></tr>
   </table>
   </dd>
@@ -420,7 +412,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 25 2016 01:31:10 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 25 2016 17:09:47 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>File containing the methods for interacting with an IR array .  
+<p>Interpolation algorithm.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;MKL25Z4.h&gt;</code><br/>
 <code>#include &quot;fsl_clock_manager.h&quot;</code><br/>
@@ -104,8 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4fd8266adc502e4318a8a585d6fd139a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8c.html#a4fd8266adc502e4318a8a585d6fd139a">ir_array_initArray</a> ()</td></tr>
-<tr class="memdesc:a4fd8266adc502e4318a8a585d6fd139a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation algorithm.  <a href="#a4fd8266adc502e4318a8a585d6fd139a">More...</a><br/></td></tr>
+<tr class="memitem:a4fd8266adc502e4318a8a585d6fd139a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fd8266adc502e4318a8a585d6fd139a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8c.html#a4fd8266adc502e4318a8a585d6fd139a">ir_array_initArray</a> ()</td></tr>
+<tr class="memdesc:a4fd8266adc502e4318a8a585d6fd139a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes IR Array. <br/></td></tr>
 <tr class="separator:a4fd8266adc502e4318a8a585d6fd139a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e0a1885be09822b842977aa4a43eea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__array_8c.html#a7e0a1885be09822b842977aa4a43eea7">ir_array_ledSingleOn</a> (uint8_t uiLedInstance)</td></tr>
 <tr class="memdesc:a7e0a1885be09822b842977aa4a43eea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on a single LED.  <a href="#a7e0a1885be09822b842977aa4a43eea7">More...</a><br/></td></tr>
@@ -147,15 +148,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir__
 <tr class="separator:add844dbc6589a57e1b4a92a4cdc1948f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>File containing the methods for interacting with an IR array . </p>
+<div class="textblock"><p>Interpolation algorithm. </p>
 <dl class="section author"><dt>Author</dt><dd>Guilherme Kairalla Kolotelo </dd>
 <dd>
 Bruno de Souza Ferreira </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27 Jun 2016 </dd>
 <dd>
-07 Oct 2016 </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+07 Oct 2016</dd></dl>
+<p>Catmull-Rom </p>
+<pre class="fragment">points: x:   0     1     2     3     4     5        (array sensor position)
+           y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]   (normalized sensor reading)
+
+Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
+with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
+points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
+x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.</pre></div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a746f190da520172c3eeedabb130f8aec"></a>
 <div class="memitem">
 <div class="memproto">
@@ -261,32 +269,6 @@ Bruno de Souza Ferreira </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[description] </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a4fd8266adc502e4318a8a585d6fd139a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ir_array_initArray </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Interpolation algorithm. </p>
-<p>Initializes IR Array.</p>
-<p>Catmull-Rom </p>
-<pre class="fragment">points: x:   0     1     2     3     4     5        (array sensor position)
-           y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]   (normalized sensor reading)
-
-Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
-with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
-points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
-x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.</pre><p>Initializes IR Array. </p>
 
 </div>
 </div>
@@ -561,7 +543,7 @@ x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.</pre><p>Initiali
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 25 2016 01:31:10 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 25 2016 17:09:47 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
