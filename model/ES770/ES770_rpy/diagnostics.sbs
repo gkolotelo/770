@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 	- _id = GUID ca62b407-67ef-4809-8221-ea15f57f183e;
 	- _myState = 8192;
 	- _name = "diagnostics";
-	- _objectCreation = "3833516190201618284081138";
-	- _umlDependencyID = "2823";
+	- _objectCreation = "19325572541201610302651119";
+	- _umlDependencyID = "2861";
 	- Dependencies = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -20,8 +20,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 26751876-e6a9-476f-b862-e386087f9a42;
 			- _myState = 2048;
 			- _name = "System";
-			- _objectCreation = "3833518190201618284061138";
-			- _umlDependencyID = "2292";
+			- _objectCreation = "19325592541201610302631119";
+			- _umlDependencyID = "2330";
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
@@ -53,7 +53,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 		- _id = GUID b02b1317-9571-48bd-9c36-d8cffd11556b;
 	}
 	- _lastID = 3;
-	- weakCGTime = 11.19.2016::19:33:23;
+	- weakCGTime = 11.25.2016::12:38:22;
 	- strongCGTime = 9.15.2016::13:39:19;
 	- _defaultComposite = GUID 0821d079-1927-42c9-a60d-273d302626b8;
 	- _eventsBaseID = -1;
@@ -64,9 +64,9 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 0821d079-1927-42c9-a60d-273d302626b8;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _objectCreation = "3833520190201618284041138";
-			- _umlDependencyID = "2449";
-			- weakCGTime = 11.13.2016::1:9:18;
+			- _objectCreation = "19325612541201610302611119";
+			- _umlDependencyID = "2487";
+			- weakCGTime = 11.19.2016::19:33:23;
 			- strongCGTime = 9.15.2016::13:39:19;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -78,8 +78,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 			- _id = GUID 072cf781-c2cc-4c85-9114-2ec4d3771de5;
 			- _myState = 8192;
 			- _name = "diagnostics";
-			- _objectCreation = "3833522190201618284021138";
-			- _umlDependencyID = "2814";
+			- _objectCreation = "19325632541201610302591119";
+			- _umlDependencyID = "2861";
 			- Dependencies = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -87,8 +87,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 0c48226c-edad-4276-8f04-f8a23c2b2f0a;
 					- _myState = 2048;
 					- _name = "target_pins";
-					- _objectCreation = "3833524190201618284001138";
-					- _umlDependencyID = "2822";
+					- _objectCreation = "19325652541201610302571119";
+					- _umlDependencyID = "2869";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -114,8 +114,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 02065f42-5d63-4248-9ac9-25184edcc7fb;
 					- _myState = 2048;
 					- _name = "fsl_gpio_hal";
-					- _objectCreation = "3833526190201618283981138";
-					- _umlDependencyID = "2911";
+					- _objectCreation = "19325672541201610302551119";
+					- _umlDependencyID = "2940";
 					- Stereotypes = { IRPYRawContainer 
 						- size = 1;
 						- value = 
@@ -159,7 +159,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 				- _id = GUID c5cba17d-6b70-4c4b-b55a-d0f042dabcbd;
 			}
 			- _lastID = 8;
-			- weakCGTime = 11.19.2016::19:33:54;
+			- weakCGTime = 11.25.2016::12:40:19;
 			- strongCGTime = 9.15.2016::13:23:2;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -168,8 +168,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 40b1e726-10e7-4513-9106-e9cf53a27297;
 					- _myState = 8192;
 					- _name = "runDiagnostics";
-					- _objectCreation = "3833528190201618283961138";
-					- _umlDependencyID = "3141";
+					- _objectCreation = "19325692541201610302531119";
+					- _umlDependencyID = "3170";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -193,8 +193,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 1ec7aef0-1739-41d2-b2de-429093805fa5;
 					- _myState = 8192;
 					- _name = "btestIrArray";
-					- _objectCreation = "3833530190201618283941138";
-					- _umlDependencyID = "2891";
+					- _objectCreation = "19325712541201610302511119";
+					- _umlDependencyID = "2920";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -218,8 +218,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID a60da37a-dd6e-43ce-8e1e-b5d773140566;
 					- _myState = 8192;
 					- _name = "btestMotors";
-					- _objectCreation = "3833532190201618283921138";
-					- _umlDependencyID = "2837";
+					- _objectCreation = "19325732541201610302491119";
+					- _umlDependencyID = "2875";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -243,8 +243,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 882aff1a-e368-4ce7-9619-dd70121b8491;
 					- _myState = 8192;
 					- _name = "btestEncoders";
-					- _objectCreation = "3833534190201618283901138";
-					- _umlDependencyID = "3012";
+					- _objectCreation = "19325752541201610302471119";
+					- _umlDependencyID = "3050";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -268,8 +268,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID 96d779c6-ebb9-4587-ba9e-46412a3877d5;
 					- _myState = 8192;
 					- _name = "btestVSense";
-					- _objectCreation = "3833536190201618283881138";
-					- _umlDependencyID = "2798";
+					- _objectCreation = "19325772541201610302451119";
+					- _umlDependencyID = "2827";
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -298,10 +298,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 					- _id = GUID c1954051-ed31-4a61-aaf7-4316de8dfcc1;
 					- _myState = 10240;
 					- _name = "statechart_3";
-					- _objectCreation = "3833538190201618283861138";
-					- _umlDependencyID = "2877";
+					- _objectCreation = "19325792541201610302431119";
+					- _umlDependencyID = "2906";
 					- _lastID = 17;
-					- weakCGTime = 11.13.2016::1:9:18;
+					- weakCGTime = 11.25.2016::12:40:19;
 					- strongCGTime = 9.15.2016::13:23:2;
 					- _multiplicity = "";
 					- _itsStateChart = { IHandle 
@@ -316,18 +316,18 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID aff25626-17f6-469c-8e07-50bf4bb6c7e0;
 							- _myState = 2048;
 							- _name = "defaulttransition_1";
-							- _objectCreation = "3833540190201618283841138";
-							- _umlDependencyID = "3631";
+							- _objectCreation = "19325812541201610302411119";
+							- _umlDependencyID = "3660";
 							- _itsLabel = { ILabel 
 								- _id = GUID d7ef1c41-fc5a-4ae5-85fc-9d9917fe6491;
-								- _objectCreation = "3833542190201618283821138";
-								- _umlDependencyID = "1647";
+								- _objectCreation = "19325832541201610302391119";
+								- _umlDependencyID = "1685";
 								- _itsTrigger = NULL;
 								- _itsGuard = NULL;
 								- _itsAction = { IAction 
 									- _id = GUID 36f3c102-2bdc-4600-b31d-e599c4fb775a;
-									- _objectCreation = "3833544190201618283801138";
-									- _umlDependencyID = "1647";
+									- _objectCreation = "19325852541201610302371119";
+									- _umlDependencyID = "1685";
 									- _body = "runDiagnostics()";
 								}
 							}
@@ -340,17 +340,17 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID 08f63fe8-e79e-4f94-8ce3-ab1f558bdfca;
 							- _myState = 2048;
 							- _name = "transition_11";
-							- _objectCreation = "3833546190201618283781138";
-							- _umlDependencyID = "2948";
+							- _objectCreation = "19325872541201610302351119";
+							- _umlDependencyID = "2977";
 							- _itsLabel = { ILabel 
 								- _id = GUID 45de7524-d2bb-4bd2-8bfd-5a886005fa60;
-								- _objectCreation = "3833548190201618283761138";
-								- _umlDependencyID = "1656";
+								- _objectCreation = "19325892541201610302331119";
+								- _umlDependencyID = "1685";
 								- _itsTrigger = NULL;
 								- _itsGuard = { IGuard 
 									- _id = GUID 11943696-d866-4e01-b35f-3ee98939496f;
-									- _objectCreation = "3833550190201618283741138";
-									- _umlDependencyID = "1647";
+									- _objectCreation = "19325912541201610302311119";
+									- _umlDependencyID = "1676";
 									- _body = "NOK";
 								}
 								- _itsAction = NULL;
@@ -363,35 +363,35 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID bbd1faaf-d09d-42cf-b1e9-58433bb19cde;
 							- _myState = 2048;
 							- _name = "transition_12";
-							- _objectCreation = "3833552190201618283721138";
-							- _umlDependencyID = "2940";
+							- _objectCreation = "19325932541201610302291119";
+							- _umlDependencyID = "2978";
 							- _itsLabel = { ILabel 
 								- _id = GUID c89ffda4-229c-4964-bb38-c5a5b5867f21;
-								- _objectCreation = "3833554190201618283701138";
-								- _umlDependencyID = "1647";
+								- _objectCreation = "19325952541201610302271119";
+								- _umlDependencyID = "1685";
 								- _itsTrigger = NULL;
 								- _itsGuard = { IGuard 
 									- _id = GUID f1537de8-fdcd-46f3-a153-3995c2bffc96;
-									- _objectCreation = "3833556190201618283681138";
-									- _umlDependencyID = "1656";
+									- _objectCreation = "19325972541201610302251119";
+									- _umlDependencyID = "1685";
 									- _body = "OK";
 								}
 								- _itsAction = NULL;
 							}
 							- _itsTarget = GUID dd7fd9d6-ad58-4c1a-a96b-6789764d6030;
 							- _staticReaction = 0;
-							- _itsSource = GUID a2f55c43-01d9-4391-9e09-b5e0229b8cbf;
+							- _itsSource = GUID cb2ee64e-25b9-4d69-94e7-3a1a985b8271;
 						}
 						{ ITransition 
 							- _id = GUID 40a304ba-f390-4fad-98c6-db9480f2db3a;
 							- _myState = 2048;
 							- _name = "transition_13";
-							- _objectCreation = "3833558190201618283661138";
-							- _umlDependencyID = "2950";
+							- _objectCreation = "19325992541201610302231119";
+							- _umlDependencyID = "2979";
 							- _itsLabel = { ILabel 
 								- _id = GUID 64467a62-baf8-45ac-90da-9c6ef952a86d;
-								- _objectCreation = "3833560190201618283641138";
-								- _umlDependencyID = "1647";
+								- _objectCreation = "19326012541201610302211119";
+								- _umlDependencyID = "1667";
 								- _itsTrigger = NULL;
 								- _itsGuard = NULL;
 								- _itsAction = NULL;
@@ -404,12 +404,12 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID 8a0889dd-9068-4a65-bdae-152a60c0822f;
 							- _myState = 2048;
 							- _name = "transition_14";
-							- _objectCreation = "3833562190201618283621138";
-							- _umlDependencyID = "2942";
+							- _objectCreation = "19326032541201610302191119";
+							- _umlDependencyID = "2971";
 							- _itsLabel = { ILabel 
 								- _id = GUID 3846c90a-e21d-4992-851d-3782693117de;
-								- _objectCreation = "3833564190201618283601138";
-								- _umlDependencyID = "1647";
+								- _objectCreation = "19326052541201610302171119";
+								- _umlDependencyID = "1676";
 								- _itsTrigger = NULL;
 								- _itsGuard = NULL;
 								- _itsAction = NULL;
@@ -422,12 +422,12 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID cd9c6dd2-9f1d-45cb-a551-d7acac696737;
 							- _myState = 2048;
 							- _name = "transition_15";
-							- _objectCreation = "3833566190201618283581138";
-							- _umlDependencyID = "2952";
+							- _objectCreation = "19326072541201610302151119";
+							- _umlDependencyID = "2972";
 							- _itsLabel = { ILabel 
 								- _id = GUID abd749d7-4295-4aba-b2e2-f53856927632;
-								- _objectCreation = "3833568190201618283561138";
-								- _umlDependencyID = "1656";
+								- _objectCreation = "19326092541201610302131119";
+								- _umlDependencyID = "1676";
 								- _itsTrigger = NULL;
 								- _itsGuard = NULL;
 								- _itsAction = NULL;
@@ -440,12 +440,12 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID 30e9908a-b4d7-42da-8af2-4420a54db440;
 							- _myState = 2048;
 							- _name = "transition_16";
-							- _objectCreation = "3833570190201618283541138";
-							- _umlDependencyID = "2944";
+							- _objectCreation = "19326112541201610302111119";
+							- _umlDependencyID = "2964";
 							- _itsLabel = { ILabel 
 								- _id = GUID 0a373632-6a97-4e92-a4db-4d66d852e2ac;
-								- _objectCreation = "3833572190201618283521138";
-								- _umlDependencyID = "1647";
+								- _objectCreation = "19326132541201610302091119";
+								- _umlDependencyID = "1676";
 								- _itsTrigger = NULL;
 								- _itsGuard = NULL;
 								- _itsAction = NULL;
@@ -460,24 +460,39 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 						- value = 
 						{ IState 
 							- _id = GUID 75c73d1a-ab14-4ea4-a041-34c8942cf64f;
-							- _objectCreation = "3833574190201618283501138";
-							- _umlDependencyID = "1647";
+							- _objectCreation = "19326152541201610302071119";
+							- _umlDependencyID = "1676";
+							- Annotations = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IComment 
+									- _id = GUID 86e59fde-e04a-457c-8843-3bda1cb0e960;
+									- _myState = 2048;
+									- _name = "comment_0";
+									- _objectCreation = "19326172541201610302051119";
+									- _umlDependencyID = "2574";
+									- _description = { IDescription 
+										- _text = "For each subsystem execute testing routine and print results to serial.";
+									}
+									- _body = "";
+								}
+							}
 							- _parent = ;
 							- _defaultTrans = GUID aff25626-17f6-469c-8e07-50bf4bb6c7e0;
 						}
 						{ IState 
 							- _id = GUID 10b1d6bf-626a-4d7b-9180-62216c17eb12;
 							- _name = "runDiagnostics";
-							- _objectCreation = "3833576190201618283481138";
-							- _umlDependencyID = "3141";
+							- _objectCreation = "19326192541201610302031119";
+							- _umlDependencyID = "3161";
 							- _parent = GUID 75c73d1a-ab14-4ea4-a041-34c8942cf64f;
 							- _defaultTrans = ;
 						}
 						{ IState 
 							- _id = GUID 3c36f8c0-fb17-4d81-b017-733d4b1deb97;
 							- _name = "testIrSensors";
-							- _objectCreation = "3833578190201618283461138";
-							- _umlDependencyID = "3040";
+							- _objectCreation = "19326212541201610302011119";
+							- _umlDependencyID = "3051";
 							- _description = { IDescription 
 								- _text = "Tests IR sensors and transmits log";
 							}
@@ -487,8 +502,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 						{ IState 
 							- _id = GUID b987f8c5-fb83-4063-87c4-4c2d47657def;
 							- _name = "testMotors";
-							- _objectCreation = "3833580190201618283441138";
-							- _umlDependencyID = "2739";
+							- _objectCreation = "19326232541201610301991119";
+							- _umlDependencyID = "2777";
 							- _description = { IDescription 
 								- _text = "Tests motors and transmits log";
 							}
@@ -498,8 +513,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 						{ IState 
 							- _id = GUID cb2ee64e-25b9-4d69-94e7-3a1a985b8271;
 							- _name = "testEncoders";
-							- _objectCreation = "3833582190201618283421138";
-							- _umlDependencyID = "2914";
+							- _objectCreation = "19326252541201610301971119";
+							- _umlDependencyID = "2952";
 							- _description = { IDescription 
 								- _text = "Tests encoders and transmits log";
 							}
@@ -509,10 +524,10 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 						{ IState 
 							- _id = GUID a2f55c43-01d9-4391-9e09-b5e0229b8cbf;
 							- _name = "halt";
-							- _objectCreation = "3833584190201618283401138";
-							- _umlDependencyID = "2072";
+							- _objectCreation = "19326272541201610301951119";
+							- _umlDependencyID = "2110";
 							- _description = { IDescription 
-								- _text = "return true if errors found";
+								- _text = "return true if errors found.";
 							}
 							- _parent = GUID 75c73d1a-ab14-4ea4-a041-34c8942cf64f;
 							- _defaultTrans = ;
@@ -521,8 +536,8 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							- _id = GUID dd7fd9d6-ad58-4c1a-a96b-6789764d6030;
 							- _myState = 2048;
 							- _name = "terminationstate_10";
-							- _objectCreation = "3833586190201618283381138";
-							- _umlDependencyID = "3587";
+							- _objectCreation = "19326292541201610301931119";
+							- _umlDependencyID = "3616";
 							- _parent = GUID 75c73d1a-ab14-4ea4-a041-34c8942cf64f;
 							- _stateType = LocalTermination;
 							- _defaultTrans = ;
@@ -530,16 +545,16 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 						{ IState 
 							- _id = GUID 6b181137-a8f9-49db-9b67-350ab6fa1ec3;
 							- _name = "testVsense";
-							- _objectCreation = "3833588190201618283361138";
-							- _umlDependencyID = "2732";
+							- _objectCreation = "19326312541201610301911119";
+							- _umlDependencyID = "2752";
 							- _description = { IDescription 
-								- _text = "Tests Vsense values and transmits log";
+								- _text = "Tests Vsense sensor and transmits log";
 							}
 							- _parent = GUID 75c73d1a-ab14-4ea4-a041-34c8942cf64f;
 							- _defaultTrans = ;
 						}
 					}
-					- _version = 11.12.2016::20:9:20;
+					- _version = 11.25.2016::10:41:16;
 					- _baseVersion = 1.2.1990::0:0:0;
 					- _diagram = { IStateChartDiagram 
 						- _id = GUID be58c322-df43-44e8-b753-353b5355f0b7;
@@ -551,8 +566,50 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								{ IPropertySubject 
 									- _Name = "Format";
 									- Metaclasses = { IRPYRawContainer 
-										- size = 4;
+										- size = 5;
 										- value = 
+										{ IPropertyMetaclass 
+											- _Name = "Comment";
+											- Properties = { IRPYRawContainer 
+												- size = 7;
+												- value = 
+												{ IProperty 
+													- _Name = "DefaultSize";
+													- _Value = "0,0,84,96";
+													- _Type = String;
+												}
+												{ IProperty 
+													- _Name = "Fill.FillColor";
+													- _Value = "255,255,207";
+													- _Type = Color;
+												}
+												{ IProperty 
+													- _Name = "Font.Font";
+													- _Value = "Arial";
+													- _Type = String;
+												}
+												{ IProperty 
+													- _Name = "Font.FontColor";
+													- _Value = "0,0,0";
+													- _Type = Color;
+												}
+												{ IProperty 
+													- _Name = "Font.Size";
+													- _Value = "10";
+													- _Type = Int;
+												}
+												{ IProperty 
+													- _Name = "Line.LineColor";
+													- _Value = "225,225,0";
+													- _Type = Color;
+												}
+												{ IProperty 
+													- _Name = "Line.LineWidth";
+													- _Value = "1";
+													- _Type = Int;
+												}
+											}
+										}
 										{ IPropertyMetaclass 
 											- _Name = "DanglingTransition";
 											- Properties = { IRPYRawContainer 
@@ -710,9 +767,9 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							}
 						}
 						- _name = "statechartdiagram_0";
-						- _objectCreation = "3833590190201618283341138";
-						- _umlDependencyID = "3590";
-						- _lastModifiedTime = "11.13.2016::1:9:20";
+						- _objectCreation = "19326332541201610301891119";
+						- _umlDependencyID = "3628";
+						- _lastModifiedTime = "11.25.2016::12:41:16";
 						- _graphicChart = { CGIStateChart 
 							- _id = GUID 24e95c8a-2a1b-4767-a7e2-eb388b60579c;
 							- m_type = 0;
@@ -736,7 +793,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 							}
 							- m_drawBehavior = 4096;
 							- m_bIsPreferencesInitialized = 1;
-							- elementList = 18;
+							- elementList = 19;
 							{ CGIState 
 								- _id = GUID 517c4978-3fbb-45d8-b932-c2e70c72ee45;
 								- m_type = 5;
@@ -1249,7 +1306,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								- m_polygon = 4 0 0  0 1060  1096 1060  1096 0  ;
 								- m_nNameFormat = 0;
 								- m_nIsNameFormat = 0;
-								- frameset = "<frameset rows=75%,25%>
+								- frameset = "<frameset rows=81%,19%>
 <frame name=DescriptionCompartment>
 <frame name=StructureCompartment>";
 								- nAndLineCount = 0;
@@ -1455,15 +1512,15 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 									- m_nIdent = 0;
 									- m_bImplicitSetRectPoints = 0;
 									- m_transform = 1 0 0 1 498 657 ;
-									- m_nHorizontalSpacing = -3;
-									- m_nVerticalSpacing = 10;
+									- m_nHorizontalSpacing = -1;
+									- m_nVerticalSpacing = 17;
 									- m_nOrientationCtrlPt = 0;
 								}
 								- m_anglePoint1 = 0 0 ;
 								- m_anglePoint2 = 0 0 ;
 								- m_line_style = 1;
-								- m_SourcePort = 554 819 ;
-								- m_TargetPort = 548 0 ;
+								- m_SourcePort = 554 913 ;
+								- m_TargetPort = 548 88 ;
 								- m_pInheritsFrom = { IHandle 
 									- _m2Class = "";
 								}
@@ -1518,7 +1575,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								}
 								- m_drawBehavior = 0;
 								- m_bIsPreferencesInitialized = 1;
-								- m_pSource = GUID ce6cc95f-b91f-4b2e-af33-7bd727285d4d;
+								- m_pSource = GUID 1468a2a1-d4da-445c-8e6d-2187b5a16e53;
 								- m_sourceType = 'F';
 								- m_pTarget = GUID 0dd4ccff-e2e8-4a80-84d8-fa390b092b04;
 								- m_targetType = 'T';
@@ -1539,7 +1596,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								- m_anglePoint1 = 0 0 ;
 								- m_anglePoint2 = 0 0 ;
 								- m_line_style = 1;
-								- m_SourcePort = 1066 505 ;
+								- m_SourcePort = 754 1060 ;
 								- m_TargetPort = 17 11 ;
 								- m_pInheritsFrom = { IHandle 
 									- _m2Class = "";
@@ -1580,7 +1637,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								}
 								- m_pParent = GUID 517c4978-3fbb-45d8-b932-c2e70c72ee45;
 								- m_name = { CGIText 
-									- m_str = "If all ok, returns execution to caller.";
+									- m_str = "If all is ok, returns execution to caller. User can proceed with normal operation.";
 									- m_style = "Arial" 10 0 0 0 1 ;
 									- m_color = { IColor 
 										- m_fgColor = 0;
@@ -1593,7 +1650,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 									- m_nOrientationCtrlPt = 5;
 								}
 								- m_drawBehavior = 4096;
-								- m_transform = 0.110701 0 0 0.0456204 636 769.863 ;
+								- m_transform = 0.110701 0 0 0.0748175 636 769.775 ;
 								- m_bIsPreferencesInitialized = 1;
 								- m_AdditionalLabel = { CGIText 
 									- m_str = "";
@@ -1647,7 +1704,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								}
 								- m_pParent = GUID 517c4978-3fbb-45d8-b932-c2e70c72ee45;
 								- m_name = { CGIText 
-									- m_str = "If any subsystem not ok, will halt execution on return.";
+									- m_str = "If any subsystem not ok, will set Red LED and halt execution upon return.";
 									- m_style = "Arial" 10 0 0 0 1 ;
 									- m_color = { IColor 
 										- m_fgColor = 0;
@@ -1660,7 +1717,7 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 									- m_nOrientationCtrlPt = 5;
 								}
 								- m_drawBehavior = 4096;
-								- m_transform = 0.121771 0 0 0.0456204 408 769.863 ;
+								- m_transform = 0.132841 0 0 0.0766423 396 767.77 ;
 								- m_bIsPreferencesInitialized = 1;
 								- m_AdditionalLabel = { CGIText 
 									- m_str = "";
@@ -2083,6 +2140,74 @@ I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
 								}
 								- m_nInheritanceMask = 0;
 								- m_bShowName = 1;
+							}
+							{ CGIAnnotation 
+								- _id = GUID e503820e-a7ed-463d-abc0-f36f20dc0016;
+								- _properties = { IPropertyContainer 
+									- Subjects = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IPropertySubject 
+											- _Name = "General";
+											- Metaclasses = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ IPropertyMetaclass 
+													- _Name = "Graphics";
+													- Properties = { IRPYRawContainer 
+														- size = 1;
+														- value = 
+														{ IProperty 
+															- _Name = "FitBoxToItsTextuals";
+															- _Value = "False";
+															- _Type = Bool;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								- m_type = 173;
+								- m_pModelObject = { IHandle 
+									- _m2Class = "IComment";
+									- _id = GUID 86e59fde-e04a-457c-8843-3bda1cb0e960;
+								}
+								- m_pParent = GUID 517c4978-3fbb-45d8-b932-c2e70c72ee45;
+								- m_name = { CGIText 
+									- m_str = "";
+									- m_style = "Arial" 10 0 0 0 1 ;
+									- m_color = { IColor 
+										- m_fgColor = 0;
+										- m_bgColor = 0;
+										- m_bgFlag = 0;
+									}
+									- m_position = 1 0 0  ;
+									- m_nIdent = 0;
+									- m_bImplicitSetRectPoints = 0;
+									- m_nOrientationCtrlPt = 5;
+								}
+								- m_drawBehavior = 2056;
+								- m_transform = 0.188192 0 0 0.0989011 684 359.703 ;
+								- m_bIsPreferencesInitialized = 1;
+								- m_AdditionalLabel = { CGIText 
+									- m_str = "";
+									- m_style = "Arial" 10 0 0 0 1 ;
+									- m_color = { IColor 
+										- m_fgColor = 0;
+										- m_bgColor = 0;
+										- m_bgFlag = 0;
+									}
+									- m_position = 1 0 0  ;
+									- m_nIdent = 0;
+									- m_bImplicitSetRectPoints = 0;
+									- m_nOrientationCtrlPt = 1;
+								}
+								- m_polygon = 4 0 3  0 1095  1084 1095  1084 3  ;
+								- m_nNameFormat = 0;
+								- m_nIsNameFormat = 0;
+								- _iTempdisplayTextFlag = 2;
+								- m_bIsBoxStyle = 0;
 							}
 							
 							- m_access = 'Z';

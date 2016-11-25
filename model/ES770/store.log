@@ -1,28 +1,35 @@
-11, 19, 2016 (18:49:23): Starting Pre-Save actions
+11, 25, 2016 (10:46:39): Starting Pre-Save actions
 
-11, 19, 2016 (18:49:23): Starting Dialogs Check/Save
-11, 19, 2016 (18:49:23): Finished Dialogs Check/Save
-11, 19, 2016 (18:49:23): Starting Controlled Files Resolution
-11, 19, 2016 (18:49:23): Finished Controlled Files Resolution
-11, 19, 2016 (18:49:23): Finished Pre-Save actions
+11, 25, 2016 (10:46:39): Starting Dialogs Check/Save
+11, 25, 2016 (10:46:39): Finished Dialogs Check/Save
+11, 25, 2016 (10:46:39): Starting Controlled Files Resolution
+11, 25, 2016 (10:46:39): Finished Controlled Files Resolution
+11, 25, 2016 (10:46:39): Finished Pre-Save actions
 
-11, 19, 2016 (18:49:23): Creating C:\Users\Bruno Souza\Documents\model\ES770\ES770.rpy
-11, 19, 2016 (18:49:23): 
-Started writing C:\Users\Bruno Souza\Documents\model\ES770\ES770.rpy on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): Creating D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy
+11, 25, 2016 (10:46:39): 
+Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): version 8.5.2
-11, 19, 2016 (18:49:23): 
-Started writing C:\Users\Bruno Souza\Documents\model\ES770\ES770_rpy\filesTable.dat on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): version 8.5.2
+11, 25, 2016 (10:46:39): 
+Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\filesTable.dat on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): Finished writing C:\Users\Bruno Souza\Documents\model\ES770\ES770_rpy\filesTable.dat on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\filesTable.dat on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): Creating C:\Users\Bruno Souza\Documents\model\ES770\ES770_rpy\main.sbs
-11, 19, 2016 (18:49:23): 
-Started writing C:\Users\Bruno Souza\Documents\model\ES770\ES770_rpy\main.sbs on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): Creating D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\hal.sbs
+11, 25, 2016 (10:46:39): 
+Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\hal.sbs on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): version 8.5.2
-11, 19, 2016 (18:49:23): Finished writing C:\Users\Bruno Souza\Documents\model\ES770\ES770_rpy\main.sbs on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): version 8.5.2
+11, 25, 2016 (10:46:39): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\hal.sbs on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): Finished writing C:\Users\Bruno Souza\Documents\model\ES770\ES770.rpy on Saturday, November 19, 2016 (18:49:23)
+11, 25, 2016 (10:46:39): Creating D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\vsense.sbs
+11, 25, 2016 (10:46:39): 
+Started writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\vsense.sbs on Friday, November 25, 2016 (10:46:39)
 
-11, 19, 2016 (18:49:23): End Log
+11, 25, 2016 (10:46:39): version 8.5.2
+11, 25, 2016 (10:46:39): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770_rpy\vsense.sbs on Friday, November 25, 2016 (10:46:39)
+
+11, 25, 2016 (10:46:39): Finished writing D:\Users\guilherme\Documents\University\Current Semester\ES770\model\ES770\ES770.rpy on Friday, November 25, 2016 (10:46:39)
+
+11, 25, 2016 (10:46:39): End Log
