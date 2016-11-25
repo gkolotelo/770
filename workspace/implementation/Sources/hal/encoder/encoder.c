@@ -24,21 +24,6 @@
 #include "fsl_clock_manager.h"
 
 
-/*
- * For ENCODER_ACQ_PERIOD_MS = 10ms: 368 pulses @ 2100RPM; 33 pulses @ 3.2RPM
- * for ENCODER_ACQ_PERIOD_MS = 28ms: 1004 pulses@ 2100RPM; 91 pulses @ 3.2RPM
- */
-
-///**
-// * @brief Channel O IRQ handler
-// * 
-// */
-//extern void ENCODER_CHO_IRQ_HANDLER()
-//{
-//    PORT_HAL_ClearPinIntFlag(PORTD, 0);
-//    uiEncoderPosition = 0;
-//}
-
 
 /**
  * @brief Initializes the encoder for an incremental encoder.
@@ -73,13 +58,6 @@ void encoder_initEncoder(encoder_instance_t encoderInstance)
 
     /* Set TPM clock to external for both channels */
     TPM_HAL_SetClockMode(tpmBase, kTpmClockSourceExternalClk);
-
-    /* Set up and enable Channel O interrupt */
-    /*CLOCK_SYS_EnablePortClock(ENCODER_CHO_PORT_INSTANCE);
-    PORT_HAL_SetMuxMode(ENCODER_CHO_PORT_BASE, ENCODER_CHO_PIN_NUMBER, kPortMuxAsGpio);
-    PORT_HAL_SetPinIntMode(ENCODER_CHO_PORT_BASE, ENCODER_CHO_PIN_NUMBER, kPortIntRisingEdge);
-    NVIC_EnableIRQ(ENCODER_CHO_IRQn);*/
-
 
 }
 
@@ -122,28 +100,6 @@ void encoder_resetCounter(encoder_instance_t encoderInstance)
 }
 
 
-///**
-// * @brief Enables the interrupt on Channel O.
-// * 
-// * @param encoderInstance encoder_instance_t struct.
-//*/
-//void encoder_enableChOInterrupt(encoder_instance_t encoderInstance)
-//{
-//    NVIC_EnableIRQ(ENCODER_CHO_IRQn);
-//}
-//
-//
-///**
-// * @brief Disables the interrupt on channel O.
-// * 
-// * @param encoderInstance encoder_instance_t struct.
-// */
-//void encoder_disableChOInterrupt(encoder_instance_t encoderInstance)
-//{
-//    NVIC_DisableIRQ(ENCODER_CHO_IRQn);
-//}
-
-
 /**
  * @brief Takes a measurement of speed, direction and position.
  * 
@@ -160,32 +116,6 @@ void encoder_takeMeasurement(encoder_instance_t *encoderInstance)
 
 
 /* Data retrieval methods */
-
-
-/**
- * @brief Returns the angular position of the encoder in degrees.
- * 
- * @param encoderInstance encoder_instance_t struct.
- * @return Angular position of the encoder in degrees.
- */
-//float encoder_getAngularPositionDegree(encoder_instance_t encoderInstance)
-//{
-//    return 360*((float)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
-//}
-
-
-/**
- * @brief Returns the angular position of the encoder in radians.
- * 
- * @param encoderInstance encoder_instance_t struct.
- * @return Angular position of the encoder in radians.
- */
-//float encoder_getAngularPositionRad(encoder_instance_t encoderInstance)
-//{
-//    return CONST_2PI*((float)uiEncoderPosition/encoderInstance.uiEncoderPulseCount);
-//}
-
-
 /**
  * @brief Returns the angular velocity of the encoder in pulses per second.
  * 

@@ -61,9 +61,9 @@
 
 /* Globals */
 volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
-float sys_voltage = 0;
-float voltage_correction = 0;
-float motor_current_speed = MOTOR_FAST_SPEED;
+float fsys_voltage = 0;
+float fvoltage_correction = 0;
+float fmotor_current_speed = MOTOR_FAST_SPEED;
 
 void main_cyclicExecuteIsr(void)
 {
@@ -251,8 +251,8 @@ int main(void)
 		ir_array_calibrate(uiIrReadings);
 
 		/* Get current voltage for motor operation */
-		sys_voltage = vsense_getV1();
-		voltage_correction = MOTOR_MAX_VOLTAGE/sys_voltage;
+		fsys_voltage = vsense_getV1();
+		fvoltage_correction = MOTOR_MAX_VOLTAGE/fsys_voltage;
 
 		/* Wait 3s for user to position robot on track. Blink Green LED for countdown. */
 		for(int i=0; i<3; i++)
@@ -274,13 +274,13 @@ int main(void)
 		//hmi_initHmi();
 
 		/* Declare local variables */
-		float positionError, leftWheelSpeed, rightWheelSpeed;
-		double positionEffort, leftWheelEffort, rightWheelEffort;
-		bool command_found = false;
-		bool counter_on = false;
-		bool command_stop = false;
-		bool command_slow = false;
-		int counter = 0;
+		float fpositionError, fleftWheelSpeed, frightWheelSpeed;
+		float fpositionEffort, fleftWheelEffort, frightWheelEffort;
+		bool bcommand_found = false;
+		bool bcounter_on = false;
+		bool bcommand_stop = false;
+		bool bcommand_slow = false;
+		int icounter = 0;
 
 
 		while(1)
@@ -291,87 +291,87 @@ int main(void)
 			/* Take measurements */
 			encoder_takeMeasurement(&tencoderL);
 			encoder_takeMeasurement(&tencoderR);
-			positionError = ir_array_getPosition();
+			fpositionError = ir_array_getPosition();
 
 			/* If known command detected proceed */
-			if(-20 != positionError)
+			if(-20 != fpositionError)
 			{
 				PTB_BASE_PTR->PSOR |= 1 << HMI_RED_PIN_NUMBER; 	 // Turn off Red LED, command is valid.
 				PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn off Green LED
 				/* Command bar detected */
-				if(-10 == positionError)
+				if(-10 == fpositionError)
 				{
 					/* Indicate status */
 					PTB_BASE_PTR->PCOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn on Green LED
 					/* set flags */
-					command_found = true;
-					counter_on = true;
+					bcommand_found = true;
+					bcounter_on = true;
 					/* proceed in a straight line */
-					driver_setDriver2(tdriverR, 50, voltage_correction);
-					driver_setDriver2(tdriverL, 50, voltage_correction);
+					driver_setDriver2(tdriverR, 50, fvoltage_correction);
+					driver_setDriver2(tdriverL, 50, fvoltage_correction);
 					/* Avoid jitters */
 					for(int j=0; j<3; j++)util_genDelay100ms();
 				}
 				else
 				{
 					/* Get measured values */
-					leftWheelSpeed = encoder_getAngularVelocity(tencoderL);
-					rightWheelSpeed = encoder_getAngularVelocity(tencoderR);
+					fleftWheelSpeed = encoder_getAngularVelocity(tencoderL);
+					frightWheelSpeed = encoder_getAngularVelocity(tencoderR);
 
 					/* Update track PID Algorithm */
-					positionEffort = controller_PIDUpdate(&tpidP, positionError, 0);
+					fpositionEffort = controller_PIDUpdate(&tpidP, fpositionError, 0);
 
 					/* Update motor PID algorithms */
-					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (motor_current_speed - positionEffort));
-					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (motor_current_speed + positionEffort));
+					fleftWheelEffort = controller_PIDUpdate(&tpidL, fleftWheelSpeed, (fmotor_current_speed - fpositionEffort));
+					frightWheelEffort = controller_PIDUpdate(&tpidR, frightWheelSpeed, (fmotor_current_speed + fpositionEffort));
 
 					/* Avoid spinning in the opposite direction */
-					if(rightWheelEffort < -10)
-						rightWheelEffort = 0;
-					if(leftWheelEffort < -10)
-						leftWheelEffort = 0;
+					if(frightWheelEffort < -10)
+						frightWheelEffort = 0;
+					if(fleftWheelEffort < -10)
+						fleftWheelEffort = 0;
 
 					/* Set Motors */
-					driver_setDriver2(tdriverR, rightWheelEffort, voltage_correction);
-					driver_setDriver2(tdriverL, leftWheelEffort, voltage_correction);
+					driver_setDriver2(tdriverR, frightWheelEffort, fvoltage_correction);
+					driver_setDriver2(tdriverL, fleftWheelEffort, fvoltage_correction);
 
 					/* Command State Machine Behavior */
-					if(command_found)
+					if(bcommand_found)
 					{
-						if(command_slow)
+						if(bcommand_slow)
 						{
-							motor_current_speed = MOTOR_FAST_SPEED;
-							command_slow = false;
-							counter_on = false;
+							fmotor_current_speed = MOTOR_FAST_SPEED;
+							bcommand_slow = false;
+							bcounter_on = false;
 						}
-						else if(counter > 1) // Command to STOP if second bar found again.
+						else if(icounter > 1) // Command to STOP if second bar found again.
 						{
-							command_stop = true;
+							bcommand_stop = true;
 						}
-						command_found = false;
+						bcommand_found = false;
 					}
 
-					if(counter_on){
-						counter++;
+					if(bcounter_on){
+						icounter++;
 					}
 					else
-						counter = 0;
+						icounter = 0;
 
-					if(counter > 5 && !command_stop) // Command to Slow Down if second bar not found.
+					if(icounter > 5 && !bcommand_stop) // Command to Slow Down if second bar not found.
 					{
-						motor_current_speed = MOTOR_SLOW_SPEED;
-						command_slow = true;
-						counter_on = false;
-						counter = 0;
+						fmotor_current_speed = MOTOR_SLOW_SPEED;
+						bcommand_slow = true;
+						bcounter_on = false;
+						icounter = 0;
 					}
-					else if(counter > STOP_COUNTER_2METER && command_stop) // approx. 2 meters.
+					else if(icounter > STOP_COUNTER_2METER && bcommand_stop) // approx. 2 meters.
 					{
 						driver_setDriver(tdriverR, 0);
 						driver_setDriver(tdriverL, 0);
 						for(int i=0; i<30; i++) util_genDelay100ms();
-						command_stop = false;
-						counter_on = false;
-						counter = 0;
+						bcommand_stop = false;
+						bcounter_on = false;
+						icounter = 0;
 					}
 				}
 			}
@@ -387,12 +387,12 @@ int main(void)
 			   	May need to increase cyclic period to accomodate printing time.
 			   	Uncomment HMI initialization at the beginning.
 			*/	
-//			hmi_transmitSCSF("Pos",':',"", positionError);
-//			hmi_transmitSCSF("RS ",':',"", rightWheelSpeed);
-//			hmi_transmitSCSF("LS ",':',"", leftWheelSpeed);
-//			hmi_transmitSCSF("PE ",':',"", positionEffort);
-//			hmi_transmitSCSF("RE ",':',"", rightWheelEffort);
-//			hmi_transmitSCSF("LE ",':',"", leftWheelEffort);
+//			hmi_transmitSCSF("Pos",':',"", fpositionError);
+//			hmi_transmitSCSF("RS ",':',"", frightWheelSpeed);
+//			hmi_transmitSCSF("LS ",':',"", fleftWheelSpeed);
+//			hmi_transmitSCSF("PE ",':',"", fpositionEffort);
+//			hmi_transmitSCSF("RE ",':',"", frightWheelEffort);
+//			hmi_transmitSCSF("LE ",':',"", fleftWheelEffort);
 //			PRINTF("\r\n");
 //			hmi_receive(); // Enables execution time changes of PID constants.
 			

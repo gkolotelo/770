@@ -5,7 +5,17 @@
  * @version 1.1
  * @date 27 Jun 2016
  * @date 07 Oct 2016
- * @brief File containing the methods for interacting with an IR array .
+ * @brief Interpolation algorithm
+ * @details Catmull-Rom
+ * 
+ *     points: x:   0     1     2     3     4     5		(array sensor position)
+ *     		   y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]	(normalized sensor reading)
+ *     		   
+ *     Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
+ *     with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
+ *     points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
+ *     x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.
+ * 
  */
 
 /* System includes */
@@ -20,23 +30,6 @@
 #include "hal/target_definitions.h"
 #include "hal/adc/adc.h"
 
-
-
-
-
-/**
- * @brief Interpolation algorithm
- * @details Catmull-Rom
- * 
- *     points: x:   0     1     2     3     4     5		(array sensor position)
- *     		   y: [0-1] [0-1] [0-1] [0-1] [0-1] [0-1]	(normalized sensor reading)
- *     		   
- *     Given 4 points (x,y) p0, p1, p2, p3, Uniform Catmull-Rom interpolates from x1 to x2
- *     with equal spacing between x1 and x2, producing a spline linking y1 and y2 given t
- *     points between x1 and x2. In this case, t=10 and we've pre-calculated the x range
- *     x1,...,x1+dt,...,x2 = fcx + x1, only y(x) must be interpolated.
- * 
- */
 
 /**
  * @brief Initializes IR Array.
@@ -176,8 +169,8 @@ void ir_array_normalizeReadings(uint16_t* uiIrVector, float* fIrNormalizedReadin
  */
 void ir_array_calibrate(uint16_t* uiIrVector)
 {
-	uint32_t readingsOff[6] = { 0 };
-	uint32_t readingsOn[6] = { 0 };
+	uint32_t uireadingsOff[6] = { 0 };
+	uint32_t uireadingsOn[6] = { 0 };
 
 	// Take average of readings with array off
 	ir_array_ledArrayOff();
@@ -188,13 +181,13 @@ void ir_array_calibrate(uint16_t* uiIrVector)
 		for(int j=0; j<6; j++)
 		{
 			ir_array_takeMeasurement(uiIrReadings);
-			readingsOff[j] = readingsOff[j] + uiIrReadings[j];
+			uireadingsOff[j] = uireadingsOff[j] + uiIrReadings[j];
 			util_genDelay10ms();
 		}
 	}
 	for(int j=0; j<6; j++)
 	{
-		readingsOff[j] = readingsOff[j] >> 3;
+		uireadingsOff[j] = uireadingsOff[j] >> 3;
 	}
 
 	// Take average of readings with array on
@@ -206,23 +199,23 @@ void ir_array_calibrate(uint16_t* uiIrVector)
 		for(int j=0; j<6; j++)
 		{
 			ir_array_takeMeasurement(uiIrReadings);
-			readingsOn[j] = readingsOn[j] + uiIrReadings[j];
+			uireadingsOn[j] = uireadingsOn[j] + uiIrReadings[j];
 			util_genDelay10ms();
 		}
 	}
 	for(int j=0; j<6; j++)
 	{
-		readingsOn[j] = readingsOn[j] >> 3;
+		uireadingsOn[j] = uireadingsOn[j] >> 3;
 	}
 
 	// Set calibration data
 	for(int i=0; i<6; i++)
 	{
-		uiIrMinreadings[i] = readingsOff[i];
+		uiIrMinreadings[i] = uireadingsOff[i];
 	}
 	for(int i=0; i<6; i++)
 	{
-		uiIrMaxreadings[i] = readingsOn[i];
+		uiIrMaxreadings[i] = uireadingsOn[i];
 	}
 }
 
@@ -299,28 +292,28 @@ float ir_array_minMaxValuePosition(float y0, float y1, float y2, float y3, float
 
 	
 	// Find minimum
-	float minVal = 1;
-	float maxVal = 0;
-	int minPos = 0;
+	float fminVal = 1;
+	float fmaxVal = 0;
+	int fminPos = 0;
 	for(int i=0; i<46; i++)
 	{
-		if(y[i] < minVal)
+		if(y[i] < fminVal)
 		{
-			minPos = i;
-			minVal = y[i];
+			fminPos = i;
+			fminVal = y[i];
 		}
-		if(y[i] > maxVal)
+		if(y[i] > fmaxVal)
 		{
-			maxVal = y[i];
+			fmaxVal = y[i];
 		}
 	}
 
-	// Fix minPos: sensor arrays go from x=0 to x=5, y goes from 0 to 45
-	if((maxVal-minVal) > IR_MIN_DIFF)
-		return ((float)minPos)*5/45 -2.5;
+	// Fix fminPos: sensor arrays go from x=0 to x=5, y goes from 0 to 45
+	if((fmaxVal-fminVal) > IR_MIN_DIFF)
+		return ((float)fminPos)*5/45 -2.5;
 
 	// If command has been recognized (black perpendicular rectangle) return -10
-	if(((maxVal-minVal) < IR_MAX_DIFF) && maxVal < IR_MIN_DIFF)
+	if(((fmaxVal-fminVal) < IR_MAX_DIFF) && fmaxVal < IR_MIN_DIFF)
 		return -10;
 
 	// If no suitable trough has been found, return -20

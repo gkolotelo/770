@@ -99,18 +99,18 @@ float vsense_getSystemVoltage()
  */
 float vsense_getCurrent()
 {
-	float meas1, meas2;
+	float fmeas1, fmeas2;
 	for(int i = 0; i < 20; i++)
 	{
-		meas1 += vsense_getV1();
+		fmeas1 += vsense_getV1();
 	}
-	meas1 = meas1/20;
+	fmeas1 = fmeas1/20;
 	for(int i = 0; i < 20; i++)
 	{
-		meas2 += vsense_getV2();
+		fmeas2 += vsense_getV2();
 	}
-	meas2 = meas2/20;
-	return (meas1 - meas2)/(float)VSENSE_RESISTOR_VALUE;
+	fmeas2 = fmeas2/20;
+	return (fmeas1 - fmeas2)/(float)VSENSE_RESISTOR_VALUE;
 }
 
 /**

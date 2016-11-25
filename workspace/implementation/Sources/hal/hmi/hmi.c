@@ -23,7 +23,7 @@
 #include "hal/target_definitions.h"
 
 extern controller_instance_t tpidP, tpidL, tpidR;
-extern float motor_current_speed;
+extern float fmotor_current_speed;
 
 /**
  * @brief Initializes HMI interface.
@@ -142,11 +142,11 @@ void hmi_receive()
     int iReceiveNumber;
     controller_instance_t *controllerInstance;
     SCANF("%c%c%d", &cReceiveInstance, &cReceiveCommand, &iReceiveNumber);
-    if((&tpidP)->cControllerInstance == cReceiveInstance)
+    if(cReceiveInstance == (&tpidP)->cControllerInstance)
         controllerInstance = &tpidP;
-    else if((&tpidL)->cControllerInstance == cReceiveInstance)
+    else if(cReceiveInstance == (&tpidL)->cControllerInstance)
         controllerInstance = &tpidL;
-    else if((&tpidR)->cControllerInstance == cReceiveInstance)
+    else if(cReceiveInstance == (&tpidR)->cControllerInstance)
         controllerInstance = &tpidR;
     else return;
     switch(cReceiveCommand)
@@ -179,8 +179,8 @@ void hmi_receive()
         case 'V':
 		case 'v':
 			iReceiveNumber = abs(iReceiveNumber);
-			motor_current_speed = ((float)iReceiveNumber/100);
-			PRINTF("Received: motor %c%f\r\n", cReceiveCommand, motor_current_speed);
+			fmotor_current_speed = ((float)iReceiveNumber/100);
+			PRINTF("Received: motor %c%f\r\n", cReceiveCommand, fmotor_current_speed);
 			break;
         default:
             break;

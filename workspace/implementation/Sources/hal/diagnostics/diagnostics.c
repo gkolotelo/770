@@ -37,30 +37,30 @@ extern driver_instance_t tdriverR;
  */
 bool diagnostics_startDiagnostics()
 {
-	bool VS_flag, IR_flag, MOT_flag,ENC_flag;
+	bool bVS_flag, bIR_flag, bMOT_flag, bENC_flag;
 
 	hmi_initHmi();
 	hmi_transmitS(HMI_DIAG_UITEXT_INIT);
 	hmi_transmitNewLine();
 
-	VS_flag = diagnostics_btestVSense();
-	IR_flag = diagnostics_btestIrArray();
+	bVS_flag = diagnostics_btestVSense();
+	bIR_flag = diagnostics_btestIrArray();
 	for(int i = 0; i < 50; i++) util_genDelay100ms();
-	MOT_flag = diagnostics_btestMotors();
-	ENC_flag = diagnostics_btestEncoders();
+	bMOT_flag = diagnostics_btestMotors();
+	bENC_flag = diagnostics_btestEncoders();
 
 	/* Transmit summary */
 	hmi_transmitS(HMI_DIAG_UITEXT_SUMMARY);
-	if(VS_flag) hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
+	if(bVS_flag) hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
 	else hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_OK);
-	if(IR_flag) hmi_transmitS(HMI_DIAG_UITEXT_IR_ERR);
+	if(bIR_flag) hmi_transmitS(HMI_DIAG_UITEXT_IR_ERR);
 	else hmi_transmitS(HMI_DIAG_UITEXT_IR_OK);
-	if(MOT_flag) hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
+	if(bMOT_flag) hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
 	else hmi_transmitS(HMI_DIAG_UITEXT_MOT_OK);
-	if(ENC_flag) hmi_transmitS(HMI_DIAG_UITEXT_ENC_ERR);
+	if(bENC_flag) hmi_transmitS(HMI_DIAG_UITEXT_ENC_ERR);
 	else hmi_transmitS(HMI_DIAG_UITEXT_ENC_OK);
 	hmi_transmitNewLine();
-	if(VS_flag || IR_flag || MOT_flag || ENC_flag)
+	if(bVS_flag || bIR_flag || bMOT_flag || bENC_flag)
 	{
 		hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_ERR);
 		return true;
@@ -82,51 +82,51 @@ bool diagnostics_startDiagnostics()
 bool diagnostics_btestVSense()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_RUNNING);
-	bool error_flag = false;
-	float meas1, meas2, meas3, meas4;
+	bool berror_flag = false;
+	float fmeas1, fmeas2, fmeas3, fmeas4;
 	for(int i = 0; i < 20; i++)
 	{
-		meas1 += vsense_getV1();
+		fmeas1 += vsense_getV1();
 		util_genDelay1ms();
 	}
-	meas1 = meas1/20;
+	fmeas1 = fmeas1/20;
 	for(int i = 0; i < 20; i++)
 	{
-		meas2 += vsense_getV2();
+		fmeas2 += vsense_getV2();
 		util_genDelay1ms();
 	}
-	meas2 = meas2/20;
-	meas3 = vsense_getCurrent();
-	meas4 = vsense_getPower();
-	if(meas1 < VSENSE_MIN_VOLTAGE)
+	fmeas2 = fmeas2/20;
+	fmeas3 = vsense_getCurrent();
+	fmeas4 = vsense_getPower();
+	if(fmeas1 < VSENSE_MIN_VOLTAGE)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR, meas1);
-		error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR, fmeas1);
+		berror_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_OK, meas1);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_OK, fmeas1);
 	}
-	if(meas2 < VSENSE_MIN_VOLTAGE)
+	if(fmeas2 < VSENSE_MIN_VOLTAGE)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR, meas2);
-		//error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR, fmeas2);
+		//berror_flag = true;
 		// Vsense2 is not very reliable, can break diagnostics even if Vsense1 above min, so it will not set the error flag.
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_OK, meas2);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_OK, fmeas2);
 	}
-	if(error_flag)
+	if(berror_flag)
 		hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_ERR);
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_CURR, meas3);
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_PWR, meas4);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_CURR, fmeas3);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, 'c', HMI_DIAG_UITEXT_VSENSE_PWR, fmeas4);
 		hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_OK);
 	}
 	hmi_transmitNewLine();
-	return error_flag;
+	return berror_flag;
 }
 
 /**
@@ -139,38 +139,38 @@ bool diagnostics_btestVSense()
  */
 bool diagnostics_btestIrArray()
 {
-	bool error_flag = false;
-	uint32_t meas1 = 0, meas2 = 0;
+	bool berror_flag = false;
+	uint32_t fmeas1 = 0, fmeas2 = 0;
 
 	hmi_transmitS(HMI_DIAG_UITEXT_IR_RUNNING);
 	ir_array_ledArrayOff();
 	for(int i = 0; i < 6; i++)
 	{
-		meas1 = 0, meas2 = 0;
+		fmeas1 = 0, fmeas2 = 0;
 		ir_array_ledSingleOn(i);
 		util_genDelay10ms();
-		meas1 = ir_array_takeSingleMeasurement(i);
+		fmeas1 = ir_array_takeSingleMeasurement(i);
 		ir_array_ledSingleOff(i);
 		util_genDelay10ms();
-		meas2 = ir_array_takeSingleMeasurement(i);
-		if(meas1 < meas2)
+		fmeas2 = ir_array_takeSingleMeasurement(i);
+		if(fmeas1 < fmeas2)
 		{
 			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_ERR);
-			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_ERR, meas1);
-			error_flag = true;
+			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_ERR, fmeas1);
+			berror_flag = true;
 		}
 		else
 		{
 			hmi_transmitSIS(HMI_DIAG_UITEXT_IRX, i, HMI_DIAG_UITEXT_IRX_OK);
-			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_OK, meas1);
+			hmi_transmitSISI(HMI_DIAG_UITEXT_IRAX, i, HMI_DIAG_UITEXT_IRAX_OK, fmeas1);
 		}
 	}
-	if(error_flag)
+	if(berror_flag)
 		hmi_transmitS(HMI_DIAG_UITEXT_IR_ERR);
 	else
 		hmi_transmitS(HMI_DIAG_UITEXT_IR_OK);
 	hmi_transmitNewLine();
-	return error_flag;
+	return berror_flag;
 }
 
 /**
@@ -184,10 +184,10 @@ bool diagnostics_btestIrArray()
 bool diagnostics_btestMotors()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_MOT_RUNNING);
-	bool error_flag = false;
-	float sscurr = 0, meas1 = 0, meas2 = 0;
-	sscurr = vsense_getCurrent();
-	if(sscurr == 0)
+	bool berror_flag = false;
+	float fsscurr = 0, fmeas1 = 0, fmeas2 = 0;
+	fsscurr = vsense_getCurrent();
+	if(0 == fsscurr)
 	{
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_INNACURATE);
 		return true;
@@ -199,45 +199,45 @@ bool diagnostics_btestMotors()
 	driver_setDriver(tdriverR, 90);
 	driver_enableDriver(tdriverR);
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
-	meas1 = vsense_getCurrent();
+	fmeas1 = vsense_getCurrent();
 	driver_disableDriver(tdriverR);
 	driver_setDriver(tdriverR, 0);
 	util_genDelay100ms();
 	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
 	util_genDelay100ms();
-	if(meas1 < sscurr + MOTOR_MIN_CURR)
+	if(fmeas1 < fsscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR, meas1-sscurr);
-		error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR, fmeas1-fsscurr);
+		berror_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas1-sscurr);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, fmeas1-fsscurr);
 	}
 	/* Testing L */
 	driver_setDriver(tdriverL, 90);
 	driver_enableDriver(tdriverL);
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
-	meas2 = vsense_getCurrent();
-	if(meas2 < sscurr + MOTOR_MIN_CURR)
+	fmeas2 = vsense_getCurrent();
+	if(fmeas2 < fsscurr + MOTOR_MIN_CURR)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR, meas2-sscurr);
-		error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR, fmeas2-fsscurr);
+		berror_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, meas2-sscurr);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, fmeas2-fsscurr);
 	}
 	driver_disableDriver(tdriverL);
 	driver_setDriver(tdriverL, 0);
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
 
-	if(error_flag)
+	if(berror_flag)
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_ERR);
 	else
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_OK);
 	hmi_transmitNewLine();
-	return error_flag;
+	return berror_flag;
 }
 
 /**
@@ -251,8 +251,8 @@ bool diagnostics_btestMotors()
 bool diagnostics_btestEncoders()
 {
 	hmi_transmitS(HMI_DIAG_UITEXT_ENC_RUNNING);
-	bool error_flag = false;
-	float meas1 = 0, meas2 = 0;
+	bool berror_flag = false;
+	float fmeas1 = 0, fmeas2 = 0;
 	/* Test R */
 	encoder_resetCounter(tencoderL);
 	encoder_resetCounter(tencoderR);
@@ -267,8 +267,8 @@ bool diagnostics_btestEncoders()
 
 	encoder_takeMeasurement(&tencoderL);
 	encoder_takeMeasurement(&tencoderR);
-	meas1 = encoder_getAngularVelocity(tencoderL);
-	meas2 = encoder_getAngularVelocity(tencoderR);
+	fmeas1 = encoder_getAngularVelocity(tencoderL);
+	fmeas2 = encoder_getAngularVelocity(tencoderR);
 
 	driver_setDriver(tdriverR, 0);
 	driver_disableDriver(tdriverR);
@@ -277,32 +277,32 @@ bool diagnostics_btestEncoders()
 	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
 
-	if(meas1 < MOTOR_MIN_VEL)
+	if(fmeas1 < MOTOR_MIN_VEL)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, meas1);
-		error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, fmeas1);
+		berror_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas1);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, fmeas1);
 	}
 
-	if(meas2 < MOTOR_MIN_VEL)
+	if(fmeas2 < MOTOR_MIN_VEL)
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, meas2);
-		error_flag = true;
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, fmeas2);
+		berror_flag = true;
 	}
 	else
 	{
-		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, meas2);
+		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, fmeas2);
 	}
 
-	if(error_flag)
+	if(berror_flag)
 		hmi_transmitS(HMI_DIAG_UITEXT_ENC_ERR);
 	else
 		hmi_transmitS(HMI_DIAG_UITEXT_ENC_OK);
 	hmi_transmitNewLine();
-	return error_flag;
+	return berror_flag;
 }
 
 
