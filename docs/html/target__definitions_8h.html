@@ -159,7 +159,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>VSENSE_MIN_VOLTAGE</b>&#160;&#160;&#160;9.0</td></tr>
 <tr class="separator:aa5aaf97936943c5dd305085856bad218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab553468317c53b1e759b7f77582f6740"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab553468317c53b1e759b7f77582f6740"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_MIN_CURR</b>&#160;&#160;&#160;10.0</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_MIN_CURR</b>&#160;&#160;&#160;500.0</td></tr>
 <tr class="separator:ab553468317c53b1e759b7f77582f6740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a63b124a50fd480792293a9af4eb1f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a63b124a50fd480792293a9af4eb1f9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_MIN_VEL</b>&#160;&#160;&#160;60.0</td></tr>
@@ -168,7 +168,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_MAX_VOLTAGE</b>&#160;&#160;&#160;8.0</td></tr>
 <tr class="separator:a236fd2fe54ed3c975e447c8e7f69314f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab68aeec5ec7a01a4a0516c8301da93b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab68aeec5ec7a01a4a0516c8301da93b1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_FAST_SPEED</b>&#160;&#160;&#160;60.0</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_FAST_SPEED</b>&#160;&#160;&#160;70.0</td></tr>
 <tr class="separator:ab68aeec5ec7a01a4a0516c8301da93b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa529e3372f4036eedffd265128ceddce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa529e3372f4036eedffd265128ceddce"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_SLOW_SPEED</b>&#160;&#160;&#160;10.0</td></tr>
@@ -353,6 +353,42 @@ Macros</h2></td></tr>
 <tr class="memitem:a9539fb3a01e9bdb7dbdc101a06f59f9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9539fb3a01e9bdb7dbdc101a06f59f9a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_UART_BAUD</b>&#160;&#160;&#160;115200</td></tr>
 <tr class="separator:a9539fb3a01e9bdb7dbdc101a06f59f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819c40d2b04a36198abd926544ae2b8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a819c40d2b04a36198abd926544ae2b8e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_DIAG_BTN_PORT_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
+<tr class="separator:a819c40d2b04a36198abd926544ae2b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605e9d7469ac2f4a6bf09788b7d5b6de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a605e9d7469ac2f4a6bf09788b7d5b6de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_DIAG_BTN_PIN_NUMBER</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a605e9d7469ac2f4a6bf09788b7d5b6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae574f194797250266564dd403dee9552"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae574f194797250266564dd403dee9552"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_DIAG_BTN_PDIR_MASK</b>&#160;&#160;&#160;0b100</td></tr>
+<tr class="separator:ae574f194797250266564dd403dee9552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6069cdfd0131a0205374f8ce41f9180"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6069cdfd0131a0205374f8ce41f9180"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_STARTSTOP_BTN_PORT_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
+<tr class="separator:aa6069cdfd0131a0205374f8ce41f9180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa24e9a6f0bdac2895ca77c842d668ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa24e9a6f0bdac2895ca77c842d668ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_STARTSTOP_BTN_PIN_NUMBER</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:aaa24e9a6f0bdac2895ca77c842d668ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09209b0a2fa60858551c571d51e758d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09209b0a2fa60858551c571d51e758d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_STARTSTOP_BTN_PDIR_MASK</b>&#160;&#160;&#160;0b1000</td></tr>
+<tr class="separator:a09209b0a2fa60858551c571d51e758d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada2e0c46661717a801d13ad38e75c78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aada2e0c46661717a801d13ad38e75c78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_RED_LED_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
+<tr class="separator:aada2e0c46661717a801d13ad38e75c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84957c805cf090b9293f166cf0cab63f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84957c805cf090b9293f166cf0cab63f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_RED_PIN_NUMBER</b>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:a84957c805cf090b9293f166cf0cab63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a433257513c954eea0e92c0f7fca751"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a433257513c954eea0e92c0f7fca751"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_GREEN_LED_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
+<tr class="separator:a4a433257513c954eea0e92c0f7fca751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30d31977e01983666fb3d07379aef09"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad30d31977e01983666fb3d07379aef09"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_GREEN_PIN_NUMBER</b>&#160;&#160;&#160;19</td></tr>
+<tr class="separator:ad30d31977e01983666fb3d07379aef09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da0759ef5c7452f79ae6de808c0ceb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3da0759ef5c7452f79ae6de808c0ceb8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_BLUE_LED_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
+<tr class="separator:a3da0759ef5c7452f79ae6de808c0ceb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bcee29358d276e2c20fe8698c5f5b29"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bcee29358d276e2c20fe8698c5f5b29"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HMI_BLUE_PIN_NUMBER</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a1bcee29358d276e2c20fe8698c5f5b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02dbd8a1c80fa6e2cfe0f27d77b9c8f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02dbd8a1c80fa6e2cfe0f27d77b9c8f8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_EN_PORT_ALT</b>&#160;&#160;&#160;kPortMuxAsGpio</td></tr>
 <tr class="separator:a02dbd8a1c80fa6e2cfe0f27d77b9c8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -393,7 +429,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 22 2016 03:49:09 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 25 2016 01:31:11 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
