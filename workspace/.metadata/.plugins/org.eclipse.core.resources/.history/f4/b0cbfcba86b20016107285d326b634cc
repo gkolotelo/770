@@ -39,10 +39,10 @@
 #define VSENSE2_CORRECTION_FACTOR		0.00032493882
 #define VSENSE_RESISTOR_VALUE			0.52 * 1000 //Ohm * 1000
 #define VSENSE_MIN_VOLTAGE				9.0	 		//V
-#define MOTOR_MIN_CURR					500.0		//mA
+#define MOTOR_MIN_CURR					5.0		//mA
 #define MOTOR_MIN_VEL					60.0		//RPM
 #define MOTOR_MAX_VOLTAGE				8.0			//V
-#define MOTOR_FAST_SPEED				70.0		//Pulses Per Second
+#define MOTOR_FAST_SPEED				90.0		//Pulses Per Second
 #define MOTOR_SLOW_SPEED				10.0		//Pulses Per Second
 #define IR_MAX_DIFF 					0.2			//Absolute
 #define IR_MIN_DIFF 					0.5			//Absolute
@@ -120,18 +120,14 @@
 #define HMI_UART_INSTANCE           	UART0_IDX
 #define HMI_UART_BASE               	UART0
 #define HMI_UART_BAUD               	115200
-#define HMI_DIAG_BTN_PORT_ALT			kPortMuxAsGpio
-#define HMI_DIAG_BTN_PIN_NUMBER			2
-#define HMI_DIAG_BTN_PDIR_MASK			0b100
-#define HMI_STARTSTOP_BTN_PORT_ALT		kPortMuxAsGpio
-#define HMI_STARTSTOP_BTN_PIN_NUMBER	3
-#define HMI_STARTSTOP_BTN_PDIR_MASK		0b1000
-#define HMI_RED_LED_ALT					kPortMuxAsGpio
-#define HMI_RED_PIN_NUMBER				18
-#define HMI_GREEN_LED_ALT				kPortMuxAsGpio
-#define HMI_GREEN_PIN_NUMBER			19
-#define HMI_BLUE_LED_ALT				kPortMuxAsGpio
-#define HMI_BLUE_PIN_NUMBER				1
+//#define HMI_DIAG_BTN_PORT_INSTANCE
+//#define HMI_DIAG_BTN_PORT_ALT			kPortMuxAsGpio
+//#define HMI_DIAG_BTN_IRQN
+//#define HMI_DIAG_BTN_PIN_NUMBER
+//#define HMI_STOP_BTN_PORT_INSTANCE
+//#define HMI_STOP_BTN_IRQN
+//#define HMI_STOP_BTN_PORT_ALT			kPortMuxAsGpio
+//#define HMI_STOP_BTN_PIN_NUMBER
 /*                   END OF HMI Definitions              */
 
 /*                   IR Array Definitions                */

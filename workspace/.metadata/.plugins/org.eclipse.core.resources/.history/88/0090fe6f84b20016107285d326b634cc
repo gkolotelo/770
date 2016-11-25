@@ -110,8 +110,7 @@ bool diagnostics_btestVSense()
 	if(meas2 < VSENSE_MIN_VOLTAGE)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR, meas2);
-		//error_flag = true;
-		// Vsense2 is not very reliable, can break diagnostics even if Vsense1 above min, so it will not set the error flag.
+		error_flag = true;
 	}
 	else
 	{
@@ -270,10 +269,10 @@ bool diagnostics_btestEncoders()
 	meas1 = encoder_getAngularVelocity(tencoderL);
 	meas2 = encoder_getAngularVelocity(tencoderR);
 
-	driver_setDriver(tdriverR, 0);
 	driver_disableDriver(tdriverR);
-	driver_setDriver(tdriverL, 0);
+	driver_setDriver(tdriverR, 0);
 	driver_disableDriver(tdriverL);
+	driver_setDriver(tdriverL, 0);
 	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
 

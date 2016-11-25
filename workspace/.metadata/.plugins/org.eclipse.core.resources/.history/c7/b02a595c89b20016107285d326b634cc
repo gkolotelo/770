@@ -34,7 +34,6 @@
  * @author Bruno de Souza Ferreira
  * @version 1.0
  * @date 9 Sep 2016
- * @date 24 Nov 2016
  * @brief File containing the main entry point of the program.
  */
 
@@ -176,23 +175,23 @@ void boardInit()
  */
 void peripheralInit()
 {
-	/* Setup RGB LEDs for Status */
+	/* Setup Red and Green LEDs for Status */
 	SIM_SCGC5 |= (SIM_SCGC5_PORTB_MASK);
 	SIM_SCGC5 |= (SIM_SCGC5_PORTD_MASK);
-	PORTB_PCR18 = PORT_PCR_MUX(HMI_RED_LED_ALT); // Red
-	PORTB_PCR19 = PORT_PCR_MUX(HMI_GREEN_LED_ALT); // Green
-	PORTD_PCR1 = PORT_PCR_MUX(HMI_BLUE_LED_ALT);  // Blue
-	PTB_BASE_PTR->PDDR |= 1 << HMI_RED_PIN_NUMBER;
-	PTB_BASE_PTR->PDDR |= 1 << HMI_GREEN_PIN_NUMBER;
-	PTD_BASE_PTR->PDDR |= 1 << HMI_BLUE_PIN_NUMBER;
-	PTB_BASE_PTR->PCOR |= 1 << HMI_GREEN_PIN_NUMBER;
-	PTB_BASE_PTR->PSOR |= 1 << HMI_RED_PIN_NUMBER;
-	PTD_BASE_PTR->PSOR |= 1 << HMI_BLUE_PIN_NUMBER;
+	PORTB_PCR18 = PORT_PCR_MUX(1);
+	PORTB_PCR19 = PORT_PCR_MUX(1);
+	PORTD_PCR1 = PORT_PCR_MUX(1);
+	PTB_BASE_PTR->PDDR |= 1 << 18;
+	PTB_BASE_PTR->PDDR |= 1 << 19;
+	PTD_BASE_PTR->PDDR |= 1 << 1;
+	PTB_BASE_PTR->PCOR |= 1 << 19;
+	PTB_BASE_PTR->PSOR |= 1 << 18;
+	PTD_BASE_PTR->PSOR |= 1 << 1;
 
 	/* Setup Buttons */
 	SIM_SCGC5 |= (SIM_SCGC5_PORTD_MASK);
-	PORTD_PCR2 = PORT_PCR_MUX(HMI_DIAG_BTN_PORT_ALT); // Diag. button
-	PORTD_PCR3 = PORT_PCR_MUX(HMI_STARTSTOP_BTN_PORT_ALT); // Start button
+	PORTD_PCR2 = PORT_PCR_MUX(1);
+	PORTD_PCR3 = PORT_PCR_MUX(1);
 
 	/* Setup peripherals */
 	adc_initAdc();
@@ -217,9 +216,11 @@ void peripheralInit()
 }
 
 /**
- * @brief Main program entry point.
+ * @brief Main entry point.
  *
  */
+
+
 int main(void)
 {
 	boardInit();
@@ -227,53 +228,47 @@ int main(void)
 
 	while(1)
 	{
-		/* Indicate status */
-		PTB_BASE_PTR->PCOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn on Green LED
-		PTB_BASE_PTR->PSOR |= 1 << HMI_RED_PIN_NUMBER;   // Turn off Red LED
-		PTD_BASE_PTR->PSOR |= 1 << HMI_BLUE_PIN_NUMBER;  // Turn off Blue LED
+		PTB_BASE_PTR->PCOR |= 1 << 19; // Turn on Green LED
+		PTB_BASE_PTR->PSOR |= 1 << 18; // Turn off Red LED
 
-		while((GPIOD->PDIR & HMI_STARTSTOP_BTN_PDIR_MASK)) // While start button not pressed (grounded)
+		while((GPIOD->PDIR & 0b1000)) // While start button not pressed (grounded)
 		{
-			if(!(GPIOD->PDIR & HMI_DIAG_BTN_PDIR_MASK)) // If diag. button pressed (grounded)
+			if(!(GPIOD->PDIR & 0b100)) // If diag. button pressed (grounded)
 				
 			// IF ALL TESTS ARE NOT PASSED, THE SYSTEM IS HALTED!
 			if(diagnostics_startDiagnostics() == true)
 			{
-				PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER;
-				PTB_BASE_PTR->PCOR |= 1 << HMI_RED_PIN_NUMBER;
+				PTB_BASE_PTR->PSOR |= 1 << 19;
+				PTB_BASE_PTR->PCOR |= 1 << 18;
 				while(1);
 			}
 
 		}
-		/* Start execution. Run until stop button is pressed */
+		// Start execution until stop button is pressed
 
-		/* Calibrate IR Array */
+		// Calibrate IR Array
 		ir_array_calibrate(uiIrReadings);
-
-		/* Get current voltage for motor operation */
+		// Get current voltage for motor operation
 		sys_voltage = vsense_getV1();
 		voltage_correction = MOTOR_MAX_VOLTAGE/sys_voltage;
-
-		/* Wait 3s for user to position robot on track. Blink Green LED for countdown. */
+		// Wait 5s for user to position robot on track
 		for(int i=0; i<3; i++)
 		{
-			PTB_BASE_PTR->PTOR |= 1 << HMI_GREEN_PIN_NUMBER;
+			PTB_BASE_PTR->PTOR |= 1 << 19;
 			for(int j=0; j<3; j++)util_genDelay100ms();
-			PTB_BASE_PTR->PTOR |= 1 << HMI_GREEN_PIN_NUMBER;
+			PTB_BASE_PTR->PTOR |= 1 << 19;
 			for(int j=0; j<8; j++)util_genDelay100ms();
 		}
-		PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER;
+		PTB_BASE_PTR->PSOR |= 1 << 19;
 
-		/* Pre-run resets */
 		encoder_resetCounter(tencoderL);
 		encoder_resetCounter(tencoderR);
+
 		driver_enableDriver(tdriverR);
 		driver_enableDriver(tdriverL);
 
-		/* Uncomment if using diagnostic section below. */
 		//hmi_initHmi();
 
-		/* Declare local variables */
 		float positionError, leftWheelSpeed, rightWheelSpeed;
 		double positionEffort, leftWheelEffort, rightWheelEffort;
 		bool command_found = false;
@@ -285,66 +280,67 @@ int main(void)
 
 		while(1)
 		{
-			/* Turn on Blue LED. Start of execution cycle.*/
-			PTD_BASE_PTR->PSOR |= 1 << HMI_BLUE_PIN_NUMBER;
+			/* Blink Blue LED for Status */
+			//PTD_BASE_PTR->PTOR |= 1 << 1;
+			PTD_BASE_PTR->PSOR |= 1 << 1;
 
 			/* Take measurements */
 			encoder_takeMeasurement(&tencoderL);
 			encoder_takeMeasurement(&tencoderR);
 			positionError = ir_array_getPosition();
 
-			/* If known command detected proceed */
-			if(-20 != positionError)
+			
+			if(positionError != -20)
 			{
-				PTB_BASE_PTR->PSOR |= 1 << HMI_RED_PIN_NUMBER; 	 // Turn off Red LED, command is valid.
-				PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn off Green LED
-				/* Command bar detected */
-				if(-10 == positionError)
+				PTB_BASE_PTR->PSOR |= 1 << 18; // Turn off Red LED
+				if(positionError == -10)
 				{
-					/* Indicate status */
-					PTB_BASE_PTR->PCOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn on Green LED
-					/* set flags */
+					PTB_BASE_PTR->PCOR |= 1 << 19; // Turn on Green LED
+					PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
 					command_found = true;
 					counter_on = true;
-					/* proceed in a straight line */
 					driver_setDriver2(tdriverR, 50, voltage_correction);
 					driver_setDriver2(tdriverL, 50, voltage_correction);
-					/* Avoid jitters */
 					for(int j=0; j<3; j++)util_genDelay100ms();
+				}
+				else if(positionError == -30 && command_found == true)
+				{
+					driver_setDriver(tdriverR, 0);
+					driver_setDriver(tdriverL, 0);
 				}
 				else
 				{
-					/* Get measured values */
+					PTB_BASE_PTR->PSOR |= 1 << 19; // Turn off Green LED
 					leftWheelSpeed = encoder_getAngularVelocity(tencoderL);
 					rightWheelSpeed = encoder_getAngularVelocity(tencoderR);
 
-					/* Update track PID Algorithm */
-					positionEffort = controller_PIDUpdate(&tpidP, positionError, 0);
+					/* Update PID Algorithm */
+					positionEffort = controller_PIDUpdate(&tpidP, positionError, -0.05);
 
-					/* Update motor PID algorithms */
+					/* Set Motors */
 					leftWheelEffort = controller_PIDUpdate(&tpidL, leftWheelSpeed, (motor_current_speed - positionEffort));
 					rightWheelEffort = controller_PIDUpdate(&tpidR, rightWheelSpeed, (motor_current_speed + positionEffort));
+
 
 					/* Avoid spinning in the opposite direction */
 					if(rightWheelEffort < -10)
 						rightWheelEffort = 0;
 					if(leftWheelEffort < -10)
 						leftWheelEffort = 0;
-
-					/* Set Motors */
 					driver_setDriver2(tdriverR, rightWheelEffort, voltage_correction);
 					driver_setDriver2(tdriverL, leftWheelEffort, voltage_correction);
 
-					/* Command State Machine Behavior */
+
 					if(command_found)
 					{
 						if(command_slow)
 						{
+//							PRINTF("going fast!\r\n");
 							motor_current_speed = MOTOR_FAST_SPEED;
 							command_slow = false;
 							counter_on = false;
 						}
-						else if(counter > 1) // Command to STOP if second bar found again.
+						else if(counter > 1) // Command to STOP
 						{
 							command_stop = true;
 						}
@@ -353,18 +349,21 @@ int main(void)
 
 					if(counter_on){
 						counter++;
+//						PRINTF("%d\r\n", counter);
 					}
+					// can probably be commented out:
 					else
 						counter = 0;
 
-					if(counter > 5 && !command_stop) // Command to Slow Down if second bar not found.
+					if(counter > 5 && !command_stop) // Command to Slow Down
 					{
+//						PRINTF("going slow!\r\n");
 						motor_current_speed = MOTOR_SLOW_SPEED;
 						command_slow = true;
 						counter_on = false;
 						counter = 0;
 					}
-					else if(counter > STOP_COUNTER_2METER && command_stop) // approx. 2 meters.
+					else if(counter > STOP_COUNTER_2METER && command_stop) // approx. 2 meters
 					{
 						driver_setDriver(tdriverR, 0);
 						driver_setDriver(tdriverL, 0);
@@ -373,59 +372,58 @@ int main(void)
 						counter_on = false;
 						counter = 0;
 					}
+
+
 				}
 			}
 			else
-			/* If unknown command detected indicate status */
 			{
-				PTB_BASE_PTR->PCOR |= 1 << HMI_RED_PIN_NUMBER; // Turn on Red LED
-				PTD_BASE_PTR->PCOR |= 1 << HMI_BLUE_PIN_NUMBER; // Turn off Blue LED
+				PTB_BASE_PTR->PCOR |= 1 << 18; // Turn on Red LED
+				PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
 			}
-
-			/* 
-				Diagnostics Section. Comment this out to analyze variable on execution time.
-			   	May need to increase cyclic period to accomodate printing time.
-			   	Uncomment HMI initialization at the beginning.
-			*/	
 //			hmi_transmitSCSF("Pos",':',"", positionError);
 //			hmi_transmitSCSF("RS ",':',"", rightWheelSpeed);
 //			hmi_transmitSCSF("LS ",':',"", leftWheelSpeed);
+//
 //			hmi_transmitSCSF("PE ",':',"", positionEffort);
 //			hmi_transmitSCSF("RE ",':',"", rightWheelEffort);
 //			hmi_transmitSCSF("LE ",':',"", leftWheelEffort);
+//
 //			PRINTF("\r\n");
-//			hmi_receive(); // Enables execution time changes of PID constants.
+//
+//
+//			hmi_receive();
 			
 
-			/* Stop button press check loop */
-			if(!(GPIOD->PDIR & HMI_STARTSTOP_BTN_PDIR_MASK))
+
+
+			// Stop button press check loop
+			if(!(GPIOD->PDIR & 0b1000))
 			{
-				util_genDelay10ms(); // Debounce
-				if(!(GPIOD->PDIR & HMI_STARTSTOP_BTN_PDIR_MASK))
+				util_genDelay10ms();
+				if(!(GPIOD->PDIR & 0b1000))
 				{
-					/* Turn on Red LED to indicate status */
-					PTD_BASE_PTR->PSOR |= 1 << HMI_BLUE_PIN_NUMBER;
-					PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER;
-					PTB_BASE_PTR->PCOR |= 1 << HMI_RED_PIN_NUMBER;
-					/* Disable motors */
+					// Turn on Red LED and wait 1 second;
+					PTD_BASE_PTR->PSOR |= 1 << 1;
+					PTB_BASE_PTR->PSOR |= 1 << 19;
+					PTB_BASE_PTR->PCOR |= 1 << 18;
 					driver_initDriver(tdriverL);
 					driver_appendDriver(tdriverR);
 					driver_disableDriver(tdriverR);
 					driver_disableDriver(tdriverL);
-					/* Wait 1 second for user to release button */
 					for(int i=0; i<10; i++)util_genDelay100ms();
 					break;
 				}
 			}
 
-			/* Turn off Blue LED. End of execution cycle. */
-			PTD_BASE_PTR->PCOR |= 1 << HMI_BLUE_PIN_NUMBER;
-
+			PTD_BASE_PTR->PCOR |= 1 << 1; // Turn off Blue LED
 			/* Wait for next cycle */
 			while(!uiFlagNextPeriod);
 			uiFlagNextPeriod = 0;
 		}
 	}
+
+
 }
 ////////////////////////////////////////////////////////////////////////////////
 // EOF

@@ -294,7 +294,7 @@ int main(void)
 			positionError = ir_array_getPosition();
 
 			/* If known command detected proceed */
-			if(-20 != positionError)
+			if(-20 == positionError)
 			{
 				PTB_BASE_PTR->PSOR |= 1 << HMI_RED_PIN_NUMBER; 	 // Turn off Red LED, command is valid.
 				PTB_BASE_PTR->PSOR |= 1 << HMI_GREEN_PIN_NUMBER; // Turn off Green LED
