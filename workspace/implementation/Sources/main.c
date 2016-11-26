@@ -310,7 +310,7 @@ int main(void)
 					driver_setDriver2(tdriverR, 50, fvoltage_correction);
 					driver_setDriver2(tdriverL, 50, fvoltage_correction);
 					/* Avoid jitters */
-					for(int j=0; j<3; j++)util_genDelay100ms();
+					for(int j=0; j<1; j++)util_genDelay100ms();
 				}
 				else
 				{
@@ -358,7 +358,7 @@ int main(void)
 					else
 						icounter = 0;
 
-					if(icounter > 5 && !bcommand_stop) // Command to Slow Down if second bar not found.
+					if(icounter > 8 && !bcommand_stop) // Command to Slow Down if second bar not found.
 					{
 						/* Slow down. */
 						fmotor_current_speed = MOTOR_SLOW_SPEED;

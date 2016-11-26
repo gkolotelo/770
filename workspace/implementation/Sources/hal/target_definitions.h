@@ -45,9 +45,9 @@
 
 /*                  User specific settings              */
 #define MOTOR_MIN_CURR					500.0		//mA
-#define MOTOR_MIN_VEL					60.0		//RPM
+#define MOTOR_MIN_VEL					60.0		//Minimum pulse counts
 #define MOTOR_MAX_VOLTAGE				8.0			//V
-#define MOTOR_FAST_SPEED				70.0		//Pulses Per Second
+#define MOTOR_FAST_SPEED				55.0		//Pulses Per Second
 #define MOTOR_SLOW_SPEED				10.0		//Pulses Per Second
 #define IR_MAX_DIFF 					0.2			//Absolute
 #define IR_MIN_DIFF 					0.5			//Absolute
