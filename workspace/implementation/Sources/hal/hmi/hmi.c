@@ -21,6 +21,7 @@
 #include "hmi.h"
 #include "hal/controller/controller.h"
 #include "hal/target_definitions.h"
+#include "hal/util/util.h"
 
 extern controller_instance_t tpidP, tpidL, tpidR;
 extern float fmotor_current_speed;

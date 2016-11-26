@@ -15,7 +15,7 @@
 #include <MKL25Z4.h>
 #include "fsl_gpio_driver.h"
 
-/*                    General uC Definitions             */
+/*                    General uC Definitions            */
 /* Cyclic executive period in microseconds */
 #define CYCLIC_EXECUTIVE_PERIOD			50 * 1000 //micro seconds
 #define DEBUG_MODE_ENABLE				true
@@ -27,7 +27,9 @@
 #define MAX_RW_MOTOR_VELOCITY_PPS		110
 #define MAX_LW_MOTOR_VELOCITY_PPS		110
 #define ADC_10MS_MULTIPLE_WAIT_PERIOD	1
-/* Voltage sense definitions */
+/*                 END OF General uC Definitions        */
+
+/*                 Voltage sense definitions            */
 #define VSENSE1_PORT_INSTANCE			PORTB_IDX
 #define VSENSE2_PORT_INSTANCE			PORTB_IDX
 #define VSENSE1_PIN_NUMBER				0U
@@ -39,6 +41,9 @@
 #define VSENSE2_CORRECTION_FACTOR		0.00032493882
 #define VSENSE_RESISTOR_VALUE			0.52 * 1000 //Ohm * 1000
 #define VSENSE_MIN_VOLTAGE				9.0	 		//V
+/*              END OF Voltage sense definitions        */
+
+/*                  User specific settings              */
 #define MOTOR_MIN_CURR					500.0		//mA
 #define MOTOR_MIN_VEL					60.0		//RPM
 #define MOTOR_MAX_VOLTAGE				8.0			//V
@@ -47,8 +52,10 @@
 #define IR_MAX_DIFF 					0.2			//Absolute
 #define IR_MIN_DIFF 					0.5			//Absolute
 #define MAX_POSITION_EFFORT				0			//Absolute
-#define STOP_COUNTER_2METER				120			//Cycles
-/*                 END OF General uC Definitions         */
+#define STOP_COUNTER_DISTANCE			75			//75 Cycles -> Approx. 1 meter
+#define STOP_WAIT_PERIOD				5			//Seconds
+/*               END OF User specific settings           */
+
 
 /*                     Driver Definitions                */
 #define DRIVER_LW_CHA_INSTANCE			5U

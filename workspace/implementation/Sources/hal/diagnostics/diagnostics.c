@@ -31,7 +31,7 @@ extern driver_instance_t tdriverR;
 
 /**
  * @brief Initiates diagnostics sequence.
- * @details Executes each system component test independently and reports the system status.
+ * @details Executes each subsystem test independently and reports the system status.
  *
  * @return True if tests were NOT successful.
  */
@@ -43,8 +43,10 @@ bool diagnostics_startDiagnostics()
 	hmi_transmitS(HMI_DIAG_UITEXT_INIT);
 	hmi_transmitNewLine();
 
+	/* Test subsystems */
 	bVS_flag = diagnostics_btestVSense();
 	bIR_flag = diagnostics_btestIrArray();
+	/* Wait for user to remove vehicle from the ground before running motors. */
 	for(int i = 0; i < 50; i++) util_genDelay100ms();
 	bMOT_flag = diagnostics_btestMotors();
 	bENC_flag = diagnostics_btestEncoders();
@@ -66,6 +68,7 @@ bool diagnostics_startDiagnostics()
 		return true;
 	}
 	hmi_transmitS(HMI_DIAG_UITEXT_COMPLETE_OK);
+	/* Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper motor behavior. */
 	driver_initDriver(tdriverL);
 	driver_appendDriver(tdriverR);
 	return false;
@@ -76,6 +79,8 @@ bool diagnostics_startDiagnostics()
  * @details Tests Vsense1 and Vsense2 pins, if main system voltage
  * (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed.
  * If Vsense2 > Vsense1, an unexpected behavior, the test is not passed.
+ * Quiescent current and power are also computed and displayed to the user
+ * through the use of the two voltage sensors and a sense resistor.
  * 
  * @return True if test was NOT successful.
  */
@@ -84,6 +89,7 @@ bool diagnostics_btestVSense()
 	hmi_transmitS(HMI_DIAG_UITEXT_VSENSE_RUNNING);
 	bool berror_flag = false;
 	float fmeas1, fmeas2, fmeas3, fmeas4;
+	/* Measure average voltages before and after resistor */
 	for(int i = 0; i < 20; i++)
 	{
 		fmeas1 += vsense_getV1();
@@ -96,8 +102,10 @@ bool diagnostics_btestVSense()
 		util_genDelay1ms();
 	}
 	fmeas2 = fmeas2/20;
+	/* Get system current and power */
 	fmeas3 = vsense_getCurrent();
 	fmeas4 = vsense_getPower();
+	/* If either voltages are below user define levels set error flag. */
 	if(fmeas1 < VSENSE_MIN_VOLTAGE)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '1', HMI_DIAG_UITEXT_VSENSEX_ERR, fmeas1);
@@ -110,8 +118,7 @@ bool diagnostics_btestVSense()
 	if(fmeas2 < VSENSE_MIN_VOLTAGE)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_VSENSEX, '2', HMI_DIAG_UITEXT_VSENSEX_ERR, fmeas2);
-		//berror_flag = true;
-		// Vsense2 is not very reliable, can break diagnostics even if Vsense1 above min, so it will not set the error flag.
+		berror_flag = true;
 	}
 	else
 	{
@@ -176,8 +183,9 @@ bool diagnostics_btestIrArray()
 /**
  * @brief Tests operation of the motors.
  * @details For each motor, the system current is measured with the motor on
- * and with the motor off. If the former measurement is not greater than 
+ * and with the motor off. If the motor on measurement is not greater than 
  * MOTOR_MIN_CURR above the quiescent system current, the test is not successful.
+ * That is not acceptable motor current was drawn for the motor being tested.
  * 
  * @return True if test was NOT successful.
  */
@@ -192,9 +200,10 @@ bool diagnostics_btestMotors()
 		hmi_transmitS(HMI_DIAG_UITEXT_MOT_INNACURATE);
 		return true;
 	}
-	/* Testing R */
+	/* Testing Right Wheel encoder */
+	/* Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper motor behavior. */
 	driver_initDriver(tdriverL);
-	driver_appendDriver(tdriverR);// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	driver_appendDriver(tdriverR);
 	util_genDelay100ms();
 	driver_setDriver(tdriverR, 90);
 	driver_enableDriver(tdriverR);
@@ -203,8 +212,10 @@ bool diagnostics_btestMotors()
 	driver_disableDriver(tdriverR);
 	driver_setDriver(tdriverR, 0);
 	util_genDelay100ms();
-	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	/* Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper serial behavior. */
+	hmi_initHmi();
 	util_genDelay100ms();
+	/* If motor current not above necessary set error flag. */
 	if(fmeas1 < fsscurr + MOTOR_MIN_CURR)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance , HMI_DIAG_UITEXT_MOTX_ERR, fmeas1-fsscurr);
@@ -214,11 +225,12 @@ bool diagnostics_btestMotors()
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverR.cDriverInstance, HMI_DIAG_UITEXT_MOTX_OK, fmeas1-fsscurr);
 	}
-	/* Testing L */
+	/* Testing Left Wheel encoder */
 	driver_setDriver(tdriverL, 90);
 	driver_enableDriver(tdriverL);
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
 	fmeas2 = vsense_getCurrent();
+	/* If motor current not above necessary set error flag. */
 	if(fmeas2 < fsscurr + MOTOR_MIN_CURR)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_MOTX, tdriverL.cDriverInstance, HMI_DIAG_UITEXT_MOTX_ERR, fmeas2-fsscurr);
@@ -256,15 +268,16 @@ bool diagnostics_btestEncoders()
 	/* Test R */
 	encoder_resetCounter(tencoderL);
 	encoder_resetCounter(tencoderR);
-
+	/* Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper motor behavior. */
 	driver_initDriver(tdriverL);
-	driver_appendDriver(tdriverR);// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	driver_appendDriver(tdriverR);
 	driver_setDriver(tdriverR, 90);
 	driver_enableDriver(tdriverR);
 	driver_setDriver(tdriverL, 90);
 	driver_enableDriver(tdriverL);
+	/* Wait for motor to reach speed. */
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
-
+	/* Get encoder readings. */
 	encoder_takeMeasurement(&tencoderL);
 	encoder_takeMeasurement(&tencoderR);
 	fmeas1 = encoder_getAngularVelocity(tencoderL);
@@ -274,9 +287,10 @@ bool diagnostics_btestEncoders()
 	driver_disableDriver(tdriverR);
 	driver_setDriver(tdriverL, 0);
 	driver_disableDriver(tdriverL);
-	hmi_initHmi();// Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper behavior.
+	/* Driver instance tdriverR uses shared pin with UART0, this sets up the mux for proper serial behavior. */
+	hmi_initHmi();
 	for(int i = 0; i < 10; i++) util_genDelay100ms();
-
+	/* If encoder  didn't capture enough counts the test was not succesfull. */
 	if(fmeas1 < MOTOR_MIN_VEL)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, fmeas1);
@@ -286,7 +300,7 @@ bool diagnostics_btestEncoders()
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderL.cEncoderInstance, HMI_DIAG_UITEXT_ENCX_OK, fmeas1);
 	}
-
+	/* If encoder didn't capture enough counts the test was not succesfull. */
 	if(fmeas2 < MOTOR_MIN_VEL)
 	{
 		hmi_transmitSCSF(HMI_DIAG_UITEXT_ENCX, tencoderR.cEncoderInstance , HMI_DIAG_UITEXT_ENCX_ERR, fmeas2);

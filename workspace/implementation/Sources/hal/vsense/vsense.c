@@ -6,6 +6,10 @@
  * @date 30 Sep 2016
  * @date 07 Oct 2016
  * @brief File containing the methods for interacting with for interacting with the sense resistors.
+ * @details Vsense systems utilizes two resistor divider networks to convert the battery voltage (vesense1)
+ * and sense resistor voltage (vsense2) and acquire using the ADC. The battery voltage is used to set the
+ * the maximum PWM for the motor according to a user define maximum motor voltage. The voltage differential
+ * on the sense resistor allows computation of the system current and power usage at any given time.
  */
 
 /* System includes */

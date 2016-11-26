@@ -250,7 +250,7 @@ int main(void)
 		/* Calibrate IR Array */
 		ir_array_calibrate(uiIrReadings);
 
-		/* Get current voltage for motor operation */
+		/* Get current voltage and calculate correction for proper motor operation */
 		fsys_voltage = vsense_getV1();
 		fvoltage_correction = MOTOR_MAX_VOLTAGE/fsys_voltage;
 
@@ -270,7 +270,7 @@ int main(void)
 		driver_enableDriver(tdriverR);
 		driver_enableDriver(tdriverL);
 
-		/* Uncomment if using diagnostic section below. */
+		/* Uncomment if using diagnostics section below. */
 		//hmi_initHmi();
 
 		/* Declare local variables */
@@ -340,6 +340,7 @@ int main(void)
 					{
 						if(bcommand_slow)
 						{
+							/* If in slow down area and command found again, disable slow down. */
 							fmotor_current_speed = MOTOR_FAST_SPEED;
 							bcommand_slow = false;
 							bcounter_on = false;
@@ -359,16 +360,18 @@ int main(void)
 
 					if(icounter > 5 && !bcommand_stop) // Command to Slow Down if second bar not found.
 					{
+						/* Slow down. */
 						fmotor_current_speed = MOTOR_SLOW_SPEED;
 						bcommand_slow = true;
 						bcounter_on = false;
 						icounter = 0;
 					}
-					else if(icounter > STOP_COUNTER_2METER && bcommand_stop) // approx. 2 meters.
+					else if(icounter > STOP_COUNTER_DISTANCE && bcommand_stop) // approx. 2 meters.
 					{
+						/* Stop and wait. */
 						driver_setDriver(tdriverR, 0);
 						driver_setDriver(tdriverL, 0);
-						for(int i=0; i<30; i++) util_genDelay100ms();
+						for(int i=0; i<10*STOP_WAIT_PERIOD; i++) util_genDelay100ms();
 						bcommand_stop = false;
 						bcounter_on = false;
 						icounter = 0;
