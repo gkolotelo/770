@@ -84,6 +84,11 @@ Tests operation of the motors.
 For each motor, the system current is measured with the motor on and with the motor off. If the former measurement is not greater than M\-O\-T\-O\-R\-\_\-\-M\-I\-N\-\_\-\-C\-U\-R\-R above the quiescent system current, the test is not successful.
 
 \begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful.
+\end{DoxyReturn}
+For each motor, the system current is measured with the motor on and with the motor off. If the motor on measurement is not greater than M\-O\-T\-O\-R\-\_\-\-M\-I\-N\-\_\-\-C\-U\-R\-R above the quiescent system current, the test is not successful. That is not acceptable motor current was drawn for the motor being tested.
+
+\begin{DoxyReturn}{Returns}
 True if test was N\-O\-T successful. 
 \end{DoxyReturn}
 \hypertarget{diagnostics_8h_a35cf672d2b71e0fef3499cd4d7a3f767}{\index{diagnostics.\-h@{diagnostics.\-h}!diagnostics\-\_\-btest\-V\-Sense@{diagnostics\-\_\-btest\-V\-Sense}}
@@ -98,6 +103,11 @@ True if test was N\-O\-T successful.
 Tests operation of the voltage sense. 
 
 Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than V\-S\-E\-N\-S\-E\-\_\-\-M\-I\-N\-\_\-\-V\-O\-L\-T\-A\-G\-E, the test is not passed. If Vsense2 $>$ Vsense1, an unexpected behavior, the test is not passed.
+
+\begin{DoxyReturn}{Returns}
+True if test was N\-O\-T successful.
+\end{DoxyReturn}
+Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than V\-S\-E\-N\-S\-E\-\_\-\-M\-I\-N\-\_\-\-V\-O\-L\-T\-A\-G\-E, the test is not passed. If Vsense2 $>$ Vsense1, an unexpected behavior, the test is not passed. Quiescent current and power are also computed and displayed to the user through the use of the two voltage sensors and a sense resistor.
 
 \begin{DoxyReturn}{Returns}
 True if test was N\-O\-T successful. 
@@ -118,7 +128,7 @@ Executes each system component test independently and reports the system status.
 \begin{DoxyReturn}{Returns}
 True if tests were N\-O\-T successful.
 \end{DoxyReturn}
-Executes each system component test independently and reports the system status.
+Executes each subsystem test independently and reports the system status.
 
 \begin{DoxyReturn}{Returns}
 True if tests were N\-O\-T successful. 

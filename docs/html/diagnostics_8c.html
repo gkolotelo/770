@@ -199,7 +199,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><div class="memdoc">
 
 <p>Tests operation of the motors. </p>
-<p>For each motor, the system current is measured with the motor on and with the motor off. If the former measurement is not greater than MOTOR_MIN_CURR above the quiescent system current, the test is not successful.</p>
+<p>For each motor, the system current is measured with the motor on and with the motor off. If the motor on measurement is not greater than MOTOR_MIN_CURR above the quiescent system current, the test is not successful. That is not acceptable motor current was drawn for the motor being tested.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
 
 </div>
@@ -218,7 +218,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><div class="memdoc">
 
 <p>Tests operation of the voltage sense. </p>
-<p>Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed. If Vsense2 &gt; Vsense1, an unexpected behavior, the test is not passed.</p>
+<p>Tests Vsense1 and Vsense2 pins, if main system voltage (Vsense1) is smaller than VSENSE_MIN_VOLTAGE, the test is not passed. If Vsense2 &gt; Vsense1, an unexpected behavior, the test is not passed. Quiescent current and power are also computed and displayed to the user through the use of the two voltage sensors and a sense resistor.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if test was NOT successful. </dd></dl>
 
 </div>
@@ -237,7 +237,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><div class="memdoc">
 
 <p>Initiates diagnostics sequence. </p>
-<p>Executes each system component test independently and reports the system status.</p>
+<p>Executes each subsystem test independently and reports the system status.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if tests were NOT successful. </dd></dl>
 
 </div>
@@ -259,7 +259,7 @@ Bruno de Souza Ferreira </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 25 2016 17:09:47 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 26 2016 01:49:44 for ES770 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
